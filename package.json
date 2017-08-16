@@ -25,6 +25,7 @@
   "dependencies": {
     "aframe": "^0.6.1",
     "aframe-particle-system-component": "^1.0.10",
+    "aframe-physics-system": "^2.0.0",
     "aframe-react": "^4.3.0",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
