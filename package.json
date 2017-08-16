@@ -1,0 +1,33 @@
+{
+  "name": "webvrexperience",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "react-scripts start",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PolideaPlayground/WebVRExperience.git"
+  },
+  "keywords": [
+    "webvr",
+    "vr",
+    "aframe"
+  ],
+  "author": "Polidea",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PolideaPlayground/WebVRExperience/issues"
+  },
+  "homepage": "https://github.com/PolideaPlayground/WebVRExperience#readme",
+  "dependencies": {
+    "aframe": "^0.6.1",
+    "aframe-particle-system-component": "^1.0.10",
+    "aframe-react": "^4.3.0",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
+    "react-scripts": "0.9.5"
+  }
+}
