@@ -94,29 +94,75 @@ class Box extends React.Component {
 class Obstacle extends React.Component {
   render() {
     let rot;
-    if (this.props.state === 'left') {
-      rot = '0 0 45';
-    } else if (this.props.state === 'right') {
-      rot = '0 0 -45';
+    let state = this.props.state
+    if (state === 'left') {
+      rot = {
+        x: 0,
+        y: 0,
+        z: 45
+      };
+
+    } else if (state === 'right') {
+      rot = {
+        x: 0,
+        y: 0,
+        z: -45
+      };
+      
     } else {
-      throw new Error(`Cannot create obstacle with state ${this.props.state}`);
+      throw new Error(`Cannot create obstacle with state ${state}`);
     }
 
     return (<Entity
       geometry={{
       primitive: 'box',
-      height:"4",
-      width:"0.5"
+      height: "4",
+      width: "0.5"
     }}
-      
+    
       static-body
-      
       material={{
       color: 'yellow'
     }}
       rotation={rot}
-      position={this.props.pos}/>)
+      position={this.props.pos}>
+      <Animation rot={rot} state={state} />
+      </Entity>)
   }
+}
+
+class Animation extends React.Component{
+  // constructor(entity){
+  //   changeEnityState(entity.props)
+  // },
+  render(){
+    return (<Entity
+    animation__rotate={{
+      property: 'rotation',
+      startEvent: 'click',
+      from: this.props.rot,
+      to: animate(this.props.state)
+    }}/>)
+  }
+}
+
+function animate(beginState){
+  if (beginState === 'left') {
+      return {
+        x: 0,
+        y: 0,
+        z: -45
+      };
+
+    } else if (beginState === 'right') {
+      return {
+        x: 0,
+        y: 0,
+        z: 45
+      };
+    } else {
+      throw new Error(`Cannot create obstacle with state ${beginState}`);
+    }
 }
 
 ReactDOM.render(
