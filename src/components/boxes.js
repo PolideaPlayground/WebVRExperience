@@ -11,8 +11,8 @@ export default class Boxes extends React.Component {
         <ClickableBox color="blue" position="0 2 -4" id="test" />
 
         <ClickableBox position="-2 2 -4" color="violet" />
-        <a-entity position="-2 4 -4">
-          <a-entity mixin="cube red">
+        <a-entity position="-2 4 -4" >
+          <a-entity mixin="cube red" class="intersectable">
             <a-animation
               begin="click"
               attribute="position"
@@ -48,20 +48,21 @@ class ClickableBox extends React.Component {
     });
   }
   render() {
-    return (
-      <Entity
-        className="intersectable"
-        name="test"
-        mixin="cube"
-        material={{ color: this.state.c }}
-        position={this.state.p}
-        events={{
-          click: this.scream.bind(this),
-          "raycaster-intersected": this.interYey.bind(this)
-        }}
+      let xml = <Entity
+          className="intersectable"
+          name="test"
+          mixin="cube"
+          material={{ color: this.state.c }}
+          position={this.state.p}
+          events={{
+              click: this.scream.bind(this),
+              "raycaster-intersected": this.interYey.bind(this)
+          }}
       >
-        {this.state.selected ? <a-animation /> : <div />}
-      </Entity>
+          {this.state.selected ? <a-animation /> : <div />}
+      </Entity>;
+      return (
+      xml
     );
   }
 }
