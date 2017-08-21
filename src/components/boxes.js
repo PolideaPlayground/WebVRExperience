@@ -41,20 +41,18 @@ class ClickableBox extends React.Component {
   render() {
     return (
       <Entity
-        animation__click={{
-          startEvents: "click",
-          property: "rotation",
-          dur: 2000,
-          loop: true,
-          to: "360 360 360"
-        }}
+
         className="intersectable"
         name='test'
         mixin="cube"
         material={{color:this.state.c}}
         position={this.state.p}
         events={{ click: this.scream.bind(this) }}
-      />
+      >
+          {this.state.selected ? <a-animation/> : <div/>
+
+          }
+      </Entity>
     );
   }
 }
