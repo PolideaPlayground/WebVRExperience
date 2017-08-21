@@ -11,6 +11,18 @@ export default class Boxes extends React.Component {
         <ClickableBox color="blue" position="0 2 -4" id="test" />
 
         <ClickableBox position="-2 2 -4" color="violet" />
+        <a-entity position="-2 4 -4">
+          <a-entity mixin="cube red">
+            <a-animation
+              begin="click"
+              attribute="position"
+              from="0 0 0"
+              to="0 0 -10"
+              dur="2000"
+              fill="both"
+            />
+          </a-entity>
+        </a-entity>
       </Entity>
     );
   }
@@ -24,9 +36,9 @@ class ClickableBox extends React.Component {
       p: props.position
     };
   }
-interYey(){
-    console.log('InterYey!')
-}
+  interYey() {
+    console.log("InterYey!");
+  }
   scream() {
     console.log("lol!");
     console.log(this);
@@ -38,20 +50,17 @@ interYey(){
   render() {
     return (
       <Entity
-
         className="intersectable"
         name="test"
         mixin="cube"
         material={{ color: this.state.c }}
         position={this.state.p}
-         events={{
+        events={{
           click: this.scream.bind(this),
-          'raycaster-intersected': this.interYey.bind(this)
+          "raycaster-intersected": this.interYey.bind(this)
         }}
       >
-          {this.state.selected ? <a-animation/> : <div/>
-
-          }
+        {this.state.selected ? <a-animation /> : <div />}
       </Entity>
     );
   }
