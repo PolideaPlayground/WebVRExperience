@@ -1,3 +1,12 @@
+<Entity
+            position="0 0 0"
+            rotation="0 0 0"
+            raycaster="far: 30; objects: .intersectable; showLine: true"
+          />
+
+
+
+
 <Entity raycaster="far: 30; objects: .intersectable; showLine: true"
           line="color: orange; opacity: 0.5" />
         <Entity primitive="a-camera" look-controls wasd-controls>

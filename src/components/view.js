@@ -1,9 +1,9 @@
 import {Entity} from "aframe-react";
 import React from "react";
 
-import ComplexBox from "./complex_box";
 import Boxes from "./boxes";
 import Controlers from "./controlers";
+import Playground from "./playground";
 
 export default class View extends React.Component {
     render() {
@@ -42,6 +42,8 @@ export default class View extends React.Component {
                 />
 
                 <Boxes/>
+
+                <Playground x='3' y='3' position={{x: 2, y: 6, z: -4}}/>
             </Entity>
         );
     }

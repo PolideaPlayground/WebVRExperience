@@ -8,21 +8,6 @@ export default class Boxes extends React.Component {
     return (
       <Entity>
         <ClickableBox color="green" position="2 4 -4" />
-        <ClickableBox color="blue" position="0 2 -4" id="test" />
-
-        <ClickableBox position="-2 2 -4" color="violet" />
-        <a-entity position="-2 4 -4" >
-          <a-entity mixin="cube red" class="intersectable">
-            <a-animation
-              begin="click"
-              attribute="position"
-              from="0 0 0"
-              to="0 0 -10"
-              dur="2000"
-              fill="both"
-            />
-          </a-entity>
-        </a-entity>
       </Entity>
     );
   }
@@ -33,7 +18,8 @@ class ClickableBox extends React.Component {
     super(props);
     this.state = {
       c: props.color,
-      p: props.position
+      p: props.position,
+      selected: false
     };
   }
   interYey() {
@@ -44,14 +30,14 @@ class ClickableBox extends React.Component {
     console.log(this);
     chosenBox = this;
     this.setState({
-      c: "yellow"
+      c: "yellow",
+      selected: true
     });
   }
   render() {
       let xml = <Entity
           className="intersectable"
-          name="test"
-          mixin="cube"
+          mixin="cube red"
           material={{ color: this.state.c }}
           position={this.state.p}
           events={{
@@ -59,7 +45,7 @@ class ClickableBox extends React.Component {
               "raycaster-intersected": this.interYey.bind(this)
           }}
       >
-          {this.state.selected ? <a-animation /> : <div />}
+          {this.state.selected ? <a-animation attribute="scale" repeat="indefinite" to="1.1 1.1 1.1" direction="alternateReverse" fill="both"></a-animation> : <div />}
       </Entity>;
       return (
       xml
