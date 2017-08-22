@@ -1,6 +1,6 @@
 import { Entity } from "aframe-react";
 import React from "react";
-import ComplexBox from "./complex_box";
+import ComplexBox from "./elements/complex_box";
 
 export default class Controlers extends React.Component {
   render() {

@@ -7,6 +7,7 @@ import ReactDOM from "react-dom";
 import View from "./components/view";
 import Assets from "./components/assets";
 import Controlers from "./components/controlers";
+import "./components/properties/hoverable";
 
 class VRScene extends React.Component {
     render() {
