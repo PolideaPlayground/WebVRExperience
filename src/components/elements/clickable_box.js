@@ -7,7 +7,7 @@ export default class ClickableBox extends React.Component {
         this.state = {
             c: props.color,
             p: props.position,
-            hovered: false,
+            state_hovered: false,
         };
     }
 
