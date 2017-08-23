@@ -1,9 +1,8 @@
 import {Entity} from "aframe-react";
 import React from "react";
 
-import ComplexBox from "./elements/complex_box";
 import Boxes from "./boxes";
-import Controlers from "./controlers";
+import Windmill from "./windmill";
 
 export default class View extends React.Component {
     render() {
@@ -42,6 +41,7 @@ export default class View extends React.Component {
                 />
 
                 <Boxes/>
+                <Windmill postion="0 1 0" scale="2 2 2"/>
             </Entity>
         );
     }

@@ -1,0 +1,1858 @@
+<?xml version="1.0" encoding="utf-8"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1">
+  <asset>
+    <contributor>
+      <author>Blender User</author>
+      <authoring_tool>Blender 2.78.0 commit date:2017-02-24, commit time:14:33, hash:e92f235</authoring_tool>
+    </contributor>
+    <created>2017-08-23T18:59:46</created>
+    <modified>2017-08-23T18:59:46</modified>
+    <unit name="meter" meter="1"/>
+    <up_axis>Z_UP</up_axis>
+  </asset>
+  <library_cameras>
+    <camera id="Camera-camera" name="Camera">
+      <optics>
+        <technique_common>
+          <perspective>
+            <xfov sid="xfov">49.13434</xfov>
+            <aspect_ratio>1.777778</aspect_ratio>
+            <znear sid="znear">0.1</znear>
+            <zfar sid="zfar">100</zfar>
+          </perspective>
+        </technique_common>
+      </optics>
+      <extra>
+        <technique profile="blender">
+          <YF_dofdist>0</YF_dofdist>
+          <shiftx>0</shiftx>
+          <shifty>0</shifty>
+        </technique>
+      </extra>
+    </camera>
+  </library_cameras>
+  <library_images/>
+  <library_effects>
+    <effect id="drewno-effect">
+      <profile_COMMON>
+        <technique sid="common">
+          <phong>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color sid="ambient">0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <color sid="diffuse">0.4081633 0.2479901 0.148423 1</color>
+            </diffuse>
+            <specular>
+              <color sid="specular">0.5 0.5 0.5 1</color>
+            </specular>
+            <shininess>
+              <float sid="shininess">49</float>
+            </shininess>
+            <index_of_refraction>
+              <float sid="index_of_refraction">1</float>
+            </index_of_refraction>
+          </phong>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="drewno2-effect">
+      <profile_COMMON>
+        <technique sid="common">
+          <phong>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color sid="ambient">0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <color sid="diffuse">0.7020409 0.4862068 0.1624557 1</color>
+            </diffuse>
+            <specular>
+              <color sid="specular">0.5 0.5 0.5 1</color>
+            </specular>
+            <shininess>
+              <float sid="shininess">49</float>
+            </shininess>
+            <index_of_refraction>
+              <float sid="index_of_refraction">1</float>
+            </index_of_refraction>
+          </phong>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="wiatraki-effect">
+      <profile_COMMON>
+        <technique sid="common">
+          <phong>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color sid="ambient">0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <color sid="diffuse">0.8 0.8 0.8 1</color>
+            </diffuse>
+            <specular>
+              <color sid="specular">0.5 0.5 0.5 1</color>
+            </specular>
+            <shininess>
+              <float sid="shininess">49</float>
+            </shininess>
+            <index_of_refraction>
+              <float sid="index_of_refraction">1</float>
+            </index_of_refraction>
+          </phong>
+        </technique>
+      </profile_COMMON>
+    </effect>
+  </library_effects>
+  <library_materials>
+    <material id="drewno-material" name="drewno">
+      <instance_effect url="#drewno-effect"/>
+    </material>
+    <material id="drewno2-material" name="drewno2">
+      <instance_effect url="#drewno2-effect"/>
+    </material>
+    <material id="wiatraki-material" name="wiatraki">
+      <instance_effect url="#wiatraki-effect"/>
+    </material>
+  </library_materials>
+  <library_geometries>
+    <geometry id="Untitled_027-mesh" name="Untitled.027">
+      <mesh>
+        <source id="Untitled_027-mesh-positions">
+          <float_array id="Untitled_027-mesh-positions-array" count="24">-2.896854 -2.896854 20.72784 -2.896854 2.896854 20.72784 2.896854 -2.896854 20.72784 2.896854 2.896854 20.72784 2.896854 -2.896854 -20.72784 2.896854 2.896854 -20.72784 -2.896854 -2.896854 -20.72784 -2.896854 2.896854 -20.72784</float_array>
+          <technique_common>
+            <accessor source="#Untitled_027-mesh-positions-array" count="8" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Untitled_027-mesh-normals">
+          <float_array id="Untitled_027-mesh-normals-array" count="18">0 0 1 1 0 0 0 0 -1 -1 0 0 0 1 0 0 -1 0</float_array>
+          <technique_common>
+            <accessor source="#Untitled_027-mesh-normals-array" count="6" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Untitled_027-mesh-map-0">
+          <float_array id="Untitled_027-mesh-map-0-array" count="72">1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 1 0 0 1 1 0 1 0 0 1 1 0 1 0 0 1 1 0 1 0 0 1 1 0 1 0 0 1 1 0 1 0 0</float_array>
+          <technique_common>
+            <accessor source="#Untitled_027-mesh-map-0-array" count="36" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="Untitled_027-mesh-vertices">
+          <input semantic="POSITION" source="#Untitled_027-mesh-positions"/>
+        </vertices>
+        <polylist material="drewno-material" count="10">
+          <input semantic="VERTEX" source="#Untitled_027-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#Untitled_027-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#Untitled_027-mesh-map-0" offset="2" set="0"/>
+          <vcount>3 3 3 3 3 3 3 3 3 3 </vcount>
+          <p>5 1 3 2 1 4 4 1 5 7 2 6 4 2 7 6 2 8 1 3 9 6 3 10 0 3 11 5 4 12 1 4 13 3 4 14 2 5 15 6 5 16 4 5 17 5 1 21 3 1 22 2 1 23 7 2 24 5 2 25 4 2 26 1 3 27 7 3 28 6 3 29 5 4 30 7 4 31 1 4 32 2 5 33 0 5 34 6 5 35</p>
+        </polylist>
+        <polylist material="drewno2-material" count="2">
+          <input semantic="VERTEX" source="#Untitled_027-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#Untitled_027-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#Untitled_027-mesh-map-0" offset="2" set="0"/>
+          <vcount>3 3 </vcount>
+          <p>3 0 0 0 0 1 2 0 2 3 0 18 1 0 19 0 0 20</p>
+        </polylist>
+      </mesh>
+    </geometry>
+    <geometry id="Untitled_022-mesh" name="Untitled.022">
+      <mesh>
+        <source id="Untitled_022-mesh-positions">
+          <float_array id="Untitled_022-mesh-positions-array" count="24">-2.896854 -1.708804 147.4493 -2.896854 1.708804 147.4493 2.896854 -1.708804 147.4493 2.896854 1.708804 147.4493 2.896854 -1.708804 -147.4493 2.896854 1.708804 -147.4493 -2.896854 -1.708804 -147.4493 -2.896854 1.708804 -147.4493</float_array>
+          <technique_common>
+            <accessor source="#Untitled_022-mesh-positions-array" count="8" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Untitled_022-mesh-normals">
+          <float_array id="Untitled_022-mesh-normals-array" count="18">0 0 1 1 0 0 0 0 -1 -1 0 0 0 1 0 0 -1 0</float_array>
+          <technique_common>
+            <accessor source="#Untitled_022-mesh-normals-array" count="6" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Untitled_022-mesh-map-0">
+          <float_array id="Untitled_022-mesh-map-0-array" count="72">1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 1 0 0 1 1 0 1 0 0 1 1 0 1 0 0 1 1 0 1 0 0 1 1 0 1 0 0 1 1 0 1 0 0</float_array>
+          <technique_common>
+            <accessor source="#Untitled_022-mesh-map-0-array" count="36" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="Untitled_022-mesh-vertices">
+          <input semantic="POSITION" source="#Untitled_022-mesh-positions"/>
+        </vertices>
+        <polylist material="drewno-material" count="12">
+          <input semantic="VERTEX" source="#Untitled_022-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#Untitled_022-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#Untitled_022-mesh-map-0" offset="2" set="0"/>
+          <vcount>3 3 3 3 3 3 3 3 3 3 3 3 </vcount>
+          <p>3 0 0 0 0 1 2 0 2 5 1 3 2 1 4 4 1 5 7 2 6 4 2 7 6 2 8 1 3 9 6 3 10 0 3 11 5 4 12 1 4 13 3 4 14 2 5 15 6 5 16 4 5 17 3 0 18 1 0 19 0 0 20 5 1 21 3 1 22 2 1 23 7 2 24 5 2 25 4 2 26 1 3 27 7 3 28 6 3 29 5 4 30 7 4 31 1 4 32 2 5 33 0 5 34 6 5 35</p>
+        </polylist>
+      </mesh>
+    </geometry>
+    <geometry id="Untitled_035-mesh" name="Untitled.035">
+      <mesh>
+        <source id="Untitled_035-mesh-positions">
+          <float_array id="Untitled_035-mesh-positions-array" count="24">-2.896854 -1.708804 147.4493 -2.896854 1.708804 147.4493 2.896854 -1.708804 147.4493 2.896854 1.708804 147.4493 2.896854 -1.708804 -147.4493 2.896854 1.708804 -147.4493 -2.896854 -1.708804 -147.4493 -2.896854 1.708804 -147.4493</float_array>
+          <technique_common>
+            <accessor source="#Untitled_035-mesh-positions-array" count="8" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Untitled_035-mesh-normals">
+          <float_array id="Untitled_035-mesh-normals-array" count="18">0 0 1 1 0 0 0 0 -1 -1 0 0 0 1 0 0 -1 0</float_array>
+          <technique_common>
+            <accessor source="#Untitled_035-mesh-normals-array" count="6" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Untitled_035-mesh-map-0">
+          <float_array id="Untitled_035-mesh-map-0-array" count="72">1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 1 0 0 1 1 0 1 0 0 1 1 0 1 0 0 1 1 0 1 0 0 1 1 0 1 0 0 1 1 0 1 0 0</float_array>
+          <technique_common>
+            <accessor source="#Untitled_035-mesh-map-0-array" count="36" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="Untitled_035-mesh-vertices">
+          <input semantic="POSITION" source="#Untitled_035-mesh-positions"/>
+        </vertices>
+        <polylist material="drewno-material" count="12">
+          <input semantic="VERTEX" source="#Untitled_035-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#Untitled_035-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#Untitled_035-mesh-map-0" offset="2" set="0"/>
+          <vcount>3 3 3 3 3 3 3 3 3 3 3 3 </vcount>
+          <p>3 0 0 0 0 1 2 0 2 5 1 3 2 1 4 4 1 5 7 2 6 4 2 7 6 2 8 1 3 9 6 3 10 0 3 11 5 4 12 1 4 13 3 4 14 2 5 15 6 5 16 4 5 17 3 0 18 1 0 19 0 0 20 5 1 21 3 1 22 2 1 23 7 2 24 5 2 25 4 2 26 1 3 27 7 3 28 6 3 29 5 4 30 7 4 31 1 4 32 2 5 33 0 5 34 6 5 35</p>
+        </polylist>
+      </mesh>
+    </geometry>
+    <geometry id="Untitled_017-mesh" name="Untitled.017">
+      <mesh>
+        <source id="Untitled_017-mesh-positions">
+          <float_array id="Untitled_017-mesh-positions-array" count="24">-19.1412 -5.49007 0.06751573 -19.1412 5.49007 0.06751573 19.1412 -5.49007 0.06751573 19.1412 5.49007 0.06751573 19.1412 -5.49007 -0.06751573 19.1412 5.49007 -0.06751573 -19.1412 -5.49007 -0.06751573 -19.1412 5.49007 -0.06751573</float_array>
+          <technique_common>
+            <accessor source="#Untitled_017-mesh-positions-array" count="8" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Untitled_017-mesh-normals">
+          <float_array id="Untitled_017-mesh-normals-array" count="18">0 0 1 1 0 0 0 0 -1 -1 0 0 0 1 0 0 -1 0</float_array>
+          <technique_common>
+            <accessor source="#Untitled_017-mesh-normals-array" count="6" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Untitled_017-mesh-map-0">
+          <float_array id="Untitled_017-mesh-map-0-array" count="72">1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 1 0 0 1 1 0 1 0 0 1 1 0 1 0 0 1 1 0 1 0 0 1 1 0 1 0 0 1 1 0 1 0 0</float_array>
+          <technique_common>
+            <accessor source="#Untitled_017-mesh-map-0-array" count="36" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="Untitled_017-mesh-vertices">
+          <input semantic="POSITION" source="#Untitled_017-mesh-positions"/>
+        </vertices>
+        <polylist material="wiatraki-material" count="12">
+          <input semantic="VERTEX" source="#Untitled_017-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#Untitled_017-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#Untitled_017-mesh-map-0" offset="2" set="0"/>
+          <vcount>3 3 3 3 3 3 3 3 3 3 3 3 </vcount>
+          <p>3 0 0 0 0 1 2 0 2 5 1 3 2 1 4 4 1 5 7 2 6 4 2 7 6 2 8 1 3 9 6 3 10 0 3 11 5 4 12 1 4 13 3 4 14 2 5 15 6 5 16 4 5 17 3 0 18 1 0 19 0 0 20 5 1 21 3 1 22 2 1 23 7 2 24 5 2 25 4 2 26 1 3 27 7 3 28 6 3 29 5 4 30 7 4 31 1 4 32 2 5 33 0 5 34 6 5 35</p>
+        </polylist>
+      </mesh>
+    </geometry>
+    <geometry id="Untitled_040-mesh" name="Untitled.040">
+      <mesh>
+        <source id="Untitled_040-mesh-positions">
+          <float_array id="Untitled_040-mesh-positions-array" count="24">-19.1412 -5.49007 0.06751573 -19.1412 5.49007 0.06751573 19.1412 -5.49007 0.06751573 19.1412 5.49007 0.06751573 19.1412 -5.49007 -0.06751573 19.1412 5.49007 -0.06751573 -19.1412 -5.49007 -0.06751573 -19.1412 5.49007 -0.06751573</float_array>
+          <technique_common>
+            <accessor source="#Untitled_040-mesh-positions-array" count="8" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Untitled_040-mesh-normals">
+          <float_array id="Untitled_040-mesh-normals-array" count="18">0 0 1 1 0 0 0 0 -1 -1 0 0 0 1 0 0 -1 0</float_array>
+          <technique_common>
+            <accessor source="#Untitled_040-mesh-normals-array" count="6" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Untitled_040-mesh-map-0">
+          <float_array id="Untitled_040-mesh-map-0-array" count="72">1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 1 0 0 1 1 0 1 0 0 1 1 0 1 0 0 1 1 0 1 0 0 1 1 0 1 0 0 1 1 0 1 0 0</float_array>
+          <technique_common>
+            <accessor source="#Untitled_040-mesh-map-0-array" count="36" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="Untitled_040-mesh-vertices">
+          <input semantic="POSITION" source="#Untitled_040-mesh-positions"/>
+        </vertices>
+        <polylist material="wiatraki-material" count="12">
+          <input semantic="VERTEX" source="#Untitled_040-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#Untitled_040-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#Untitled_040-mesh-map-0" offset="2" set="0"/>
+          <vcount>3 3 3 3 3 3 3 3 3 3 3 3 </vcount>
+          <p>3 0 0 0 0 1 2 0 2 5 1 3 2 1 4 4 1 5 7 2 6 4 2 7 6 2 8 1 3 9 6 3 10 0 3 11 5 4 12 1 4 13 3 4 14 2 5 15 6 5 16 4 5 17 3 0 18 1 0 19 0 0 20 5 1 21 3 1 22 2 1 23 7 2 24 5 2 25 4 2 26 1 3 27 7 3 28 6 3 29 5 4 30 7 4 31 1 4 32 2 5 33 0 5 34 6 5 35</p>
+        </polylist>
+      </mesh>
+    </geometry>
+    <geometry id="Untitled_029-mesh" name="Untitled.029">
+      <mesh>
+        <source id="Untitled_029-mesh-positions">
+          <float_array id="Untitled_029-mesh-positions-array" count="24">-19.1412 -5.49007 0.06751573 -19.1412 5.49007 0.06751573 19.1412 -5.49007 0.06751573 19.1412 5.49007 0.06751573 19.1412 -5.49007 -0.06751573 19.1412 5.49007 -0.06751573 -19.1412 -5.49007 -0.06751573 -19.1412 5.49007 -0.06751573</float_array>
+          <technique_common>
+            <accessor source="#Untitled_029-mesh-positions-array" count="8" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Untitled_029-mesh-normals">
+          <float_array id="Untitled_029-mesh-normals-array" count="18">0 0 1 1 0 0 0 0 -1 -1 0 0 0 1 0 0 -1 0</float_array>
+          <technique_common>
+            <accessor source="#Untitled_029-mesh-normals-array" count="6" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Untitled_029-mesh-map-0">
+          <float_array id="Untitled_029-mesh-map-0-array" count="72">1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 1 0 0 1 1 0 1 0 0 1 1 0 1 0 0 1 1 0 1 0 0 1 1 0 1 0 0 1 1 0 1 0 0</float_array>
+          <technique_common>
+            <accessor source="#Untitled_029-mesh-map-0-array" count="36" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="Untitled_029-mesh-vertices">
+          <input semantic="POSITION" source="#Untitled_029-mesh-positions"/>
+        </vertices>
+        <polylist material="wiatraki-material" count="12">
+          <input semantic="VERTEX" source="#Untitled_029-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#Untitled_029-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#Untitled_029-mesh-map-0" offset="2" set="0"/>
+          <vcount>3 3 3 3 3 3 3 3 3 3 3 3 </vcount>
+          <p>3 0 0 0 0 1 2 0 2 5 1 3 2 1 4 4 1 5 7 2 6 4 2 7 6 2 8 1 3 9 6 3 10 0 3 11 5 4 12 1 4 13 3 4 14 2 5 15 6 5 16 4 5 17 3 0 18 1 0 19 0 0 20 5 1 21 3 1 22 2 1 23 7 2 24 5 2 25 4 2 26 1 3 27 7 3 28 6 3 29 5 4 30 7 4 31 1 4 32 2 5 33 0 5 34 6 5 35</p>
+        </polylist>
+      </mesh>
+    </geometry>
+    <geometry id="Untitled_021-mesh" name="Untitled.021">
+      <mesh>
+        <source id="Untitled_021-mesh-positions">
+          <float_array id="Untitled_021-mesh-positions-array" count="24">-19.1412 -5.49007 0.06751573 -19.1412 5.49007 0.06751573 19.1412 -5.49007 0.06751573 19.1412 5.49007 0.06751573 19.1412 -5.49007 -0.06751573 19.1412 5.49007 -0.06751573 -19.1412 -5.49007 -0.06751573 -19.1412 5.49007 -0.06751573</float_array>
+          <technique_common>
+            <accessor source="#Untitled_021-mesh-positions-array" count="8" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Untitled_021-mesh-normals">
+          <float_array id="Untitled_021-mesh-normals-array" count="18">0 0 1 1 0 0 0 0 -1 -1 0 0 0 1 0 0 -1 0</float_array>
+          <technique_common>
+            <accessor source="#Untitled_021-mesh-normals-array" count="6" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Untitled_021-mesh-map-0">
+          <float_array id="Untitled_021-mesh-map-0-array" count="72">1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 1 0 0 1 1 0 1 0 0 1 1 0 1 0 0 1 1 0 1 0 0 1 1 0 1 0 0 1 1 0 1 0 0</float_array>
+          <technique_common>
+            <accessor source="#Untitled_021-mesh-map-0-array" count="36" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="Untitled_021-mesh-vertices">
+          <input semantic="POSITION" source="#Untitled_021-mesh-positions"/>
+        </vertices>
+        <polylist material="wiatraki-material" count="12">
+          <input semantic="VERTEX" source="#Untitled_021-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#Untitled_021-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#Untitled_021-mesh-map-0" offset="2" set="0"/>
+          <vcount>3 3 3 3 3 3 3 3 3 3 3 3 </vcount>
+          <p>3 0 0 0 0 1 2 0 2 5 1 3 2 1 4 4 1 5 7 2 6 4 2 7 6 2 8 1 3 9 6 3 10 0 3 11 5 4 12 1 4 13 3 4 14 2 5 15 6 5 16 4 5 17 3 0 18 1 0 19 0 0 20 5 1 21 3 1 22 2 1 23 7 2 24 5 2 25 4 2 26 1 3 27 7 3 28 6 3 29 5 4 30 7 4 31 1 4 32 2 5 33 0 5 34 6 5 35</p>
+        </polylist>
+      </mesh>
+    </geometry>
+    <geometry id="Untitled_006-mesh" name="Untitled.006">
+      <mesh>
+        <source id="Untitled_006-mesh-positions">
+          <float_array id="Untitled_006-mesh-positions-array" count="24">-19.1412 -5.49007 0.06751573 -19.1412 5.49007 0.06751573 19.1412 -5.49007 0.06751573 19.1412 5.49007 0.06751573 19.1412 -5.49007 -0.06751573 19.1412 5.49007 -0.06751573 -19.1412 -5.49007 -0.06751573 -19.1412 5.49007 -0.06751573</float_array>
+          <technique_common>
+            <accessor source="#Untitled_006-mesh-positions-array" count="8" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Untitled_006-mesh-normals">
+          <float_array id="Untitled_006-mesh-normals-array" count="18">0 0 1 1 0 0 0 0 -1 -1 0 0 0 1 0 0 -1 0</float_array>
+          <technique_common>
+            <accessor source="#Untitled_006-mesh-normals-array" count="6" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Untitled_006-mesh-map-0">
+          <float_array id="Untitled_006-mesh-map-0-array" count="72">1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 1 0 0 1 1 0 1 0 0 1 1 0 1 0 0 1 1 0 1 0 0 1 1 0 1 0 0 1 1 0 1 0 0</float_array>
+          <technique_common>
+            <accessor source="#Untitled_006-mesh-map-0-array" count="36" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="Untitled_006-mesh-vertices">
+          <input semantic="POSITION" source="#Untitled_006-mesh-positions"/>
+        </vertices>
+        <polylist material="wiatraki-material" count="12">
+          <input semantic="VERTEX" source="#Untitled_006-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#Untitled_006-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#Untitled_006-mesh-map-0" offset="2" set="0"/>
+          <vcount>3 3 3 3 3 3 3 3 3 3 3 3 </vcount>
+          <p>3 0 0 0 0 1 2 0 2 5 1 3 2 1 4 4 1 5 7 2 6 4 2 7 6 2 8 1 3 9 6 3 10 0 3 11 5 4 12 1 4 13 3 4 14 2 5 15 6 5 16 4 5 17 3 0 18 1 0 19 0 0 20 5 1 21 3 1 22 2 1 23 7 2 24 5 2 25 4 2 26 1 3 27 7 3 28 6 3 29 5 4 30 7 4 31 1 4 32 2 5 33 0 5 34 6 5 35</p>
+        </polylist>
+      </mesh>
+    </geometry>
+    <geometry id="Untitled_014-mesh" name="Untitled.014">
+      <mesh>
+        <source id="Untitled_014-mesh-positions">
+          <float_array id="Untitled_014-mesh-positions-array" count="24">-19.1412 -5.49007 0.06751573 -19.1412 5.49007 0.06751573 19.1412 -5.49007 0.06751573 19.1412 5.49007 0.06751573 19.1412 -5.49007 -0.06751573 19.1412 5.49007 -0.06751573 -19.1412 -5.49007 -0.06751573 -19.1412 5.49007 -0.06751573</float_array>
+          <technique_common>
+            <accessor source="#Untitled_014-mesh-positions-array" count="8" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Untitled_014-mesh-normals">
+          <float_array id="Untitled_014-mesh-normals-array" count="18">0 0 1 1 0 0 0 0 -1 -1 0 0 0 1 0 0 -1 0</float_array>
+          <technique_common>
+            <accessor source="#Untitled_014-mesh-normals-array" count="6" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Untitled_014-mesh-map-0">
+          <float_array id="Untitled_014-mesh-map-0-array" count="72">1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 1 0 0 1 1 0 1 0 0 1 1 0 1 0 0 1 1 0 1 0 0 1 1 0 1 0 0 1 1 0 1 0 0</float_array>
+          <technique_common>
+            <accessor source="#Untitled_014-mesh-map-0-array" count="36" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="Untitled_014-mesh-vertices">
+          <input semantic="POSITION" source="#Untitled_014-mesh-positions"/>
+        </vertices>
+        <polylist material="wiatraki-material" count="12">
+          <input semantic="VERTEX" source="#Untitled_014-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#Untitled_014-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#Untitled_014-mesh-map-0" offset="2" set="0"/>
+          <vcount>3 3 3 3 3 3 3 3 3 3 3 3 </vcount>
+          <p>3 0 0 0 0 1 2 0 2 5 1 3 2 1 4 4 1 5 7 2 6 4 2 7 6 2 8 1 3 9 6 3 10 0 3 11 5 4 12 1 4 13 3 4 14 2 5 15 6 5 16 4 5 17 3 0 18 1 0 19 0 0 20 5 1 21 3 1 22 2 1 23 7 2 24 5 2 25 4 2 26 1 3 27 7 3 28 6 3 29 5 4 30 7 4 31 1 4 32 2 5 33 0 5 34 6 5 35</p>
+        </polylist>
+      </mesh>
+    </geometry>
+    <geometry id="Untitled_007-mesh" name="Untitled.007">
+      <mesh>
+        <source id="Untitled_007-mesh-positions">
+          <float_array id="Untitled_007-mesh-positions-array" count="24">-19.1412 -5.49007 0.06751573 -19.1412 5.49007 0.06751573 19.1412 -5.49007 0.06751573 19.1412 5.49007 0.06751573 19.1412 -5.49007 -0.06751573 19.1412 5.49007 -0.06751573 -19.1412 -5.49007 -0.06751573 -19.1412 5.49007 -0.06751573</float_array>
+          <technique_common>
+            <accessor source="#Untitled_007-mesh-positions-array" count="8" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Untitled_007-mesh-normals">
+          <float_array id="Untitled_007-mesh-normals-array" count="18">0 0 1 1 0 0 0 0 -1 -1 0 0 0 1 0 0 -1 0</float_array>
+          <technique_common>
+            <accessor source="#Untitled_007-mesh-normals-array" count="6" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Untitled_007-mesh-map-0">
+          <float_array id="Untitled_007-mesh-map-0-array" count="72">1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 1 0 0 1 1 0 1 0 0 1 1 0 1 0 0 1 1 0 1 0 0 1 1 0 1 0 0 1 1 0 1 0 0</float_array>
+          <technique_common>
+            <accessor source="#Untitled_007-mesh-map-0-array" count="36" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="Untitled_007-mesh-vertices">
+          <input semantic="POSITION" source="#Untitled_007-mesh-positions"/>
+        </vertices>
+        <polylist material="wiatraki-material" count="12">
+          <input semantic="VERTEX" source="#Untitled_007-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#Untitled_007-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#Untitled_007-mesh-map-0" offset="2" set="0"/>
+          <vcount>3 3 3 3 3 3 3 3 3 3 3 3 </vcount>
+          <p>3 0 0 0 0 1 2 0 2 5 1 3 2 1 4 4 1 5 7 2 6 4 2 7 6 2 8 1 3 9 6 3 10 0 3 11 5 4 12 1 4 13 3 4 14 2 5 15 6 5 16 4 5 17 3 0 18 1 0 19 0 0 20 5 1 21 3 1 22 2 1 23 7 2 24 5 2 25 4 2 26 1 3 27 7 3 28 6 3 29 5 4 30 7 4 31 1 4 32 2 5 33 0 5 34 6 5 35</p>
+        </polylist>
+      </mesh>
+    </geometry>
+    <geometry id="Untitled_018-mesh" name="Untitled.018">
+      <mesh>
+        <source id="Untitled_018-mesh-positions">
+          <float_array id="Untitled_018-mesh-positions-array" count="24">-19.1412 -5.49007 0.06751573 -19.1412 5.49007 0.06751573 19.1412 -5.49007 0.06751573 19.1412 5.49007 0.06751573 19.1412 -5.49007 -0.06751573 19.1412 5.49007 -0.06751573 -19.1412 -5.49007 -0.06751573 -19.1412 5.49007 -0.06751573</float_array>
+          <technique_common>
+            <accessor source="#Untitled_018-mesh-positions-array" count="8" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Untitled_018-mesh-normals">
+          <float_array id="Untitled_018-mesh-normals-array" count="18">0 0 1 1 0 0 0 0 -1 -1 0 0 0 1 0 0 -1 0</float_array>
+          <technique_common>
+            <accessor source="#Untitled_018-mesh-normals-array" count="6" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Untitled_018-mesh-map-0">
+          <float_array id="Untitled_018-mesh-map-0-array" count="72">1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 1 0 0 1 1 0 1 0 0 1 1 0 1 0 0 1 1 0 1 0 0 1 1 0 1 0 0 1 1 0 1 0 0</float_array>
+          <technique_common>
+            <accessor source="#Untitled_018-mesh-map-0-array" count="36" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="Untitled_018-mesh-vertices">
+          <input semantic="POSITION" source="#Untitled_018-mesh-positions"/>
+        </vertices>
+        <polylist material="wiatraki-material" count="12">
+          <input semantic="VERTEX" source="#Untitled_018-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#Untitled_018-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#Untitled_018-mesh-map-0" offset="2" set="0"/>
+          <vcount>3 3 3 3 3 3 3 3 3 3 3 3 </vcount>
+          <p>3 0 0 0 0 1 2 0 2 5 1 3 2 1 4 4 1 5 7 2 6 4 2 7 6 2 8 1 3 9 6 3 10 0 3 11 5 4 12 1 4 13 3 4 14 2 5 15 6 5 16 4 5 17 3 0 18 1 0 19 0 0 20 5 1 21 3 1 22 2 1 23 7 2 24 5 2 25 4 2 26 1 3 27 7 3 28 6 3 29 5 4 30 7 4 31 1 4 32 2 5 33 0 5 34 6 5 35</p>
+        </polylist>
+      </mesh>
+    </geometry>
+    <geometry id="Untitled-mesh" name="Untitled">
+      <mesh>
+        <source id="Untitled-mesh-positions">
+          <float_array id="Untitled-mesh-positions-array" count="24">-19.1412 -5.49007 0.06751573 -19.1412 5.49007 0.06751573 19.1412 -5.49007 0.06751573 19.1412 5.49007 0.06751573 19.1412 -5.49007 -0.06751573 19.1412 5.49007 -0.06751573 -19.1412 -5.49007 -0.06751573 -19.1412 5.49007 -0.06751573</float_array>
+          <technique_common>
+            <accessor source="#Untitled-mesh-positions-array" count="8" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Untitled-mesh-normals">
+          <float_array id="Untitled-mesh-normals-array" count="18">0 0 1 1 0 0 0 0 -1 -1 0 0 0 1 0 0 -1 0</float_array>
+          <technique_common>
+            <accessor source="#Untitled-mesh-normals-array" count="6" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Untitled-mesh-map-0">
+          <float_array id="Untitled-mesh-map-0-array" count="72">1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 1 0 0 1 1 0 1 0 0 1 1 0 1 0 0 1 1 0 1 0 0 1 1 0 1 0 0 1 1 0 1 0 0</float_array>
+          <technique_common>
+            <accessor source="#Untitled-mesh-map-0-array" count="36" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="Untitled-mesh-vertices">
+          <input semantic="POSITION" source="#Untitled-mesh-positions"/>
+        </vertices>
+        <polylist material="wiatraki-material" count="12">
+          <input semantic="VERTEX" source="#Untitled-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#Untitled-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#Untitled-mesh-map-0" offset="2" set="0"/>
+          <vcount>3 3 3 3 3 3 3 3 3 3 3 3 </vcount>
+          <p>3 0 0 0 0 1 2 0 2 5 1 3 2 1 4 4 1 5 7 2 6 4 2 7 6 2 8 1 3 9 6 3 10 0 3 11 5 4 12 1 4 13 3 4 14 2 5 15 6 5 16 4 5 17 3 0 18 1 0 19 0 0 20 5 1 21 3 1 22 2 1 23 7 2 24 5 2 25 4 2 26 1 3 27 7 3 28 6 3 29 5 4 30 7 4 31 1 4 32 2 5 33 0 5 34 6 5 35</p>
+        </polylist>
+      </mesh>
+    </geometry>
+    <geometry id="Untitled_045-mesh" name="Untitled.045">
+      <mesh>
+        <source id="Untitled_045-mesh-positions">
+          <float_array id="Untitled_045-mesh-positions-array" count="24">-19.1412 -5.49007 0.06751573 -19.1412 5.49007 0.06751573 19.1412 -5.49007 0.06751573 19.1412 5.49007 0.06751573 19.1412 -5.49007 -0.06751573 19.1412 5.49007 -0.06751573 -19.1412 -5.49007 -0.06751573 -19.1412 5.49007 -0.06751573</float_array>
+          <technique_common>
+            <accessor source="#Untitled_045-mesh-positions-array" count="8" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Untitled_045-mesh-normals">
+          <float_array id="Untitled_045-mesh-normals-array" count="18">0 0 1 1 0 0 0 0 -1 -1 0 0 0 1 0 0 -1 0</float_array>
+          <technique_common>
+            <accessor source="#Untitled_045-mesh-normals-array" count="6" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Untitled_045-mesh-map-0">
+          <float_array id="Untitled_045-mesh-map-0-array" count="72">1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 1 0 0 1 1 0 1 0 0 1 1 0 1 0 0 1 1 0 1 0 0 1 1 0 1 0 0 1 1 0 1 0 0</float_array>
+          <technique_common>
+            <accessor source="#Untitled_045-mesh-map-0-array" count="36" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="Untitled_045-mesh-vertices">
+          <input semantic="POSITION" source="#Untitled_045-mesh-positions"/>
+        </vertices>
+        <polylist material="wiatraki-material" count="12">
+          <input semantic="VERTEX" source="#Untitled_045-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#Untitled_045-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#Untitled_045-mesh-map-0" offset="2" set="0"/>
+          <vcount>3 3 3 3 3 3 3 3 3 3 3 3 </vcount>
+          <p>3 0 0 0 0 1 2 0 2 5 1 3 2 1 4 4 1 5 7 2 6 4 2 7 6 2 8 1 3 9 6 3 10 0 3 11 5 4 12 1 4 13 3 4 14 2 5 15 6 5 16 4 5 17 3 0 18 1 0 19 0 0 20 5 1 21 3 1 22 2 1 23 7 2 24 5 2 25 4 2 26 1 3 27 7 3 28 6 3 29 5 4 30 7 4 31 1 4 32 2 5 33 0 5 34 6 5 35</p>
+        </polylist>
+      </mesh>
+    </geometry>
+    <geometry id="Untitled_034-mesh" name="Untitled.034">
+      <mesh>
+        <source id="Untitled_034-mesh-positions">
+          <float_array id="Untitled_034-mesh-positions-array" count="24">-19.1412 -5.49007 0.06751573 -19.1412 5.49007 0.06751573 19.1412 -5.49007 0.06751573 19.1412 5.49007 0.06751573 19.1412 -5.49007 -0.06751573 19.1412 5.49007 -0.06751573 -19.1412 -5.49007 -0.06751573 -19.1412 5.49007 -0.06751573</float_array>
+          <technique_common>
+            <accessor source="#Untitled_034-mesh-positions-array" count="8" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Untitled_034-mesh-normals">
+          <float_array id="Untitled_034-mesh-normals-array" count="18">0 0 1 1 0 0 0 0 -1 -1 0 0 0 1 0 0 -1 0</float_array>
+          <technique_common>
+            <accessor source="#Untitled_034-mesh-normals-array" count="6" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Untitled_034-mesh-map-0">
+          <float_array id="Untitled_034-mesh-map-0-array" count="72">1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 1 0 0 1 1 0 1 0 0 1 1 0 1 0 0 1 1 0 1 0 0 1 1 0 1 0 0 1 1 0 1 0 0</float_array>
+          <technique_common>
+            <accessor source="#Untitled_034-mesh-map-0-array" count="36" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="Untitled_034-mesh-vertices">
+          <input semantic="POSITION" source="#Untitled_034-mesh-positions"/>
+        </vertices>
+        <polylist material="wiatraki-material" count="12">
+          <input semantic="VERTEX" source="#Untitled_034-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#Untitled_034-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#Untitled_034-mesh-map-0" offset="2" set="0"/>
+          <vcount>3 3 3 3 3 3 3 3 3 3 3 3 </vcount>
+          <p>3 0 0 0 0 1 2 0 2 5 1 3 2 1 4 4 1 5 7 2 6 4 2 7 6 2 8 1 3 9 6 3 10 0 3 11 5 4 12 1 4 13 3 4 14 2 5 15 6 5 16 4 5 17 3 0 18 1 0 19 0 0 20 5 1 21 3 1 22 2 1 23 7 2 24 5 2 25 4 2 26 1 3 27 7 3 28 6 3 29 5 4 30 7 4 31 1 4 32 2 5 33 0 5 34 6 5 35</p>
+        </polylist>
+      </mesh>
+    </geometry>
+    <geometry id="Untitled_012-mesh" name="Untitled.012">
+      <mesh>
+        <source id="Untitled_012-mesh-positions">
+          <float_array id="Untitled_012-mesh-positions-array" count="24">-19.1412 -5.49007 0.06751573 -19.1412 5.49007 0.06751573 19.1412 -5.49007 0.06751573 19.1412 5.49007 0.06751573 19.1412 -5.49007 -0.06751573 19.1412 5.49007 -0.06751573 -19.1412 -5.49007 -0.06751573 -19.1412 5.49007 -0.06751573</float_array>
+          <technique_common>
+            <accessor source="#Untitled_012-mesh-positions-array" count="8" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Untitled_012-mesh-normals">
+          <float_array id="Untitled_012-mesh-normals-array" count="18">0 0 1 1 0 0 0 0 -1 -1 0 0 0 1 0 0 -1 0</float_array>
+          <technique_common>
+            <accessor source="#Untitled_012-mesh-normals-array" count="6" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Untitled_012-mesh-map-0">
+          <float_array id="Untitled_012-mesh-map-0-array" count="72">1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 1 0 0 1 1 0 1 0 0 1 1 0 1 0 0 1 1 0 1 0 0 1 1 0 1 0 0 1 1 0 1 0 0</float_array>
+          <technique_common>
+            <accessor source="#Untitled_012-mesh-map-0-array" count="36" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="Untitled_012-mesh-vertices">
+          <input semantic="POSITION" source="#Untitled_012-mesh-positions"/>
+        </vertices>
+        <polylist material="wiatraki-material" count="12">
+          <input semantic="VERTEX" source="#Untitled_012-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#Untitled_012-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#Untitled_012-mesh-map-0" offset="2" set="0"/>
+          <vcount>3 3 3 3 3 3 3 3 3 3 3 3 </vcount>
+          <p>3 0 0 0 0 1 2 0 2 5 1 3 2 1 4 4 1 5 7 2 6 4 2 7 6 2 8 1 3 9 6 3 10 0 3 11 5 4 12 1 4 13 3 4 14 2 5 15 6 5 16 4 5 17 3 0 18 1 0 19 0 0 20 5 1 21 3 1 22 2 1 23 7 2 24 5 2 25 4 2 26 1 3 27 7 3 28 6 3 29 5 4 30 7 4 31 1 4 32 2 5 33 0 5 34 6 5 35</p>
+        </polylist>
+      </mesh>
+    </geometry>
+    <geometry id="Untitled_038-mesh" name="Untitled.038">
+      <mesh>
+        <source id="Untitled_038-mesh-positions">
+          <float_array id="Untitled_038-mesh-positions-array" count="24">-19.1412 -5.49007 0.06751573 -19.1412 5.49007 0.06751573 19.1412 -5.49007 0.06751573 19.1412 5.49007 0.06751573 19.1412 -5.49007 -0.06751573 19.1412 5.49007 -0.06751573 -19.1412 -5.49007 -0.06751573 -19.1412 5.49007 -0.06751573</float_array>
+          <technique_common>
+            <accessor source="#Untitled_038-mesh-positions-array" count="8" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Untitled_038-mesh-normals">
+          <float_array id="Untitled_038-mesh-normals-array" count="18">0 0 1 1 0 0 0 0 -1 -1 0 0 0 1 0 0 -1 0</float_array>
+          <technique_common>
+            <accessor source="#Untitled_038-mesh-normals-array" count="6" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Untitled_038-mesh-map-0">
+          <float_array id="Untitled_038-mesh-map-0-array" count="72">1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 1 0 0 1 1 0 1 0 0 1 1 0 1 0 0 1 1 0 1 0 0 1 1 0 1 0 0 1 1 0 1 0 0</float_array>
+          <technique_common>
+            <accessor source="#Untitled_038-mesh-map-0-array" count="36" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="Untitled_038-mesh-vertices">
+          <input semantic="POSITION" source="#Untitled_038-mesh-positions"/>
+        </vertices>
+        <polylist material="wiatraki-material" count="12">
+          <input semantic="VERTEX" source="#Untitled_038-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#Untitled_038-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#Untitled_038-mesh-map-0" offset="2" set="0"/>
+          <vcount>3 3 3 3 3 3 3 3 3 3 3 3 </vcount>
+          <p>3 0 0 0 0 1 2 0 2 5 1 3 2 1 4 4 1 5 7 2 6 4 2 7 6 2 8 1 3 9 6 3 10 0 3 11 5 4 12 1 4 13 3 4 14 2 5 15 6 5 16 4 5 17 3 0 18 1 0 19 0 0 20 5 1 21 3 1 22 2 1 23 7 2 24 5 2 25 4 2 26 1 3 27 7 3 28 6 3 29 5 4 30 7 4 31 1 4 32 2 5 33 0 5 34 6 5 35</p>
+        </polylist>
+      </mesh>
+    </geometry>
+    <geometry id="Untitled_033-mesh" name="Untitled.033">
+      <mesh>
+        <source id="Untitled_033-mesh-positions">
+          <float_array id="Untitled_033-mesh-positions-array" count="24">-19.1412 -5.49007 0.06751573 -19.1412 5.49007 0.06751573 19.1412 -5.49007 0.06751573 19.1412 5.49007 0.06751573 19.1412 -5.49007 -0.06751573 19.1412 5.49007 -0.06751573 -19.1412 -5.49007 -0.06751573 -19.1412 5.49007 -0.06751573</float_array>
+          <technique_common>
+            <accessor source="#Untitled_033-mesh-positions-array" count="8" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Untitled_033-mesh-normals">
+          <float_array id="Untitled_033-mesh-normals-array" count="18">0 0 1 1 0 0 0 0 -1 -1 0 0 0 1 0 0 -1 0</float_array>
+          <technique_common>
+            <accessor source="#Untitled_033-mesh-normals-array" count="6" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Untitled_033-mesh-map-0">
+          <float_array id="Untitled_033-mesh-map-0-array" count="72">1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 1 0 0 1 1 0 1 0 0 1 1 0 1 0 0 1 1 0 1 0 0 1 1 0 1 0 0 1 1 0 1 0 0</float_array>
+          <technique_common>
+            <accessor source="#Untitled_033-mesh-map-0-array" count="36" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="Untitled_033-mesh-vertices">
+          <input semantic="POSITION" source="#Untitled_033-mesh-positions"/>
+        </vertices>
+        <polylist material="wiatraki-material" count="12">
+          <input semantic="VERTEX" source="#Untitled_033-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#Untitled_033-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#Untitled_033-mesh-map-0" offset="2" set="0"/>
+          <vcount>3 3 3 3 3 3 3 3 3 3 3 3 </vcount>
+          <p>3 0 0 0 0 1 2 0 2 5 1 3 2 1 4 4 1 5 7 2 6 4 2 7 6 2 8 1 3 9 6 3 10 0 3 11 5 4 12 1 4 13 3 4 14 2 5 15 6 5 16 4 5 17 3 0 18 1 0 19 0 0 20 5 1 21 3 1 22 2 1 23 7 2 24 5 2 25 4 2 26 1 3 27 7 3 28 6 3 29 5 4 30 7 4 31 1 4 32 2 5 33 0 5 34 6 5 35</p>
+        </polylist>
+      </mesh>
+    </geometry>
+    <geometry id="Untitled_003-mesh" name="Untitled.003">
+      <mesh>
+        <source id="Untitled_003-mesh-positions">
+          <float_array id="Untitled_003-mesh-positions-array" count="24">-19.1412 -5.49007 0.06751573 -19.1412 5.49007 0.06751573 19.1412 -5.49007 0.06751573 19.1412 5.49007 0.06751573 19.1412 -5.49007 -0.06751573 19.1412 5.49007 -0.06751573 -19.1412 -5.49007 -0.06751573 -19.1412 5.49007 -0.06751573</float_array>
+          <technique_common>
+            <accessor source="#Untitled_003-mesh-positions-array" count="8" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Untitled_003-mesh-normals">
+          <float_array id="Untitled_003-mesh-normals-array" count="18">0 0 1 1 0 0 0 0 -1 -1 0 0 0 1 0 0 -1 0</float_array>
+          <technique_common>
+            <accessor source="#Untitled_003-mesh-normals-array" count="6" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Untitled_003-mesh-map-0">
+          <float_array id="Untitled_003-mesh-map-0-array" count="72">1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 1 0 0 1 1 0 1 0 0 1 1 0 1 0 0 1 1 0 1 0 0 1 1 0 1 0 0 1 1 0 1 0 0</float_array>
+          <technique_common>
+            <accessor source="#Untitled_003-mesh-map-0-array" count="36" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="Untitled_003-mesh-vertices">
+          <input semantic="POSITION" source="#Untitled_003-mesh-positions"/>
+        </vertices>
+        <polylist material="wiatraki-material" count="12">
+          <input semantic="VERTEX" source="#Untitled_003-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#Untitled_003-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#Untitled_003-mesh-map-0" offset="2" set="0"/>
+          <vcount>3 3 3 3 3 3 3 3 3 3 3 3 </vcount>
+          <p>3 0 0 0 0 1 2 0 2 5 1 3 2 1 4 4 1 5 7 2 6 4 2 7 6 2 8 1 3 9 6 3 10 0 3 11 5 4 12 1 4 13 3 4 14 2 5 15 6 5 16 4 5 17 3 0 18 1 0 19 0 0 20 5 1 21 3 1 22 2 1 23 7 2 24 5 2 25 4 2 26 1 3 27 7 3 28 6 3 29 5 4 30 7 4 31 1 4 32 2 5 33 0 5 34 6 5 35</p>
+        </polylist>
+      </mesh>
+    </geometry>
+    <geometry id="Untitled_028-mesh" name="Untitled.028">
+      <mesh>
+        <source id="Untitled_028-mesh-positions">
+          <float_array id="Untitled_028-mesh-positions-array" count="24">-19.1412 -5.49007 0.06751573 -19.1412 5.49007 0.06751573 19.1412 -5.49007 0.06751573 19.1412 5.49007 0.06751573 19.1412 -5.49007 -0.06751573 19.1412 5.49007 -0.06751573 -19.1412 -5.49007 -0.06751573 -19.1412 5.49007 -0.06751573</float_array>
+          <technique_common>
+            <accessor source="#Untitled_028-mesh-positions-array" count="8" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Untitled_028-mesh-normals">
+          <float_array id="Untitled_028-mesh-normals-array" count="18">0 0 1 1 0 0 0 0 -1 -1 0 0 0 1 0 0 -1 0</float_array>
+          <technique_common>
+            <accessor source="#Untitled_028-mesh-normals-array" count="6" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Untitled_028-mesh-map-0">
+          <float_array id="Untitled_028-mesh-map-0-array" count="72">1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 1 0 0 1 1 0 1 0 0 1 1 0 1 0 0 1 1 0 1 0 0 1 1 0 1 0 0 1 1 0 1 0 0</float_array>
+          <technique_common>
+            <accessor source="#Untitled_028-mesh-map-0-array" count="36" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="Untitled_028-mesh-vertices">
+          <input semantic="POSITION" source="#Untitled_028-mesh-positions"/>
+        </vertices>
+        <polylist material="wiatraki-material" count="12">
+          <input semantic="VERTEX" source="#Untitled_028-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#Untitled_028-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#Untitled_028-mesh-map-0" offset="2" set="0"/>
+          <vcount>3 3 3 3 3 3 3 3 3 3 3 3 </vcount>
+          <p>3 0 0 0 0 1 2 0 2 5 1 3 2 1 4 4 1 5 7 2 6 4 2 7 6 2 8 1 3 9 6 3 10 0 3 11 5 4 12 1 4 13 3 4 14 2 5 15 6 5 16 4 5 17 3 0 18 1 0 19 0 0 20 5 1 21 3 1 22 2 1 23 7 2 24 5 2 25 4 2 26 1 3 27 7 3 28 6 3 29 5 4 30 7 4 31 1 4 32 2 5 33 0 5 34 6 5 35</p>
+        </polylist>
+      </mesh>
+    </geometry>
+    <geometry id="Untitled_002-mesh" name="Untitled.002">
+      <mesh>
+        <source id="Untitled_002-mesh-positions">
+          <float_array id="Untitled_002-mesh-positions-array" count="24">-19.1412 -5.49007 0.06751573 -19.1412 5.49007 0.06751573 19.1412 -5.49007 0.06751573 19.1412 5.49007 0.06751573 19.1412 -5.49007 -0.06751573 19.1412 5.49007 -0.06751573 -19.1412 -5.49007 -0.06751573 -19.1412 5.49007 -0.06751573</float_array>
+          <technique_common>
+            <accessor source="#Untitled_002-mesh-positions-array" count="8" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Untitled_002-mesh-normals">
+          <float_array id="Untitled_002-mesh-normals-array" count="18">0 0 1 1 0 0 0 0 -1 -1 0 0 0 1 0 0 -1 0</float_array>
+          <technique_common>
+            <accessor source="#Untitled_002-mesh-normals-array" count="6" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Untitled_002-mesh-map-0">
+          <float_array id="Untitled_002-mesh-map-0-array" count="72">1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 1 0 0 1 1 0 1 0 0 1 1 0 1 0 0 1 1 0 1 0 0 1 1 0 1 0 0 1 1 0 1 0 0</float_array>
+          <technique_common>
+            <accessor source="#Untitled_002-mesh-map-0-array" count="36" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="Untitled_002-mesh-vertices">
+          <input semantic="POSITION" source="#Untitled_002-mesh-positions"/>
+        </vertices>
+        <polylist material="wiatraki-material" count="12">
+          <input semantic="VERTEX" source="#Untitled_002-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#Untitled_002-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#Untitled_002-mesh-map-0" offset="2" set="0"/>
+          <vcount>3 3 3 3 3 3 3 3 3 3 3 3 </vcount>
+          <p>3 0 0 0 0 1 2 0 2 5 1 3 2 1 4 4 1 5 7 2 6 4 2 7 6 2 8 1 3 9 6 3 10 0 3 11 5 4 12 1 4 13 3 4 14 2 5 15 6 5 16 4 5 17 3 0 18 1 0 19 0 0 20 5 1 21 3 1 22 2 1 23 7 2 24 5 2 25 4 2 26 1 3 27 7 3 28 6 3 29 5 4 30 7 4 31 1 4 32 2 5 33 0 5 34 6 5 35</p>
+        </polylist>
+      </mesh>
+    </geometry>
+    <geometry id="Untitled_010-mesh" name="Untitled.010">
+      <mesh>
+        <source id="Untitled_010-mesh-positions">
+          <float_array id="Untitled_010-mesh-positions-array" count="24">-19.1412 -5.49007 0.06751573 -19.1412 5.49007 0.06751573 19.1412 -5.49007 0.06751573 19.1412 5.49007 0.06751573 19.1412 -5.49007 -0.06751573 19.1412 5.49007 -0.06751573 -19.1412 -5.49007 -0.06751573 -19.1412 5.49007 -0.06751573</float_array>
+          <technique_common>
+            <accessor source="#Untitled_010-mesh-positions-array" count="8" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Untitled_010-mesh-normals">
+          <float_array id="Untitled_010-mesh-normals-array" count="18">0 0 1 1 0 0 0 0 -1 -1 0 0 0 1 0 0 -1 0</float_array>
+          <technique_common>
+            <accessor source="#Untitled_010-mesh-normals-array" count="6" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Untitled_010-mesh-map-0">
+          <float_array id="Untitled_010-mesh-map-0-array" count="72">1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 1 0 0 1 1 0 1 0 0 1 1 0 1 0 0 1 1 0 1 0 0 1 1 0 1 0 0 1 1 0 1 0 0</float_array>
+          <technique_common>
+            <accessor source="#Untitled_010-mesh-map-0-array" count="36" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="Untitled_010-mesh-vertices">
+          <input semantic="POSITION" source="#Untitled_010-mesh-positions"/>
+        </vertices>
+        <polylist material="wiatraki-material" count="12">
+          <input semantic="VERTEX" source="#Untitled_010-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#Untitled_010-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#Untitled_010-mesh-map-0" offset="2" set="0"/>
+          <vcount>3 3 3 3 3 3 3 3 3 3 3 3 </vcount>
+          <p>3 0 0 0 0 1 2 0 2 5 1 3 2 1 4 4 1 5 7 2 6 4 2 7 6 2 8 1 3 9 6 3 10 0 3 11 5 4 12 1 4 13 3 4 14 2 5 15 6 5 16 4 5 17 3 0 18 1 0 19 0 0 20 5 1 21 3 1 22 2 1 23 7 2 24 5 2 25 4 2 26 1 3 27 7 3 28 6 3 29 5 4 30 7 4 31 1 4 32 2 5 33 0 5 34 6 5 35</p>
+        </polylist>
+      </mesh>
+    </geometry>
+    <geometry id="Untitled_039-mesh" name="Untitled.039">
+      <mesh>
+        <source id="Untitled_039-mesh-positions">
+          <float_array id="Untitled_039-mesh-positions-array" count="24">-19.1412 -5.49007 0.06751573 -19.1412 5.49007 0.06751573 19.1412 -5.49007 0.06751573 19.1412 5.49007 0.06751573 19.1412 -5.49007 -0.06751573 19.1412 5.49007 -0.06751573 -19.1412 -5.49007 -0.06751573 -19.1412 5.49007 -0.06751573</float_array>
+          <technique_common>
+            <accessor source="#Untitled_039-mesh-positions-array" count="8" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Untitled_039-mesh-normals">
+          <float_array id="Untitled_039-mesh-normals-array" count="18">0 0 1 1 0 0 0 0 -1 -1 0 0 0 1 0 0 -1 0</float_array>
+          <technique_common>
+            <accessor source="#Untitled_039-mesh-normals-array" count="6" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Untitled_039-mesh-map-0">
+          <float_array id="Untitled_039-mesh-map-0-array" count="72">1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 1 0 0 1 1 0 1 0 0 1 1 0 1 0 0 1 1 0 1 0 0 1 1 0 1 0 0 1 1 0 1 0 0</float_array>
+          <technique_common>
+            <accessor source="#Untitled_039-mesh-map-0-array" count="36" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="Untitled_039-mesh-vertices">
+          <input semantic="POSITION" source="#Untitled_039-mesh-positions"/>
+        </vertices>
+        <polylist material="wiatraki-material" count="12">
+          <input semantic="VERTEX" source="#Untitled_039-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#Untitled_039-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#Untitled_039-mesh-map-0" offset="2" set="0"/>
+          <vcount>3 3 3 3 3 3 3 3 3 3 3 3 </vcount>
+          <p>3 0 0 0 0 1 2 0 2 5 1 3 2 1 4 4 1 5 7 2 6 4 2 7 6 2 8 1 3 9 6 3 10 0 3 11 5 4 12 1 4 13 3 4 14 2 5 15 6 5 16 4 5 17 3 0 18 1 0 19 0 0 20 5 1 21 3 1 22 2 1 23 7 2 24 5 2 25 4 2 26 1 3 27 7 3 28 6 3 29 5 4 30 7 4 31 1 4 32 2 5 33 0 5 34 6 5 35</p>
+        </polylist>
+      </mesh>
+    </geometry>
+    <geometry id="Untitled_043-mesh" name="Untitled.043">
+      <mesh>
+        <source id="Untitled_043-mesh-positions">
+          <float_array id="Untitled_043-mesh-positions-array" count="24">-19.1412 -5.49007 0.06751573 -19.1412 5.49007 0.06751573 19.1412 -5.49007 0.06751573 19.1412 5.49007 0.06751573 19.1412 -5.49007 -0.06751573 19.1412 5.49007 -0.06751573 -19.1412 -5.49007 -0.06751573 -19.1412 5.49007 -0.06751573</float_array>
+          <technique_common>
+            <accessor source="#Untitled_043-mesh-positions-array" count="8" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Untitled_043-mesh-normals">
+          <float_array id="Untitled_043-mesh-normals-array" count="18">0 0 1 1 0 0 0 0 -1 -1 0 0 0 1 0 0 -1 0</float_array>
+          <technique_common>
+            <accessor source="#Untitled_043-mesh-normals-array" count="6" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Untitled_043-mesh-map-0">
+          <float_array id="Untitled_043-mesh-map-0-array" count="72">1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 1 0 0 1 1 0 1 0 0 1 1 0 1 0 0 1 1 0 1 0 0 1 1 0 1 0 0 1 1 0 1 0 0</float_array>
+          <technique_common>
+            <accessor source="#Untitled_043-mesh-map-0-array" count="36" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="Untitled_043-mesh-vertices">
+          <input semantic="POSITION" source="#Untitled_043-mesh-positions"/>
+        </vertices>
+        <polylist material="wiatraki-material" count="12">
+          <input semantic="VERTEX" source="#Untitled_043-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#Untitled_043-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#Untitled_043-mesh-map-0" offset="2" set="0"/>
+          <vcount>3 3 3 3 3 3 3 3 3 3 3 3 </vcount>
+          <p>3 0 0 0 0 1 2 0 2 5 1 3 2 1 4 4 1 5 7 2 6 4 2 7 6 2 8 1 3 9 6 3 10 0 3 11 5 4 12 1 4 13 3 4 14 2 5 15 6 5 16 4 5 17 3 0 18 1 0 19 0 0 20 5 1 21 3 1 22 2 1 23 7 2 24 5 2 25 4 2 26 1 3 27 7 3 28 6 3 29 5 4 30 7 4 31 1 4 32 2 5 33 0 5 34 6 5 35</p>
+        </polylist>
+      </mesh>
+    </geometry>
+    <geometry id="Untitled_005-mesh" name="Untitled.005">
+      <mesh>
+        <source id="Untitled_005-mesh-positions">
+          <float_array id="Untitled_005-mesh-positions-array" count="24">-19.1412 -5.49007 0.06751573 -19.1412 5.49007 0.06751573 19.1412 -5.49007 0.06751573 19.1412 5.49007 0.06751573 19.1412 -5.49007 -0.06751573 19.1412 5.49007 -0.06751573 -19.1412 -5.49007 -0.06751573 -19.1412 5.49007 -0.06751573</float_array>
+          <technique_common>
+            <accessor source="#Untitled_005-mesh-positions-array" count="8" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Untitled_005-mesh-normals">
+          <float_array id="Untitled_005-mesh-normals-array" count="18">0 0 1 1 0 0 0 0 -1 -1 0 0 0 1 0 0 -1 0</float_array>
+          <technique_common>
+            <accessor source="#Untitled_005-mesh-normals-array" count="6" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Untitled_005-mesh-map-0">
+          <float_array id="Untitled_005-mesh-map-0-array" count="72">1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 1 0 0 1 1 0 1 0 0 1 1 0 1 0 0 1 1 0 1 0 0 1 1 0 1 0 0 1 1 0 1 0 0</float_array>
+          <technique_common>
+            <accessor source="#Untitled_005-mesh-map-0-array" count="36" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="Untitled_005-mesh-vertices">
+          <input semantic="POSITION" source="#Untitled_005-mesh-positions"/>
+        </vertices>
+        <polylist material="wiatraki-material" count="12">
+          <input semantic="VERTEX" source="#Untitled_005-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#Untitled_005-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#Untitled_005-mesh-map-0" offset="2" set="0"/>
+          <vcount>3 3 3 3 3 3 3 3 3 3 3 3 </vcount>
+          <p>3 0 0 0 0 1 2 0 2 5 1 3 2 1 4 4 1 5 7 2 6 4 2 7 6 2 8 1 3 9 6 3 10 0 3 11 5 4 12 1 4 13 3 4 14 2 5 15 6 5 16 4 5 17 3 0 18 1 0 19 0 0 20 5 1 21 3 1 22 2 1 23 7 2 24 5 2 25 4 2 26 1 3 27 7 3 28 6 3 29 5 4 30 7 4 31 1 4 32 2 5 33 0 5 34 6 5 35</p>
+        </polylist>
+      </mesh>
+    </geometry>
+    <geometry id="Untitled_020-mesh" name="Untitled.020">
+      <mesh>
+        <source id="Untitled_020-mesh-positions">
+          <float_array id="Untitled_020-mesh-positions-array" count="24">-19.1412 -5.49007 0.06751573 -19.1412 5.49007 0.06751573 19.1412 -5.49007 0.06751573 19.1412 5.49007 0.06751573 19.1412 -5.49007 -0.06751573 19.1412 5.49007 -0.06751573 -19.1412 -5.49007 -0.06751573 -19.1412 5.49007 -0.06751573</float_array>
+          <technique_common>
+            <accessor source="#Untitled_020-mesh-positions-array" count="8" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Untitled_020-mesh-normals">
+          <float_array id="Untitled_020-mesh-normals-array" count="18">0 0 1 1 0 0 0 0 -1 -1 0 0 0 1 0 0 -1 0</float_array>
+          <technique_common>
+            <accessor source="#Untitled_020-mesh-normals-array" count="6" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Untitled_020-mesh-map-0">
+          <float_array id="Untitled_020-mesh-map-0-array" count="72">1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 1 0 0 1 1 0 1 0 0 1 1 0 1 0 0 1 1 0 1 0 0 1 1 0 1 0 0 1 1 0 1 0 0</float_array>
+          <technique_common>
+            <accessor source="#Untitled_020-mesh-map-0-array" count="36" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="Untitled_020-mesh-vertices">
+          <input semantic="POSITION" source="#Untitled_020-mesh-positions"/>
+        </vertices>
+        <polylist material="wiatraki-material" count="12">
+          <input semantic="VERTEX" source="#Untitled_020-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#Untitled_020-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#Untitled_020-mesh-map-0" offset="2" set="0"/>
+          <vcount>3 3 3 3 3 3 3 3 3 3 3 3 </vcount>
+          <p>3 0 0 0 0 1 2 0 2 5 1 3 2 1 4 4 1 5 7 2 6 4 2 7 6 2 8 1 3 9 6 3 10 0 3 11 5 4 12 1 4 13 3 4 14 2 5 15 6 5 16 4 5 17 3 0 18 1 0 19 0 0 20 5 1 21 3 1 22 2 1 23 7 2 24 5 2 25 4 2 26 1 3 27 7 3 28 6 3 29 5 4 30 7 4 31 1 4 32 2 5 33 0 5 34 6 5 35</p>
+        </polylist>
+      </mesh>
+    </geometry>
+    <geometry id="Untitled_037-mesh" name="Untitled.037">
+      <mesh>
+        <source id="Untitled_037-mesh-positions">
+          <float_array id="Untitled_037-mesh-positions-array" count="24">-19.1412 -5.49007 0.06751573 -19.1412 5.49007 0.06751573 19.1412 -5.49007 0.06751573 19.1412 5.49007 0.06751573 19.1412 -5.49007 -0.06751573 19.1412 5.49007 -0.06751573 -19.1412 -5.49007 -0.06751573 -19.1412 5.49007 -0.06751573</float_array>
+          <technique_common>
+            <accessor source="#Untitled_037-mesh-positions-array" count="8" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Untitled_037-mesh-normals">
+          <float_array id="Untitled_037-mesh-normals-array" count="18">0 0 1 1 0 0 0 0 -1 -1 0 0 0 1 0 0 -1 0</float_array>
+          <technique_common>
+            <accessor source="#Untitled_037-mesh-normals-array" count="6" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Untitled_037-mesh-map-0">
+          <float_array id="Untitled_037-mesh-map-0-array" count="72">1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 1 0 0 1 1 0 1 0 0 1 1 0 1 0 0 1 1 0 1 0 0 1 1 0 1 0 0 1 1 0 1 0 0</float_array>
+          <technique_common>
+            <accessor source="#Untitled_037-mesh-map-0-array" count="36" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="Untitled_037-mesh-vertices">
+          <input semantic="POSITION" source="#Untitled_037-mesh-positions"/>
+        </vertices>
+        <polylist material="wiatraki-material" count="12">
+          <input semantic="VERTEX" source="#Untitled_037-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#Untitled_037-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#Untitled_037-mesh-map-0" offset="2" set="0"/>
+          <vcount>3 3 3 3 3 3 3 3 3 3 3 3 </vcount>
+          <p>3 0 0 0 0 1 2 0 2 5 1 3 2 1 4 4 1 5 7 2 6 4 2 7 6 2 8 1 3 9 6 3 10 0 3 11 5 4 12 1 4 13 3 4 14 2 5 15 6 5 16 4 5 17 3 0 18 1 0 19 0 0 20 5 1 21 3 1 22 2 1 23 7 2 24 5 2 25 4 2 26 1 3 27 7 3 28 6 3 29 5 4 30 7 4 31 1 4 32 2 5 33 0 5 34 6 5 35</p>
+        </polylist>
+      </mesh>
+    </geometry>
+    <geometry id="Untitled_025-mesh" name="Untitled.025">
+      <mesh>
+        <source id="Untitled_025-mesh-positions">
+          <float_array id="Untitled_025-mesh-positions-array" count="24">-19.1412 -5.49007 0.06751573 -19.1412 5.49007 0.06751573 19.1412 -5.49007 0.06751573 19.1412 5.49007 0.06751573 19.1412 -5.49007 -0.06751573 19.1412 5.49007 -0.06751573 -19.1412 -5.49007 -0.06751573 -19.1412 5.49007 -0.06751573</float_array>
+          <technique_common>
+            <accessor source="#Untitled_025-mesh-positions-array" count="8" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Untitled_025-mesh-normals">
+          <float_array id="Untitled_025-mesh-normals-array" count="18">0 0 1 1 0 0 0 0 -1 -1 0 0 0 1 0 0 -1 0</float_array>
+          <technique_common>
+            <accessor source="#Untitled_025-mesh-normals-array" count="6" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Untitled_025-mesh-map-0">
+          <float_array id="Untitled_025-mesh-map-0-array" count="72">1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 1 0 0 1 1 0 1 0 0 1 1 0 1 0 0 1 1 0 1 0 0 1 1 0 1 0 0 1 1 0 1 0 0</float_array>
+          <technique_common>
+            <accessor source="#Untitled_025-mesh-map-0-array" count="36" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="Untitled_025-mesh-vertices">
+          <input semantic="POSITION" source="#Untitled_025-mesh-positions"/>
+        </vertices>
+        <polylist material="wiatraki-material" count="12">
+          <input semantic="VERTEX" source="#Untitled_025-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#Untitled_025-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#Untitled_025-mesh-map-0" offset="2" set="0"/>
+          <vcount>3 3 3 3 3 3 3 3 3 3 3 3 </vcount>
+          <p>3 0 0 0 0 1 2 0 2 5 1 3 2 1 4 4 1 5 7 2 6 4 2 7 6 2 8 1 3 9 6 3 10 0 3 11 5 4 12 1 4 13 3 4 14 2 5 15 6 5 16 4 5 17 3 0 18 1 0 19 0 0 20 5 1 21 3 1 22 2 1 23 7 2 24 5 2 25 4 2 26 1 3 27 7 3 28 6 3 29 5 4 30 7 4 31 1 4 32 2 5 33 0 5 34 6 5 35</p>
+        </polylist>
+      </mesh>
+    </geometry>
+    <geometry id="Untitled_031-mesh" name="Untitled.031">
+      <mesh>
+        <source id="Untitled_031-mesh-positions">
+          <float_array id="Untitled_031-mesh-positions-array" count="24">-19.1412 -5.49007 0.06751573 -19.1412 5.49007 0.06751573 19.1412 -5.49007 0.06751573 19.1412 5.49007 0.06751573 19.1412 -5.49007 -0.06751573 19.1412 5.49007 -0.06751573 -19.1412 -5.49007 -0.06751573 -19.1412 5.49007 -0.06751573</float_array>
+          <technique_common>
+            <accessor source="#Untitled_031-mesh-positions-array" count="8" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Untitled_031-mesh-normals">
+          <float_array id="Untitled_031-mesh-normals-array" count="18">0 0 1 1 0 0 0 0 -1 -1 0 0 0 1 0 0 -1 0</float_array>
+          <technique_common>
+            <accessor source="#Untitled_031-mesh-normals-array" count="6" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Untitled_031-mesh-map-0">
+          <float_array id="Untitled_031-mesh-map-0-array" count="72">1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 1 0 0 1 1 0 1 0 0 1 1 0 1 0 0 1 1 0 1 0 0 1 1 0 1 0 0 1 1 0 1 0 0</float_array>
+          <technique_common>
+            <accessor source="#Untitled_031-mesh-map-0-array" count="36" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="Untitled_031-mesh-vertices">
+          <input semantic="POSITION" source="#Untitled_031-mesh-positions"/>
+        </vertices>
+        <polylist material="wiatraki-material" count="12">
+          <input semantic="VERTEX" source="#Untitled_031-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#Untitled_031-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#Untitled_031-mesh-map-0" offset="2" set="0"/>
+          <vcount>3 3 3 3 3 3 3 3 3 3 3 3 </vcount>
+          <p>3 0 0 0 0 1 2 0 2 5 1 3 2 1 4 4 1 5 7 2 6 4 2 7 6 2 8 1 3 9 6 3 10 0 3 11 5 4 12 1 4 13 3 4 14 2 5 15 6 5 16 4 5 17 3 0 18 1 0 19 0 0 20 5 1 21 3 1 22 2 1 23 7 2 24 5 2 25 4 2 26 1 3 27 7 3 28 6 3 29 5 4 30 7 4 31 1 4 32 2 5 33 0 5 34 6 5 35</p>
+        </polylist>
+      </mesh>
+    </geometry>
+    <geometry id="Untitled_047-mesh" name="Untitled.047">
+      <mesh>
+        <source id="Untitled_047-mesh-positions">
+          <float_array id="Untitled_047-mesh-positions-array" count="24">-19.1412 -5.49007 0.06751573 -19.1412 5.49007 0.06751573 19.1412 -5.49007 0.06751573 19.1412 5.49007 0.06751573 19.1412 -5.49007 -0.06751573 19.1412 5.49007 -0.06751573 -19.1412 -5.49007 -0.06751573 -19.1412 5.49007 -0.06751573</float_array>
+          <technique_common>
+            <accessor source="#Untitled_047-mesh-positions-array" count="8" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Untitled_047-mesh-normals">
+          <float_array id="Untitled_047-mesh-normals-array" count="18">0 0 1 1 0 0 0 0 -1 -1 0 0 0 1 0 0 -1 0</float_array>
+          <technique_common>
+            <accessor source="#Untitled_047-mesh-normals-array" count="6" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Untitled_047-mesh-map-0">
+          <float_array id="Untitled_047-mesh-map-0-array" count="72">1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 1 0 0 1 1 0 1 0 0 1 1 0 1 0 0 1 1 0 1 0 0 1 1 0 1 0 0 1 1 0 1 0 0</float_array>
+          <technique_common>
+            <accessor source="#Untitled_047-mesh-map-0-array" count="36" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="Untitled_047-mesh-vertices">
+          <input semantic="POSITION" source="#Untitled_047-mesh-positions"/>
+        </vertices>
+        <polylist material="wiatraki-material" count="12">
+          <input semantic="VERTEX" source="#Untitled_047-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#Untitled_047-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#Untitled_047-mesh-map-0" offset="2" set="0"/>
+          <vcount>3 3 3 3 3 3 3 3 3 3 3 3 </vcount>
+          <p>3 0 0 0 0 1 2 0 2 5 1 3 2 1 4 4 1 5 7 2 6 4 2 7 6 2 8 1 3 9 6 3 10 0 3 11 5 4 12 1 4 13 3 4 14 2 5 15 6 5 16 4 5 17 3 0 18 1 0 19 0 0 20 5 1 21 3 1 22 2 1 23 7 2 24 5 2 25 4 2 26 1 3 27 7 3 28 6 3 29 5 4 30 7 4 31 1 4 32 2 5 33 0 5 34 6 5 35</p>
+        </polylist>
+      </mesh>
+    </geometry>
+    <geometry id="Untitled_008-mesh" name="Untitled.008">
+      <mesh>
+        <source id="Untitled_008-mesh-positions">
+          <float_array id="Untitled_008-mesh-positions-array" count="24">-19.1412 -5.49007 0.06751573 -19.1412 5.49007 0.06751573 19.1412 -5.49007 0.06751573 19.1412 5.49007 0.06751573 19.1412 -5.49007 -0.06751573 19.1412 5.49007 -0.06751573 -19.1412 -5.49007 -0.06751573 -19.1412 5.49007 -0.06751573</float_array>
+          <technique_common>
+            <accessor source="#Untitled_008-mesh-positions-array" count="8" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Untitled_008-mesh-normals">
+          <float_array id="Untitled_008-mesh-normals-array" count="18">0 0 1 1 0 0 0 0 -1 -1 0 0 0 1 0 0 -1 0</float_array>
+          <technique_common>
+            <accessor source="#Untitled_008-mesh-normals-array" count="6" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Untitled_008-mesh-map-0">
+          <float_array id="Untitled_008-mesh-map-0-array" count="72">1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 1 0 0 1 1 0 1 0 0 1 1 0 1 0 0 1 1 0 1 0 0 1 1 0 1 0 0 1 1 0 1 0 0</float_array>
+          <technique_common>
+            <accessor source="#Untitled_008-mesh-map-0-array" count="36" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="Untitled_008-mesh-vertices">
+          <input semantic="POSITION" source="#Untitled_008-mesh-positions"/>
+        </vertices>
+        <polylist material="wiatraki-material" count="12">
+          <input semantic="VERTEX" source="#Untitled_008-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#Untitled_008-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#Untitled_008-mesh-map-0" offset="2" set="0"/>
+          <vcount>3 3 3 3 3 3 3 3 3 3 3 3 </vcount>
+          <p>3 0 0 0 0 1 2 0 2 5 1 3 2 1 4 4 1 5 7 2 6 4 2 7 6 2 8 1 3 9 6 3 10 0 3 11 5 4 12 1 4 13 3 4 14 2 5 15 6 5 16 4 5 17 3 0 18 1 0 19 0 0 20 5 1 21 3 1 22 2 1 23 7 2 24 5 2 25 4 2 26 1 3 27 7 3 28 6 3 29 5 4 30 7 4 31 1 4 32 2 5 33 0 5 34 6 5 35</p>
+        </polylist>
+      </mesh>
+    </geometry>
+    <geometry id="Untitled_024-mesh" name="Untitled.024">
+      <mesh>
+        <source id="Untitled_024-mesh-positions">
+          <float_array id="Untitled_024-mesh-positions-array" count="24">-19.1412 -5.49007 0.06751573 -19.1412 5.49007 0.06751573 19.1412 -5.49007 0.06751573 19.1412 5.49007 0.06751573 19.1412 -5.49007 -0.06751573 19.1412 5.49007 -0.06751573 -19.1412 -5.49007 -0.06751573 -19.1412 5.49007 -0.06751573</float_array>
+          <technique_common>
+            <accessor source="#Untitled_024-mesh-positions-array" count="8" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Untitled_024-mesh-normals">
+          <float_array id="Untitled_024-mesh-normals-array" count="18">0 0 1 1 0 0 0 0 -1 -1 0 0 0 1 0 0 -1 0</float_array>
+          <technique_common>
+            <accessor source="#Untitled_024-mesh-normals-array" count="6" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Untitled_024-mesh-map-0">
+          <float_array id="Untitled_024-mesh-map-0-array" count="72">1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 0 1 0 1 1 0 1 0 0 1 1 0 1 0 0 1 1 0 1 0 0 1 1 0 1 0 0 1 1 0 1 0 0 1 1 0 1 0 0</float_array>
+          <technique_common>
+            <accessor source="#Untitled_024-mesh-map-0-array" count="36" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="Untitled_024-mesh-vertices">
+          <input semantic="POSITION" source="#Untitled_024-mesh-positions"/>
+        </vertices>
+        <polylist material="wiatraki-material" count="12">
+          <input semantic="VERTEX" source="#Untitled_024-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#Untitled_024-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#Untitled_024-mesh-map-0" offset="2" set="0"/>
+          <vcount>3 3 3 3 3 3 3 3 3 3 3 3 </vcount>
+          <p>3 0 0 0 0 1 2 0 2 5 1 3 2 1 4 4 1 5 7 2 6 4 2 7 6 2 8 1 3 9 6 3 10 0 3 11 5 4 12 1 4 13 3 4 14 2 5 15 6 5 16 4 5 17 3 0 18 1 0 19 0 0 20 5 1 21 3 1 22 2 1 23 7 2 24 5 2 25 4 2 26 1 3 27 7 3 28 6 3 29 5 4 30 7 4 31 1 4 32 2 5 33 0 5 34 6 5 35</p>
+        </polylist>
+      </mesh>
+    </geometry>
+  </library_geometries>
+  <library_controllers/>
+  <library_visual_scenes>
+    <visual_scene id="Scene" name="Scene">
+      <node id="Camera" name="Camera" type="NODE">
+        <matrix sid="transform">0.6859207 -0.3240135 0.6515582 7.481132 0.7276763 0.3054208 -0.6141704 -6.50764 0 0.8953956 0.4452714 5.343665 0 0 0 1</matrix>
+        <instance_camera url="#Camera-camera"/>
+      </node>
+      <node id="Cube" name="Cube" type="NODE">
+        <matrix sid="transform">0.006683303 -0.007315525 -0.001347786 0.0215921 -9.09061e-4 9.95056e-4 -0.009908756 0.274231 0.007382888 0.006744845 5.09222e-10 -0.005407035 0 0 0 1</matrix>
+        <instance_geometry url="#Untitled_027-mesh" name="Cube">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="drewno-material" target="#drewno-material">
+                <bind_vertex_input semantic="UVW" input_semantic="TEXCOORD" input_set="0"/>
+              </instance_material>
+              <instance_material symbol="drewno2-material" target="#drewno2-material">
+                <bind_vertex_input semantic="UVW" input_semantic="TEXCOORD" input_set="0"/>
+              </instance_material>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+      <node id="Cube_1" name="Cube_1" type="NODE">
+        <matrix sid="transform">-0.001407397 -0.007315526 -0.006671005 -3.39346e-4 -0.009778808 0.002080219 -2.18142e-4 0.1199558 0.001547297 0.006492746 -0.007446483 -0.006434083 0 0 0 1</matrix>
+        <instance_geometry url="#Untitled_022-mesh" name="Cube_1">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="drewno-material" target="#drewno-material">
+                <bind_vertex_input semantic="UVW" input_semantic="TEXCOORD" input_set="0"/>
+              </instance_material>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+      <node id="Cube_2" name="Cube_2" type="NODE">
+        <matrix sid="transform">6.6786e-5 -0.006740313 0.007386724 -3.39346e-4 -0.009997272 -2.10297e-4 -1.01505e-4 0.1199558 2.23758e-4 -0.007384032 -0.006739879 -0.006434083 0 0 0 1</matrix>
+        <instance_geometry url="#Untitled_035-mesh" name="Cube_2">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="drewno-material" target="#drewno-material">
+                <bind_vertex_input semantic="UVW" input_semantic="TEXCOORD" input_set="0"/>
+              </instance_material>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+      <node id="wiatrak" name="wiatrak" type="NODE">
+        <matrix sid="transform">0.01 0 0 -0.001818674 0 -1.62921e-9 -0.01 0.1174234 0 0.01 -1.62921e-9 -6.1959e-4 0 0 0 1</matrix>
+        <node id="Cube_3_4" name="Cube_3_4" type="NODE">
+          <matrix sid="transform">0.7313179 0.6668458 -0.1431454 107.8612 -0.6544266 0.7451963 0.128095 92.45868 0.1920909 2.29126e-8 0.9813771 2.175888 0 0 0 1</matrix>
+          <instance_geometry url="#Untitled_017-mesh" name="Cube_3_4">
+            <bind_material>
+              <technique_common>
+                <instance_material symbol="wiatraki-material" target="#wiatraki-material">
+                  <bind_vertex_input semantic="UVW" input_semantic="TEXCOORD" input_set="0"/>
+                </instance_material>
+              </technique_common>
+            </bind_material>
+          </instance_geometry>
+        </node>
+        <node id="Cube_4_4" name="Cube_4_4" type="NODE">
+          <matrix sid="transform">0.7313179 0.6668458 -0.1431454 93.9724 -0.6544266 0.7451963 0.128095 76.93808 0.1920909 2.29126e-8 0.9813771 2.175888 0 0 0 1</matrix>
+          <instance_geometry url="#Untitled_040-mesh" name="Cube_4_4">
+            <bind_material>
+              <technique_common>
+                <instance_material symbol="wiatraki-material" target="#wiatraki-material">
+                  <bind_vertex_input semantic="UVW" input_semantic="TEXCOORD" input_set="0"/>
+                </instance_material>
+              </technique_common>
+            </bind_material>
+          </instance_geometry>
+        </node>
+        <node id="Cube_5_2" name="Cube_5_2" type="NODE">
+          <matrix sid="transform">0.7313179 0.6668458 -0.1431454 80.12541 -0.6544266 0.7451963 0.128095 61.46411 0.1920909 2.29126e-8 0.9813771 2.175889 0 0 0 1</matrix>
+          <instance_geometry url="#Untitled_029-mesh" name="Cube_5_2">
+            <bind_material>
+              <technique_common>
+                <instance_material symbol="wiatraki-material" target="#wiatraki-material">
+                  <bind_vertex_input semantic="UVW" input_semantic="TEXCOORD" input_set="0"/>
+                </instance_material>
+              </technique_common>
+            </bind_material>
+          </instance_geometry>
+        </node>
+        <node id="Cube_6_2" name="Cube_6_2" type="NODE">
+          <matrix sid="transform">0.7313179 0.6668458 -0.1431454 66.23665 -0.6544266 0.7451963 0.128095 45.94353 0.1920909 2.29126e-8 0.9813771 2.17588 0 0 0 1</matrix>
+          <instance_geometry url="#Untitled_021-mesh" name="Cube_6_2">
+            <bind_material>
+              <technique_common>
+                <instance_material symbol="wiatraki-material" target="#wiatraki-material">
+                  <bind_vertex_input semantic="UVW" input_semantic="TEXCOORD" input_set="0"/>
+                </instance_material>
+              </technique_common>
+            </bind_material>
+          </instance_geometry>
+        </node>
+        <node id="Cube_7_2" name="Cube_7_2" type="NODE">
+          <matrix sid="transform">0.7313179 0.6668458 -0.1431454 53.00835 -0.6544266 0.7451963 0.128095 31.16096 0.1920909 2.29126e-8 0.9813771 2.175889 0 0 0 1</matrix>
+          <instance_geometry url="#Untitled_006-mesh" name="Cube_7_2">
+            <bind_material>
+              <technique_common>
+                <instance_material symbol="wiatraki-material" target="#wiatraki-material">
+                  <bind_vertex_input semantic="UVW" input_semantic="TEXCOORD" input_set="0"/>
+                </instance_material>
+              </technique_common>
+            </bind_material>
+          </instance_geometry>
+        </node>
+        <node id="Cube_8_2" name="Cube_8_2" type="NODE">
+          <matrix sid="transform">0.7313179 0.6668458 -0.1431454 39.11958 -0.6544266 0.7451963 0.128095 15.64036 0.1920909 2.29126e-8 0.9813771 2.175888 0 0 0 1</matrix>
+          <instance_geometry url="#Untitled_014-mesh" name="Cube_8_2">
+            <bind_material>
+              <technique_common>
+                <instance_material symbol="wiatraki-material" target="#wiatraki-material">
+                  <bind_vertex_input semantic="UVW" input_semantic="TEXCOORD" input_set="0"/>
+                </instance_material>
+              </technique_common>
+            </bind_material>
+          </instance_geometry>
+        </node>
+        <node id="Cube_9_2" name="Cube_9_2" type="NODE">
+          <matrix sid="transform">0.7313179 0.6668458 -0.1431454 25.27259 -0.6544266 0.7451963 0.128095 0.16642 0.1920909 2.29126e-8 0.9813771 2.175889 0 0 0 1</matrix>
+          <instance_geometry url="#Untitled_007-mesh" name="Cube_9_2">
+            <bind_material>
+              <technique_common>
+                <instance_material symbol="wiatraki-material" target="#wiatraki-material">
+                  <bind_vertex_input semantic="UVW" input_semantic="TEXCOORD" input_set="0"/>
+                </instance_material>
+              </technique_common>
+            </bind_material>
+          </instance_geometry>
+        </node>
+        <node id="Cube_10_2" name="Cube_10_2" type="NODE">
+          <matrix sid="transform">0.7313179 0.6668458 -0.1431454 -25.16068 -0.6544266 0.7451963 0.128095 -0.1608047 0.1920909 2.29126e-8 0.9813771 -2.174049 0 0 0 1</matrix>
+          <instance_geometry url="#Untitled_018-mesh" name="Cube_10_2">
+            <bind_material>
+              <technique_common>
+                <instance_material symbol="wiatraki-material" target="#wiatraki-material">
+                  <bind_vertex_input semantic="UVW" input_semantic="TEXCOORD" input_set="0"/>
+                </instance_material>
+              </technique_common>
+            </bind_material>
+          </instance_geometry>
+        </node>
+        <node id="Cube_11_2" name="Cube_11_2" type="NODE">
+          <matrix sid="transform">0.7313179 0.6668458 -0.1431454 -39.04943 -0.6544266 0.7451963 0.128095 -15.68141 0.1920909 2.29126e-8 0.9813771 -2.174041 0 0 0 1</matrix>
+          <instance_geometry url="#Untitled-mesh" name="Cube_11_2">
+            <bind_material>
+              <technique_common>
+                <instance_material symbol="wiatraki-material" target="#wiatraki-material">
+                  <bind_vertex_input semantic="UVW" input_semantic="TEXCOORD" input_set="0"/>
+                </instance_material>
+              </technique_common>
+            </bind_material>
+          </instance_geometry>
+        </node>
+        <node id="Cube_12_2" name="Cube_12_2" type="NODE">
+          <matrix sid="transform">0.7313179 0.6668458 -0.1431454 -52.89643 -0.6544266 0.7451963 0.128095 -31.15536 0.1920909 2.29126e-8 0.9813771 -2.174042 0 0 0 1</matrix>
+          <instance_geometry url="#Untitled_045-mesh" name="Cube_12_2">
+            <bind_material>
+              <technique_common>
+                <instance_material symbol="wiatraki-material" target="#wiatraki-material">
+                  <bind_vertex_input semantic="UVW" input_semantic="TEXCOORD" input_set="0"/>
+                </instance_material>
+              </technique_common>
+            </bind_material>
+          </instance_geometry>
+        </node>
+        <node id="Cube_13" name="Cube_13" type="NODE">
+          <matrix sid="transform">0.7313179 0.6668458 -0.1431454 -66.78518 -0.6544266 0.7451963 0.128095 -46.67597 0.1920909 2.29126e-8 0.9813771 -2.174049 0 0 0 1</matrix>
+          <instance_geometry url="#Untitled_034-mesh" name="Cube_13">
+            <bind_material>
+              <technique_common>
+                <instance_material symbol="wiatraki-material" target="#wiatraki-material">
+                  <bind_vertex_input semantic="UVW" input_semantic="TEXCOORD" input_set="0"/>
+                </instance_material>
+              </technique_common>
+            </bind_material>
+          </instance_geometry>
+        </node>
+        <node id="Cube_14" name="Cube_14" type="NODE">
+          <matrix sid="transform">0.7313179 0.6668458 -0.1431454 -80.01349 -0.6544266 0.7451963 0.128095 -61.45852 0.1920909 2.29126e-8 0.9813771 -2.174047 0 0 0 1</matrix>
+          <instance_geometry url="#Untitled_012-mesh" name="Cube_14">
+            <bind_material>
+              <technique_common>
+                <instance_material symbol="wiatraki-material" target="#wiatraki-material">
+                  <bind_vertex_input semantic="UVW" input_semantic="TEXCOORD" input_set="0"/>
+                </instance_material>
+              </technique_common>
+            </bind_material>
+          </instance_geometry>
+        </node>
+        <node id="Cube_15" name="Cube_15" type="NODE">
+          <matrix sid="transform">0.7313179 0.6668458 -0.1431454 -93.90224 -0.6544266 0.7451963 0.128095 -76.97913 0.1920909 2.29126e-8 0.9813771 -2.174048 0 0 0 1</matrix>
+          <instance_geometry url="#Untitled_038-mesh" name="Cube_15">
+            <bind_material>
+              <technique_common>
+                <instance_material symbol="wiatraki-material" target="#wiatraki-material">
+                  <bind_vertex_input semantic="UVW" input_semantic="TEXCOORD" input_set="0"/>
+                </instance_material>
+              </technique_common>
+            </bind_material>
+          </instance_geometry>
+        </node>
+        <node id="Cube_16" name="Cube_16" type="NODE">
+          <matrix sid="transform">0.7313179 0.6668458 -0.1431454 -107.7492 -0.6544266 0.7451963 0.128095 -92.45307 0.1920909 2.29126e-8 0.9813771 -2.174048 0 0 0 1</matrix>
+          <instance_geometry url="#Untitled_033-mesh" name="Cube_16">
+            <bind_material>
+              <technique_common>
+                <instance_material symbol="wiatraki-material" target="#wiatraki-material">
+                  <bind_vertex_input semantic="UVW" input_semantic="TEXCOORD" input_set="0"/>
+                </instance_material>
+              </technique_common>
+            </bind_material>
+          </instance_geometry>
+        </node>
+        <node id="Cube_17" name="Cube_17" type="NODE">
+          <matrix sid="transform">-0.6750169 0.737568 -0.01858779 91.26508 -0.7377997 -0.6748729 0.01408303 -108.8663 -0.002157209 0.02322033 0.9997278 1.775765 0 0 0 1</matrix>
+          <instance_geometry url="#Untitled_003-mesh" name="Cube_17">
+            <bind_material>
+              <technique_common>
+                <instance_material symbol="wiatraki-material" target="#wiatraki-material">
+                  <bind_vertex_input semantic="UVW" input_semantic="TEXCOORD" input_set="0"/>
+                </instance_material>
+              </technique_common>
+            </bind_material>
+          </instance_geometry>
+        </node>
+        <node id="Cube_18" name="Cube_18" type="NODE">
+          <matrix sid="transform">-0.6750169 0.737568 -0.01858779 75.90335 -0.7377997 -0.6748729 0.01408303 -94.81039 -0.002157209 0.02322033 0.9997278 1.292137 0 0 0 1</matrix>
+          <instance_geometry url="#Untitled_028-mesh" name="Cube_18">
+            <bind_material>
+              <technique_common>
+                <instance_material symbol="wiatraki-material" target="#wiatraki-material">
+                  <bind_vertex_input semantic="UVW" input_semantic="TEXCOORD" input_set="0"/>
+                </instance_material>
+              </technique_common>
+            </bind_material>
+          </instance_geometry>
+        </node>
+        <node id="Cube_19" name="Cube_19" type="NODE">
+          <matrix sid="transform">-0.6750169 0.737568 -0.01858779 60.58781 -0.7377997 -0.6748729 0.01408303 -80.79671 -0.002157209 0.02322033 0.9997278 0.809968 0 0 0 1</matrix>
+          <instance_geometry url="#Untitled_002-mesh" name="Cube_19">
+            <bind_material>
+              <technique_common>
+                <instance_material symbol="wiatraki-material" target="#wiatraki-material">
+                  <bind_vertex_input semantic="UVW" input_semantic="TEXCOORD" input_set="0"/>
+                </instance_material>
+              </technique_common>
+            </bind_material>
+          </instance_geometry>
+        </node>
+        <node id="Cube_20" name="Cube_20" type="NODE">
+          <matrix sid="transform">-0.6750169 0.737568 -0.01858779 45.22607 -0.7377997 -0.6748729 0.01408303 -66.74078 -0.002157209 0.02322033 0.9997278 0.3263474 0 0 0 1</matrix>
+          <instance_geometry url="#Untitled_010-mesh" name="Cube_20">
+            <bind_material>
+              <technique_common>
+                <instance_material symbol="wiatraki-material" target="#wiatraki-material">
+                  <bind_vertex_input semantic="UVW" input_semantic="TEXCOORD" input_set="0"/>
+                </instance_material>
+              </technique_common>
+            </bind_material>
+          </instance_geometry>
+        </node>
+        <node id="Cube_21" name="Cube_21" type="NODE">
+          <matrix sid="transform">-0.6750169 0.737568 -0.01858779 30.59484 -0.7377997 -0.6748729 0.01408303 -53.35325 -0.002157209 0.02322033 0.9997278 -0.134285 0 0 0 1</matrix>
+          <instance_geometry url="#Untitled_039-mesh" name="Cube_21">
+            <bind_material>
+              <technique_common>
+                <instance_material symbol="wiatraki-material" target="#wiatraki-material">
+                  <bind_vertex_input semantic="UVW" input_semantic="TEXCOORD" input_set="0"/>
+                </instance_material>
+              </technique_common>
+            </bind_material>
+          </instance_geometry>
+        </node>
+        <node id="Cube_22" name="Cube_22" type="NODE">
+          <matrix sid="transform">-0.6750169 0.737568 -0.01858779 15.23312 -0.7377997 -0.6748729 0.01408303 -39.29732 -0.002157209 0.02322033 0.9997278 -0.6179037 0 0 0 1</matrix>
+          <instance_geometry url="#Untitled_043-mesh" name="Cube_22">
+            <bind_material>
+              <technique_common>
+                <instance_material symbol="wiatraki-material" target="#wiatraki-material">
+                  <bind_vertex_input semantic="UVW" input_semantic="TEXCOORD" input_set="0"/>
+                </instance_material>
+              </technique_common>
+            </bind_material>
+          </instance_geometry>
+        </node>
+        <node id="Cube_23" name="Cube_23" type="NODE">
+          <matrix sid="transform">-0.6750169 0.737568 -0.01858779 -0.08242702 -0.7377997 -0.6748729 0.01408303 -25.28364 -0.002157209 0.02322033 0.9997278 -1.100066 0 0 0 1</matrix>
+          <instance_geometry url="#Untitled_005-mesh" name="Cube_23">
+            <bind_material>
+              <technique_common>
+                <instance_material symbol="wiatraki-material" target="#wiatraki-material">
+                  <bind_vertex_input semantic="UVW" input_semantic="TEXCOORD" input_set="0"/>
+                </instance_material>
+              </technique_common>
+            </bind_material>
+          </instance_geometry>
+        </node>
+        <node id="Cube_24" name="Cube_24" type="NODE">
+          <matrix sid="transform">-0.6750169 0.737568 -0.01858779 0.194344 -0.7377997 -0.6748729 0.01408303 25.28925 -0.002157209 0.02322033 0.9997278 1.101914 0 0 0 1</matrix>
+          <instance_geometry url="#Untitled_020-mesh" name="Cube_24">
+            <bind_material>
+              <technique_common>
+                <instance_material symbol="wiatraki-material" target="#wiatraki-material">
+                  <bind_vertex_input semantic="UVW" input_semantic="TEXCOORD" input_set="0"/>
+                </instance_material>
+              </technique_common>
+            </bind_material>
+          </instance_geometry>
+        </node>
+        <node id="Cube_25" name="Cube_25" type="NODE">
+          <matrix sid="transform">-0.6750169 0.737568 -0.01858779 -15.16739 -0.7377997 -0.6748729 0.01408303 39.34519 -0.002157209 0.02322033 0.9997278 0.6182861 0 0 0 1</matrix>
+          <instance_geometry url="#Untitled_037-mesh" name="Cube_25">
+            <bind_material>
+              <technique_common>
+                <instance_material symbol="wiatraki-material" target="#wiatraki-material">
+                  <bind_vertex_input semantic="UVW" input_semantic="TEXCOORD" input_set="0"/>
+                </instance_material>
+              </technique_common>
+            </bind_material>
+          </instance_geometry>
+        </node>
+        <node id="Cube_26" name="Cube_26" type="NODE">
+          <matrix sid="transform">-0.6750169 0.737568 -0.01858779 -30.48293 -0.7377997 -0.6748729 0.01408303 53.35886 -0.002157209 0.02322033 0.9997278 0.136117 0 0 0 1</matrix>
+          <instance_geometry url="#Untitled_025-mesh" name="Cube_26">
+            <bind_material>
+              <technique_common>
+                <instance_material symbol="wiatraki-material" target="#wiatraki-material">
+                  <bind_vertex_input semantic="UVW" input_semantic="TEXCOORD" input_set="0"/>
+                </instance_material>
+              </technique_common>
+            </bind_material>
+          </instance_geometry>
+        </node>
+        <node id="Cube_27" name="Cube_27" type="NODE">
+          <matrix sid="transform">-0.6750169 0.737568 -0.01858779 -45.84466 -0.7377997 -0.6748729 0.01408303 67.41479 -0.002157209 0.02322033 0.9997278 -0.3475037 0 0 0 1</matrix>
+          <instance_geometry url="#Untitled_031-mesh" name="Cube_27">
+            <bind_material>
+              <technique_common>
+                <instance_material symbol="wiatraki-material" target="#wiatraki-material">
+                  <bind_vertex_input semantic="UVW" input_semantic="TEXCOORD" input_set="0"/>
+                </instance_material>
+              </technique_common>
+            </bind_material>
+          </instance_geometry>
+        </node>
+        <node id="Cube_28" name="Cube_28" type="NODE">
+          <matrix sid="transform">-0.6750169 0.737568 -0.01858779 -60.47589 -0.7377997 -0.6748729 0.01408303 80.80233 -0.002157209 0.02322033 0.9997278 -0.8081284 0 0 0 1</matrix>
+          <instance_geometry url="#Untitled_047-mesh" name="Cube_28">
+            <bind_material>
+              <technique_common>
+                <instance_material symbol="wiatraki-material" target="#wiatraki-material">
+                  <bind_vertex_input semantic="UVW" input_semantic="TEXCOORD" input_set="0"/>
+                </instance_material>
+              </technique_common>
+            </bind_material>
+          </instance_geometry>
+        </node>
+        <node id="Cube_29" name="Cube_29" type="NODE">
+          <matrix sid="transform">-0.6750169 0.737568 -0.01858779 -75.83762 -0.7377997 -0.6748729 0.01408303 94.85828 -0.002157209 0.02322033 0.9997278 -1.291755 0 0 0 1</matrix>
+          <instance_geometry url="#Untitled_008-mesh" name="Cube_29">
+            <bind_material>
+              <technique_common>
+                <instance_material symbol="wiatraki-material" target="#wiatraki-material">
+                  <bind_vertex_input semantic="UVW" input_semantic="TEXCOORD" input_set="0"/>
+                </instance_material>
+              </technique_common>
+            </bind_material>
+          </instance_geometry>
+        </node>
+        <node id="Cube_30" name="Cube_30" type="NODE">
+          <matrix sid="transform">-0.6750169 0.737568 -0.01858779 -91.15315 -0.7377997 -0.6748729 0.01408303 108.872 -0.002157209 0.02322033 0.9997278 -1.773917 0 0 0 1</matrix>
+          <instance_geometry url="#Untitled_024-mesh" name="Cube_30">
+            <bind_material>
+              <technique_common>
+                <instance_material symbol="wiatraki-material" target="#wiatraki-material">
+                  <bind_vertex_input semantic="UVW" input_semantic="TEXCOORD" input_set="0"/>
+                </instance_material>
+              </technique_common>
+            </bind_material>
+          </instance_geometry>
+        </node>
+      </node>
+    </visual_scene>
+  </library_visual_scenes>
+  <scene>
+    <instance_visual_scene url="#Scene"/>
+  </scene>
+</COLLADA>
