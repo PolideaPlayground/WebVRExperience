@@ -6,6 +6,7 @@ class ComplexBox extends React.Component {
         return (
             <Entity {...this.props}>
                 <Entity geometry={{primitive: 'box', height: '0.1', width: '0.5', depth: '4.5'}}
+                        mixin="cube"
                         material={{color: 'red'}}
                         position={{x: 0, y: 0.5, z: -5}}
                         rotation="45 0 0"/>
