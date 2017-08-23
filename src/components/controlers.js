@@ -11,21 +11,19 @@ export default class Controlers extends React.Component {
             daydream_enabled: false,
             gearvr_enabled: false
         };
-
-        console.re.log("Init controlls!");
     }
 
     controllerConnected = (evt) => {
         // Wait for controller to connect before
         let controllerName = evt.detail.name;
-        console.re.log("Controller:" + controllerName);
+        // console.re.log("Controller:" + controllerName);
         this.enableControllerRaycaster(controllerName, true);
     };
 
     controllerDisconnected = (evt) => {
         // Wait for controller to connect before
         let controllerName = evt.detail.name;
-        console.re.log("Controller:" + controllerName);
+        // console.re.log("Controller:" + controllerName);
         this.enableControllerRaycaster(controllerName, false);
     };
 
@@ -52,7 +50,7 @@ export default class Controlers extends React.Component {
             gearvr_enabled: gearvrEnabled
         });
 
-        console.log(this.state)
+        // console.log(this.state)
     }
 
     render() {
@@ -83,7 +81,7 @@ export default class Controlers extends React.Component {
                     color="blue"
                 />
 
-                <Entity primitive="a-camera" look-controls wasd-controls>
+                <Entity camera="userHeight:3" look-controls wasd-controls>
                     <CursorController enabled={this.state.cursor_enabled}/>
                 </Entity>
             </Entity>
@@ -112,6 +110,7 @@ class CursorController extends React.Component {
                     attribute="scale"
                     fill="backwards"
                     from="0.1 0.1 0.1"
+                    dur="200"
                     to="1 1 1"
                 />
                 <a-animation
