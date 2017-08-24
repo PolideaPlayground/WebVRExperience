@@ -67,15 +67,14 @@ class Field extends React.Component {
         }
     }
 
-    //TODO animations not working
+    //TODO animations not working, because React is substituting the child
     render() {
         return (
             <Entity {...this.props}
                     mixin='cube'
                     hoverable
-                    geometry={{width: 1, height: 1, depth: this.state.state_hovered ? 0.2 : 0.1}}
-                    scale="1 1 1"
-                    material={{color: this.state.state_hovered ? "yellow" : "#222"}}
+                    geometry={{width: 1, height: 1, depth: this.state.state_hovered ? 0.1 : 0.4}}
+                    material={{color: this.state.state_hovered ? "#555" : "#222"}}
                     className="intersectable"
                     events={{
                         stateadded: this.stateUpdated,
