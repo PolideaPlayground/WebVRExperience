@@ -32,8 +32,8 @@ class BasicPlane extends React.Component {
         for (let j = 1; j <= this.props.dim; j++) {
             for (let i = 1; i <= this.props.dim; i++) {
 
-                rows.push(<Field class='fields' key={`${i}${j}`} dim={3} color='pink' rot={rot}
-                                 pos={{x: p.x + i, y: p.y - j, z: p.z + 1}}/>)
+                rows.push(<Field class='fields' key={`${i}${j}`}
+                                 position={{x: p.x + i, y: p.y - j, z: p.z + 1}}/>)
             }
         }
         return (
@@ -51,21 +51,48 @@ class Field extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            pos: this.props.pos
+            state_hovered: false,
         }
     }
 
+    stateUpdated = (evt) => {
+        let stateName = evt.detail.state;
+        let stateValue = evt.target.is(evt.detail.state);
+
+        if (stateName === "hovered") {
+            console.log("hovered: " + stateValue)
+            this.setState({
+                state_hovered: stateValue,
+            });
+        }
+    }
+
+    //TODO animations not working
     render() {
         return (
-            <Entity
-                mixin='cube'
-                geometry={{width: 1, height: 1, dept: 0.5}}
-                position={this.state.pos}
-                className="intersectable"
+            <Entity {...this.props}
+                    mixin='cube'
+                    hoverable
+                    geometry={{width: 1, height: 1, depth: this.state.state_hovered ? 0.2 : 0.1}}
+                    scale="1 1 1"
+                    material={{color: this.state.state_hovered ? "yellow" : "#222"}}
+                    className="intersectable"
+                    events={{
+                        stateadded: this.stateUpdated,
+                        stateremoved: this.stateUpdated
+                    }}
             >
-                {this.state.state_hovered ?
-                    <a-animation attribute="scale" repeat="indefinite" to="1.1 1.1 1.1" direction="alternateReverse"
-                                 fill="both"></a-animation> : <div/>}
+                {/*{this.state.state_hovered ?*/}
+                {/*<a-animation*/}
+                {/*attribute="scale"*/}
+                {/*from="1.0 1.0 2.0"*/}
+                {/*to="1.0 1.0 0.5"*/}
+                {/*/> : <a-animation*/}
+                {/*attribute="scale"*/}
+                {/*from="1.0 1.0 0.5"*/}
+                {/*to="1.0 1.0 2.0"*/}
+                {/*/>*/}
+                {/*}*/}
             </Entity>
         )
     }
