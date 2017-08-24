@@ -40,7 +40,7 @@ export default class View extends React.Component {
                     }}
                 />
 
-                <Playground dim="3"/>
+                <Playground dim={3} position={{x: 0, y: 0, z: -6}}/>
                 <Boxes/>
             </Entity>
         );

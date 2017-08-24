@@ -2,45 +2,29 @@ import React from 'react';
 import {Entity} from "aframe-react";
 
 export default class Playground extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {dim: this.props.dim}
-    }
 
     render() {
-        return (
-            <BasicPlane id="plane" dim={3} pos={{x: 0, y: 3, z: -6}}/>
-        )
-    }
-};
-
-class BasicPlane extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            x: this.props.dim + 2,
-            y: this.props.dim + 2,
-            rot: this.props.rot,
-            pos: this.props.pos
-        }
-    }
-
-    render() {
-        let p = {x: -this.props.dim + 1, y: this.props.dim - 1, z: 0};
+        var plane_width = this.props.dim + 1;
+        var plane_height = this.props.dim + 1;
+        let p = {x: 1.0, y: 1.0, z: 0};
+        console.log(plane_width);
         let rows = [];
-        let rot = {x: 0, y: 0, z: 0};
-        for (let j = 1; j <= this.props.dim; j++) {
-            for (let i = 1; i <= this.props.dim; i++) {
+        for (let j = 0; j < this.props.dim; j++) {
+            for (let i = 0; i < this.props.dim; i++) {
 
-                rows.push(<Field class='fields' key={`${i}${j}`}
-                                 position={{x: p.x + i, y: p.y - j, z: p.z + 1}}/>)
+                rows.push(<Field key={`${i}${j}`}
+                                 position={{x: p.x + i, y: p.y + j, z: p.z}}/>)
             }
         }
         return (
-            <Entity geometry={{primitive: 'plane', width: this.state.x, height: this.state.y}}
-                    material={{color: '#99d9ff'}} rotation={rot}
-                    position={this.state.pos}
-            >
+            <Entity {...this.props}
+                    className="fields">
+                <Entity
+                    geometry={{primitive: 'plane', width: plane_width, height: plane_height}}
+                    position={{x: plane_width / 2, y: plane_height / 2, z: 0}}
+                    material={{color: '#99d9ff'}}
+
+                />
                 {rows}
             </Entity>
         )
@@ -75,7 +59,7 @@ class Field extends React.Component {
                     hoverable
                     geometry={{width: 1, height: 1, depth: this.state.state_hovered ? 0.1 : 0.4}}
                     material={{color: this.state.state_hovered ? "#555" : "#222"}}
-                    className="intersectable"
+                    className="field intersectable"
                     events={{
                         stateadded: this.stateUpdated,
                         stateremoved: this.stateUpdated
