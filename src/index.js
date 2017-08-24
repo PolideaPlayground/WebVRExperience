@@ -17,6 +17,7 @@ class VRScene extends React.Component {
                 material={{
                     color: "black"
                 }}
+                antialias="true"
             >
                 <Assets/>
                 <Controlers/>
