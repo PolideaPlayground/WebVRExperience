@@ -4,7 +4,7 @@ import {Entity} from "aframe-react";
 
 export default class Windmill extends React.Component {
     render() {
-        return <Entity position={{x: -5, y: 4, z: -15}} scale="4 4 4">
+        return <Entity  {...this.props}>
             <Entity position={{x: -0.48, y: 0.55, z: 0.6}} collada-model="#propeller">
                 <a-animation attribute="rotation"
                              dur="5000"

@@ -41,7 +41,7 @@ export default class View extends React.Component {
                 />
 
                 <Boxes/>
-                <Windmill postion="0 1 0" scale="2 2 2"/>
+                <Windmill position={{x: -5, y: 4, z: -15}} scale={{x: 4, y:4, z: 4}}/>
             </Entity>
         );
     }
