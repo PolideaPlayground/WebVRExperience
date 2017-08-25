@@ -1,7 +1,7 @@
 
 // Registering component in hoverable-component.js
 import * as AFRAME from "aframe";
-const HOVERED_STATE = 'hovered';
+export const HOVERED_STATE = 'hovered';
 
 AFRAME.registerComponent('hoverable', {
     schema: {},

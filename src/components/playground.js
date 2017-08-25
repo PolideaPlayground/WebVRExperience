@@ -32,50 +32,18 @@ export default class Playground extends React.Component {
 }
 
 class Field extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            state_hovered: false,
-        }
-    }
-
-    stateUpdated = (evt) => {
-        let stateName = evt.detail.state;
-        let stateValue = evt.target.is(evt.detail.state);
-
-        if (stateName === "hovered") {
-            console.log("hovered: " + stateValue)
-            this.setState({
-                state_hovered: stateValue,
-            });
-        }
-    }
-
     //TODO animations not working, because React is substituting the child
     render() {
         return (
             <Entity {...this.props}
                     mixin='cube'
                     hoverable
-                    geometry={{width: 1, height: 1, depth: this.state.state_hovered ? 0.1 : 0.4}}
-                    material={{color: this.state.state_hovered ? "#555" : "#222"}}
+                    hovered_field
+                    geometry={{width: 1, height: 1, depth: 0.4}}
+                    material={{color: "#222"}}
                     className="field intersectable"
-                    events={{
-                        stateadded: this.stateUpdated,
-                        stateremoved: this.stateUpdated
-                    }}
             >
-                {/*{this.state.state_hovered ?*/}
-                {/*<a-animation*/}
-                {/*attribute="scale"*/}
-                {/*from="1.0 1.0 2.0"*/}
-                {/*to="1.0 1.0 0.5"*/}
-                {/*/> : <a-animation*/}
-                {/*attribute="scale"*/}
-                {/*from="1.0 1.0 0.5"*/}
-                {/*to="1.0 1.0 2.0"*/}
-                {/*/>*/}
-                {/*}*/}
+
             </Entity>
         )
     }

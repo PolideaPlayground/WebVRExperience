@@ -13,6 +13,7 @@ import "./components/properties/hoverable";
 // Register a single component.
 extras.physics.registerAll();                               // Register a particular package, and its dependencies.
 extras.registerAll();
+import "./components/properties/hovered_field";
 
 class VRScene extends React.Component {
     render() {
@@ -22,7 +23,6 @@ class VRScene extends React.Component {
                 material={{
                     color: "black"
                 }}
-                antialias="true"
             >
                 <Assets/>
                 <Controlers/>
