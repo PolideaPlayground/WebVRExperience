@@ -8,6 +8,7 @@ import View from "./components/view";
 import Assets from "./components/assets";
 import Controlers from "./components/controlers";
 import "./components/properties/hoverable";
+import "./components/properties/hovered_field";
 
 class VRScene extends React.Component {
     render() {
