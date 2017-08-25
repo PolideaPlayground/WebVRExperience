@@ -23,7 +23,6 @@ export default class ClickableBox extends React.Component {
     };
 
     scream = () => {
-        console.log("lol!");
         this.setState({
             c: "yellow"
         });
@@ -44,12 +43,7 @@ export default class ClickableBox extends React.Component {
                     stateremoved: this.stateUpdated
                 }}
             >
-                {this.state.state_hovered ? <a-animation attribute="rotation"
-                                                         dur="1000"
-                                                         fill="forwards"
-                                                         from="0 0 0"
-                                                         to="0 360 0"
-                                                         repeat="indefinite"/> : <div/>}
+                {this.state.state_hovered ? <a-animation attribute="scale" repeat="indefinite" to="1.1 1.1 1.1" direction="alternateReverse" fill="both"></a-animation> : <div/>}
             </Entity>
         );
     }
