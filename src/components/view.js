@@ -1,7 +1,6 @@
 import {Entity} from "aframe-react";
 import React from "react";
 
-import Boxes from "./boxes";
 import Playground from "./playground";
 import Windmill from "./windmill";
 
@@ -41,9 +40,8 @@ export default class View extends React.Component {
                     }}
                 />
 
-                <Playground dim={3} position={{x: 0, y: 0, z: -6}}/>
-                <Boxes/>
-                <Windmill position={{x: -5, y: 4, z: -15}} scale={{x: 4, y:4, z: 4}}/>
+                <Playground dim={4} position={{x: -2.5, y: 0.5, z: -6}} rotation="-45 0 0"/>
+                <Windmill position={{x: -5, y: 4, z: -15}} scale={{x: 4, y: 4, z: 4}}/>
             </Entity>
         );
     }
