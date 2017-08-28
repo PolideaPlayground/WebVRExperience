@@ -19,7 +19,7 @@ export default class Assets extends React.Component {
                 <a-asset-item id="neonText" src={neonTextUrl}/>
                 <a-asset-item id="wireFork" src={wireForkUrl}/>
                 <a-asset-item id="wireHorizontal" src={wireHorizontalUrl}/>
-                <a-asset-item id="wireTurn" src={wireTurnUrl}/>
+                <a-asset-item id="wireTurn"  src={wireTurnUrl}/>
                 <a-asset-item id="wireVertical" src={wireVerticalUrl}/>
 
                 {/*3D models */}

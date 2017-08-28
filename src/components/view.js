@@ -3,7 +3,7 @@ import React from "react";
 import Playground from "./playground";
 import {Windmill} from "./elements/windmill";
 import Neon from "./elements/neon";
-import Menu from "./menu";
+import Wires from "./elements/wires";
 
 export default class View extends React.Component {
     render() {
@@ -44,7 +44,7 @@ export default class View extends React.Component {
 
                 <Playground dim={4} position={{x: -2.5, y: 3, z: -6}}/>
 
-                <Menu id='menu' position={{x: 0, y: 2, z: -5}} rotation={{x: -65, y: 0, z: 0}}/>
+                <Wires id='menu' position={{x: 0, y: 2, z: -5}} rotation={{x: -65, y: 0, z: 0}}/>
 
             </Entity>
         );

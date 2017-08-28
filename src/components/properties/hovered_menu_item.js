@@ -1,7 +1,7 @@
 import * as AFRAME from "aframe";
 import {HOVERED_STATE} from "./hoverable";
 
-AFRAME.registerComponent('hovered_field', {
+AFRAME.registerComponent('hovered_menu_item', {
     schema: {
         color_down: {default: '#555'},
         color_up: {default: '#222'},
