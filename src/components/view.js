@@ -2,7 +2,7 @@ import {Entity} from "aframe-react";
 import React from "react";
 import Playground from "./playground";
 import {Windmill} from "./elements/windmill";
-import {Neon} from "./models";
+import Neon from "./elements/neon";
 import Menu from "./menu";
 
 export default class View extends React.Component {
