@@ -23,9 +23,7 @@ export class ObjPlane extends React.Component {
 export class PlyPlane extends React.Component {
     render() {
         return <Entity  {...this.props}>
-            <a-entity ply-model="src: #ply-plane" rotation="0 0 0"></a-entity>
-
-
+            <a-entity ply-model="src: #neon-ply" rotation="0 0 0"></a-entity>
         </Entity>
     }
 }

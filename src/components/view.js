@@ -47,9 +47,8 @@ export default class View extends React.Component {
                 <Windmill position={{x: -5, y: 4, z: -15}} scale={{x: 4, y: 4, z: 4}}/>
 
                 <Scene id="scene" position={{x: -38.805, y: -4, z: 0}} scale={{x: 4, y: 4, z: 4}} rotation={{x: 0, y: -90, z: 0}}/>
-                <a-entity id="t-rex" ply-model="src: #t-rex" rotation="-90 -135 0" position="-1 -16 0" scale="1 1 1" />
-                <PlyPlane id="ply" position={{x: 0, y: 0, z: 0}} scale={{x: 0.1, y: 0.1, z: 0.1}} rotation={{x: -90, y: 0, z: 0}}/>
-                {/*<ObjPlane id="obj" position={{x: 0, y: 0, z: 0}} scale={{x: 1, y: 1, z: 1}} rotation={{x: 0, y: 0, z: 0}}/>*/}
+                <PlyPlane id="neon" position={{x: 0, y: 0, z: 0}} scale={{x: 0.1, y: 0.1, z: 0.1}} rotation={{x: -90, y: 0, z: 0}}/>
+                {/*<ObjPlane id="neon" position={{x: 0, y: 0, z: 0}} scale={{x: 1, y: 1, z: 1}} rotation={{x: 0, y: 0, z: 0}}/>*/}
             </Entity>
         );
     }
