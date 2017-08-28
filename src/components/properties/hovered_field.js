@@ -9,7 +9,7 @@ AFRAME.registerComponent('hovered_field', {
         scale_up: {default: {x: 1, y: 1, z: 1.0}}
     },
     init: function () {
-        var el = this.el;
+        let el = this.el;
         el.setAttribute("animation__scale_down", {
             property: "scale",
             dur: 400,

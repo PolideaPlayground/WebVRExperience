@@ -61,25 +61,6 @@ export default class Controlers extends React.Component {
             }}>
                 <GearVRController enabled={this.state.gearvr_enabled}/>
                 <DaydreamController enabled={this.state.daydream_enabled}/>
-                <ComplexBox
-                    position="4 2 -4"
-                    rotation="0 0 180"
-                    color="#F55"
-                    animation__click={{
-                        startEvents: "click",
-                        property: "rotation",
-                        dur: 2000,
-                        loop: true,
-                        to: "360 360 360"
-                    }}
-                />
-
-                <Entity
-                    class="collidable"
-                    primitive="a-box"
-                    position="-1 2 -4"
-                    color="blue"
-                />
 
                 <Entity camera="userHeight:3" look-controls wasd-controls>
                     <CursorController enabled={this.state.cursor_enabled}/>

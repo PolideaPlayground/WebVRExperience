@@ -21,8 +21,9 @@ class VRScene extends React.Component {
             <Scene
                 debug
                 material={{
-                    color: "black"
+                    color: "#031128"
                 }}
+                fog="color:#AAB;density:0;far:35;near:0"
             >
                 <Assets/>
                 <Controlers/>
