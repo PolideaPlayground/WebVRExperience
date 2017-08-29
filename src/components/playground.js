@@ -15,7 +15,7 @@ export default class Playground extends React.Component {
                     id_x: x,
                     id_y: y,
                     position: {x: p.x + x, y: p.y + y, z: p.z},
-                    model: "#propeller", //TODO remove
+                    model: "", //TODO remove
                     visible: false
                 };
                 column.push(fieldModel);
@@ -121,7 +121,7 @@ class Field extends React.Component {
                     }}
             >
                 {<Entity id="model" visible={visible} position={{x: 0.0, y: 0.0, z: 0.4}}
-                         collada-model={this.props.model}/>}
+                         ply-model={this.props.model}/>}
             </Entity>
         )
     }
