@@ -1,7 +1,5 @@
 import React from 'react';
 import {Entity} from "aframe-react";
-import 'aframe-extras';
-
 
 export default class Neon extends React.Component {
     render() {
@@ -15,7 +13,7 @@ export default class Neon extends React.Component {
 
 class NeonPlane extends React.Component {
     render() {
-        return <Entity {...this.props}><Entity ply-model="src: #neonPlane"/></Entity>
+        return <Entity {...this.props}><Entity collada-model="#neonPlane"/></Entity>
 
     }
 }
@@ -23,7 +21,7 @@ class NeonPlane extends React.Component {
 class NeonOutline extends React.Component {
     render() {
         return <Entity {...this.props}>
-            <Entity ply-model="src: #neonOutline"/>
+            <Entity collada-model="#neonOutline"/>
         </Entity>
     }
 }
@@ -31,7 +29,7 @@ class NeonOutline extends React.Component {
 class NeonText extends React.Component {
     render() {
         return <Entity {...this.props}>
-            <Entity ply-model="src: #neonText"/>
+            <Entity collada-model="#neonText"/>
         </Entity>
     }
 }

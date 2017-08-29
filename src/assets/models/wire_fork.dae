@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?><COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1">
+<asset>
+<contributor>
+<author>VoxelShop User</author>
+<authoring_tool>VoxelShop V1.8.11
+</authoring_tool>
+</contributor>
+<created>2017-08-29T13:40:49</created>
+<modified>2017-08-29T13:40:49</modified>
+<unit meter="1" name="meter"/>
+<up_axis>Z_UP</up_axis>
+</asset>
+<library_geometries>
+<geometry id="Plane-tex-mesh-0" name="Plane-tex">
+<mesh>
+<source id="Plane-tex-mesh-0-positions">
+<float_array count="144" id="Plane-tex-mesh-0-positions-array">-1 -25 29 -1 -1 27 -1 -25 27 -1 -1 29 -1 1 29 -1 25 27 -1 1 27 -1 25 29 -1 1 25 -1 25 23 -1 1 23 -1 25 25 -1 -25 25 -1 -1 23 -1 -25 23 -1 -1 25 -3 -25 27 -3 -3 25 -3 -25 25 -3 -3 27 -3 3 27 -3 25 25 -3 3 25 -3 25 27 -25 -1 29 -25 1 27 -25 -1 27 -25 1 25 -25 1 29 -25 3 25 -25 -1 25 -25 3 27 -25 1 23 -25 -3 27 -25 -1 23 -25 -3 25 3 -25 27 3 25 25 3 -25 25 3 25 27 1 -25 29 1 25 27 1 -25 27 1 25 29 1 -25 25 1 25 23 1 -25 23 1 25 25</float_array>
+<technique_common>
+<accessor count="48" source="#Plane-tex-mesh-0-positions-array" stride="3">
+<param name="X" type="float"/>
+<param name="Y" type="float"/>
+<param name="Z" type="float"/>
+</accessor>
+</technique_common>
+</source>
+<source id="Plane-tex-mesh-0-colors">
+<float_array count="3" id="Plane-tex-mesh-0-colors-array">0.90588236 0.14117648 0.34901962</float_array>
+<technique_common>
+<accessor count="1" source="#Plane-tex-mesh-0-colors-array" stride="3">
+<param name="R" type="float"/>
+<param name="G" type="float"/>
+<param name="B" type="float"/>
+</accessor>
+</technique_common>
+</source>
+<vertices id="Plane-tex-mesh-0-vertices">
+<input semantic="POSITION" source="#Plane-tex-mesh-0-positions"/>
+</vertices>
+<triangles count="92" material="Plane-tex-mesh-0-colors-material">
+<input offset="0" semantic="VERTEX" source="#Plane-tex-mesh-0-vertices"/>
+<input offset="1" semantic="COLOR" source="#Plane-tex-mesh-0-colors"/>
+<p>0 0 1 0 2 0 0 0 3 0 1 0 4 0 5 0 6 0 4 0 7 0 5 0 8 0 9 0 10 0 8 0 11 0 9 0 12 0 13 0 14 0 12 0 15 0 13 0 16 0 17 0 18 0 16 0 19 0 17 0 20 0 21 0 22 0 20 0 23 0 21 0 24 0 25 0 26 0 26 0 25 0 27 0 24 0 28 0 25 0 25 0 29 0 27 0 26 0 27 0 30 0 25 0 31 0 29 0 30 0 27 0 32 0 33 0 26 0 30 0 30 0 32 0 34 0 33 0 30 0 35 0 37 0 36 0 38 0 39 0 36 0 37 0 41 0 40 0 42 0 43 0 40 0 41 0 45 0 44 0 46 0 47 0 44 0 45 0 13 0 46 0 14 0 46 0 13 0 10 0 45 0 46 0 10 0 10 0 13 0 32 0 9 0 45 0 10 0 32 0 13 0 34 0 47 0 38 0 44 0 37 0 38 0 47 0 22 0 8 0 27 0 29 0 22 0 27 0 11 0 8 0 22 0 21 0 11 0 22 0 17 0 12 0 18 0 15 0 12 0 17 0 15 0 17 0 30 0 30 0 17 0 35 0 36 0 41 0 42 0 36 0 39 0 41 0 6 0 20 0 25 0 20 0 31 0 25 0 6 0 5 0 20 0 5 0 23 0 20 0 2 0 19 0 16 0 2 0 1 0 19 0 19 0 1 0 26 0 19 0 26 0 33 0 40 0 3 0 0 0 3 0 40 0 4 0 40 0 43 0 4 0 3 0 4 0 28 0 43 0 7 0 4 0 3 0 28 0 24 0 13 0 30 0 34 0 13 0 15 0 30 0 1 0 24 0 26 0 1 0 3 0 24 0 17 0 33 0 35 0 17 0 19 0 33 0 38 0 42 0 44 0 44 0 42 0 2 0 38 0 36 0 42 0 42 0 0 0 2 0 44 0 2 0 12 0 42 0 40 0 0 0 12 0 2 0 16 0 46 0 44 0 12 0 12 0 16 0 18 0 46 0 12 0 14 0 31 0 22 0 29 0 20 0 22 0 31 0 27 0 10 0 32 0 8 0 10 0 27 0 28 0 6 0 25 0 4 0 6 0 28 0 41 0 37 0 47 0 41 0 47 0 5 0 39 0 37 0 41 0 7 0 41 0 5 0 5 0 47 0 11 0 43 0 41 0 7 0 5 0 11 0 23 0 47 0 45 0 11 0 23 0 11 0 21 0 11 0 45 0 9 0</p>
+</triangles>
+</mesh>
+</geometry>
+</library_geometries>
+<library_visual_scenes>
+<visual_scene id="Scene" name="Scene">
+<node id="wire_fork.wire_fork" name="wire_fork.wire_fork" type="NODE">
+<translate sid="location">0 0 0</translate>
+<rotate sid="rotationZ">0 0 1 0</rotate>
+<rotate sid="rotationY">0 1 0 0</rotate>
+<rotate sid="rotationX">1 0 0 0</rotate>
+<scale sid="scale">0.05 0.05 0.05</scale>
+<instance_geometry name="wire_fork" sid="wire_fork" url="#Plane-tex-mesh-0"/>
+</node>
+</visual_scene>
+</library_visual_scenes>
+<scene>
+<instance_visual_scene url="#Scene"/>
+</scene>
+</COLLADA>

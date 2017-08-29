@@ -5,13 +5,10 @@ import ReactDOM from "react-dom";
 import View from "./components/view";
 import Assets from "./components/assets";
 import Controlers from "./components/controlers";
+
 import "./components/properties/hoverable";
 import "./components/properties/hovered_field";
 import "./components/properties/hovered_menu_item";
-import extras from 'aframe-extras';
-// Register model components
-extras.loaders.registerAll();
-
 
 class VRScene extends React.Component {
     render() {

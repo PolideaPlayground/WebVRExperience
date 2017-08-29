@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?><COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1">
+<asset>
+<contributor>
+<author>VoxelShop User</author>
+<authoring_tool>VoxelShop V1.8.11
+</authoring_tool>
+</contributor>
+<created>2017-08-29T13:42:05</created>
+<modified>2017-08-29T13:42:05</modified>
+<unit meter="1" name="meter"/>
+<up_axis>Z_UP</up_axis>
+</asset>
+<library_geometries>
+<geometry id="Plane-tex-mesh-0" name="Plane-tex">
+<mesh>
+<source id="Plane-tex-mesh-0-positions">
+<float_array count="48" id="Plane-tex-mesh-0-positions-array">-25 -25 5 -25 25 -1 -25 -25 -1 -25 25 5 25 -25 5 25 25 -1 25 -25 -1 25 25 5 23 -23 -1 -23 23 -1 -23 -23 -1 23 23 -1 23 -23 5 -23 23 5 -23 -23 5 23 23 5</float_array>
+<technique_common>
+<accessor count="16" source="#Plane-tex-mesh-0-positions-array" stride="3">
+<param name="X" type="float"/>
+<param name="Y" type="float"/>
+<param name="Z" type="float"/>
+</accessor>
+</technique_common>
+</source>
+<source id="Plane-tex-mesh-0-colors">
+<float_array count="6" id="Plane-tex-mesh-0-colors-array">0.93333334 0.93333334 0.93333334 0.3254902 0.80784315 0.9764706</float_array>
+<technique_common>
+<accessor count="2" source="#Plane-tex-mesh-0-colors-array" stride="3">
+<param name="R" type="float"/>
+<param name="G" type="float"/>
+<param name="B" type="float"/>
+</accessor>
+</technique_common>
+</source>
+<vertices id="Plane-tex-mesh-0-vertices">
+<input semantic="POSITION" source="#Plane-tex-mesh-0-positions"/>
+</vertices>
+<triangles count="28" material="Plane-tex-mesh-0-colors-material">
+<input offset="0" semantic="VERTEX" source="#Plane-tex-mesh-0-vertices"/>
+<input offset="1" semantic="COLOR" source="#Plane-tex-mesh-0-colors"/>
+<p>0 1 1 1 2 1 0 1 3 1 1 1 5 1 4 1 6 1 7 1 4 1 5 1 9 0 8 0 10 0 11 0 8 0 9 0 8 1 6 1 2 1 10 1 8 1 2 1 5 1 6 1 8 1 1 1 10 1 2 1 11 1 5 1 8 1 9 1 10 1 1 1 5 1 11 1 1 1 11 1 9 1 1 1 12 0 13 0 14 0 12 0 15 0 13 0 4 1 12 1 0 1 12 1 14 1 0 1 4 1 7 1 12 1 14 1 3 1 0 1 7 1 15 1 12 1 14 1 13 1 3 1 15 1 7 1 3 1 13 1 15 1 3 1 6 1 0 1 2 1 6 1 4 1 0 1 3 1 5 1 1 1 7 1 5 1 3 1</p>
+</triangles>
+</mesh>
+</geometry>
+</library_geometries>
+<library_visual_scenes>
+<visual_scene id="Scene" name="Scene">
+<node id="mat_piece.mat_piece" name="mat_piece.mat_piece" type="NODE">
+<translate sid="location">0 0 0</translate>
+<rotate sid="rotationZ">0 0 1 0</rotate>
+<rotate sid="rotationY">0 1 0 0</rotate>
+<rotate sid="rotationX">1 0 0 0</rotate>
+<scale sid="scale">0.05 0.05 0.05</scale>
+<instance_geometry name="mat_piece" sid="mat_piece" url="#Plane-tex-mesh-0"/>
+</node>
+</visual_scene>
+</library_visual_scenes>
+<scene>
+<instance_visual_scene url="#Scene"/>
+</scene>
+</COLLADA>

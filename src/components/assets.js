@@ -1,14 +1,13 @@
 import React from "react";
 import propellerUrl from "./../assets/models/propeller.dae";
 import windmillUrl from "./../assets/models/windmill.dae";
-import neonPlaneUrl from "./../assets/models/neon_plane.ply";
-import neonOutlineUrl from "./../assets/models/neon_outline.ply";
-import neonTextUrl from "./../assets/models/neon_text.ply";
-import wireForkUrl from "./../assets/models/wire_fork.ply";
-import wireHorizontalUrl from "./../assets/models/wire_horizontal.ply";
-import wireTurnUrl from "./../assets/models/wire_turn.ply";
-import wireVerticalUrl from "./../assets/models/wire_vertical.ply";
-
+import neonPlaneUrl from "./../assets/models/neon_plane.dae";
+import neonOutlineUrl from "./../assets/models/neon_outline.dae";
+import neonTextUrl from "./../assets/models/neon_text.dae";
+import wireForkUrl from "./../assets/models/wire_fork.dae";
+import wireHorizontalUrl from "./../assets/models/wire_horizontal.dae";
+import wireTurnUrl from "./../assets/models/wire_turn.dae";
+import wireVerticalUrl from "./../assets/models/wire_vertical.dae";
 
 export default class Assets extends React.Component {
     render() {
@@ -19,7 +18,7 @@ export default class Assets extends React.Component {
                 <a-asset-item id="neonText" src={neonTextUrl}/>
                 <a-asset-item id="wireFork" src={wireForkUrl}/>
                 <a-asset-item id="wireHorizontal" src={wireHorizontalUrl}/>
-                <a-asset-item id="wireTurn"  src={wireTurnUrl}/>
+                <a-asset-item id="wireTurn" src={wireTurnUrl}/>
                 <a-asset-item id="wireVertical" src={wireVerticalUrl}/>
 
                 {/*3D models */}

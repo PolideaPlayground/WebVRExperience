@@ -19,7 +19,7 @@ class WireFork extends React.Component {
     render() {
         return <Entity className="item intersectable" hoverable hovered_menu_item>
             <Entity scale={{x: 0.05, y: 0.05, z: 0.05}}
-                    position={{x: -0.6, y: 0.2, z: -0.5}} rotation={{x: 0, y: 0, z: 0}} ply-model="src: #wireFork"/>
+                    position={{x: -0.6, y: 0.2, z: -0.5}} rotation={{x: 0, y: 0, z: 0}} collada-model="#wireFork"/>
         </Entity>
     }
 }
@@ -29,7 +29,7 @@ class WireHorizontal extends React.Component {
         return <Entity className="item intersectable" hoverable hovered_menu_item>
             <Entity scale={{x: 0.05, y: 0.05, z: 0.05}}
                     position={{x: 0.6, y: 0.2, z: -0.5}}
-                    ply-model="src: #wireHorizontal"/>
+                    collada-model="#wireHorizontal"/>
         </Entity>
     }
 }
@@ -38,7 +38,7 @@ class WireTurn extends React.Component {
     render() {
         return <Entity className="item intersectable" hoverable hovered_menu_item>
             <Entity scale={{x: 0.05, y: 0.05, z: 0.05}}
-                    position={{x: -0.6, y: -1, z: -0.5}} ply-model="src: #wireTurn"/>
+                    position={{x: -0.6, y: -1, z: -0.5}} collada-model="#wireTurn"/>
         </Entity>
     }
 }
@@ -48,7 +48,7 @@ class WireVertical extends React.Component {
         return <Entity className="item intersectable" hoverable hovered_menu_item>
             <Entity
                 scale={{x: 0.05, y: 0.05, z: 0.05}} position={{x: 0.6, y: -1, z: -0.5}}
-                ply-model="src: #wireVertical"/>
+                collada-model="#wireVertical"/>
         </Entity>
     }
 }
