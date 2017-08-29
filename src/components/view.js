@@ -1,5 +1,6 @@
 import {Entity} from "aframe-react";
 import React from "react";
+
 import Playground from "./playground";
 import Windmill from "./elements/windmill";
 import Neon from "./elements/neon";
@@ -47,6 +48,7 @@ export default class View extends React.Component {
                 <Wires id='menu' position={{x: 0, y: 2, z: -5}} rotation={{x: -65, y: 0, z: 0}}/>
 
                 <Background />
+
             </Entity>
         );
     }

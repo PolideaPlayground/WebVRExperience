@@ -1,7 +1,5 @@
 import "aframe-particle-system-component";
 import "aframe-animation-component";
-
-import {Scene} from "aframe-react";
 import React from "react";
 import ReactDOM from "react-dom";
 import View from "./components/view";
@@ -18,17 +16,18 @@ extras.loaders.registerAll();
 class VRScene extends React.Component {
     render() {
         return (
-            <Scene
+            <a-scene
                 debug
                 material={{
                     color: "#031128"
                 }}
                 fog="color:#AAB;density:0;far:35;near:0"
+                redux="reducers: modelSelected"
             >
                 <Assets/>
                 <Controlers/>
                 <View/>
-            </Scene>
+            </a-scene>
         );
     }
 }

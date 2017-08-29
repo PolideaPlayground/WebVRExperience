@@ -49,21 +49,32 @@ export default class Controlers extends React.Component {
         this.setState({
             gearvr_enabled: gearvrEnabled
         });
-
-        // console.log(this.state)
     }
 
     render() {
+        let selectedModel = (
+            <Entity id="model"
+                    position={{x: 0.0, y: 0.0, z: -2.4}}
+                    redux-bind="modelSelected.visible: visible">
+                <Entity redux-bind="modelSelected.model: collada-model"/>
+            </Entity>);
+
         return (
             <Entity events={{
                 controllerconnected: this.controllerConnected,
                 controllerdisconnected: this.controllerDisconnected,
             }}>
-                <GearVRController enabled={this.state.gearvr_enabled}/>
-                <DaydreamController enabled={this.state.daydream_enabled}/>
+
+                <GearVRController enabled={this.state.gearvr_enabled}>
+                    {selectedModel}
+                </GearVRController>
+                <DaydreamController enabled={this.state.daydream_enabled}>
+                    {selectedModel}
+                </DaydreamController>
 
                 <Entity camera="userHeight:3" look-controls wasd-controls>
                     <CursorController enabled={this.state.cursor_enabled}/>
+                    {selectedModel}
                 </Entity>
             </Entity>
         );
@@ -77,7 +88,7 @@ class CursorController extends React.Component {
                 id="cursor"
                 primitive="a-cursor"
                 cursor="fuse: true"
-                raycaster="far: 20; objects: .intersectable; showLine: true"
+                raycaster="far: 10; objects: .intersectable; showLine: true"
                 line="color: black; opacity: 2"
                 rotation="0 0 0"
                 position="0 0 -0.75"
@@ -100,6 +111,7 @@ class CursorController extends React.Component {
                     attribute="scale"
                     fill="backwards"
                     from="1 1 1"
+                    dur="1000"
                     to="0.1 0.1 0.1"
                 />
             </Entity>
@@ -113,8 +125,8 @@ class GearVRController extends React.Component {
     render() {
         let gearRaycaster;
         if (this.props.enabled) {
-            gearRaycaster = <ComplexBox scale="0.1 0.1 0.1" raycaster="far: 20; objects: .intersectable; showLine: true"
-                                        line="color: black; opacity: 2"/>;
+            gearRaycaster = <Entity scale="0.1 0.1 0.1" raycaster="far: 20; objects: .intersectable; showLine: true"
+                                    line="color: black; opacity: 2"/>;
         }
         return (
             <Entity gearvr-controls>
@@ -130,8 +142,8 @@ class DaydreamController extends React.Component {
         let daydreamRaycaster;
         if (this.props.enabled) {
             daydreamRaycaster =
-                <ComplexBox scale="0.1 0.1 0.1" raycaster="far: 20; objects: .intersectable; showLine: true"
-                            line="color: black; opacity: 2"/>;
+                <Entity scale="0.1 0.1 0.1" raycaster="far: 5; objects: .intersectable; showLine: true"
+                        line="color: black; opacity: 2"/>;
         }
         return (
             <Entity daydream-controls>
