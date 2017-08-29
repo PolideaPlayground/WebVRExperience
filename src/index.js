@@ -1,3 +1,4 @@
+import "aframe";
 import "aframe-particle-system-component";
 import "aframe-animation-component";
 import React from "react";

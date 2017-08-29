@@ -5,8 +5,8 @@
 <authoring_tool>VoxelShop V1.8.11
 </authoring_tool>
 </contributor>
-<created>2017-08-29T13:42:05</created>
-<modified>2017-08-29T13:42:05</modified>
+<created>2017-08-29T14:08:27</created>
+<modified>2017-08-29T14:08:27</modified>
 <unit meter="1" name="meter"/>
 <up_axis>Z_UP</up_axis>
 </asset>
@@ -33,13 +33,24 @@
 </accessor>
 </technique_common>
 </source>
+<source id="Plane-tex-mesh-0-normals">
+<float_array count="18" id="Plane-tex-mesh-0-normals-array">-1 0 0 1 0 0 0 0 -1 0 0 1 0 -1 0 0 1 0 </float_array>
+<technique_common>
+<accessor count="6" source="#Plane-tex-mesh-0-normals-array" stride="3">
+<param name="X" type="float"/>
+<param name="Y" type="float"/>
+<param name="Z" type="float"/>
+</accessor>
+</technique_common>
+</source>
 <vertices id="Plane-tex-mesh-0-vertices">
 <input semantic="POSITION" source="#Plane-tex-mesh-0-positions"/>
 </vertices>
 <triangles count="28" material="Plane-tex-mesh-0-colors-material">
 <input offset="0" semantic="VERTEX" source="#Plane-tex-mesh-0-vertices"/>
 <input offset="1" semantic="COLOR" source="#Plane-tex-mesh-0-colors"/>
-<p>0 1 1 1 2 1 0 1 3 1 1 1 5 1 4 1 6 1 7 1 4 1 5 1 9 0 8 0 10 0 11 0 8 0 9 0 8 1 6 1 2 1 10 1 8 1 2 1 5 1 6 1 8 1 1 1 10 1 2 1 11 1 5 1 8 1 9 1 10 1 1 1 5 1 11 1 1 1 11 1 9 1 1 1 12 0 13 0 14 0 12 0 15 0 13 0 4 1 12 1 0 1 12 1 14 1 0 1 4 1 7 1 12 1 14 1 3 1 0 1 7 1 15 1 12 1 14 1 13 1 3 1 15 1 7 1 3 1 13 1 15 1 3 1 6 1 0 1 2 1 6 1 4 1 0 1 3 1 5 1 1 1 7 1 5 1 3 1</p>
+<input offset="2" semantic="NORMAL" source="#Plane-tex-mesh-0-normals"/>
+<p>0 1 0 1 1 0 2 1 0 0 1 0 3 1 0 1 1 0 5 1 1 4 1 1 6 1 1 7 1 1 4 1 1 5 1 1 9 0 2 8 0 2 10 0 2 11 0 2 8 0 2 9 0 2 8 1 2 6 1 2 2 1 2 10 1 2 8 1 2 2 1 2 5 1 2 6 1 2 8 1 2 1 1 2 10 1 2 2 1 2 11 1 2 5 1 2 8 1 2 9 1 2 10 1 2 1 1 2 5 1 2 11 1 2 1 1 2 11 1 2 9 1 2 1 1 2 12 0 3 13 0 3 14 0 3 12 0 3 15 0 3 13 0 3 4 1 3 12 1 3 0 1 3 12 1 3 14 1 3 0 1 3 4 1 3 7 1 3 12 1 3 14 1 3 3 1 3 0 1 3 7 1 3 15 1 3 12 1 3 14 1 3 13 1 3 3 1 3 15 1 3 7 1 3 3 1 3 13 1 3 15 1 3 3 1 3 6 1 4 0 1 4 2 1 4 6 1 4 4 1 4 0 1 4 3 1 5 5 1 5 1 1 5 7 1 5 5 1 5 3 1 5</p>
 </triangles>
 </mesh>
 </geometry>
