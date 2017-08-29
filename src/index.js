@@ -1,7 +1,6 @@
 import "aframe";
 import "aframe-particle-system-component";
 import "aframe-animation-component";
-import {Entity, Scene} from "aframe-react";
 import React from "react";
 import ReactDOM from "react-dom";
 import View from "./components/view";
@@ -13,16 +12,17 @@ import "./components/properties/hovered_field";
 class VRScene extends React.Component {
     render() {
         return (
-            <Scene
+            <a-scene
                 debug
                 material={{
                     color: "black"
                 }}
+                redux="reducers: modelSelected"
             >
                 <Assets/>
                 <Controlers/>
                 <View/>
-            </Scene>
+            </a-scene>
         );
     }
 }

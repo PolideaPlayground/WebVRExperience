@@ -10,6 +10,7 @@ AFRAME.registerComponent('hovered_field', {
     },
     init: function () {
         var el = this.el;
+
         el.setAttribute("animation__scale_down", {
             property: "scale",
             dur: 400,
@@ -34,7 +35,6 @@ AFRAME.registerComponent('hovered_field', {
             let el = evt.target;
 
             if (stateName === HOVERED_STATE) {
-                console.log("Set attribute");
                 el.emit("run_down");
             }
         });
