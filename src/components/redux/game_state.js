@@ -12,19 +12,19 @@ AFRAME.registerReducer('modelSelected', {
     },
     reducer: function (state, action) {
         state = state || this.initialState;
+        let newState;
         switch (action.type) {
             case this.actions.MODE_SELECTED: {
-                var newState = Object.assign({}, state);
-
+                newState = Object.assign({}, state);
                 newState.model = action.model;
                 newState.visible = true;
                 return newState;
             }
             case this.actions.MODE_DESELECTED: {
-                var newState1 = Object.assign({}, state);
-                newState1.model = "";
-                newState1.visible = false;
-                return newState1;
+                newState = Object.assign({}, state);
+                newState.model = "";
+                newState.visible = false;
+                return newState;
             }
             default: {
                 return state;
@@ -34,6 +34,10 @@ AFRAME.registerReducer('modelSelected', {
 
 
 });
+
+export function getCurrentlySelectedModel(element) {
+    return element.sceneEl.systems.redux.store.getState().modelSelected.model;
+}
 
 export function selectCurrentModel(element, value) {
     let action = {

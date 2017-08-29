@@ -1,6 +1,6 @@
 import React from 'react';
 import {Entity} from "aframe-react";
-import {selectCurrentModel, deselectCurrentMode} from "./redux/game_state";
+import {selectCurrentModel, deselectCurrentMode, getCurrentlySelectedModel} from "./redux/game_state";
 
 export default class Playground extends React.Component {
     constructor(props) {
@@ -33,7 +33,7 @@ export default class Playground extends React.Component {
         let fields = this.state.fields;
         var fieldModel = fields[id_x][id_y];
         //Check if model is selected in game state
-        let selectedModel = el.sceneEl.systems.redux.store.getState().modelSelected.model;
+        let selectedModel = getCurrentlySelectedModel(el);
         let isDirty = false;
         if (selectedModel) {
             console.log("Placing: " + selectedModel);
