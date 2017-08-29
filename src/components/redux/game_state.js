@@ -16,7 +16,7 @@ AFRAME.registerReducer('modelSelected', {
         switch (action.type) {
             case this.actions.MODE_SELECTED: {
                 newState = Object.assign({}, state);
-                newState.model = action.model;
+                newState.model = `src: ${action.model}`;
                 newState.visible = true;
                 return newState;
             }

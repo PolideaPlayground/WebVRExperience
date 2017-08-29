@@ -56,7 +56,7 @@ export default class Controlers extends React.Component {
             <Entity id="model"
                     position={{x: 0.0, y: 0.0, z: -2.4}}
                     redux-bind="modelSelected.visible: visible">
-                <Entity redux-bind="modelSelected.model: collada-model"/>
+                <Entity redux-bind="modelSelected.model: ply-model"/>
             </Entity>);
 
         return (
