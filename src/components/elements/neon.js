@@ -15,9 +15,7 @@ export default class Neon extends React.Component {
 
 class NeonPlane extends React.Component {
     render() {
-        return <Entity {...this.props}>
-            <Entity ply-model="src: #neonPlane"/>
-        </Entity>
+        return <Entity {...this.props}><Entity ply-model="src: #neonPlane"/></Entity>
 
     }
 }
