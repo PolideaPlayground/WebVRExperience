@@ -1,7 +1,7 @@
 import {Entity} from "aframe-react";
 import React from "react";
 import Playground from "./playground";
-import {Windmill} from "./elements/windmill";
+import Windmill from "./elements/windmill";
 import Neon from "./elements/neon";
 import Wires from "./elements/wires";
 

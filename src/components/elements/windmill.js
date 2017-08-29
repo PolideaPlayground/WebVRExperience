@@ -1,8 +1,7 @@
 import React from 'react';
 import {Entity} from "aframe-react";
 
-
-export class Windmill extends React.Component {
+export default class Windmill extends React.Component {
     render() {
         return <Entity  {...this.props}>
             <Entity position={{x: -0.48, y: 0.55, z: 0.6}} collada-model="#propeller">

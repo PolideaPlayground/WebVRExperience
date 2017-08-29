@@ -18,7 +18,7 @@ export default class Wires extends React.Component {
 class WireFork extends React.Component {
     render() {
         return <Entity className="item intersectable" hoverable hovered_menu_item>
-            <Entity className="item intersectable" scale={{x: 0.05, y: 0.05, z: 0.05}}
+            <Entity scale={{x: 0.05, y: 0.05, z: 0.05}}
                     position={{x: -0.6, y: 0.2, z: -0.5}} rotation={{x: 0, y: 0, z: 0}} ply-model="src: #wireFork"/>
         </Entity>
     }
@@ -27,8 +27,8 @@ class WireFork extends React.Component {
 class WireHorizontal extends React.Component {
     render() {
         return <Entity className="item intersectable" hoverable hovered_menu_item>
-            <Entity className="item intersectable" scale={{x: 0.05, y: 0.05, z: 0.05}}
-                    position={{x: 0.6, y: 0.2, z: -0.5}} rotation={{x: 0, y: 0, z: 0}}
+            <Entity scale={{x: 0.05, y: 0.05, z: 0.05}}
+                    position={{x: 0.6, y: 0.2, z: -0.5}}
                     ply-model="src: #wireHorizontal"/>
         </Entity>
     }
@@ -37,8 +37,8 @@ class WireHorizontal extends React.Component {
 class WireTurn extends React.Component {
     render() {
         return <Entity className="item intersectable" hoverable hovered_menu_item>
-            <Entity className="item intersectable" scale={{x: 0.05, y: 0.05, z: 0.05}}
-                    position={{x: -0.6, y: -1, z: -0.5}} rotation={{x: 0, y: 0, z: 0}} ply-model="src: #wireTurn"/>
+            <Entity scale={{x: 0.05, y: 0.05, z: 0.05}}
+                    position={{x: -0.6, y: -1, z: -0.5}} ply-model="src: #wireTurn"/>
         </Entity>
     }
 }
@@ -47,7 +47,7 @@ class WireVertical extends React.Component {
     render() {
         return <Entity className="item intersectable" hoverable hovered_menu_item>
             <Entity
-                scale={{x: 0.05, y: 0.05, z: 0.05}} position={{x: 0.6, y: -1, z: -0.5}} rotation={{x: 0, y: 0, z: 0}}
+                scale={{x: 0.05, y: 0.05, z: 0.05}} position={{x: 0.6, y: -1, z: -0.5}}
                 ply-model="src: #wireVertical"/>
         </Entity>
     }
