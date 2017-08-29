@@ -64,12 +64,14 @@ export default class Controlers extends React.Component {
                 controllerconnected: this.controllerConnected,
                 controllerdisconnected: this.controllerDisconnected,
             }}>
+
                 <GearVRController enabled={this.state.gearvr_enabled}>
                     {selectedModel}
                 </GearVRController>
                 <DaydreamController enabled={this.state.daydream_enabled}>
                     {selectedModel}
                 </DaydreamController>
+
                 <Entity camera="userHeight:3" look-controls wasd-controls>
                     <CursorController enabled={this.state.cursor_enabled}/>
                     {selectedModel}

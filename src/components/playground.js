@@ -82,7 +82,6 @@ export default class Playground extends React.Component {
                     geometry={{primitive: 'plane', width: plane_width, height: plane_height}}
                     position={{x: plane_width / 2, y: plane_height / 2, z: 0}}
                     material={{color: '#99d9ff'}}
-
                 />
                 {
                     this.state.fields.map(

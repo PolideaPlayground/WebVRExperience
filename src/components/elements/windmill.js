@@ -1,7 +1,6 @@
 import React from 'react';
 import {Entity} from "aframe-react";
 
-
 export default class Windmill extends React.Component {
     render() {
         return <Entity  {...this.props}>
