@@ -3,10 +3,8 @@ import {HOVERED_STATE} from "./hoverable";
 
 AFRAME.registerComponent('hovered_menu_item', {
     schema: {
-        color_down: {default: '#555'},
-        color_up: {default: '#222'},
-        scale_down: {default: {x: 1, y: 1, z: 1}},
-        scale_up: {default: {x: 1.1, y: 1.1, z: 1.1}}
+        scale_down: {default: {x: 1.1, y: 1.1, z: 1.1}},
+        scale_up: {default: {x: 1, y: 1, z: 1}}
     },
     init: function () {
         let el = this.el;

@@ -14,6 +14,7 @@ import "./components/properties/hoverable";
 extras.physics.registerAll();                               // Register a particular package, and its dependencies.
 extras.registerAll();
 import "./components/properties/hovered_field";
+import "./components/properties/hovered_menu_item";
 
 class VRScene extends React.Component {
     render() {
