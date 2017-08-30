@@ -13,6 +13,7 @@ export default class Assets extends React.Component {
     render() {
         return (
             <a-assets>
+                {/*3D models */}
                 <a-asset-item id="neonPlane" src={neonPlaneUrl}/>
                 <a-asset-item id="neonOutline" src={neonOutlineUrl}/>
                 <a-asset-item id="neonText" src={neonTextUrl}/>
@@ -21,9 +22,11 @@ export default class Assets extends React.Component {
                 <a-asset-item id="wireTurn" src={wireTurnUrl}/>
                 <a-asset-item id="wireVertical" src={wireVerticalUrl}/>
 
-                {/*3D models */}
                 <a-asset-item id="propeller" src={propellerUrl}/>
                 <a-asset-item id="windmill" src={windmillUrl}/>
+
+                <audio id="sound" src="./../assets/sounds/down.mp3"/>
+                <audio id="sound2" src="./../assets/sounds/down-2.wav"/>
             </a-assets>
         );
     }

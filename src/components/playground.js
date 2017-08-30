@@ -118,6 +118,7 @@ class Field extends React.Component {
                     mixin='cube'
                     hoverable
                     geometry={{width: 1, height: 1, depth: 0.4}}
+                    sound="src: #sound2; on: click"
                     material={{color: "#222"}}
                     className="field intersectable"
                     events={{
