@@ -54,6 +54,7 @@ export default class Wires extends React.Component {
         </Entity>
     }
 }
+const scaleFactor = 0.05;
 
 class Wire extends React.Component {
     constructor(props) {
@@ -72,9 +73,9 @@ class Wire extends React.Component {
                                this.props.onMenuItemClicked(el, this.state.model)
                            }
                        }}>
-            <Entity scale={{x: 0.05, y: 0.05, z: 0.05}}
+            <Entity scale={{x: scaleFactor, y: scaleFactor, z: scaleFactor}}
                     position={this.props.position} rotation={{x: 0, y: 0, z: 0}}
-                    ply-model={`src: ${this.props.model}`}
+                    collada-model={this.props.model}
             />
         </Entity>
     }
