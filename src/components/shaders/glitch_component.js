@@ -61,7 +61,7 @@ AFRAME.registerComponent('material-grid-glitch', {
         let context = this;
         let mesh = this.el.getObject3D('mesh');
         if (mesh) {
-            mesh.setObject3D("material", context.material);
+            mesh.material = context.material;
             mesh.traverse((child) => {
                 if (child instanceof THREE.Mesh) {
                     child.material = context.material;
