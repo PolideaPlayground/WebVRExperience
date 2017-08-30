@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1">
+  <asset>
+    <contributor>
+      <author>Blender User</author>
+      <authoring_tool>Blender 2.78.0 commit date:2017-02-24, commit time:14:33, hash:e92f235</authoring_tool>
+    </contributor>
+    <created>2017-08-30T10:57:19</created>
+    <modified>2017-08-30T10:57:19</modified>
+    <unit name="meter" meter="1"/>
+    <up_axis>Z_UP</up_axis>
+  </asset>
+  <library_images/>
+  <library_effects>
+    <effect id="white-effect">
+      <profile_COMMON>
+        <technique sid="common">
+          <phong>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color sid="ambient">0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <color sid="diffuse">0.6839942 0.6839942 0.6839942 1</color>
+            </diffuse>
+            <specular>
+              <color sid="specular">0.5 0.5 0.5 1</color>
+            </specular>
+            <shininess>
+              <float sid="shininess">50</float>
+            </shininess>
+            <index_of_refraction>
+              <float sid="index_of_refraction">1</float>
+            </index_of_refraction>
+          </phong>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="pink-effect">
+      <profile_COMMON>
+        <technique sid="common">
+          <phong>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color sid="ambient">0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <color sid="diffuse">0.6392822 0.01411356 0.001214108 1</color>
+            </diffuse>
+            <specular>
+              <color sid="specular">0.5 0.5 0.5 1</color>
+            </specular>
+            <shininess>
+              <float sid="shininess">50</float>
+            </shininess>
+            <index_of_refraction>
+              <float sid="index_of_refraction">1</float>
+            </index_of_refraction>
+          </phong>
+        </technique>
+      </profile_COMMON>
+    </effect>
+  </library_effects>
+  <library_materials>
+    <material id="white-material" name="white">
+      <instance_effect url="#white-effect"/>
+    </material>
+    <material id="pink-material" name="pink">
+      <instance_effect url="#pink-effect"/>
+    </material>
+  </library_materials>
+  <library_geometries>
+    <geometry id="neon_plane-mesh" name="neon_plane">
+      <mesh>
+        <source id="neon_plane-mesh-positions">
+          <float_array id="neon_plane-mesh-positions-array" count="252">-50 1 25 -50 0 -25 -50 0 25 -50 1 -25 -48 2 18 -48 1 17 -48 1 18 -48 2 17 -38 2 25 -38 1 18 -38 1 25 -38 2 18 37 2 25 37 1 14 37 1 25 37 2 14 -37 1 25 -37 1 17 -37 2 25 -37 2 17 38 1 25 38 1 14 38 2 25 38 2 14 50 0 25 50 0 -25 50 1 25 50 1 -25 -38 1 25 -50 1 25 -50 0 25 -37 1 25 -38 2 25 -37 2 25 37 1 25 38 1 25 37 2 25 38 2 25 50 0 25 50 1 25 -38 1 18 -48 2 18 -48 1 18 -38 2 18 -48 1 17 -48 2 17 -37 1 17 -37 2 17 37 1 14 37 2 14 38 1 14 38 2 14 -50 0 -25 -50 1 -25 50 0 -25 50 1 -25 -50 0 -25 50 0 25 -50 0 25 50 0 -25 -50 1 25 -38 1 25 -48 1 18 -38 1 18 -48 1 17 -37 1 25 37 1 25 -37 1 17 37 1 14 38 1 25 50 1 25 38 1 14 -50 1 -25 50 1 -25 -38 2 25 -37 2 25 -38 2 18 -48 2 18 -48 2 17 -37 2 17 37 2 25 38 2 25 37 2 14 38 2 14</float_array>
+          <technique_common>
+            <accessor source="#neon_plane-mesh-positions-array" count="84" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="neon_plane-mesh-normals">
+          <float_array id="neon_plane-mesh-normals-array" count="18">-1 0 0 1 0 0 0 0 1 0 0 -1 0 -1 0 0 1 0</float_array>
+          <technique_common>
+            <accessor source="#neon_plane-mesh-normals-array" count="6" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="neon_plane-mesh-map-0">
+          <float_array id="neon_plane-mesh-map-0-array" count="312">0.958984 0.5 0.958984 0.5 0.958984 0.5 0.958984 0.5 0.958984 0.5 0.958984 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.958984 0.5 0.958984 0.5 0.958984 0.5 0.958984 0.5 0.958984 0.5 0.958984 0.5 0.958984 0.5 0.958984 0.5 0.958984 0.5 0.958984 0.5 0.958984 0.5 0.958984 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.958984 0.5 0.958984 0.5 0.958984 0.5 0.958984 0.5 0.958984 0.5 0.958984 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.958984 0.5 0.958984 0.5 0.958984 0.5 0.958984 0.5 0.958984 0.5 0.958984 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.958984 0.5 0.958984 0.5 0.958984 0.5 0.958984 0.5 0.958984 0.5 0.958984 0.5 0.958984 0.5 0.958984 0.5 0.958984 0.5 0.958984 0.5 0.958984 0.5 0.958984 0.5 0.958984 0.5 0.958984 0.5 0.958984 0.5 0.958984 0.5 0.958984 0.5 0.958984 0.5 0.958984 0.5 0.958984 0.5 0.958984 0.5 0.958984 0.5 0.958984 0.5 0.958984 0.5 0.958984 0.5 0.958984 0.5 0.958984 0.5 0.958984 0.5 0.958984 0.5 0.958984 0.5 0.958984 0.5 0.958984 0.5 0.958984 0.5 0.958984 0.5 0.958984 0.5 0.958984 0.5 0.958984 0.5 0.958984 0.5 0.958984 0.5 0.958984 0.5 0.958984 0.5 0.958984 0.5 0.958984 0.5 0.958984 0.5 0.958984 0.5 0.958984 0.5 0.958984 0.5 0.958984 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5</float_array>
+          <technique_common>
+            <accessor source="#neon_plane-mesh-map-0-array" count="156" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="neon_plane-mesh-vertices">
+          <input semantic="POSITION" source="#neon_plane-mesh-positions"/>
+        </vertices>
+        <polylist material="white-material" count="26">
+          <input semantic="VERTEX" source="#neon_plane-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#neon_plane-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#neon_plane-mesh-map-0" offset="2" set="0"/>
+          <vcount>3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 </vcount>
+          <p>0 0 0 1 0 1 2 0 2 3 0 3 1 0 4 0 0 5 24 1 36 25 1 37 26 1 38 26 1 39 25 1 40 27 1 41 28 2 42 29 2 43 30 2 44 31 2 45 28 2 46 30 2 47 34 2 54 31 2 55 30 2 56 35 2 57 34 2 58 30 2 59 38 2 66 35 2 67 30 2 68 39 2 69 35 2 70 38 2 71 52 3 90 53 3 91 54 3 92 54 3 93 53 3 94 55 3 95 56 4 96 57 4 97 58 4 98 59 4 99 57 4 100 56 4 101 60 5 102 61 5 103 62 5 104 62 5 105 61 5 106 63 5 107 60 5 108 62 5 109 64 5 110 65 5 111 66 5 112 67 5 113 67 5 114 66 5 115 68 5 116 64 5 117 67 5 118 68 5 119 69 5 120 70 5 121 71 5 122 64 5 123 68 5 124 72 5 125 68 5 126 71 5 127 72 5 128 60 5 129 64 5 130 72 5 131 71 5 132 70 5 133 73 5 134 72 5 135 71 5 136 73 5 137</p>
+        </polylist>
+        <polylist material="pink-material" count="26">
+          <input semantic="VERTEX" source="#neon_plane-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#neon_plane-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#neon_plane-mesh-map-0" offset="2" set="0"/>
+          <vcount>3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 </vcount>
+          <p>4 0 6 5 0 7 6 0 8 7 0 9 5 0 10 4 0 11 8 0 12 9 0 13 10 0 14 11 0 15 9 0 16 8 0 17 12 0 18 13 0 19 14 0 20 15 0 21 13 0 22 12 0 23 16 1 24 17 1 25 18 1 26 18 1 27 17 1 28 19 1 29 20 1 30 21 1 31 22 1 32 22 1 33 21 1 34 23 1 35 31 2 48 32 2 49 28 2 50 33 2 51 32 2 52 31 2 53 35 2 60 36 2 61 34 2 62 37 2 63 36 2 64 35 2 65 40 2 72 41 2 73 42 2 74 43 2 75 41 2 76 40 2 77 44 3 78 45 3 79 46 3 80 46 3 81 45 3 82 47 3 83 48 3 84 49 3 85 50 3 86 50 3 87 49 3 88 51 3 89 74 5 138 75 5 139 76 5 140 77 5 141 76 5 142 78 5 143 76 5 144 75 5 145 79 5 146 78 5 147 76 5 148 79 5 149 80 5 150 81 5 151 82 5 152 82 5 153 81 5 154 83 5 155</p>
+        </polylist>
+      </mesh>
+    </geometry>
+  </library_geometries>
+  <library_controllers/>
+  <library_visual_scenes>
+    <visual_scene id="Scene" name="Scene">
+      <node id="neon_plane" name="neon_plane" type="NODE">
+        <matrix sid="transform">1 0 0 0 0 -1.62921e-7 -1 0 0 1 -1.62921e-7 0 0 0 0 1</matrix>
+        <instance_geometry url="#neon_plane-mesh" name="neon_plane">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="white-material" target="#white-material"/>
+              <instance_material symbol="pink-material" target="#pink-material"/>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+    </visual_scene>
+  </library_visual_scenes>
+  <scene>
+    <instance_visual_scene url="#Scene"/>
+  </scene>
+</COLLADA>
