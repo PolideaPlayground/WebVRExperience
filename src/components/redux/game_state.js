@@ -8,7 +8,7 @@ AFRAME.registerReducer('modelSelected', {
     },
     initialState: {
         model: "",
-        visible: false
+        visible: false,
     },
     reducer: function (state, action) {
         state = state || this.initialState;
