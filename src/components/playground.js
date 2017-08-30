@@ -65,6 +65,12 @@ export default class Playground extends React.Component {
                       id_x={field.id_x}
                       id_y={field.id_y}
                       position={field.position}
+                      hovered_field={
+                          {
+                              position_down: {x: field.position.x, y: field.position.y, z: field.position.z - 0.15},
+                              position_up: {x: field.position.x, y: field.position.y, z: field.position.z}
+                          }
+                      }
                       model={field.model}
                       visible={field.visible}
                       onFieldClicked={clickCallback}
@@ -92,6 +98,8 @@ export default class Playground extends React.Component {
     }
 }
 
+const scaleFactor = 0.05;
+
 class Field extends React.Component {
     constructor(props) {
         super(props);
@@ -103,13 +111,12 @@ class Field extends React.Component {
     }
 
     render() {
-        var {visible, ...other} = this.props;
+        let {visible, ...other} = this.props;
 
         return (
             <Entity {...other}
                     mixin='cube'
                     hoverable
-                    hovered_field
                     geometry={{width: 1, height: 1, depth: 0.4}}
                     material={{color: "#222"}}
                     className="field intersectable"
@@ -120,8 +127,12 @@ class Field extends React.Component {
                         }
                     }}
             >
-                {<Entity id="model" visible={visible} position={{x: 0.0, y: 0.0, z: 0.4}}
-                         ply-model={this.props.model}/>}
+                {<Entity id="model"
+                         visible={visible}
+                         scale={{x: scaleFactor, y: scaleFactor, z: scaleFactor}}
+                         rotation={{x: 90.0, y: 0.0, z: 0.0}}
+                         position={{x: 0.0, y: 0.5, z: 0.0}}
+                         collada-model={this.props.model}/>}
             </Entity>
         )
     }

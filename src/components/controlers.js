@@ -1,6 +1,7 @@
 import {Entity} from "aframe-react";
 import React from "react";
 import ComplexBox from "./elements/complex_box";
+const scaleFactor = 0.05;
 
 export default class Controlers extends React.Component {
     constructor(props) {
@@ -49,6 +50,10 @@ export default class Controlers extends React.Component {
         this.setState({
             gearvr_enabled: gearvrEnabled
         });
+
+        this.setState({
+            daydream_enabled: daydreamEnabled
+        });
     }
 
     render() {
@@ -56,7 +61,9 @@ export default class Controlers extends React.Component {
             <Entity id="model"
                     position={{x: 0.0, y: 0.0, z: -2.4}}
                     redux-bind="modelSelected.visible: visible">
-                <Entity redux-bind="modelSelected.model: collada-model"/>
+                <Entity
+                    scale={{x: scaleFactor, y: scaleFactor, z: scaleFactor}}
+                    redux-bind="modelSelected.model: collada-model"/>
             </Entity>);
 
         return (
