@@ -5,26 +5,26 @@ AFRAME.registerComponent('hovered_field', {
     schema: {
         color_down: {default: '#555'},
         color_up: {default: '#222'},
-        scale_down: {default: {x: 1, y: 1, z: 0.5}},
-        scale_up: {default: {x: 1, y: 1, z: 1.0}}
+        position_down: {default: {x: 1, y: 1, z: -0.25}},
+        position_up: {default: {x: 1, y: 1, z: 0.0}}
     },
     init: function () {
         let el = this.el;
 
         el.setAttribute("animation__scale_down", {
-            property: "scale",
+            property: "position",
             dur: 400,
             easing: "easeInSine",
-            to: this.data.scale_down,
+            to: this.data.position_down,
             startEvents: "run_down",
             restartEvents: "run_down"
         });
 
         el.setAttribute("animation__scale_up", {
-            property: "scale",
+            property: "position",
             dur: 400,
             easing: "easeInSine",
-            to: this.data.scale_up,
+            to: this.data.position_up,
             startEvents: "run_up",
             restartEvents: "run_up"
         });

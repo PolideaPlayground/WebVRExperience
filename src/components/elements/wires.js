@@ -41,7 +41,9 @@ export default class Wires extends React.Component {
     }
 
     createWire(field) {
-        return <Wire key={field.model} position={field.position} model={field.model}
+        return <Wire key={field.model}
+                     position={field.position}
+                     model={field.model}
                      onMenuItemClicked={this.onMenuItemClicked}/>
     }
 
@@ -60,7 +62,8 @@ class Wire extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            model: this.props.model
+            model: this.props.model,
+            position: this.props.position
         }
     }
 
@@ -74,8 +77,9 @@ class Wire extends React.Component {
                            }
                        }}>
             <Entity scale={{x: scaleFactor, y: scaleFactor, z: scaleFactor}}
-                    position={this.props.position} rotation={{x: 0, y: 0, z: 0}}
-                    collada-model={this.props.model}
+                    position={this.state.position}
+                    rotation={{x: 90, y: 0, z: 0}}
+                    collada-model={this.state.model}
             />
         </Entity>
     }
