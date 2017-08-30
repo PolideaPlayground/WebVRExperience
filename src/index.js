@@ -1,5 +1,6 @@
-import "aframe";
+import * as AFRAME from "aframe";
 import "aframe-particle-system-component";
+
 import "aframe-animation-component";
 import React from "react";
 import ReactDOM from "react-dom";

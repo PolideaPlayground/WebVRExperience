@@ -1,74 +1,82 @@
 import {Entity} from "aframe-react";
 import React from 'react';
+import {selectCurrentModel} from "../redux/game_state";
 
 export default class Wires extends React.Component {
+    constructor(props) {
+        super(props);
+        let fields = [
+            {
+                position: {x: -0.6, y: 0.2, z: -0.5},
+                model: "#wireFork"
+            },
+            {
+                position: {x: 0.6, y: 0.2, z: -0.5},
+                model: "#wireHorizontal"
+            },
+            {
+                position: {x: -0.6, y: -1, z: -0.5},
+                model: "#wireTurn"
+            },
+            {
+                position: {x: 0.6, y: -1, z: -0.5},
+                model: "#wireVertical"
+            }
+        ];
+        this.state = {
+            fields: fields
+        };
+    }
+
+    onMenuItemClicked(el, model) {
+        //Pickup model
+        console.log("Picking up: " + model);
+        selectCurrentModel(el, model);
+    }
+
+    createAllWires(fields) {
+        return fields.map((field) => {
+            return this.createWire(field);
+        })
+    }
+
+    createWire(field) {
+        return <Wire key={field.model} position={field.position} model={field.model}
+                     onMenuItemClicked={this.onMenuItemClicked}/>
+    }
+
     render() {
         return <Entity {...this.props}
                        className="menu"
                        geometry={{primitive: 'plane', width: 4, height: 4}}
                        material={{color: '#bfd7ff'}}>
-            <WireFork id="wire-fork"/>
-            <WireHorizontal id="wire-horizontal"/>
-            <WireTurn id="wire-turn"/>
-            <WireVertical id="wire-vertical"/>
+            {this.createAllWires(this.state.fields)}
         </Entity>
     }
 }
 const scaleFactor = 0.05;
 
-class WireFork extends React.Component {
+class Wire extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            model: this.props.model
+        }
+    }
+
     render() {
-        return (
-            <Entity className="item intersectable" hoverable hovered_menu_item>
-                <Entity
-                    scale={{x: scaleFactor, y: scaleFactor, z: scaleFactor}}
-                    rotation={{x: 90, y: 0, z: 0}}
-                    position={{x: -0.6, y: 0.2, z: 0.2}}
-                    collada-model="#wireFork"/>
-            </Entity>
-        );
+        return <Entity className="item intersectable" hoverable hovered_menu_item
+                       events={{
+                           click: (evt) => {
+                               let el = evt.target;
+                               console.log('clicked')
+                               this.props.onMenuItemClicked(el, this.state.model)
+                           }
+                       }}>
+            <Entity scale={{x: scaleFactor, y: scaleFactor, z: scaleFactor}}
+                    position={this.props.position} rotation={{x: 0, y: 0, z: 0}}
+                    collada-model={this.props.model}
+            />
+        </Entity>
     }
 }
-
-class WireHorizontal extends React.Component {
-    render() {
-        return (
-            <Entity className="item intersectable" hoverable hovered_menu_item>
-                <Entity
-                    rotation={{x: 90, y: 0, z: 0}}
-                    scale={{x: scaleFactor, y: scaleFactor, z: scaleFactor}}
-                    position={{x: 0.6, y: 0.2, z: 0.2}}
-                    collada-model="#wireHorizontal"/>
-            </Entity>
-        );
-    }
-}
-
-class WireTurn extends React.Component {
-    render() {
-        return (
-            <Entity className="item intersectable" hoverable hovered_menu_item>
-                <Entity
-                    rotation={{x: 90, y: 0, z: 0}}
-                    scale={{x: scaleFactor, y: scaleFactor, z: scaleFactor}}
-                    position={{x: -0.6, y: -1, z: 0.2}}
-                    collada-model="#wireTurn"/>
-            </Entity>
-        );
-    }
-}
-
-class WireVertical extends React.Component {
-    render() {
-        return (
-            <Entity className="item intersectable" hoverable hovered_menu_item>
-                <Entity
-                    scale={{x: scaleFactor, y: scaleFactor, z: scaleFactor}}
-                    rotation={{x: 90, y: 0, z: 0}}
-                    position={{x: 0.6, y: -1, z: 0.2}}
-                    collada-model="#wireVertical"/>
-            </Entity>
-        );
-    }
-}
-
