@@ -15,7 +15,7 @@ class NeonPlane extends React.Component {
     render() {
         return (
             <Entity {...this.props}>
-                <Entity collada-model="#neonPlane"/>
+                <Entity collada-model="#neonPlane" material="color: red; shader: shader-glitch" material-grid-glitch/>
             </Entity>
         );
 

@@ -1,62 +1,110 @@
-<?xml version="1.0" encoding="UTF-8"?><COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1">
-<asset>
-<contributor>
-<author>VoxelShop User</author>
-<authoring_tool>VoxelShop V1.8.11
-</authoring_tool>
-</contributor>
-<created>2017-08-29T13:39:39</created>
-<modified>2017-08-29T13:39:39</modified>
-<unit meter="1" name="meter"/>
-<up_axis>Z_UP</up_axis>
-</asset>
-<library_geometries>
-<geometry id="Plane-tex-mesh-0" name="Plane-tex">
-<mesh>
-<source id="Plane-tex-mesh-0-positions">
-<float_array count="96" id="Plane-tex-mesh-0-positions-array">-97 -45 3 -97 51 -1 -97 -45 -1 -97 51 3 97 -43 3 97 51 -1 97 -43 -1 97 51 3 95 -45 3 95 -43 -1 95 -45 -1 95 -43 3 -95 -47 3 -95 -45 -1 -95 -47 -1 -95 -45 3 -95 -43 3 -95 51 -1 -95 -43 -1 -95 51 3 99 -45 3 99 51 -1 99 -45 -1 99 51 3 -93 -45 3 -93 -43 -1 -93 -45 -1 -93 -43 3 97 -47 3 97 -45 -1 97 -47 -1 97 -45 3</float_array>
-<technique_common>
-<accessor count="32" source="#Plane-tex-mesh-0-positions-array" stride="3">
-<param name="X" type="float"/>
-<param name="Y" type="float"/>
-<param name="Z" type="float"/>
-</accessor>
-</technique_common>
-</source>
-<source id="Plane-tex-mesh-0-colors">
-<float_array count="3" id="Plane-tex-mesh-0-colors-array">0.101960786 0.62352943 0.8509804</float_array>
-<technique_common>
-<accessor count="1" source="#Plane-tex-mesh-0-colors-array" stride="3">
-<param name="R" type="float"/>
-<param name="G" type="float"/>
-<param name="B" type="float"/>
-</accessor>
-</technique_common>
-</source>
-<vertices id="Plane-tex-mesh-0-vertices">
-<input semantic="POSITION" source="#Plane-tex-mesh-0-positions"/>
-</vertices>
-<triangles count="60" material="Plane-tex-mesh-0-colors-material">
-<input offset="0" semantic="VERTEX" source="#Plane-tex-mesh-0-vertices"/>
-<input offset="1" semantic="COLOR" source="#Plane-tex-mesh-0-colors"/>
-<p>0 0 1 0 2 0 0 0 3 0 1 0 4 0 5 0 6 0 4 0 7 0 5 0 8 0 9 0 10 0 8 0 11 0 9 0 12 0 13 0 14 0 12 0 15 0 13 0 17 0 16 0 18 0 19 0 16 0 17 0 21 0 20 0 22 0 23 0 20 0 21 0 25 0 24 0 26 0 27 0 24 0 25 0 29 0 28 0 30 0 31 0 28 0 29 0 6 0 22 0 29 0 6 0 29 0 9 0 21 0 22 0 6 0 9 0 29 0 10 0 5 0 21 0 6 0 29 0 30 0 10 0 10 0 30 0 14 0 26 0 10 0 14 0 13 0 26 0 14 0 18 0 26 0 13 0 13 0 2 0 18 0 25 0 26 0 18 0 18 0 2 0 1 0 17 0 18 0 1 0 20 0 4 0 31 0 31 0 4 0 11 0 20 0 23 0 4 0 31 0 11 0 8 0 23 0 7 0 4 0 28 0 31 0 8 0 28 0 8 0 12 0 8 0 24 0 12 0 24 0 15 0 12 0 24 0 16 0 15 0 0 0 15 0 16 0 24 0 27 0 16 0 0 0 16 0 3 0 16 0 19 0 3 0 22 0 31 0 29 0 22 0 20 0 31 0 13 0 0 0 2 0 13 0 15 0 0 0 30 0 12 0 14 0 30 0 28 0 12 0 11 0 6 0 9 0 4 0 6 0 11 0 16 0 25 0 18 0 27 0 25 0 16 0 24 0 10 0 26 0 8 0 10 0 24 0 7 0 21 0 5 0 23 0 21 0 7 0 3 0 17 0 1 0 19 0 17 0 3 0</p>
-</triangles>
-</mesh>
-</geometry>
-</library_geometries>
-<library_visual_scenes>
-<visual_scene id="Scene" name="Scene">
-<node id="neon_outline.neon_outline" name="neon_outline.neon_outline" type="NODE">
-<translate sid="location">0 0 0</translate>
-<rotate sid="rotationZ">0 0 1 0</rotate>
-<rotate sid="rotationY">0 1 0 0</rotate>
-<rotate sid="rotationX">1 0 0 0</rotate>
-<scale sid="scale">0.05 0.05 0.05</scale>
-<instance_geometry name="neon_outline" sid="neon_outline" url="#Plane-tex-mesh-0"/>
-</node>
-</visual_scene>
-</library_visual_scenes>
-<scene>
-<instance_visual_scene url="#Scene"/>
-</scene>
+<?xml version="1.0" encoding="utf-8"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1">
+  <asset>
+    <contributor>
+      <author>Blender User</author>
+      <authoring_tool>Blender 2.78.0 commit date:2017-02-24, commit time:14:33, hash:e92f235</authoring_tool>
+    </contributor>
+    <created>2017-08-30T14:13:01</created>
+    <modified>2017-08-30T14:13:01</modified>
+    <unit name="meter" meter="1"/>
+    <up_axis>Z_UP</up_axis>
+  </asset>
+  <library_images/>
+  <library_effects>
+    <effect id="blue-effect">
+      <profile_COMMON>
+        <technique sid="common">
+          <phong>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color sid="ambient">0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <color sid="diffuse">4.85643e-4 0.2735315 0.5725549 1</color>
+            </diffuse>
+            <specular>
+              <color sid="specular">0.5 0.5 0.5 1</color>
+            </specular>
+            <shininess>
+              <float sid="shininess">50</float>
+            </shininess>
+            <index_of_refraction>
+              <float sid="index_of_refraction">1</float>
+            </index_of_refraction>
+          </phong>
+        </technique>
+      </profile_COMMON>
+    </effect>
+  </library_effects>
+  <library_materials>
+    <material id="blue-material" name="blue">
+      <instance_effect url="#blue-effect"/>
+    </material>
+  </library_materials>
+  <library_geometries>
+    <geometry id="neon_outline-mesh" name="neon_outline">
+      <mesh>
+        <source id="neon_outline-mesh-positions">
+          <float_array id="neon_outline-mesh-positions-array" count="288">-49 2 25 -49 0 -23 -49 0 25 -49 2 -23 -48 2 -23 -48 0 -24 -48 0 -23 -48 2 -24 47 2 -22 47 0 -23 47 0 -22 47 2 -23 48 2 25 48 0 -22 48 0 25 48 2 -22 -48 0 25 -48 0 -22 -48 2 25 -48 2 -22 -47 0 -22 -47 0 -23 -47 2 -22 -47 2 -23 48 0 -23 48 0 -24 48 2 -23 48 2 -24 49 0 25 49 0 -23 49 2 25 49 2 -23 -48 0 25 -49 2 25 -49 0 25 -48 2 25 49 0 25 48 2 25 48 0 25 49 2 25 -47 0 -22 -48 2 -22 -48 0 -22 -47 2 -22 48 0 -22 47 2 -22 47 0 -22 48 2 -22 47 0 -23 -47 2 -23 -47 0 -23 47 2 -23 -49 0 -23 -49 2 -23 -48 0 -23 -48 2 -23 48 0 -23 48 2 -23 49 0 -23 49 2 -23 -48 0 -24 -48 2 -24 48 0 -24 48 2 -24 -48 0 -22 -48 0 25 -49 0 25 48 0 -22 49 0 25 48 0 25 -49 0 -23 -47 0 -22 -48 0 -23 -47 0 -23 47 0 -23 47 0 -22 48 0 -23 49 0 -23 -48 0 -24 48 0 -24 -49 2 25 -48 2 25 -48 2 -22 48 2 25 49 2 25 48 2 -22 -47 2 -22 -49 2 -23 -48 2 -23 -47 2 -23 47 2 -22 47 2 -23 48 2 -23 49 2 -23 -48 2 -24 48 2 -24</float_array>
+          <technique_common>
+            <accessor source="#neon_outline-mesh-positions-array" count="96" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="neon_outline-mesh-normals">
+          <float_array id="neon_outline-mesh-normals-array" count="18">-1 0 0 1 0 0 0 0 1 0 0 -1 0 -1 0 0 1 0</float_array>
+          <technique_common>
+            <accessor source="#neon_outline-mesh-normals-array" count="6" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="neon_outline-mesh-map-0">
+          <float_array id="neon_outline-mesh-map-0-array" count="360">0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5 0.962891 0.5</float_array>
+          <technique_common>
+            <accessor source="#neon_outline-mesh-map-0-array" count="180" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="neon_outline-mesh-vertices">
+          <input semantic="POSITION" source="#neon_outline-mesh-positions"/>
+        </vertices>
+        <polylist material="blue-material" count="60">
+          <input semantic="VERTEX" source="#neon_outline-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#neon_outline-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#neon_outline-mesh-map-0" offset="2" set="0"/>
+          <vcount>3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 </vcount>
+          <p>0 0 0 1 0 1 2 0 2 3 0 3 1 0 4 0 0 5 4 0 6 5 0 7 6 0 8 7 0 9 5 0 10 4 0 11 8 0 12 9 0 13 10 0 14 11 0 15 9 0 16 8 0 17 12 0 18 13 0 19 14 0 20 15 0 21 13 0 22 12 0 23 16 1 24 17 1 25 18 1 26 18 1 27 17 1 28 19 1 29 20 1 30 21 1 31 22 1 32 22 1 33 21 1 34 23 1 35 24 1 36 25 1 37 26 1 38 26 1 39 25 1 40 27 1 41 28 1 42 29 1 43 30 1 44 30 1 45 29 1 46 31 1 47 32 2 48 33 2 49 34 2 50 35 2 51 33 2 52 32 2 53 36 2 54 37 2 55 38 2 56 39 2 57 37 2 58 36 2 59 40 2 60 41 2 61 42 2 62 43 2 63 41 2 64 40 2 65 44 2 66 45 2 67 46 2 68 47 2 69 45 2 70 44 2 71 48 2 72 49 2 73 50 2 74 51 2 75 49 2 76 48 2 77 52 3 78 53 3 79 54 3 80 54 3 81 53 3 82 55 3 83 56 3 84 57 3 85 58 3 86 58 3 87 57 3 88 59 3 89 60 3 90 61 3 91 62 3 92 62 3 93 61 3 94 63 3 95 64 4 96 65 4 97 66 4 98 67 4 99 68 4 100 69 4 101 70 4 102 71 4 103 64 4 104 70 4 105 64 4 106 66 4 107 72 4 108 71 4 109 70 4 110 73 4 111 71 4 112 72 4 113 74 4 114 67 4 115 75 4 116 76 4 117 68 4 118 67 4 119 76 4 120 67 4 121 74 4 122 77 4 123 68 4 124 76 4 125 78 4 126 73 4 127 72 4 128 78 4 129 74 4 130 73 4 131 78 4 132 76 4 133 74 4 134 79 4 135 76 4 136 78 4 137 80 5 138 81 5 139 82 5 140 83 5 141 84 5 142 85 5 143 82 5 144 86 5 145 87 5 146 80 5 147 82 5 148 87 5 149 87 5 150 86 5 151 88 5 152 88 5 153 86 5 154 89 5 155 90 5 156 85 5 157 91 5 158 85 5 159 84 5 160 92 5 161 91 5 162 85 5 163 92 5 164 92 5 165 84 5 166 93 5 167 88 5 168 89 5 169 94 5 170 89 5 171 91 5 172 94 5 173 91 5 174 92 5 175 94 5 176 94 5 177 92 5 178 95 5 179</p>
+        </polylist>
+      </mesh>
+    </geometry>
+  </library_geometries>
+  <library_controllers/>
+  <library_visual_scenes>
+    <visual_scene id="Scene" name="Scene">
+      <node id="neon_outline" name="neon_outline" type="NODE">
+        <matrix sid="transform">1 0 0 0 0 -1.62921e-7 -1 0 0 1 -1.62921e-7 0 0 0 0 1</matrix>
+        <instance_geometry url="#neon_outline-mesh" name="neon_outline">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="blue-material" target="#blue-material"/>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+    </visual_scene>
+  </library_visual_scenes>
+  <scene>
+    <instance_visual_scene url="#Scene"/>
+  </scene>
 </COLLADA>

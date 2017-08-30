@@ -45,8 +45,8 @@ export default class View extends React.Component {
 
                 <Neon id="neon"
                       position={{x: 0, y: 5, z: -12}}
-                      scale={{x: 0.5, y: 0.5, z: 0.5}}
-                      rotation={{x: -90, y: 180, z: 0}}/>
+                      scale={{x: 0.05, y: 0.05, z: 0.05}}
+                      rotation={{x: 90, y: 0, z: 0}}/>
 
                 <Playground dim={4}
                             position={{x: -2.5, y: 1, z: -6}}

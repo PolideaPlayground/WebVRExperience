@@ -14,7 +14,7 @@ export default class Wires extends React.Component {
         </Entity>
     }
 }
-const scaleFactor = 0.4;
+const scaleFactor = 0.05;
 
 class WireFork extends React.Component {
     render() {

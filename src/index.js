@@ -11,6 +11,9 @@ import "./components/properties/hoverable";
 import "./components/properties/hovered_field";
 import "./components/properties/hovered_menu_item";
 
+import "./components/shaders/glitch_shader";
+import "./components/shaders/glitch_component";
+
 class VRScene extends React.Component {
     render() {
         return (
