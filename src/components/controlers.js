@@ -150,7 +150,7 @@ class DaydreamController extends React.Component {
         let daydreamRaycaster;
         if (this.props.enabled) {
             daydreamRaycaster =
-                <Entity scale="0.1 0.1 0.1" raycaster="far: 5; objects: .intersectable; showLine: true"
+                <Entity scale="0.1 0.1 0.1" raycaster="far: 20; objects: .intersectable; showLine: true"
                         line="color: black; opacity: 2"/>;
         }
         return (
