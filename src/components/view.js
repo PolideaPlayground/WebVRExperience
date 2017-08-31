@@ -48,9 +48,9 @@ export default class View extends React.Component {
                       scale={{x: 0.05, y: 0.05, z: 0.05}}
                       rotation={{x: 90, y: 0, z: 0}}/>
 
-                <Playground dim={4}
+                <Playground dim={3}
                             position={{x: -2.5, y: 1, z: -6}}
-                            rotation={{x: -65, y: 0, z: 0}}
+                            rotation={{x: -55, y: 0, z: 0}}
                 />
 
                 <Wires id='menu'

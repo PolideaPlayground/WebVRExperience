@@ -63,6 +63,7 @@ export default class Controlers extends React.Component {
                     redux-bind="modelSelected.visible: visible">
                 <Entity
                     scale={{x: scaleFactor, y: scaleFactor, z: scaleFactor}}
+                    rotation={{x: 0, y: 0, z: -90}}
                     redux-bind="modelSelected.model: collada-model"/>
             </Entity>);
 
@@ -149,7 +150,7 @@ class DaydreamController extends React.Component {
         let daydreamRaycaster;
         if (this.props.enabled) {
             daydreamRaycaster =
-                <Entity scale="0.1 0.1 0.1" raycaster="far: 5; objects: .intersectable; showLine: true"
+                <Entity scale="0.1 0.1 0.1" raycaster="far: 20; objects: .intersectable; showLine: true"
                         line="color: black; opacity: 2"/>;
         }
         return (
