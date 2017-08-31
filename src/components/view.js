@@ -21,6 +21,8 @@ export default class View extends React.Component {
                         shadowCameraRight: 35,
                         shadowCameraBotton: -35,
                         shadowCameraLeft: -35,
+                        shadowMapWidth: 1024,
+                        shadowMapHeight: 1024,
                     }}
                     position={{x: 0, y: 40, z: 50}}
 
@@ -53,7 +55,7 @@ export default class View extends React.Component {
                 <Wires id='menu'
                        position={{x: 3.5, y: 5, z: -7}}
                        rotation={{x: -0, y: -30, z: 0}}
-                       />
+                />
 
                 <Background/>
 
@@ -64,7 +66,8 @@ export default class View extends React.Component {
 
 class Background extends React.Component {
     render() {
-        return <a-entity position="0 0 -10">
+        return <a-entity
+            position="0 0 0">
             <Entity collada-model="#environment" shadow="receive: true" material="shader: flat"/>
         </a-entity>
     }
