@@ -1,6 +1,8 @@
 import React from 'react';
 import {Entity} from "aframe-react";
 import {selectCurrentModel, deselectCurrentMode, getCurrentlySelectedModel} from "./redux/game_state";
+import {WIRES} from "./elements/wires";
+import {connectExit, disconnectExits} from "./redux/neon_state";
 
 export default class Playground extends React.Component {
     constructor(props) {
@@ -8,20 +10,39 @@ export default class Playground extends React.Component {
 
         let p = {x: 1.0, y: 1.0, z: 0};
         let fields = [];
-        for (let x = 0; x < this.props.dim; x++) {
+        let dimension = this.props.dim;
+        for (let x = 0; x < dimension; x++) {
             let column = [];
-            for (let y = 0; y < this.props.dim; y++) {
+            for (let y = 0; y < dimension; y++) {
                 let fieldModel = {
                     id_x: x,
                     id_y: y,
                     position: {x: p.x + x, y: p.y + y, z: p.z},
-                    model: "", //TODO remove
-                    visible: false
+                    model: "",
+                    visible: false,
+                    selectable: true
                 };
                 column.push(fieldModel);
             }
             fields.push(column);
         }
+
+        //Init and lock entry field
+        fields[0][0].selectable = false;
+        fields[0][0].model = "#wireFork";
+        fields[0][0].visible = true;
+
+        //Init and lock exit field 1
+        let exitIdx = dimension - 1;
+        fields[0][exitIdx].selectable = false;
+        fields[0][exitIdx].model = "#wireVertical";
+        fields[0][exitIdx].visible = true;
+
+        //Init and lock exit field 2
+        fields[exitIdx][exitIdx].selectable = false;
+        fields[exitIdx][exitIdx].model = "#wireVertical";
+        fields[exitIdx][exitIdx].visible = true;
+
         this.state = {
             fields: fields
         };
@@ -35,30 +56,78 @@ export default class Playground extends React.Component {
         //Check if model is selected in game state
         let selectedModel = getCurrentlySelectedModel(el);
         let isDirty = false;
-        if (selectedModel) {
-            console.log("Placing: " + selectedModel);
-            fieldModel.model = selectedModel;
-            fieldModel.visible = true;
-            deselectCurrentMode(el);
-            isDirty = true;
-        } else if (fieldModel.model) {
-            let model = fieldModel.model;
-            //Pickup model
-            console.log("Picking up: " + model);
-            fieldModel.model = "";
-            fieldModel.visible = false;
-            selectCurrentModel(el, model);
-            isDirty = true;
-        }
+        if (fieldModel.selectable) {
+            if (selectedModel) {
+                console.log("Placing: " + selectedModel);
+                fieldModel.model = selectedModel;
+                fieldModel.visible = true;
+                deselectCurrentMode(el);
+                isDirty = true;
+            } else if (fieldModel.model) {
+                let model = fieldModel.model;
+                //Pickup model
+                console.log("Picking up: " + model);
+                fieldModel.model = "";
+                fieldModel.visible = false;
+                selectCurrentModel(el, model);
+                isDirty = true;
+            }
 
-        if (isDirty) {
-            fields[id_x][id_y] = fieldModel;
-            this.setState({
-                fields: fields
-            });
+            if (isDirty) {
+                fields[id_x][id_y] = fieldModel;
+                this.setState({
+                    fields: fields
+                });
+
+                this.checkExitsConnect(el);
+            }
         }
     }
 
+    checkExitsConnect(el) {
+        disconnectExits(el);
+
+        return this.checkConnection(el, 1, 0) || this.checkConnection(el, 0, 1);
+    }
+
+    checkConnection(el, startIdx, startIdy) {
+        let exitIndex = this.props.dim - 1;
+        if (startIdy === exitIndex) {
+            console.log(`Connected ${startIdx}, ${startIdy}`);
+            if (startIdx === 0) {
+                connectExit(el, "exit1");
+            } else if (startIdx === exitIndex) {
+                connectExit(el, "exit2");
+            }
+            return true;
+        } else {
+            let fields = this.state.fields;
+            console.log(`${startIdx}, ${startIdy}`);
+            let currentField = fields[startIdx][startIdy];
+            let connected = false;
+            console.log(currentField.model);
+            if (currentField.model) {
+                if (WIRES[currentField.model].exit_up) {
+                    let nextField = fields[startIdx][startIdy + 1];
+                    if (nextField.model) {
+                        if (WIRES[nextField.model].start_down) {
+                            connected = this.checkConnection(el, startIdx, startIdy + 1);
+                        }
+                    }
+                }
+                if (WIRES[currentField.model].exit_right) {
+                    let nextField = fields[startIdx + 1][startIdy];
+                    if (nextField.model) {
+                        if (WIRES[nextField.model].start_left) {
+                            connected = connected || this.checkConnection(el, startIdx + 1, startIdy);
+                        }
+                    }
+                }
+            }
+
+            return connected;
+        }
+    }
 
     renderField(field, clickCallback) {
         return <Field key={`${field.id_x}${field.id_y}`}

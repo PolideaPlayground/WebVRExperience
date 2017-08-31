@@ -2,29 +2,48 @@ import {Entity} from "aframe-react";
 import React from 'react';
 import {selectCurrentModel} from "../redux/game_state";
 
+export const WIRES = {
+    "#wireFork": {
+        position: {x: -0.6, y: 0.2, z: -0.5},
+        model: "#wireFork",
+        exit_up: true,
+        exit_right: true,
+        start_left: true,
+        start_down: false
+    },
+    "#wireHorizontal": {
+        position: {x: 0.6, y: -1, z: -0.5},
+        model: "#wireHorizontal",
+        exit_up: false,
+        exit_right: true,
+        start_left: true,
+        start_down: false
+    },
+    "#wireTurn": {
+        position: {x: -0.6, y: -1, z: -0.5},
+        model: "#wireTurn",
+        exit_up: true,
+        exit_right: false,
+        start_left: true,
+        start_down: false
+    },
+    "#wireVertical": {
+        position: {x: 0.6, y: 0.2, z: -0.5},
+        model: "#wireVertical",
+        exit_up: true,
+        exit_right: false,
+        start_left: false,
+        start_down: true
+    }
+
+};
+
 export default class Wires extends React.Component {
     constructor(props) {
         super(props);
-        let fields = [
-            {
-                position: {x: -0.6, y: 0.2, z: -0.5},
-                model: "#wireFork"
-            },
-            {
-                position: {x: 0.6, y: 0.2, z: -0.5},
-                model: "#wireHorizontal"
-            },
-            {
-                position: {x: -0.6, y: -1, z: -0.5},
-                model: "#wireTurn"
-            },
-            {
-                position: {x: 0.6, y: -1, z: -0.5},
-                model: "#wireVertical"
-            }
-        ];
+
         this.state = {
-            fields: fields
+            fields: WIRES
         };
     }
 
@@ -35,8 +54,8 @@ export default class Wires extends React.Component {
     }
 
     createAllWires(fields) {
-        return fields.map((field) => {
-            return this.createWire(field);
+        return Object.entries(fields).map((field) => {
+            return this.createWire(field[1]);
         })
     }
 
