@@ -152,12 +152,13 @@ export default class Playground extends React.Component {
 
         return (
             <Entity {...this.props}
-                    className="fields">
-                <Entity
-                    geometry={{primitive: 'plane', width: plane_width, height: plane_height}}
-                    position={{x: plane_width / 2, y: plane_height / 2, z: 0}}
-                    material={{color: '#99d9ff'}}
-                />
+                    className="fields"
+                    shadow="receive: false">
+                {/*<Entity*/}
+                    {/*geometry={{primitive: 'plane', width: plane_width, height: plane_height}}*/}
+                    {/*position={{x: plane_width / 2, y: plane_height / 2, z: 0}}*/}
+                    {/*material={{color: '#99d9ff'}}*/}
+                {/*/>*/}
                 {
                     this.state.fields.map(
                         (columns) => columns.map((field) => this.renderField(field, this.onFieldChange)))
@@ -189,6 +190,7 @@ class Field extends React.Component {
                     geometry={{width: 1, height: 1, depth: 0.4}}
                     material={{color: "#222"}}
                     className="field intersectable"
+                    shadow="receive: false"
                     events={{
                         click: (evt) => {
                             let el = evt.target;

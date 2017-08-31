@@ -23,8 +23,9 @@ class VRScene extends React.Component {
                 material={{
                     color: "#031128"
                 }}
-                fog="color:#AAB;density:0;far:35;near:0"
+                fog="color:#FFB;density:0;far:65;near:0"
                 redux="reducers: modelSelected, neonConnected"
+                light="defaultLightsEnabled: false"
             >
                 <Assets/>
                 <Controlers/>

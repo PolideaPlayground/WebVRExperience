@@ -8,6 +8,7 @@ import wireForkUrl from "./../assets/models/wire_fork.dae";
 import wireHorizontalUrl from "./../assets/models/wire_horizontal.dae";
 import wireTurnUrl from "./../assets/models/wire_turn.dae";
 import wireVerticalUrl from "./../assets/models/wire_vertical.dae";
+import environmentUrl from "./../assets/models/environment.dae";
 
 export default class Assets extends React.Component {
     render() {
@@ -20,6 +21,7 @@ export default class Assets extends React.Component {
                 <a-asset-item id="wireHorizontal" src={wireHorizontalUrl}/>
                 <a-asset-item id="wireTurn" src={wireTurnUrl}/>
                 <a-asset-item id="wireVertical" src={wireVerticalUrl}/>
+                <a-asset-item id="environment" src={environmentUrl}/>
 
                 {/*3D models */}
                 <a-asset-item id="propeller" src={propellerUrl}/>
