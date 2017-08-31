@@ -69,8 +69,9 @@ export default class Wires extends React.Component {
     render() {
         return <Entity {...this.props}
                        className="menu"
-                       geometry={{primitive: 'plane', width: 4, height: 4}}
-                       material={{color: '#bfd7ff'}}>
+                       geometry={{primitive: 'box', width: 4, height: 4, depth: 0.2}}
+                       material={{color: '#bfd7ff'}}
+                       shadow="receive: false; cast: true">
             {this.createAllWires(this.state.fields)}
         </Entity>
     }
@@ -87,8 +88,10 @@ class Wire extends React.Component {
     }
 
     render() {
-        return <Entity className="item intersectable" hoverable hovered_menu_item
+        return <Entity className="item intersectable"
+                       hoverable hovered_menu_item
                        rotation={{x: 0, y: 0, z: 0}}
+                       shadow="cast: false; receive: false"
                        events={{
                            click: (evt) => {
                                let el = evt.target;
@@ -99,6 +102,7 @@ class Wire extends React.Component {
             <Entity scale={{x: scaleFactor, y: scaleFactor, z: scaleFactor}}
                     position={this.state.position}
                     rotation={{x: 0, y: 0, z: -90}}
+                    shadow="cast: false; receive: false"
                     collada-model={this.state.model}
             />
         </Entity>
