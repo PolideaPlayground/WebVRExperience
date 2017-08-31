@@ -15,7 +15,7 @@ class NeonPlane extends React.Component {
     render() {
         return (
             <Entity {...this.props}>
-                <Entity collada-model="#neonPlane" material="color: red; shader: shader-glitch" material-grid-glitch/>
+                <Entity collada-model="#neonPlane"/>
             </Entity>
         );
 
@@ -25,7 +25,7 @@ class NeonPlane extends React.Component {
 class NeonOutline extends React.Component {
     render() {
         return (<Entity {...this.props}>
-            <Entity collada-model="#neonOutline"/>
+            <Entity collada-model="#neonOutline" material-grid-glitch/>
         </Entity>);
     }
 }
@@ -33,7 +33,7 @@ class NeonOutline extends React.Component {
 class NeonText extends React.Component {
     render() {
         return <Entity {...this.props}>
-            <Entity collada-model="#neonText"/>
+            <Entity collada-model="#neonText" material-grid-glitch/>
         </Entity>
     }
 }

@@ -98,7 +98,7 @@ export default class Playground extends React.Component {
     }
 }
 
-const scaleFactor = 0.05;
+const scaleFactor = 0.04;
 
 class Field extends React.Component {
     constructor(props) {
@@ -130,8 +130,8 @@ class Field extends React.Component {
                 {<Entity id="model"
                          visible={visible}
                          scale={{x: scaleFactor, y: scaleFactor, z: scaleFactor}}
-                         rotation={{x: 90.0, y: 0.0, z: 0.0}}
-                         position={{x: 0.0, y: 0.5, z: 0.0}}
+                         rotation={{x: 0.0, y: 0.0, z: -90.0}}
+                         position={{x: 0.0, y: 0.0, z: -0.25}}
                          collada-model={this.props.model}/>}
             </Entity>
         )

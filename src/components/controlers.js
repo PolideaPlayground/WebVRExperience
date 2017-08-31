@@ -63,6 +63,7 @@ export default class Controlers extends React.Component {
                     redux-bind="modelSelected.visible: visible">
                 <Entity
                     scale={{x: scaleFactor, y: scaleFactor, z: scaleFactor}}
+                    rotation={{x: 0, y: 0, z: -90}}
                     redux-bind="modelSelected.model: collada-model"/>
             </Entity>);
 

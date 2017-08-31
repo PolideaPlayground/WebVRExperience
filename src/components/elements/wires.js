@@ -69,6 +69,7 @@ class Wire extends React.Component {
 
     render() {
         return <Entity className="item intersectable" hoverable hovered_menu_item
+                       rotation={{x: 0, y: 0, z: 0}}
                        events={{
                            click: (evt) => {
                                let el = evt.target;
@@ -78,7 +79,7 @@ class Wire extends React.Component {
                        }}>
             <Entity scale={{x: scaleFactor, y: scaleFactor, z: scaleFactor}}
                     position={this.state.position}
-                    rotation={{x: 90, y: 0, z: 0}}
+                    rotation={{x: 0, y: 0, z: -90}}
                     collada-model={this.state.model}
             />
         </Entity>
