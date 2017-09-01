@@ -133,7 +133,7 @@ class GearVRController extends React.Component {
     render() {
         let gearRaycaster;
         if (this.props.enabled) {
-            gearRaycaster = <Entity scale="0.1 0.1 0.1" raycaster="far: 20; objects: .intersectable; showLine: true"
+            gearRaycaster = <Entity raycaster="far: 20; objects: .intersectable; showLine: true"
                                     line="color: black; opacity: 2"/>;
         }
         return (
@@ -150,7 +150,7 @@ class DaydreamController extends React.Component {
         let daydreamRaycaster;
         if (this.props.enabled) {
             daydreamRaycaster =
-                <Entity scale="0.1 0.1 0.1" raycaster="far: 20; objects: .intersectable; showLine: true"
+                <Entity raycaster="far: 20; objects: .intersectable; showLine: true"
                         line="color: black; opacity: 2"/>;
         }
         return (

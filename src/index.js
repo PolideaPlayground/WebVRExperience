@@ -18,13 +18,16 @@ import "./components/shaders/glitch_component";
 class VRScene extends React.Component {
     render() {
         return (
+            //TODO when turn on/off antialias and other effects
             <a-scene
-                debug
+                // antialias="false"
                 material={{
                     color: "#031128"
                 }}
-                fog="color:#AAB;density:0;far:35;near:0"
+                fog="color:#FFB;density:0;far:65;near:0"
                 redux="reducers: modelSelected, neonConnected"
+                shadow="type: basic"
+                light="defaultLightsEnabled: false"
             >
                 <Assets/>
                 <Controlers/>
