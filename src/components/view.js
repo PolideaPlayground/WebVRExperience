@@ -3,7 +3,6 @@ import React from "react";
 
 import Playground from "./playground";
 import Windmill from "./elements/windmill";
-import Neon from "./elements/neon";
 import Wires from "./elements/wires";
 
 export default class View extends React.Component {
@@ -34,17 +33,13 @@ export default class View extends React.Component {
                     }}
                 />
 
-
+                <Entity sound="src: #nightSound" />
+                <Entity id="night" sound="src: #nightSound; autoplay: true"/>
                 <Windmill
                     position={{x: -15, y: -4, z: -15}}
                     scale={{x: 4, y: 4, z: 4}}
                     rotation={{x: 0, y: 40, z: 0}}
                     shadow="cast: true; receive: false"/>
-
-                {/*<Neon id="neon"*/}
-                {/*position={{x: 0, y: 5, z: -12}}*/}
-                {/*scale={{x: 0.05, y: 0.05, z: 0.05}}*/}
-                {/*rotation={{x: 90, y: 0, z: 0}}/>*/}
 
                 <Playground dim={3}
                             position={{x: -2.5, y: 1, z: -6}}
