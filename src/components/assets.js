@@ -6,8 +6,9 @@ import wireHorizontalUrl from "./../assets/models/wire_horizontal.dae";
 import wireTurnUrl from "./../assets/models/wire_turn.dae";
 import wireVerticalUrl from "./../assets/models/wire_vertical.dae";
 import environmentUrl from "./../assets/models/environment.dae";
-import rockSoundUrl from "./../assets/sounds/Rock_Scraping_On_Boulder.wav";
+import rockSoundUrl from "./../assets/sounds/rock_scraping.mp3";
 import nightSoundUrl from "./../assets/sounds/Jungle_Atmosphere_Late_Night.mp3";
+import birdSoundUrl from "./../assets/sounds/Chirping-birds.mp3";
 
 export default class Assets extends React.Component {
     render() {
@@ -25,6 +26,7 @@ export default class Assets extends React.Component {
 
                 <audio id="rockSound" src={rockSoundUrl}/>
                 <audio id="nightSound" src={nightSoundUrl}/>
+                <audio id="birdSound" src={birdSoundUrl}/>
             </a-assets>
         );
     }

@@ -9,7 +9,7 @@ export default class View extends React.Component {
     render() {
         return (
             <Entity>
-                <Entity primitive="a-sky" color="#031128"/>
+                <Sky id={"Sky"} ref={"Sky"}/>
 
                 <Entity
                     light={{
@@ -33,9 +33,11 @@ export default class View extends React.Component {
                     }}
                 />
 
-                <Entity sound="src: #nightSound" />
-                <Entity id="night" sound="src: #nightSound; autoplay: true"/>
+
+                {/*<Entity id="night" sound="src: #nightSound; autoplay: true"/>*/}
+                <Sound autoplay="true"/>
                 <Windmill
+                    className="intersectable"
                     position={{x: -15, y: -4, z: -15}}
                     scale={{x: 4, y: 4, z: 4}}
                     rotation={{x: 0, y: 40, z: 0}}
@@ -65,5 +67,32 @@ class Background extends React.Component {
             position="0 0 0">
             <Entity collada-model="#environment" shadow="receive: true" material="shader: flat"/>
         </a-entity>
+    }
+}
+
+class Sky extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            color: this.props.color,
+        }
+    }
+
+
+    render() {
+        return <Entity {...this.props} primitive="a-sky" reduxBind="windmillSelected.color: #031128"/>
+    }
+}
+
+class Sound extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            sound: this.props.sound,
+        }
+    }
+
+    render() {
+        return <Entity {...this.props} sound reduxBind="windmillSelected.sound: #nightSound"/>
     }
 }
