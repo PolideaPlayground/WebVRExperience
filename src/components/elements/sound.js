@@ -10,6 +10,6 @@ export default class Sound extends React.Component {
     }
 
     render() {
-        return <Entity {...this.props} sound reduxBind="windmillSelected.sound: #nightSound"/>
+        return <Entity {...this.props} sound reduxBind="backgroundSelected.sound: sound"/>
     }
 }
