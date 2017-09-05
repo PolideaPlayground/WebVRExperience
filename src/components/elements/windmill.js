@@ -1,6 +1,6 @@
 import React from 'react';
 import {Entity} from "aframe-react";
-import {getCurrentBackgroundColor, toggleBackground} from "../redux/environment_state";
+import {toggleBackground} from "../redux/environment_state";
 
 export default class Windmill extends React.Component {
 

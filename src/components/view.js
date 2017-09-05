@@ -4,12 +4,15 @@ import React from "react";
 import Playground from "./playground";
 import Windmill from "./elements/windmill";
 import Wires from "./elements/wires";
+import Sound from "./elements/sound";
+import Background from "./elements/background";
+import Sky from "./elements/sky";
 
 export default class View extends React.Component {
     render() {
         return (
             <Entity>
-                <Sky id={"Sky"} ref={"Sky"}/>
+                <Sky id={"Sky"} ref={"Sky"} color="black" fog="color:#FFB;density:0;far:65;near:0"/>
 
                 <Entity
                     light={{
@@ -43,6 +46,17 @@ export default class View extends React.Component {
                     rotation={{x: 0, y: 40, z: 0}}
                     shadow="cast: true; receive: false"/>
 
+                <Entity id={"block"}
+                        shadow="receive: false"
+                        material="src: url(https://vwartclub.com/media/learning/useful-tips-vray-world-how-to-create-a-displacement-map-in-photoshop/9.jpg); color: red; roughness: 1; metalness: 0;"
+                        collada-model="#block" position={{x: 0, y: 2, z: -2}}/>
+
+                <a-sphere
+                          id={"block2"}
+                          shadow="receive: false"
+                          material="src: url(https://vwartclub.com/media/learning/useful-tips-vray-world-how-to-create-a-displacement-map-in-photoshop/9.jpg); color: red; roughness: 1; metalness: 0;"
+                          position="1 1 -2"
+                            />
                 <Playground dim={3}
                             position={{x: -2.5, y: 1, z: -6}}
                             rotation={{x: -55, y: 0, z: 0}}
@@ -61,38 +75,4 @@ export default class View extends React.Component {
     }
 }
 
-class Background extends React.Component {
-    render() {
-        return <a-entity
-            position="0 0 0">
-            <Entity collada-model="#environment" shadow="receive: true" material="shader: flat"/>
-        </a-entity>
-    }
-}
 
-class Sky extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            color: this.props.color,
-        }
-    }
-
-
-    render() {
-        return <Entity {...this.props} primitive="a-sky" reduxBind="windmillSelected.color: #031128"/>
-    }
-}
-
-class Sound extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            sound: this.props.sound,
-        }
-    }
-
-    render() {
-        return <Entity {...this.props} sound reduxBind="windmillSelected.sound: #nightSound"/>
-    }
-}

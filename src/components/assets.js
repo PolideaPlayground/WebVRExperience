@@ -6,6 +6,7 @@ import wireHorizontalUrl from "./../assets/models/wire_horizontal.dae";
 import wireTurnUrl from "./../assets/models/wire_turn.dae";
 import wireVerticalUrl from "./../assets/models/wire_vertical.dae";
 import environmentUrl from "./../assets/models/environment.dae";
+import blockUrl from "./../assets/models/block.dae";
 import rockSoundUrl from "./../assets/sounds/rock_scraping.mp3";
 import nightSoundUrl from "./../assets/sounds/Jungle_Atmosphere_Late_Night.mp3";
 import birdSoundUrl from "./../assets/sounds/Chirping-birds.mp3";
@@ -20,6 +21,7 @@ export default class Assets extends React.Component {
                 <a-asset-item id="wireTurn" src={wireTurnUrl}/>
                 <a-asset-item id="wireVertical" src={wireVerticalUrl}/>
                 <a-asset-item id="environment" src={environmentUrl}/>
+                <a-asset-item id="block" src={blockUrl}/>
 
                 <a-asset-item id="propeller" src={propellerUrl}/>
                 <a-asset-item id="windmill" src={windmillUrl}/>

@@ -7,10 +7,10 @@ AFRAME.registerReducer('windmillSelected', {
         WINDMILL_DESELECTED: 'WINDMILL_DESELECTED'
     },
     initialState: {
-        color: 'black',
+        color: '#000000',
         sound: 'src: #nightSound',
-        visible: false,
-        stateName: 'WINDMILL_DESELECTED'
+
+        stateName: 'WINDMILL_SELECTED'
     },
     reducer: function (state, action) {
         state = state || this.initialState;
@@ -20,15 +20,17 @@ AFRAME.registerReducer('windmillSelected', {
             case this.actions.WINDMILL_SELECTED: {
                 console.log("WINDMILL_SELECTED");
                 newState = Object.assign({}, state);
-                newState.color = '#031128';
-                newState.visible = true;
+                newState.color = '#fffaf0';
+                newState.stateName = "WINDMILL_DESELECTED";
+                console.log('Change to day')
                 return newState;
             }
             case this.actions.WINDMILL_DESELECTED: {
                 console.log("WINDMILL_DESELECTED");
                 newState = Object.assign({}, state);
-                newState.color = this.initialState.color;
-                newState.visible = false;
+                newState.color = '#000000';
+                newState.stateName = "WINDMILL_SELECTED";
+                console.log('Change to night')
                 return newState;
             }
             default: {
