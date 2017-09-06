@@ -31,6 +31,7 @@
     "aframe-particle-system-component": "^1.0.10",
     "aframe-react": "^4.3.0",
     "aframe-redux-component": "^3.0.2",
+    "aframe-stats-in-vr-component": "^0.1.7",
     "gh-pages": "^1.0.0",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",

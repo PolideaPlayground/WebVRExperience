@@ -1,4 +1,5 @@
 import * as AFRAME from "aframe";
+import "aframe-stats-in-vr-component";
 import "aframe-particle-system-component";
 
 import "aframe-animation-component";
@@ -20,10 +21,13 @@ class VRScene extends React.Component {
         return (
             //TODO when turn on/off antialias and other effects
             <a-scene
-                // antialias="false"
+                antialias="false"
+                debug
                 material={{
                     color: "#031128"
                 }}
+                stats
+                stats-in-vr
                 fog="color:#FFB;density:0;far:65;near:0"
                 redux="reducers: modelSelected, neonConnected"
                 shadow="type: basic"

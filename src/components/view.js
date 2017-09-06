@@ -16,7 +16,7 @@ export default class View extends React.Component {
                     light={{
                         type: "directional",
                         intensity: 1.4,
-                        castShadow: true,
+                        // castShadow: true,
                         shadowCameraTop: 35,
                         shadowCameraRight: 35,
                         shadowCameraBotton: -35,
