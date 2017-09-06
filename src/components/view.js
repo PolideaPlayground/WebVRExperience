@@ -39,7 +39,9 @@ export default class View extends React.Component {
 
 
 
-                <Sound id="Sound"/>
+                <Sound id="NightSound" sound={{src:"#nightSound", autoplay:"true"}}/>
+                <Sound id="NightSound" sound="src: #nightSound; autoplay: false"/>
+                <Sound id="BirdSound" sound="src: #birdSound; autoplay: false"/>
                 <Windmill
                     className="intersectable"
                     position={{x: -15, y: -4, z: -15}}

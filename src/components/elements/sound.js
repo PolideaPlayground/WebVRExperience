@@ -4,11 +4,14 @@ import React from "react";
 export default class Sound extends React.Component {
     constructor(props) {
         super(props);
+        this.state = {
+            sound: this.props.sound
+        }
     }
 
     render() {
-        return <a-entity {...this.props}
-                         sound="src: #nightSound; autoplay: true"
+        return <Entity {...this.props}
+                         sound={this.state.sound}
                          reduxBind="backgroundSelected.sound: sound"/>
     }
 }
