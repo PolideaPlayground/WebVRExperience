@@ -20,6 +20,7 @@ class VRScene extends React.Component {
         return (
             //TODO when turn on/off antialias and other effects
             <a-scene
+                id={"Scene"}
                 // antialias="false"
                 material={{
                     color: "#031128"
