@@ -13,7 +13,6 @@ export default class Sky extends React.Component {
         return <Entity {...this.props}
                        primitive="a-sky"
                        color={this.state.color}
-                       material={{fog: "false"}}
                        redux-bind="backgroundSelected.color: color"
 
         />

@@ -13,7 +13,7 @@ export default class View extends React.Component {
     render() {
         return (
             <Entity>
-                <Sky id={"Sky"} ref={"Sky"} color="black"/>
+                <Sky id={"Sky"} ref={"Sky"} color="#4e4b55"/>
 
                 <Entity
                     light={{
@@ -38,8 +38,8 @@ export default class View extends React.Component {
                 />
 
 
-                {/*<Entity id="night" sound="src: #nightSound; autoplay: true"/>*/}
-                <Sound autoplay="true"/>
+
+                <Sound id="Sound"/>
                 <Windmill
                     className="intersectable"
                     position={{x: -15, y: -4, z: -15}}

@@ -10,8 +10,8 @@ AFRAME.registerReducer('backgroundSelected', {
     },
     initialState: {
         color: '#000000',
-        sound: 'src: #nightSound',
-        fog: 'far: 40; color: #ababab; density: 0; near: 0',
+        sound: 'src: #nightSound; autoplay: true',
+        fog: 'density: 0.06; far: 40; color: #4e4b55; near: 0; type: exponential',
         backgroundCurrentState: 'FOG_NIGHT'
     },
 
@@ -136,9 +136,9 @@ function getFogNight(state, newCurrentState) {
     console.log(state);
     console.log("get fog night!");
     newState.color = '#000';
-    newState.fog = 'far: 40; color: #ababab; density: 0; near: 0';
+    newState.fog = 'density: 0.04; far: 40; type: exponential; color: #4e4b55; near: 0';
     newState.backgroundCurrentState = newCurrentState;
-    newState.sound = 'src: #nightSound';
+    newState.sound = 'src: #nightSound; autoplay: true';
 
     return newState;
 }
@@ -149,9 +149,9 @@ function getFogDay(state, newCurrentState) {
     console.log("get fog day!");
     newState = Object.assign({}, state);
     newState.color = '#FFB';
-    newState.fog = 'far: 40; color: #ababab; density: 0; near: 0';
+    newState.fog = 'density: 0.04; far: 40; type: exponential; color: #ababab; near: 0';
     newState.backgroundCurrentState = newCurrentState;
-    newState.sound = 'src: #nightSound';
+    newState.sound = 'src: #birdSound; autoplay: true';
 
     return newState;
 }
@@ -162,8 +162,8 @@ function getNoFogNight(state, newCurrentState) {
     console.log("get No fog night!");
     newState = Object.assign({}, state);
     newState.color = '#000';
-    newState.fog = 'far: 400; color: #ababab; density: 0; near: 0';
-    newState.sound = 'src: #nightSound';
+    newState.fog = 'density: 0; far: 40; type: exponential; color: #ababab; near: 0';
+    newState.sound = 'src: #nightSound; autoplay: true';
     newState.backgroundCurrentState = newCurrentState;
 
     return newState;
@@ -175,8 +175,8 @@ function getNoFogDay(state, newCurrentState) {
     console.log("get No fog day!");
     newState = Object.assign({}, state);
     newState.color = '#FFB';
-    newState.fog = 'far: 400; color: #ababab; density: 0; near: 0';
-    newState.sound = 'src: #nightSound';
+    newState.fog = 'density: 0; far: 40; type: exponential; color: #ababab; near: 0';
+    newState.sound = 'src: #birdSound; autoplay: true';
     newState.backgroundCurrentState = newCurrentState;
 
     return newState;
