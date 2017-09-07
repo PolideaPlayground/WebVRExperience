@@ -37,22 +37,15 @@ export default class View extends React.Component {
                     }}
                 />
 
-
-
-                <Sound id="NightSound" sound={{src:"#nightSound", autoplay:"true"}}/>
-                <Sound id="NightSound" sound="src: #nightSound; autoplay: false"/>
-                <Sound id="BirdSound" sound="src: #birdSound; autoplay: false"/>
+                <Sound id="BackgroundSound" sound={{src: "#nightSound", autoplay: "true"}}/>
                 <Windmill
-                    className="intersectable"
                     position={{x: -15, y: -4, z: -15}}
                     scale={{x: 4, y: 4, z: 4}}
                     rotation={{x: 0, y: 40, z: 0}}
                     shadow="cast: true; receive: false"/>
 
-                <Button id={"fogOn"} position="-1 1 -2" className="intersectable" color={"blue"} reqState={'fog_on'}/>
-                <Button id={"fogOff"} position="0 1 -2" className="intersectable" color={"green"} reqState={'fog_off'}/>
-                <Button id={"nightOn"} position="1 1 -2" className="intersectable" color={"yellow"} reqState={'night_on'}/>
-                <Button id={"nightOff"} position="2 1 -2" className="intersectable" color={"pink"} reqState={'night_off'}/>
+                <Button id={"fogButton"} position="-1 1 -2" className="intersectable" color={"blue"} mode={'FOG_ENABLED'}/>
+                <Button id={"nightButton"} position="0 1 -2" className="intersectable" color={"green"} mode={'NIGHT_ENABLED'}/>
 
                 <Playground dim={3}
                             position={{x: -2.5, y: 1, z: -6}}
