@@ -1,6 +1,6 @@
 import React from 'react';
 import {Entity} from "aframe-react";
-import {selectCurrentModel, deselectCurrentMode, getCurrentlySelectedModel} from "./redux/game_state";
+import {deselectCurrentMode, getCurrentlySelectedModel, selectCurrentModel} from "./redux/game_state";
 import {ROCKS} from "./elements/rocks";
 import {connectExit, disconnectExits} from "./redux/neon_state";
 
@@ -135,10 +135,11 @@ export default class Playground extends React.Component {
             <Entity {...this.props}
                     className="fields"
                     shadow="receive: false">
-                {
-                    this.state.fields.map(
-                        (columns) => columns.map((field) => this.renderField(field, this.onFieldChange)))
-                }
+                <Desktop  />
+                {/*{*/}
+                    {/*this.state.fields.map(*/}
+                        {/*(columns) => columns.map((field) => this.renderField(field, this.onFieldChange)))*/}
+                {/*}*/}
             </Entity>
         )
     }
@@ -185,4 +186,16 @@ class Field extends React.Component {
         )
     }
 
+}
+
+class Desktop extends React.Component {
+    render() {
+        return <Entity
+            {...this.props}
+            id="Desktop"
+            // rotation={{x: 90, y: 0, z: 0}}
+            // position={this.props.pos}
+
+            collada-model="#rockDesktop"/>
+    }
 }

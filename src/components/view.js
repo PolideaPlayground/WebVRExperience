@@ -55,13 +55,13 @@ export default class View extends React.Component {
                 <Button id={"nightOff"} position="2 1 -2" className="intersectable" color={"pink"} reqState={'night_off'}/>
 
                 <Playground dim={3}
-                            position={{x: -2.5, y: 1, z: -6}}
-                            rotation={{x: -55, y: 0, z: 0}}
+                            position={{x: 0, y: 1, z: -4}}
+                            rotation={{x: 27.5, y: 0, z: 0}}
                             shadow="cast: true"
                 />
 
                 <Rocks id='menu'
-                       position={{x: 3.5, y: 5, z: -7}}
+                       position={{x: 3.5, y: 4, z: -4.5}}
                        rotation={{x: -0, y: -30, z: 0}}
                 />
 

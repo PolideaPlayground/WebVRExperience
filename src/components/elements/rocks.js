@@ -53,14 +53,14 @@ export default class Rocks extends React.Component {
         selectCurrentModel(el, model);
     }
 
-    createAllWires(fields) {
+    createAllRocks(fields) {
         return Object.entries(fields).map((field) => {
-            return this.createWire(field[1]);
+            return this.createRock(field[1]);
         })
     }
 
-    createWire(field) {
-        return <Rock key={field.model}
+    createRock(field) {
+        return <Rock key={field.model+Math.floor((Math.random() * 100) + 1)}
                      position={field.position}
                      model={field.model}
                      onMenuItemClicked={this.onMenuItemClicked}/>
@@ -72,7 +72,7 @@ export default class Rocks extends React.Component {
                        geometry={{primitive: 'box', width: 4, height: 4, depth: 0.2}}
                        material={{color: '#bfd7ff'}}
                        shadow="receive: false; cast: true">
-            {this.createAllWires(this.state.fields)}
+            {this.createAllRocks(this.state.fields)}
         </Entity>
     }
 }

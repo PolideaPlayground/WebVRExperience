@@ -18,7 +18,6 @@ AFRAME.registerReducer('backgroundSelected', {
     reducer: function (state, action) {
         state = state || this.initialState;
 
-        console.log("reducer");
         switch (action.changeState) {
             case "fog_on": {
                 return turnOnFog(state, action.type)
