@@ -3,7 +3,7 @@ import React from "react";
 
 import Playground from "./playground";
 import Windmill from "./elements/windmill";
-import Rocks from "./elements/rocks";
+import Rocks from "./elements/disks";
 import Sound from "./elements/sound";
 import Background from "./elements/background";
 import Sky from "./elements/sky";
@@ -39,9 +39,9 @@ export default class View extends React.Component {
 
                 <Sound id="BackgroundSound"/>
                 <Windmill
-                    position={{x: -15, y: -4, z: -8}}
+                    position={{x: -20, y: -3, z: 80}}
                     scale={{x: 4, y: 4, z: 4}}
-                    rotation={{x: 0, y: 40, z: 0}}
+                    rotation={{x: 0, y: 120, z: 0}}
                     shadow="cast: true; receive: false"/>
 
                 <Button id={"fogButton"} position="-1 1 -2" className="intersectable" color={"blue"} mode={'FOG_ENABLED'}/>

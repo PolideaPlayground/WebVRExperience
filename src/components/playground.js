@@ -12,27 +12,27 @@ export const ROCKS = {
     },
     "#sticks": {
         texture: '#sticksTexture',
-        position: {x: 1, y: 0, z: 0},
+        position: {x: 0.55, y: 0, z: 0},
         visible: true
     },
-    "mist": {
-        texture: '#mistTexture',
-        position: {x: 2, y: 0, z: 0},
+    "fog": {
+        texture: '#fogTexture',
+        position: {x: 1.1, y: 0, z: 0},
         visible: true
     },
     "fence": {
         texture: '#fenceTexture',
-        position: {x: 0, y: 0, z: 1},
+        position: {x: 0, y: 0, z: 0.6},
         visible: true
     },
     "eye": {
         texture: '#eyeTexture',
-        position: {x: 1, y: 0, z: 1},
+        position: {x: 0.55, y: 0, z: 0.6},
         visible: true
     },
     "birds": {
         texture: '#birdsTexture',
-        position: {x: 2, y: 0, z: 1},
+        position: {x: 1.1, y: 0, z: 0.6},
         visible: true
     }
 };
@@ -60,13 +60,13 @@ export default class Playground extends React.Component {
             src={data.texture}
             hovered_field={
                 {
-                    position_down: {x: data.position.x, y: data.position.y, z: data.position.z - 0.15},
+                    position_down: {x: data.position.x, y: data.position.y - 0.15, z: data.position.z},
                     position_up: {x: data.position.x, y: data.position.y, z: data.position.z}
                 }
             }
             visible={data.visible}
             onFieldClicked={callback}
-            possition={data.position}
+            position={data.position}
         />
     }
 
@@ -106,7 +106,6 @@ export default class Playground extends React.Component {
 
     checkExitsConnect(el) {
         disconnectExits(el);
-
         return this.checkConnection(el, 1, 0) || this.checkConnection(el, 0, 1);
     }
 
@@ -156,7 +155,7 @@ export default class Playground extends React.Component {
                     className="fields"
                     shadow="receive: false">
                 <Desktop/>
-                <Entity position={{x: 0, y: 2, z: 0}}>
+                <Entity position={{x: -0.55, y: 0.5, z: -0.2}}>
                     {
                         this.createAllDisks(this.onDiskChange)
                     }
@@ -178,21 +177,32 @@ class Rock extends React.Component {
 
     render() {
         return (
-            <Entity position={this.props.position}
-                    src={this.props.src}
+            <Entity
+                {...this.props}
+
+                id={this.props.src}
+                hoverable
+                sound="src: #rockSound; on: fusing"
+                className="field intersectable"
+                shadow="receive: false"
+                events={{
+                    click: (evt) => {
+                        let el = evt.target;
+                        this.props.onFieldClicked(el, this.state.id_x, this.state.id_y);
+                    }
+                }}
+            >
+
+                <Entity
                     id={this.props.src}
-                    hoverable
                     collada-model="#rockButton"
-                    sound="src: #rockSound; on: fusing"
-                    className="field intersectable"
-                    shadow="receive: false"
-                    events={{
-                        click: (evt) => {
-                            let el = evt.target;
-                            this.props.onFieldClicked(el, this.state.id_x, this.state.id_y);
-                        }
-                    }}
-            />
+                />
+                <a-image
+                    position="0 0.15 0"
+                    rotation="90 0 0"
+                    scale="0.4 0.4 1"
+                    src={this.props.src}/>
+            </Entity>
         )
     }
 

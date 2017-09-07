@@ -4,54 +4,21 @@ import {selectCurrentModel} from "../redux/game_state";
 
 export const DISKS = {
     "#sun": {
-        position: {x: -0.6, y: 0.2, z: -0.5},
-        model: "#rockButton",
-        exit_up: true,
-        exit_right: true,
-        start_left: true,
-        start_down: false
+        position: {x: -0.6, y: 0.2, z: 0.2},
+        texture: "#sunTexture",
     },
-    "#midt": {
-        position: {x: 0.6, y: -1, z: -0.5},
-        model: "#rockButton",
-        exit_up: false,
-        exit_right: true,
-        start_left: true,
-        start_down: false
+    "#fog": {
+        position: {x: 0.6, y: -1, z: 0.2},
+        texture: "#fogTexture",
     },
     "#eye": {
-        position: {x: -0.6, y: -1, z: -0.5},
-        model: "#rockButton",
-        exit_up: true,
-        exit_right: false,
-        start_left: true,
-        start_down: false
-    },
-    "#fence": {
-        position: {x: 0.6, y: 0.2, z: -0.5},
-        model: "#rockButton",
-        exit_up: true,
-        exit_right: false,
-        start_left: false,
-        start_down: true
+        position: {x: -0.6, y: -1, z: 0.2},
+        texture: "#eyeTexture",
     },
     "#birds": {
-        position: {x: 0.6, y: 0.2, z: -0.5},
-        model: "#rockButton",
-        exit_up: true,
-        exit_right: false,
-        start_left: false,
-        start_down: true
-    },
-    "#sticks": {
-        position: {x: 0.6, y: 0.2, z: -0.5},
-        texture: "#sticksTexture",
-        exit_up: true,
-        exit_right: false,
-        start_left: false,
-        start_down: true
+        position: {x: 0.6, y: 0.2, z: 0.2},
+        texture: "#birdsTexture",
     }
-
 };
 
 export default class Rocks extends React.Component {
@@ -76,9 +43,9 @@ export default class Rocks extends React.Component {
     }
 
     createRock(field) {
-        return <Rock key={field.model+Math.floor((Math.random() * 100) + 1)}
+        return <Rock key={field.texture}
                      position={field.position}
-                     model={field.model}
+                     texture={field.texture}
                      onMenuItemClicked={this.onMenuItemClicked}/>
     }
 
@@ -92,13 +59,13 @@ export default class Rocks extends React.Component {
         </Entity>
     }
 }
-const scaleFactor = 0.05;
+const scaleFactor = 2;
 
 class Rock extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            model: this.props.model,
+            texture: this.props.texture,
             position: this.props.position
         }
     }
@@ -107,20 +74,23 @@ class Rock extends React.Component {
         return <Entity className="item intersectable"
                        hoverable hovered_menu_item
                        rotation={{x: 0, y: 0, z: 0}}
+                       position={this.state.position}
                        shadow="cast: false; receive: false"
                        events={{
                            click: (evt) => {
                                let el = evt.target;
                                console.log('clicked')
-                               this.props.onMenuItemClicked(el, this.state.model)
+                               this.props.onMenuItemClicked(el, this.state.texture)
                            }
                        }}>
             <Entity scale={{x: scaleFactor, y: scaleFactor, z: scaleFactor}}
-                    position={this.state.position}
-                    rotation={{x: 0, y: 0, z: -90}}
+                    rotation={{x: 90, y: 0, z: 0}}
                     shadow="cast: false; receive: false"
-                    collada-model={this.state.model}
+                    collada-model="#rockDisk"
             />
+            <a-image
+                position="0 0 0.15"
+                src={this.state.texture}/>
         </Entity>
     }
 }

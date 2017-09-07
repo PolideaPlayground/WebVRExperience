@@ -1,13 +1,13 @@
 import "aframe-redux-component";
 import * as AFRAME from "aframe";
 
-AFRAME.registerReducer('modelSelected', {
+AFRAME.registerReducer('diskSelected', {
     actions: {
         MODE_SELECTED: 'MODEL_SELECTED',
         MODE_DESELECTED: 'MODEL_DESELECTED'
     },
     initialState: {
-        model: "",
+        texture: "",
         visible: false,
     },
     reducer: function (state, action) {
@@ -16,13 +16,13 @@ AFRAME.registerReducer('modelSelected', {
         switch (action.type) {
             case this.actions.MODE_SELECTED: {
                 newState = Object.assign({}, state);
-                newState.model = action.model;
+                newState.texture = action.texture;
                 newState.visible = true;
                 return newState;
             }
             case this.actions.MODE_DESELECTED: {
                 newState = Object.assign({}, state);
-                newState.model = "";
+                newState.texture = "";
                 newState.visible = false;
                 return newState;
             }
@@ -35,14 +35,14 @@ AFRAME.registerReducer('modelSelected', {
 
 });
 
-export function getCurrentlySelectedModel(element) {
-    return element.sceneEl.systems.redux.store.getState().modelSelected.model;
+export function getCurrentlySelectedTexture(element) {
+    return element.sceneEl.systems.redux.store.getState().diskSelected.texture;
 }
 
 export function selectCurrentModel(element, value) {
     let action = {
         type: "MODEL_SELECTED",
-        model: value
+        texture: value
     };
     element.sceneEl.systems.redux.store.dispatch(action);
 }
@@ -50,7 +50,7 @@ export function selectCurrentModel(element, value) {
 export function deselectCurrentMode(element) {
     let action = {
         type: "MODEL_DESELECTED",
-        model: ""
+        texture: ""
     };
     element.sceneEl.systems.redux.store.dispatch(action);
 }
