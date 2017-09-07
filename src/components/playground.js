@@ -1,7 +1,7 @@
 import React from 'react';
 import {Entity} from "aframe-react";
 import {selectCurrentModel, deselectCurrentMode, getCurrentlySelectedModel} from "./redux/game_state";
-import {WIRES} from "./elements/wires";
+import {ROCKS} from "./elements/rocks";
 import {connectExit, disconnectExits} from "./redux/neon_state";
 
 export default class Playground extends React.Component {
@@ -26,22 +26,6 @@ export default class Playground extends React.Component {
             }
             fields.push(column);
         }
-
-        //Init and lock entry field
-        fields[0][0].selectable = false;
-        fields[0][0].model = "#wireFork";
-        fields[0][0].visible = true;
-
-        //Init and lock exit field 1
-        let exitIdx = dimension - 1;
-        fields[0][exitIdx].selectable = false;
-        fields[0][exitIdx].model = "#wireVertical";
-        fields[0][exitIdx].visible = true;
-
-        //Init and lock exit field 2
-        fields[exitIdx][exitIdx].selectable = false;
-        fields[exitIdx][exitIdx].model = "#wireVertical";
-        fields[exitIdx][exitIdx].visible = true;
 
         this.state = {
             fields: fields
@@ -107,18 +91,18 @@ export default class Playground extends React.Component {
             let connected = false;
             console.log(currentField.model);
             if (currentField.model) {
-                if (WIRES[currentField.model].exit_up) {
+                if (ROCKS[currentField.model].exit_up) {
                     let nextField = fields[startIdx][startIdy + 1];
                     if (nextField.model) {
-                        if (WIRES[nextField.model].start_down) {
+                        if (ROCKS[nextField.model].start_down) {
                             connected = this.checkConnection(el, startIdx, startIdy + 1);
                         }
                     }
                 }
-                if (WIRES[currentField.model].exit_right) {
+                if (ROCKS[currentField.model].exit_right) {
                     let nextField = fields[startIdx + 1][startIdy];
                     if (nextField.model) {
-                        if (WIRES[nextField.model].start_left) {
+                        if (ROCKS[nextField.model].start_left) {
                             connected = connected || this.checkConnection(el, startIdx + 1, startIdy);
                         }
                     }

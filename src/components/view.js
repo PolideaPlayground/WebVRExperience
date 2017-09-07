@@ -3,7 +3,7 @@ import React from "react";
 
 import Playground from "./playground";
 import Windmill from "./elements/windmill";
-import Wires from "./elements/wires";
+import Rocks from "./elements/rocks";
 import Sound from "./elements/sound";
 import Background from "./elements/background";
 import Sky from "./elements/sky";
@@ -60,7 +60,7 @@ export default class View extends React.Component {
                             shadow="cast: true"
                 />
 
-                <Wires id='menu'
+                <Rocks id='menu'
                        position={{x: 3.5, y: 5, z: -7}}
                        rotation={{x: -0, y: -30, z: 0}}
                 />
