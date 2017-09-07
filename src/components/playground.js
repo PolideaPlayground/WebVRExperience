@@ -4,37 +4,93 @@ import {deselectCurrentMode, getCurrentlySelectedModel, selectCurrentModel} from
 import {ROCKS} from "./elements/rocks";
 import {connectExit, disconnectExits} from "./redux/neon_state";
 
+
+export const DISKS = {
+    "#sun": {
+        texture: '#sunTexture',
+        position: {x:0, y:0, z:0},
+        visibla: true
+    },
+    "#sticks": {
+        texture: '#sticksTexture',
+        position: {x:1, y:0, z:0},
+        visibla: true
+    },
+    "mist": {
+        texture: '#mistTexture',
+        position: {x:2, y:0, z:0},
+        visibla: true
+    },
+    "fence": {
+        texture: '#fenceTexture',
+        position: {x:0, y:1, z:0},
+        visibla: true
+    },
+    "eye": {
+        texture: '#eyeTexture',
+        position: {x:1, y:1, z:0},
+        visibla: true
+    },
+    "birds": {
+        texture: '#birdsTexture',
+        position: {x:2, y:1, z:0},
+        visibla: true
+    }
+};
+
 export default class Playground extends React.Component {
     constructor(props) {
         super(props);
 
-        let p = {x: 1.0, y: 1.0, z: 0};
-        let fields = [];
-        let dimension = this.props.dim;
-        for (let x = 0; x < dimension; x++) {
-            let column = [];
-            for (let y = 0; y < dimension; y++) {
-                let fieldModel = {
-                    id_x: x,
-                    id_y: y,
-                    position: {x: p.x + x, y: p.y + y, z: p.z},
-                    model: "",
-                    visible: false,
-                    selectable: true
-                };
-                column.push(fieldModel);
-            }
-            fields.push(column);
-        }
+
+        // let p = {x: 1.0, y: 1.0, z: 0};
+        // let fields = [];
+        // let dimensionX = this.props.dimX;
+        // let dimensionY = this.props.dimY;
+        // for (let x = 0; x < dimensionX; x++) {
+        //     let column = [];
+        //     for (let y = 0; y < dimensionY; y++) {
+        //         let fieldModel = {
+        //             id_x: x,
+        //             id_y: y,
+        //             position: {x: p.x + x, y: p.y + y, z: p.z},
+        //             model: "",
+        //             visible: false,
+        //             selectable: true
+        //         };
+        //         column.push(fieldModel);
+        //     }
+        //     fields.push(column);
+        // }
 
         this.state = {
-            fields: fields
+            fields: DISKS
         };
 
-        this.onFieldChange = this.onFieldChange.bind(this);
+        this.onDiskChange = this.onDiskChange.bind(this);
     }
 
-    onFieldChange(el, id_x, id_y) {
+    createAllDisks() {
+        return Object.entries(this.state.fields).map((field) => {
+            return this.createDisk(field[0], field[1]);
+        })
+    }
+
+    createDisk(name, data, callback) {
+        return <Disk key={name}
+                     src={data.texture}
+                     hovered_field={
+                         {
+                             position_down: {x: data.position.x, y: data.position.y, z: data.position.z - 0.15},
+                             position_up: {x: data.position.x, y: data.position.y, z: data.position.z}
+                         }
+                     }
+                     visible={data.visible}
+                     onFieldClicked={callback}
+        />
+    }
+
+    onDiskChange(el, id_x, id_y) {
         let fields = this.state.fields;
         var fieldModel = fields[id_x][id_y];
         //Check if model is selected in game state
@@ -113,20 +169,20 @@ export default class Playground extends React.Component {
         }
     }
 
-    renderField(field, clickCallback) {
-        return <Field key={`${field.id_x}${field.id_y}`}
-                      id_x={field.id_x}
-                      id_y={field.id_y}
-                      position={field.position}
-                      hovered_field={
-                          {
-                              position_down: {x: field.position.x, y: field.position.y, z: field.position.z - 0.15},
-                              position_up: {x: field.position.x, y: field.position.y, z: field.position.z}
-                          }
-                      }
-                      model={field.model}
-                      visible={field.visible}
-                      onFieldClicked={clickCallback}
+    renderDisk(field, clickCallback) {
+        return <Disk key={`${field.id_x}${field.id_y}`}
+                     id_x={field.id_x}
+                     id_y={field.id_y}
+                     position={field.position}
+                     hovered_field={
+                         {
+                             position_down: {x: field.position.x, y: field.position.y, z: field.position.z - 0.15},
+                             position_up: {x: field.position.x, y: field.position.y, z: field.position.z}
+                         }
+                     }
+                     model={field.model}
+                     visible={field.visible}
+                     onFieldClicked={clickCallback}
         />;
     }
 
@@ -135,11 +191,12 @@ export default class Playground extends React.Component {
             <Entity {...this.props}
                     className="fields"
                     shadow="receive: false">
-                <Desktop  />
-                {/*{*/}
-                    {/*this.state.fields.map(*/}
-                        {/*(columns) => columns.map((field) => this.renderField(field, this.onFieldChange)))*/}
-                {/*}*/}
+                <Desktop/>
+                {
+                    this.createAllDisks()
+                    // this.state.fields.map(
+                    //     (columns) => columns.map((field) => this.renderDisk(field, this.onDiskChange)))
+                }
             </Entity>
         )
     }
@@ -147,7 +204,7 @@ export default class Playground extends React.Component {
 
 const scaleFactor = 0.04;
 
-class Field extends React.Component {
+class Disk extends React.Component {
     constructor(props) {
         super(props);
 
@@ -166,7 +223,7 @@ class Field extends React.Component {
                     hoverable
                     geometry={{width: 1, height: 1, depth: 0.4}}
                     sound="src: #rockSound; on: fusing"
-                    material={{color: "#222"}}
+                    collada-model="#rockButton"
                     className="field intersectable"
                     shadow="receive: false"
                     events={{

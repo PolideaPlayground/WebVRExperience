@@ -38,8 +38,7 @@ export default class View extends React.Component {
                 />
 
 
-
-                <Sound id="NightSound" sound={{src:"#nightSound", autoplay:"true"}}/>
+                <Sound id="NightSound" sound={{src: "#nightSound", autoplay: "true"}}/>
                 <Sound id="NightSound" sound="src: #nightSound; autoplay: false"/>
                 <Sound id="BirdSound" sound="src: #birdSound; autoplay: false"/>
                 <Windmill
@@ -51,10 +50,13 @@ export default class View extends React.Component {
 
                 <Button id={"fogOn"} position="-1 1 -2" className="intersectable" color={"blue"} reqState={'fog_on'}/>
                 <Button id={"fogOff"} position="0 1 -2" className="intersectable" color={"green"} reqState={'fog_off'}/>
-                <Button id={"nightOn"} position="1 1 -2" className="intersectable" color={"yellow"} reqState={'night_on'}/>
-                <Button id={"nightOff"} position="2 1 -2" className="intersectable" color={"pink"} reqState={'night_off'}/>
+                <Button id={"nightOn"} position="1 1 -2" className="intersectable" color={"yellow"}
+                        reqState={'night_on'}/>
+                <Button id={"nightOff"} position="2 1 -2" className="intersectable" color={"pink"}
+                        reqState={'night_off'}/>
 
-                <Playground dim={3}
+                <Playground dimX={3}
+                            dimY={2}
                             position={{x: 0, y: 1, z: -4}}
                             rotation={{x: 27.5, y: 0, z: 0}}
                             shadow="cast: true"
