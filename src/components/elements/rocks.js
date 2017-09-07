@@ -2,10 +2,10 @@ import {Entity} from "aframe-react";
 import React from 'react';
 import {selectCurrentModel} from "../redux/game_state";
 
-export const WIRES = {
+export const ROCKS = {
     "#wireFork": {
         position: {x: -0.6, y: 0.2, z: -0.5},
-        model: "#wireFork",
+        model: "#rockButton",
         exit_up: true,
         exit_right: true,
         start_left: true,
@@ -13,7 +13,7 @@ export const WIRES = {
     },
     "#wireHorizontal": {
         position: {x: 0.6, y: -1, z: -0.5},
-        model: "#wireHorizontal",
+        model: "#rockButton",
         exit_up: false,
         exit_right: true,
         start_left: true,
@@ -21,7 +21,7 @@ export const WIRES = {
     },
     "#wireTurn": {
         position: {x: -0.6, y: -1, z: -0.5},
-        model: "#wireTurn",
+        model: "#rockButton",
         exit_up: true,
         exit_right: false,
         start_left: true,
@@ -29,7 +29,7 @@ export const WIRES = {
     },
     "#wireVertical": {
         position: {x: 0.6, y: 0.2, z: -0.5},
-        model: "#wireVertical",
+        model: "#rockButton",
         exit_up: true,
         exit_right: false,
         start_left: false,
@@ -38,12 +38,12 @@ export const WIRES = {
 
 };
 
-export default class Wires extends React.Component {
+export default class Rocks extends React.Component {
     constructor(props) {
         super(props);
 
         this.state = {
-            fields: WIRES
+            fields: ROCKS
         };
     }
 
@@ -60,7 +60,7 @@ export default class Wires extends React.Component {
     }
 
     createWire(field) {
-        return <Wire key={field.model}
+        return <Rock key={field.model}
                      position={field.position}
                      model={field.model}
                      onMenuItemClicked={this.onMenuItemClicked}/>
@@ -78,7 +78,7 @@ export default class Wires extends React.Component {
 }
 const scaleFactor = 0.05;
 
-class Wire extends React.Component {
+class Rock extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
