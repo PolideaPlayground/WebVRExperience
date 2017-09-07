@@ -1,6 +1,6 @@
 import React from 'react';
 import {Entity} from "aframe-react";
-import {deselectCurrentMode, getCurrentlySelectedModel, selectCurrentModel} from "./redux/game_state";
+import {deselectCurrentMode, getCurrentlySelectedTexture, selectCurrentModel} from "./redux/game_state";
 import {connectExit, disconnectExits} from "./redux/neon_state";
 
 
@@ -8,32 +8,38 @@ export const ROCKS = {
     "#sun": {
         texture: '#sunTexture',
         position: {x: 0, y: 0, z: 0},
-        visible: true
+        visible: true,
+        selectable: true
     },
     "#sticks": {
         texture: '#sticksTexture',
         position: {x: 0.55, y: 0, z: 0},
-        visible: true
+        visible: true,
+        selectable: true
     },
     "fog": {
         texture: '#fogTexture',
         position: {x: 1.1, y: 0, z: 0},
-        visible: true
+        visible: true,
+        selectable: true
     },
     "fence": {
         texture: '#fenceTexture',
         position: {x: 0, y: 0, z: 0.6},
-        visible: true
+        visible: true,
+        selectable: true
     },
     "eye": {
         texture: '#eyeTexture',
         position: {x: 0.55, y: 0, z: 0.6},
-        visible: true
+        visible: true,
+        selectable: true
     },
     "birds": {
         texture: '#birdsTexture',
         position: {x: 1.1, y: 0, z: 0.6},
-        visible: true
+        visible: true,
+        selectable: true
     }
 };
 
@@ -48,15 +54,16 @@ export default class Playground extends React.Component {
         this.onDiskChange = this.onDiskChange.bind(this);
     }
 
-    createAllDisks(callback) {
+    createAllRocks(callback) {
         return Object.entries(this.state.fields).map((field) => {
-            return this.createDisk(field[0], field[1], callback);
+            return this.createRock(field[0], field[1], callback);
         })
     }
 
-    createDisk(name, data, callback) {
+    createRock(name, data, callback) {
         return <Rock
             key={name}
+            name={name}
             src={data.texture}
             hovered_field={
                 {
@@ -70,11 +77,11 @@ export default class Playground extends React.Component {
         />
     }
 
-    onDiskChange(el, id_x, id_y) {
+    onDiskChange(el, name) {
         let fields = this.state.fields;
-        var fieldModel = fields[id_x][id_y];
+        var fieldModel = fields[name];
         //Check if model is selected in game state
-        let selectedModel = getCurrentlySelectedModel(el);
+        let selectedModel = getCurrentlySelectedTexture(el);
         let isDirty = false;
         if (fieldModel.selectable) {
             if (selectedModel) {
@@ -94,7 +101,7 @@ export default class Playground extends React.Component {
             }
 
             if (isDirty) {
-                fields[id_x][id_y] = fieldModel;
+                fields[name] = fieldModel;
                 this.setState({
                     fields: fields
                 });
@@ -157,7 +164,7 @@ export default class Playground extends React.Component {
                 <Desktop/>
                 <Entity position={{x: -0.55, y: 0.5, z: -0.2}}>
                     {
-                        this.createAllDisks(this.onDiskChange)
+                        this.createAllRocks(this.onDiskChange)
                     }
                 </Entity>
             </Entity>
@@ -170,8 +177,7 @@ class Rock extends React.Component {
         super(props);
 
         this.state = {
-            id_x: this.props.id_x,
-            id_y: this.props.id_y,
+            name: this.props.name,
         }
     }
 
@@ -188,7 +194,7 @@ class Rock extends React.Component {
                 events={{
                     click: (evt) => {
                         let el = evt.target;
-                        this.props.onFieldClicked(el, this.state.id_x, this.state.id_y);
+                        this.props.onFieldClicked(el, this.state.name);
                     }
                 }}
             >
