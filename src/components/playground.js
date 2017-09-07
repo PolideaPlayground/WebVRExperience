@@ -147,18 +147,10 @@ export default class Playground extends React.Component {
     }
 
     render() {
-        var plane_width = this.props.dim + 1;
-        var plane_height = this.props.dim + 1;
-
         return (
             <Entity {...this.props}
                     className="fields"
                     shadow="receive: false">
-                {/*<Entity*/}
-                    {/*geometry={{primitive: 'plane', width: plane_width, height: plane_height}}*/}
-                    {/*position={{x: plane_width / 2, y: plane_height / 2, z: 0}}*/}
-                    {/*material={{color: '#99d9ff'}}*/}
-                {/*/>*/}
                 {
                     this.state.fields.map(
                         (columns) => columns.map((field) => this.renderField(field, this.onFieldChange)))
@@ -188,6 +180,7 @@ class Field extends React.Component {
                     mixin='cube'
                     hoverable
                     geometry={{width: 1, height: 1, depth: 0.4}}
+                    sound="src: #rockSound; on: fusing"
                     material={{color: "#222"}}
                     className="field intersectable"
                     shadow="receive: false"

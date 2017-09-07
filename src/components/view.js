@@ -3,14 +3,17 @@ import React from "react";
 
 import Playground from "./playground";
 import Windmill from "./elements/windmill";
-import Neon from "./elements/neon";
 import Wires from "./elements/wires";
+import Sound from "./elements/sound";
+import Background from "./elements/background";
+import Sky from "./elements/sky";
+import Button from "./elements/button";
 
 export default class View extends React.Component {
     render() {
         return (
             <Entity>
-                <Entity primitive="a-sky" color="#031128"/>
+                <Sky id={"Sky"} ref={"Sky"} color="#4e4b55"/>
 
                 <Entity
                     light={{
@@ -34,17 +37,15 @@ export default class View extends React.Component {
                     }}
                 />
 
-
+                <Sound id="BackgroundSound"/>
                 <Windmill
                     position={{x: -15, y: -4, z: -15}}
                     scale={{x: 4, y: 4, z: 4}}
                     rotation={{x: 0, y: 40, z: 0}}
                     shadow="cast: true; receive: false"/>
 
-                {/*<Neon id="neon"*/}
-                {/*position={{x: 0, y: 5, z: -12}}*/}
-                {/*scale={{x: 0.05, y: 0.05, z: 0.05}}*/}
-                {/*rotation={{x: 90, y: 0, z: 0}}/>*/}
+                <Button id={"fogButton"} position="-1 1 -2" className="intersectable" color={"blue"} mode={'FOG_ENABLED'}/>
+                <Button id={"nightButton"} position="0 1 -2" className="intersectable" color={"green"} mode={'NIGHT_ENABLED'}/>
 
                 <Playground dim={3}
                             position={{x: -2.5, y: 1, z: -6}}
@@ -64,11 +65,4 @@ export default class View extends React.Component {
     }
 }
 
-class Background extends React.Component {
-    render() {
-        return <a-entity
-            position="0 0 0">
-            <Entity collada-model="#environment" shadow="receive: true" material="shader: flat"/>
-        </a-entity>
-    }
-}
+
