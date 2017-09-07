@@ -3,7 +3,7 @@ import React from 'react';
 import {selectCurrentModel} from "../redux/game_state";
 
 export const ROCKS = {
-    "#wireFork": {
+    "#sun": {
         position: {x: -0.6, y: 0.2, z: -0.5},
         model: "#rockButton",
         exit_up: true,
@@ -11,7 +11,7 @@ export const ROCKS = {
         start_left: true,
         start_down: false
     },
-    "#wireHorizontal": {
+    "#midt": {
         position: {x: 0.6, y: -1, z: -0.5},
         model: "#rockButton",
         exit_up: false,
@@ -19,7 +19,7 @@ export const ROCKS = {
         start_left: true,
         start_down: false
     },
-    "#wireTurn": {
+    "#eye": {
         position: {x: -0.6, y: -1, z: -0.5},
         model: "#rockButton",
         exit_up: true,
@@ -27,9 +27,25 @@ export const ROCKS = {
         start_left: true,
         start_down: false
     },
-    "#wireVertical": {
+    "#fence": {
         position: {x: 0.6, y: 0.2, z: -0.5},
         model: "#rockButton",
+        exit_up: true,
+        exit_right: false,
+        start_left: false,
+        start_down: true
+    },
+    "#birds": {
+        position: {x: 0.6, y: 0.2, z: -0.5},
+        model: "#rockButton",
+        exit_up: true,
+        exit_right: false,
+        start_left: false,
+        start_down: true
+    },
+    "#sticks": {
+        position: {x: 0.6, y: 0.2, z: -0.5},
+        texture: "#sticksTexture",
         exit_up: true,
         exit_right: false,
         start_left: false,

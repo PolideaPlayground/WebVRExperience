@@ -22,7 +22,7 @@ export default class View extends React.Component {
                         castShadow: true,
                         shadowCameraTop: 35,
                         shadowCameraRight: 35,
-                        shadowCameraBotton: -35,
+                        shadowCameraBottom: -35,
                         shadowCameraLeft: -35,
                         shadowMapWidth: 1024,
                         shadowMapHeight: 1024,
@@ -39,7 +39,7 @@ export default class View extends React.Component {
 
                 <Sound id="BackgroundSound"/>
                 <Windmill
-                    position={{x: -15, y: -4, z: -15}}
+                    position={{x: -15, y: -4, z: -8}}
                     scale={{x: 4, y: 4, z: 4}}
                     rotation={{x: 0, y: 40, z: 0}}
                     shadow="cast: true; receive: false"/>
