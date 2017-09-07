@@ -1,6 +1,6 @@
 import React from 'react';
 import {Entity} from "aframe-react";
-import {deselectCurrentMode, getCurrentlySelectedTexture, selectCurrentModel} from "./redux/game_state";
+import {deselectCurrentMode, getCurrentlySelectedTexture, getCurrentlySelectedModel, selectCurrentModel} from "./redux/game_state";
 import {connectExit, disconnectExits} from "./redux/neon_state";
 
 
@@ -8,38 +8,44 @@ export const ROCKS = {
     "#sun": {
         texture: '#sunTexture',
         position: {x: 0, y: 0, z: 0},
-        visible: true,
-        selectable: true
+        visible: false,
+        selectable: true,
+        model: "",
     },
     "#sticks": {
         texture: '#sticksTexture',
         position: {x: 0.55, y: 0, z: 0},
-        visible: true,
-        selectable: true
+        visible: false,
+        selectable: true,
+        model: "",
     },
     "fog": {
         texture: '#fogTexture',
         position: {x: 1.1, y: 0, z: 0},
-        visible: true,
-        selectable: true
+        visible: false,
+        selectable: true,
+        model: "",
     },
     "fence": {
         texture: '#fenceTexture',
         position: {x: 0, y: 0, z: 0.6},
-        visible: true,
-        selectable: true
+        visible: false,
+        selectable: true,
+        model: "",
     },
     "eye": {
         texture: '#eyeTexture',
         position: {x: 0.55, y: 0, z: 0.6},
-        visible: true,
-        selectable: true
+        visible: false,
+        selectable: true,
+        model: "",
     },
     "birds": {
         texture: '#birdsTexture',
         position: {x: 1.1, y: 0, z: 0.6},
-        visible: true,
-        selectable: true
+        visible: false,
+        selectable: true,
+        model: "",
     }
 };
 
@@ -81,12 +87,12 @@ export default class Playground extends React.Component {
         let fields = this.state.fields;
         var fieldModel = fields[name];
         //Check if model is selected in game state
-        let selectedModel = getCurrentlySelectedTexture(el);
+        let selectedTexture = getCurrentlySelectedTexture(el);
         let isDirty = false;
         if (fieldModel.selectable) {
-            if (selectedModel) {
-                console.log("Placing: " + selectedModel);
-                fieldModel.model = selectedModel;
+            if (selectedTexture) {
+                console.log("Placing: " + selectedTexture);
+                fieldModel.modelSrc = selectedTexture;
                 fieldModel.visible = true;
                 deselectCurrentMode(el);
                 isDirty = true;
@@ -94,7 +100,7 @@ export default class Playground extends React.Component {
                 let model = fieldModel.model;
                 //Pickup model
                 console.log("Picking up: " + model);
-                fieldModel.model = "";
+                fieldModel.modelSrc = "";
                 fieldModel.visible = false;
                 selectCurrentModel(el, model);
                 isDirty = true;
@@ -106,7 +112,7 @@ export default class Playground extends React.Component {
                     fields: fields
                 });
 
-                this.checkExitsConnect(el);
+               // this.checkExitsConnect(el);
             }
         }
     }
@@ -171,6 +177,7 @@ export default class Playground extends React.Component {
         )
     }
 }
+const scaleFactor = 0.04;
 
 class Rock extends React.Component {
     constructor(props) {
@@ -182,9 +189,10 @@ class Rock extends React.Component {
     }
 
     render() {
+        let {visible, ...other} = this.props;
         return (
             <Entity
-                {...this.props}
+                {...other}
 
                 id={this.props.src}
                 hoverable
@@ -208,6 +216,22 @@ class Rock extends React.Component {
                     rotation="90 0 0"
                     scale="0.4 0.4 1"
                     src={this.props.src}/>
+
+                {<Entity
+                    visible={visible}>
+                    <Entity id="model"
+                        scale={{x: scaleFactor, y: scaleFactor, z: scaleFactor}}
+                        rotation={{x: 0.0, y: 0.0, z: -90.0}}
+                        position={{x: 0.0, y: 0.0, z: -0.25}}
+                        collada-model="#rockDisk"    
+                        />
+                    <a-image
+                        position="0 0.15 0"
+                        rotation="90 0 0"
+                        scale="0.4 0.4 1"
+                        src={this.props.modelSrc}/>
+                    </Entity>
+                }
             </Entity>
         )
     }
