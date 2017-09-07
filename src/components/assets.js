@@ -37,12 +37,12 @@ export default class Assets extends React.Component {
                 <audio id="birdSound" src={birdSoundUrl}/>
 
                 {/* textures */}
-                <img id="birdsTexture" src={birdsImageUrl}/>
-                <img id="sunTexture" src={sunImageUrl}/>
-                <img id="fenceTexture" src={fenceImageUrl}/>
-                <img id="sticksTexture" src={sticksImageUrl}/>
-                <img id="fogTexture" src={mistImageUrl}/>
-                <img id="eyeTexture" src={eyeImageUrl}/>
+                <img id="birdsTexture" alt="birdsTexture" src={birdsImageUrl}/>
+                <img id="sunTexture" alt="sunTexture" src={sunImageUrl}/>
+                <img id="fenceTexture"  alt="fenceTexture" src={fenceImageUrl}/>
+                <img id="sticksTexture" alt="sticksTexture" src={sticksImageUrl}/>
+                <img id="fogTexture" alt="fogTexture" src={mistImageUrl}/>
+                <img id="eyeTexture" alt="eyeTexture" src={eyeImageUrl}/>
             </a-assets>
         );
     }
