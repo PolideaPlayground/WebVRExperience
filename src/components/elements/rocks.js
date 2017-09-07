@@ -2,7 +2,7 @@ import {Entity} from "aframe-react";
 import React from 'react';
 import {selectCurrentModel} from "../redux/game_state";
 
-export const ROCKS = {
+export const DISKS = {
     "#sun": {
         position: {x: -0.6, y: 0.2, z: -0.5},
         model: "#rockButton",
@@ -59,7 +59,7 @@ export default class Rocks extends React.Component {
         super(props);
 
         this.state = {
-            fields: ROCKS
+            fields: DISKS
         };
     }
 

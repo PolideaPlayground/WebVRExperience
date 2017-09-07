@@ -1,40 +1,39 @@
 import React from 'react';
 import {Entity} from "aframe-react";
 import {deselectCurrentMode, getCurrentlySelectedModel, selectCurrentModel} from "./redux/game_state";
-import {ROCKS} from "./elements/rocks";
 import {connectExit, disconnectExits} from "./redux/neon_state";
 
 
-export const DISKS = {
+export const ROCKS = {
     "#sun": {
         texture: '#sunTexture',
-        position: {x:0, y:0, z:0},
-        visibla: true
+        position: {x: 0, y: 0, z: 0},
+        visible: true
     },
     "#sticks": {
         texture: '#sticksTexture',
-        position: {x:1, y:0, z:0},
-        visibla: true
+        position: {x: 1, y: 0, z: 0},
+        visible: true
     },
     "mist": {
         texture: '#mistTexture',
-        position: {x:2, y:0, z:0},
-        visibla: true
+        position: {x: 2, y: 0, z: 0},
+        visible: true
     },
     "fence": {
         texture: '#fenceTexture',
-        position: {x:0, y:1, z:0},
-        visibla: true
+        position: {x: 0, y: 0, z: 1},
+        visible: true
     },
     "eye": {
         texture: '#eyeTexture',
-        position: {x:1, y:1, z:0},
-        visibla: true
+        position: {x: 1, y: 0, z: 1},
+        visible: true
     },
     "birds": {
         texture: '#birdsTexture',
-        position: {x:2, y:1, z:0},
-        visibla: true
+        position: {x: 2, y: 0, z: 1},
+        visible: true
     }
 };
 
@@ -42,51 +41,32 @@ export default class Playground extends React.Component {
     constructor(props) {
         super(props);
 
-
-        // let p = {x: 1.0, y: 1.0, z: 0};
-        // let fields = [];
-        // let dimensionX = this.props.dimX;
-        // let dimensionY = this.props.dimY;
-        // for (let x = 0; x < dimensionX; x++) {
-        //     let column = [];
-        //     for (let y = 0; y < dimensionY; y++) {
-        //         let fieldModel = {
-        //             id_x: x,
-        //             id_y: y,
-        //             position: {x: p.x + x, y: p.y + y, z: p.z},
-        //             model: "",
-        //             visible: false,
-        //             selectable: true
-        //         };
-        //         column.push(fieldModel);
-        //     }
-        //     fields.push(column);
-        // }
-
         this.state = {
-            fields: DISKS
+            fields: ROCKS
         };
 
         this.onDiskChange = this.onDiskChange.bind(this);
     }
 
-    createAllDisks() {
+    createAllDisks(callback) {
         return Object.entries(this.state.fields).map((field) => {
-            return this.createDisk(field[0], field[1]);
+            return this.createDisk(field[0], field[1], callback);
         })
     }
 
     createDisk(name, data, callback) {
-        return <Disk key={name}
-                     src={data.texture}
-                     hovered_field={
-                         {
-                             position_down: {x: data.position.x, y: data.position.y, z: data.position.z - 0.15},
-                             position_up: {x: data.position.x, y: data.position.y, z: data.position.z}
-                         }
-                     }
-                     visible={data.visible}
-                     onFieldClicked={callback}
+        return <Rock
+            key={name}
+            src={data.texture}
+            hovered_field={
+                {
+                    position_down: {x: data.position.x, y: data.position.y, z: data.position.z - 0.15},
+                    position_up: {x: data.position.x, y: data.position.y, z: data.position.z}
+                }
+            }
+            visible={data.visible}
+            onFieldClicked={callback}
+            possition={data.position}
         />
     }
 
@@ -169,22 +149,6 @@ export default class Playground extends React.Component {
         }
     }
 
-    renderDisk(field, clickCallback) {
-        return <Disk key={`${field.id_x}${field.id_y}`}
-                     id_x={field.id_x}
-                     id_y={field.id_y}
-                     position={field.position}
-                     hovered_field={
-                         {
-                             position_down: {x: field.position.x, y: field.position.y, z: field.position.z - 0.15},
-                             position_up: {x: field.position.x, y: field.position.y, z: field.position.z}
-                         }
-                     }
-                     model={field.model}
-                     visible={field.visible}
-                     onFieldClicked={clickCallback}
-        />;
-    }
 
     render() {
         return (
@@ -192,19 +156,17 @@ export default class Playground extends React.Component {
                     className="fields"
                     shadow="receive: false">
                 <Desktop/>
-                {
-                    this.createAllDisks()
-                    // this.state.fields.map(
-                    //     (columns) => columns.map((field) => this.renderDisk(field, this.onDiskChange)))
-                }
+                <Entity position={{x: 0, y: 2, z: 0}}>
+                    {
+                        this.createAllDisks(this.onDiskChange)
+                    }
+                </Entity>
             </Entity>
         )
     }
 }
 
-const scaleFactor = 0.04;
-
-class Disk extends React.Component {
+class Rock extends React.Component {
     constructor(props) {
         super(props);
 
@@ -215,15 +177,13 @@ class Disk extends React.Component {
     }
 
     render() {
-        let {visible, ...other} = this.props;
-
         return (
-            <Entity {...other}
-                    mixin='cube'
+            <Entity position={this.props.position}
+                    src={this.props.src}
+                    id={this.props.src}
                     hoverable
-                    geometry={{width: 1, height: 1, depth: 0.4}}
-                    sound="src: #rockSound; on: fusing"
                     collada-model="#rockButton"
+                    sound="src: #rockSound; on: fusing"
                     className="field intersectable"
                     shadow="receive: false"
                     events={{
@@ -232,14 +192,7 @@ class Disk extends React.Component {
                             this.props.onFieldClicked(el, this.state.id_x, this.state.id_y);
                         }
                     }}
-            >
-                {<Entity id="model"
-                         visible={visible}
-                         scale={{x: scaleFactor, y: scaleFactor, z: scaleFactor}}
-                         rotation={{x: 0.0, y: 0.0, z: -90.0}}
-                         position={{x: 0.0, y: 0.0, z: -0.25}}
-                         collada-model={this.props.model}/>}
-            </Entity>
+            />
         )
     }
 
@@ -250,9 +203,6 @@ class Desktop extends React.Component {
         return <Entity
             {...this.props}
             id="Desktop"
-            // rotation={{x: 90, y: 0, z: 0}}
-            // position={this.props.pos}
-
             collada-model="#rockDesktop"/>
     }
 }
