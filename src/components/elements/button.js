@@ -9,7 +9,7 @@ export default class Button extends React.Component {
                        events={{
                            click: (element) => {
                                let el = element.target;
-                               return toggleBackground(el, this.props.reqState)
+                               return toggleBackground(el, this.props.mode)
                            }
                        }}/>
     }

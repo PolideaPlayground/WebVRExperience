@@ -15,6 +15,8 @@ import "./components/properties/hovered_menu_item";
 import "./components/shaders/glitch_shader";
 import "./components/shaders/glitch_component";
 
+import "./components/extras/birds";
+
 class VRScene extends React.Component {
     render() {
         return (
@@ -25,6 +27,7 @@ class VRScene extends React.Component {
                 material={{
                     color: "#031128"
                 }}
+                birds
                 fog="density: 0.02; far: 40; color: #4e4b55; near: 0; type: exponential"
                 redux-bind="backgroundSelected.fog: fog"
                 redux="reducers: modelSelected, backgroundSelected"

@@ -1,5 +1,6 @@
 import {Entity} from "aframe-react";
 import React from "react";
+
 const scaleFactor = 0.05;
 
 export default class Controlers extends React.Component {
