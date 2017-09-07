@@ -37,7 +37,7 @@ export default class View extends React.Component {
                     }}
                 />
 
-                <Sound id="BackgroundSound" sound={{src: "#nightSound", autoplay: "true"}}/>
+                <Sound id="BackgroundSound"/>
                 <Windmill
                     position={{x: -15, y: -4, z: -15}}
                     scale={{x: 4, y: 4, z: 4}}
