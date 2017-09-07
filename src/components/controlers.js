@@ -1,7 +1,7 @@
 import {Entity} from "aframe-react";
 import React from "react";
 
-const scaleFactor = 0.05;
+const scaleFactor = 1;
 
 export default class Controlers extends React.Component {
     constructor(props) {
@@ -60,11 +60,16 @@ export default class Controlers extends React.Component {
         let selectedModel = (
             <Entity id="model"
                     position={{x: 0.0, y: 0.0, z: -2.4}}
-                    redux-bind="modelSelected.visible: visible">
+                    redux-bind="diskSelected.visible: visible">
                 <Entity
                     scale={{x: scaleFactor, y: scaleFactor, z: scaleFactor}}
-                    rotation={{x: 0, y: 0, z: -90}}
-                    redux-bind="modelSelected.model: collada-model"/>
+                    rotation={{x: 90, y: 0, z: 0}}
+                    collada-model="#rockDisk"/>
+                <a-image
+                    position="0 0 0.15"
+                    scale="0.5 0.5 1"
+                    redux-bind="diskSelected.texture: src"
+                    />
             </Entity>);
 
         return (

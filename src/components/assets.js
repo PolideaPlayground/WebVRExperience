@@ -41,7 +41,7 @@ export default class Assets extends React.Component {
                 <img id="sunTexture" src={sunImageUrl}/>
                 <img id="fenceTexture" src={fenceImageUrl}/>
                 <img id="sticksTexture" src={sticksImageUrl}/>
-                <img id="mistTexture" src={mistImageUrl}/>
+                <img id="fogTexture" src={mistImageUrl}/>
                 <img id="eyeTexture" src={eyeImageUrl}/>
             </a-assets>
         );

@@ -1,7 +1,7 @@
 import React from 'react';
 import {Entity} from "aframe-react";
 import {deselectCurrentMode, getCurrentlySelectedModel, selectCurrentModel} from "./redux/game_state";
-import {ROCKS} from "./elements/rocks";
+import {ROCKS} from "./elements/disks";
 import {connectExit, disconnectExits} from "./redux/neon_state";
 
 

@@ -30,7 +30,7 @@ class VRScene extends React.Component {
                 birds
                 fog="density: 0.02; far: 40; color: #4e4b55; near: 0; type: exponential"
                 redux-bind="backgroundSelected.fog: fog"
-                redux="reducers: modelSelected, backgroundSelected"
+                redux="reducers: diskSelected, backgroundSelected"
                 shadow="type: basic"
                 light="defaultLightsEnabled: false"
             >
