@@ -1,89 +1,106 @@
-import "aframe-redux-component";
+import "aframe-state-component";
 import * as AFRAME from "aframe";
 
-const fogDay = 'density: 0.06; far: 40; color: #ababab; near: 0; type: exponential';
-const fogNight = 'density: 0.06; far: 40; color: #4e4b55; near: 0; type: exponential';
-const noFog = 'density: 0; far: 40; type: exponential; color: #ababab; near: 0';
-const nightBackground = '#000';
-const dayBackground = '#FFB';
-const nightSound = 'src: #nightSound; autoplay: true';
-const daySound = 'src: #birdSound; autoplay: true';
-AFRAME.registerReducer('backgroundSelected', {
-    actions: {
-        FOG_ENABLED: 'FOG_ENABLED',
-        NIGHT_ENABLED: 'NIGHT_ENABLED'
-    },
+const FOGDAY = 'density: 0.06; far: 40; color: #ababab; near: 0; type: exponential';
+const FOGNIGHT = 'density: 0.06; far: 40; color: #4e4b55; near: 0; type: exponential';
+const NOFOG = 'density: 0; far: 40; type: exponential; color: #ababab; near: 0';
+const NIGHTBACKGROUND = '#000';
+const DAYBACKGROUND = '#FFB';
+const NIGHTSOUND = 'src: #nightSound; autoplay: true';
+const DAYSOUND = 'src: #birdSound; autoplay: true';
+const NOBIRDS = 'attach: false';
+const WITHBIRDS = 'attach: true';
+
+AFRAME.registerReducer('environment', {
     initialState: {
-        color: nightBackground,
+        color: NIGHTBACKGROUND,
         fogState: true,
         nightState: true,
-        sound: nightSound,
-        fog: fogNight,
-        backgroundCurrentState: 'FOG_ENABLED'
+        lightIntensity: 0.4,
+        birds: NOBIRDS,
+        sound: NIGHTSOUND,
+        fog: FOGNIGHT,
     },
-    reducer: function (state, action) {
-        state = state || this.initialState;
-
-        console.log("reducer");
-        switch (action.type) {
-            case this.actions.FOG_ENABLED: {
-                return toggleFog(state)
-            }
-            case this.actions.NIGHT_ENABLED: {
-                return toggleNight(state)
-            }
-            default: {
-                return state
-            }
-        }
+    handlers: {
+        FOG_ENABLED: function (state, action) {
+            state = state || this.initialState;
+            return changeFog(state, action.enabled);
+        },
+        NIGHT_ENABLED: function (state, action) {
+            state = state || this.initialState;
+            return changeNight(state, action.enabled);
+        },
+        BIRDS_ENABLED: function (state, action) {
+            state = state || this.initialState;
+            let newState = Object.assign({}, state);
+            newState.birds = action.enabled ? WITHBIRDS : NOBIRDS;
+            return newState;
+        },
     }
 });
 
 
-function toggleFog(state) {
-    let newState;
-    newState = Object.assign({}, state);
-    console.log(state);
-    if (state.fogState === true) {
+function changeFog(state, enabled) {
+    let newState = Object.assign({}, state);
+    if (!enabled) {
         console.log("Turn off fog");
         newState.fogState = false;
-        newState.color = (state.nightState && nightBackground) || dayBackground;
-        newState.fog = noFog;
-        newState.sound = (state.nightState && nightSound) || daySound;
+        newState.color = (state.nightState && NIGHTBACKGROUND) || DAYBACKGROUND;
+        newState.fog = NOFOG;
+        newState.sound = (state.nightState && NIGHTSOUND) || DAYSOUND;
     } else {
         console.log("Turn on fog");
         newState.fogState = true;
-        newState.color = (state.nightState && nightBackground) || dayBackground;
-        newState.fog = (state.nightState && fogNight) || fogDay;
-        newState.sound = (state.nightState && nightSound) || daySound;
+        newState.color = (state.nightState && NIGHTBACKGROUND) || DAYBACKGROUND;
+        newState.fog = (state.nightState && FOGNIGHT) || FOGDAY;
+        newState.sound = (state.nightState && NIGHTSOUND) || DAYSOUND;
     }
     return newState;
 }
 
-function toggleNight(state) {
+function changeNight(state, enabled) {
     let newState = Object.assign({}, state);
-    console.log(state);
-    if (state.nightState === true) {
-        console.log("Turn off night");
+    if (!enabled) {
+        console.log("Turn on day");
         newState.nightState = false;
-        newState.color = dayBackground;
-        newState.fog = (state.fogState && fogDay) || noFog;
-        newState.sound = daySound;
+        newState.lightIntensity = 1.4;
+        newState.color = DAYBACKGROUND;
+        newState.fog = (state.fogState && FOGDAY) || NOFOG;
+        newState.sound = DAYSOUND;
 
     } else {
         console.log("Turn on night");
         newState.nightState = true;
-        newState.color = nightBackground;
-        newState.fog = (state.fogState && fogNight) || noFog;
-        newState.sound = nightSound;
+        newState.lightIntensity = 0.4;
+        newState.color = NIGHTBACKGROUND;
+        newState.fog = (state.fogState && FOGNIGHT) || NOFOG;
+        newState.sound = NIGHTSOUND;
     }
     return newState;
 }
 
-export function toggleBackground(element, mode) {
+export function toggleNight(element, enabled) {
 
     let action = {
-        type: mode
+        type: "NIGHT_ENABLED",
+        enabled: enabled
     };
-    element.sceneEl.systems.redux.store.dispatch(action);
+    element.sceneEl.systems.state.store.dispatch(action);
+}
+
+export function toggleFog(element, enabled) {
+
+    let action = {
+        enabled: enabled
+    };
+    element.sceneEl.emit("FOG_ENABLED", action);
+}
+
+export function toggleBirds(element, enabled) {
+
+    let action = {
+        type: "BIRDS_ENABLED",
+        enabled: enabled
+    };
+    element.sceneEl.systems.state.store.dispatch(action);
 }

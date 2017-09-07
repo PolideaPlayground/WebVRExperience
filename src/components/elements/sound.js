@@ -1,7 +1,7 @@
 import {Entity} from "aframe-react";
 import React from "react";
 
-export default class Sound extends React.Component {
+export default class EnvironmentSound extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -12,6 +12,6 @@ export default class Sound extends React.Component {
     render() {
         return <Entity {...this.props}
                          sound={this.state.sound}
-                         redux-bind="backgroundSelected.sound: sound"/>
+                         bind__sound="environment.sound"/>
     }
 }

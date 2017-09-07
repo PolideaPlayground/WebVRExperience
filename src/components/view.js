@@ -1,13 +1,12 @@
 import {Entity} from "aframe-react";
 import React from "react";
 
-import Playground from "./playground";
+import StoneGame from "./elements/stone_game";
 import Windmill from "./elements/windmill";
-import Wires from "./elements/wires";
-import Sound from "./elements/sound";
+import Rocks from "./elements/menu_disks";
+import EnvironmentSound from "./elements/sound";
 import Background from "./elements/background";
 import Sky from "./elements/sky";
-import Button from "./elements/button";
 
 export default class View extends React.Component {
     render() {
@@ -16,18 +15,18 @@ export default class View extends React.Component {
                 <Sky id={"Sky"} ref={"Sky"} color="#4e4b55"/>
 
                 <Entity
+                    bind__light="intensity: environment.lightIntensity"
                     light={{
                         type: "directional",
-                        intensity: 1.4,
                         castShadow: true,
                         shadowCameraTop: 35,
                         shadowCameraRight: 35,
-                        shadowCameraBotton: -35,
+                        shadowCameraBottom: -35,
                         shadowCameraLeft: -35,
                         shadowMapWidth: 1024,
                         shadowMapHeight: 1024,
                     }}
-                    position={{x: 0, y: 40, z: 50}}
+                    position={{x: 0, y: 140, z: 80}}
 
                 />
                 <Entity
@@ -37,24 +36,22 @@ export default class View extends React.Component {
                     }}
                 />
 
-                <Sound id="BackgroundSound"/>
+                <EnvironmentSound id="envSound"/>
                 <Windmill
-                    position={{x: -15, y: -4, z: -15}}
+                    position={{x: -20, y: -3, z: 80}}
                     scale={{x: 4, y: 4, z: 4}}
-                    rotation={{x: 0, y: 40, z: 0}}
+                    rotation={{x: 0, y: 120, z: 0}}
                     shadow="cast: true; receive: false"/>
 
-                <Button id={"fogButton"} position="-1 1 -2" className="intersectable" color={"blue"} mode={'FOG_ENABLED'}/>
-                <Button id={"nightButton"} position="0 1 -2" className="intersectable" color={"green"} mode={'NIGHT_ENABLED'}/>
-
-                <Playground dim={3}
-                            position={{x: -2.5, y: 1, z: -6}}
-                            rotation={{x: -55, y: 0, z: 0}}
-                            shadow="cast: true"
+                <StoneGame dimX={3}
+                           dimY={2}
+                           position={{x: 0, y: 1, z: -4}}
+                           rotation={{x: 27.5, y: 0, z: 0}}
+                           shadow="cast: true"
                 />
 
-                <Wires id='menu'
-                       position={{x: 3.5, y: 5, z: -7}}
+                <Rocks id='menu'
+                       position={{x: 3.5, y: 4, z: -4.5}}
                        rotation={{x: -0, y: -30, z: 0}}
                 />
 

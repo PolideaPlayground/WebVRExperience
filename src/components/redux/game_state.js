@@ -1,56 +1,41 @@
-import "aframe-redux-component";
 import * as AFRAME from "aframe";
 
-AFRAME.registerReducer('modelSelected', {
-    actions: {
-        MODE_SELECTED: 'MODEL_SELECTED',
-        MODE_DESELECTED: 'MODEL_DESELECTED'
-    },
+AFRAME.registerReducer('gameState', {
     initialState: {
-        model: "",
-        visible: false,
+        selected_texture: "",
+        disk_visible: false,
     },
-    reducer: function (state, action) {
-        state = state || this.initialState;
-        let newState;
-        switch (action.type) {
-            case this.actions.MODE_SELECTED: {
-                newState = Object.assign({}, state);
-                newState.model = action.model;
-                newState.visible = true;
-                return newState;
-            }
-            case this.actions.MODE_DESELECTED: {
-                newState = Object.assign({}, state);
-                newState.model = "";
-                newState.visible = false;
-                return newState;
-            }
-            default: {
-                return state;
-            }
-        }
+    handlers: {
+        DISK_SELECTED: function (state, action) {
+            state = state || this.initialState;
+            let newState = Object.assign({}, state);
+            newState.selected_texture = action.texture;
+            newState.disk_visible = true;
+            return newState;
+        },
+        DISK_DESELECTED: function (state, action) {
+            state = state || this.initialState;
+            let newState = Object.assign({}, state);
+            newState.selected_texture = "";
+            newState.disk_visible = false;
+            return newState;
+        },
     }
 
 
 });
 
-export function getCurrentlySelectedModel(element) {
-    return element.sceneEl.systems.redux.store.getState().modelSelected.model;
+export function getCurrentlySelectedDisk(element) {
+    return element.sceneEl.systems.state.store.getState().gameState.selected_texture;
 }
 
-export function selectCurrentModel(element, value) {
-    let action = {
-        type: "MODEL_SELECTED",
-        model: value
-    };
-    element.sceneEl.systems.redux.store.dispatch(action);
+export function selectCurrentDisk(element, value) {
+    element.sceneEl.emit("DISK_SELECTED", {texture: value});
 }
 
-export function deselectCurrentMode(element) {
+export function deselectCurrentDisk(element) {
     let action = {
-        type: "MODEL_DESELECTED",
-        model: ""
+        texture: ""
     };
-    element.sceneEl.systems.redux.store.dispatch(action);
+    element.sceneEl.emit("DISK_DESELECTED", action);
 }
