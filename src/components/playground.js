@@ -1,51 +1,43 @@
 import React from 'react';
 import {Entity} from "aframe-react";
-import {deselectCurrentMode, getCurrentlySelectedTexture, getCurrentlySelectedModel, selectCurrentModel} from "./redux/game_state";
-import {connectExit, disconnectExits} from "./redux/neon_state";
+import {
+    deselectCurrentModel,
+    getCurrentlySelectedTexture,
+    selectCurrentModel
+} from "./redux/game_state";
+import {toggleBirds, toggleFog, toggleNight} from "./redux/environment_state";
 
 
 export const ROCKS = {
     "#sun": {
         texture: '#sunTexture',
         position: {x: 0, y: 0, z: 0},
-        visible: false,
-        selectable: true,
-        model: "",
+        placed: false,
     },
     "#sticks": {
         texture: '#sticksTexture',
         position: {x: 0.55, y: 0, z: 0},
-        visible: false,
-        selectable: true,
-        model: "",
+        placed: false,
     },
-    "fog": {
+    "#fog": {
         texture: '#fogTexture',
         position: {x: 1.1, y: 0, z: 0},
-        visible: false,
-        selectable: true,
-        model: "",
+        placed: true,
     },
-    "fence": {
+    "#fence": {
         texture: '#fenceTexture',
         position: {x: 0, y: 0, z: 0.6},
-        visible: false,
-        selectable: true,
-        model: "",
+        placed: false,
     },
-    "eye": {
+    "#eye": {
         texture: '#eyeTexture',
         position: {x: 0.55, y: 0, z: 0.6},
-        visible: false,
-        selectable: true,
-        model: "",
+        placed: false,
     },
-    "birds": {
+    "#birds": {
         texture: '#birdsTexture',
         position: {x: 1.1, y: 0, z: 0.6},
-        visible: false,
-        selectable: true,
-        model: "",
+        placed: false,
     }
 };
 
@@ -77,7 +69,7 @@ export default class Playground extends React.Component {
                     position_up: {x: data.position.x, y: data.position.y, z: data.position.z}
                 }
             }
-            visible={data.visible}
+            placed={data.placed}
             onFieldClicked={callback}
             position={data.position}
         />
@@ -85,89 +77,65 @@ export default class Playground extends React.Component {
 
     onDiskChange(el, name) {
         let fields = this.state.fields;
-        var fieldModel = fields[name];
+        let fieldModel = fields[name];
+
         //Check if model is selected in game state
         let selectedTexture = getCurrentlySelectedTexture(el);
         let isDirty = false;
-        if (fieldModel.selectable) {
-            if (selectedTexture) {
-                console.log("Placing: " + selectedTexture);
-                fieldModel.modelSrc = selectedTexture;
-                fieldModel.visible = true;
-                deselectCurrentMode(el);
-                isDirty = true;
-            } else if (fieldModel.model) {
-                let model = fieldModel.model;
-                //Pickup model
-                console.log("Picking up: " + model);
-                fieldModel.modelSrc = "";
-                fieldModel.visible = false;
-                selectCurrentModel(el, model);
-                isDirty = true;
-            }
+        if (selectedTexture && fieldModel.texture === selectedTexture) {
+            console.log("Placing: " + selectedTexture);
+            fieldModel.placed = true;
+            deselectCurrentModel(el);
+            isDirty = true;
+        } else if (fieldModel.placed) {
+            let texture = fieldModel.texture;
+            //Pickup model
+            console.log("Picking up: " + texture);
+            fieldModel.placed = false;
+            selectCurrentModel(el, texture);
+            isDirty = true;
+        }
 
-            if (isDirty) {
-                fields[name] = fieldModel;
-                this.setState({
-                    fields: fields
-                });
+        if (isDirty) {
+            fields[name] = fieldModel;
+            this.setState({
+                fields: fields
+            });
 
-               // this.checkExitsConnect(el);
-            }
+            this.enableDisableEffects(el);
         }
     }
 
-    checkExitsConnect(el) {
-        disconnectExits(el);
-        return this.checkConnection(el, 1, 0) || this.checkConnection(el, 0, 1);
-    }
 
-    checkConnection(el, startIdx, startIdy) {
-        let exitIndex = this.props.dim - 1;
-        if (startIdy === exitIndex) {
-            console.log(`Connected ${startIdx}, ${startIdy}`);
-            if (startIdx === 0) {
-                connectExit(el, "exit1");
-            } else if (startIdx === exitIndex) {
-                connectExit(el, "exit2");
-            }
-            return true;
+    enableDisableEffects(element) {
+        if (this.state.fields["#fog"].placed) {
+            toggleFog(element, true);
         } else {
-            let fields = this.state.fields;
-            console.log(`${startIdx}, ${startIdy}`);
-            let currentField = fields[startIdx][startIdy];
-            let connected = false;
-            console.log(currentField.model);
-            if (currentField.model) {
-                if (ROCKS[currentField.model].exit_up) {
-                    let nextField = fields[startIdx][startIdy + 1];
-                    if (nextField.model) {
-                        if (ROCKS[nextField.model].start_down) {
-                            connected = this.checkConnection(el, startIdx, startIdy + 1);
-                        }
-                    }
-                }
-                if (ROCKS[currentField.model].exit_right) {
-                    let nextField = fields[startIdx + 1][startIdy];
-                    if (nextField.model) {
-                        if (ROCKS[nextField.model].start_left) {
-                            connected = connected || this.checkConnection(el, startIdx + 1, startIdy);
-                        }
-                    }
-                }
-            }
+            toggleFog(element, false);
+        }
 
-            return connected;
+        if (this.state.fields["#sun"].placed) {
+            toggleNight(element, false);
+        } else {
+            toggleNight(element, true);
+        }
+
+        if (this.state.fields["#birds"].placed) {
+            toggleBirds(element, true);
+        } else {
+            toggleBirds(element, false);
         }
     }
-
 
     render() {
         return (
             <Entity {...this.props}
+                    id="stonePlayground"
                     className="fields"
                     shadow="receive: false">
-                <Desktop/>
+                <Entity
+                    collada-model="#rockDesktop"/>
+
                 <Entity position={{x: -0.55, y: 0.5, z: -0.2}}>
                     {
                         this.createAllRocks(this.onDiskChange)
@@ -177,7 +145,7 @@ export default class Playground extends React.Component {
         )
     }
 }
-const scaleFactor = 0.04;
+const scaleFactor = 1;
 
 class Rock extends React.Component {
     constructor(props) {
@@ -189,11 +157,9 @@ class Rock extends React.Component {
     }
 
     render() {
-        let {visible, ...other} = this.props;
         return (
             <Entity
-                {...other}
-
+                {...this.props}
                 id={this.props.src}
                 hoverable
                 sound="src: #rockSound; on: fusing"
@@ -217,32 +183,20 @@ class Rock extends React.Component {
                     scale="0.4 0.4 1"
                     src={this.props.src}/>
 
-                {<Entity
-                    visible={visible}>
+                <Entity
+                    visible={this.props.placed}
+                    position={{x: 0.0, y: 0.2, z: 0.}}>
                     <Entity id="model"
-                        scale={{x: scaleFactor, y: scaleFactor, z: scaleFactor}}
-                        rotation={{x: 0.0, y: 0.0, z: -90.0}}
-                        position={{x: 0.0, y: 0.0, z: -0.25}}
-                        collada-model="#rockDisk"    
-                        />
+                            scale={{x: scaleFactor, y: scaleFactor, z: scaleFactor}}
+                            collada-model="#rockDisk"/>
                     <a-image
                         position="0 0.15 0"
                         rotation="90 0 0"
                         scale="0.4 0.4 1"
-                        src={this.props.modelSrc}/>
-                    </Entity>
-                }
+                        src={this.props.src}/>
+                </Entity>
             </Entity>
         )
     }
 
-}
-
-class Desktop extends React.Component {
-    render() {
-        return <Entity
-            {...this.props}
-            id="Desktop"
-            collada-model="#rockDesktop"/>
-    }
 }

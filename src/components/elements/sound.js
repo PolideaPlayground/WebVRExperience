@@ -12,6 +12,6 @@ export default class Sound extends React.Component {
     render() {
         return <Entity {...this.props}
                          sound={this.state.sound}
-                         redux-bind="backgroundSelected.sound: sound"/>
+                         bind__sound="environment.sound"/>
     }
 }

@@ -30,23 +30,17 @@ export default class Rocks extends React.Component {
         };
     }
 
-    onMenuItemClicked(el, model) {
-        //Pickup model
-        console.log("Picking up: " + model);
-        selectCurrentModel(el, model);
+    createRock(field) {
+        return <Rock key={field.texture}
+                     position={field.position}
+                     texture={field.texture}
+                     onMenuItemClicked={Rock.onMenuItemClicked}/>
     }
 
     createAllRocks(fields) {
         return Object.entries(fields).map((field) => {
             return this.createRock(field[1]);
         })
-    }
-
-    createRock(field) {
-        return <Rock key={field.texture}
-                     position={field.position}
-                     texture={field.texture}
-                     onMenuItemClicked={this.onMenuItemClicked}/>
     }
 
     render() {
@@ -70,6 +64,12 @@ class Rock extends React.Component {
         }
     }
 
+    static onMenuItemClicked(el, model) {
+        //Pickup model
+        console.log("Picking up: " + model);
+        selectCurrentModel(el, model);
+    }
+
     render() {
         return <Entity className="item intersectable"
                        hoverable hovered_menu_item
@@ -79,8 +79,7 @@ class Rock extends React.Component {
                        events={{
                            click: (evt) => {
                                let el = evt.target;
-                               console.log('clicked')
-                               this.props.onMenuItemClicked(el, this.state.texture)
+                               Rock.onMenuItemClicked(el, this.state.texture)
                            }
                        }}>
             <Entity scale={{x: scaleFactor, y: scaleFactor, z: scaleFactor}}

@@ -1,7 +1,9 @@
-import * as AFRAME from "aframe";
+import "aframe";
 import "aframe-particle-system-component";
 
 import "aframe-animation-component";
+import "aframe-state-component";
+
 import React from "react";
 import ReactDOM from "react-dom";
 import View from "./components/view";
@@ -16,6 +18,8 @@ import "./components/shaders/glitch_shader";
 import "./components/shaders/glitch_component";
 
 import "./components/extras/birds";
+import "./components/redux/environment_state";
+import "./components/redux/game_state";
 
 class VRScene extends React.Component {
     render() {
@@ -27,16 +31,14 @@ class VRScene extends React.Component {
                 material={{
                     color: "#031128"
                 }}
-                birds
-                fog="density: 0.02; far: 40; color: #4e4b55; near: 0; type: exponential"
-                redux-bind="backgroundSelected.fog: fog"
-                redux="reducers: diskSelected, backgroundSelected"
+                bind__fog="environment.fog"
+                bind__birds="environment.birds"
                 shadow="type: basic"
                 light="defaultLightsEnabled: false"
             >
                 <Assets/>
                 <Controlers/>
-                <View/>
+                <View />
             </a-scene>
         );
     }

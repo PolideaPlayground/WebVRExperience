@@ -7,7 +7,6 @@ import Rocks from "./elements/disks";
 import Sound from "./elements/sound";
 import Background from "./elements/background";
 import Sky from "./elements/sky";
-import Button from "./elements/button";
 
 export default class View extends React.Component {
     render() {
@@ -43,9 +42,6 @@ export default class View extends React.Component {
                     scale={{x: 4, y: 4, z: 4}}
                     rotation={{x: 0, y: 120, z: 0}}
                     shadow="cast: true; receive: false"/>
-
-                <Button id={"fogButton"} position="-1 1 -2" className="intersectable" color={"blue"} mode={'FOG_ENABLED'}/>
-                <Button id={"nightButton"} position="0 1 -2" className="intersectable" color={"green"} mode={'NIGHT_ENABLED'}/>
 
                 <Playground dimX={3}
                             dimY={2}
