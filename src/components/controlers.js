@@ -61,7 +61,7 @@ export default class Controlers extends React.Component {
         let selectedModel = (
             <Entity id="model"
                     position={{x: 0.0, y: 0.0, z: -2.4}}
-                    bind="visible: diskSelected.visible">
+                    bind__visible="gameState.disk_visible">
                 <Entity
                     scale={{x: scaleFactor, y: scaleFactor, z: scaleFactor}}
                     rotation={{x: 90, y: 0, z: 0}}
@@ -69,7 +69,7 @@ export default class Controlers extends React.Component {
                 <a-image
                     position="0 0 0.15"
                     scale="0.35 0.35 1"
-                    bind="src: diskSelected.texture"
+                    bind__src="gameState.selected_texture"
                     />
             </Entity>);
 

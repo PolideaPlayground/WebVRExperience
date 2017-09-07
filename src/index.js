@@ -14,9 +14,6 @@ import "./components/properties/hoverable";
 import "./components/properties/hovered_field";
 import "./components/properties/hovered_menu_item";
 
-import "./components/shaders/glitch_shader";
-import "./components/shaders/glitch_component";
-
 import "./components/extras/birds";
 import "./components/redux/environment_state";
 import "./components/redux/game_state";

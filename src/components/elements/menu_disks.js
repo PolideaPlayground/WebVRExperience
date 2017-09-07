@@ -1,6 +1,6 @@
 import {Entity} from "aframe-react";
 import React from 'react';
-import {selectCurrentModel} from "../redux/game_state";
+import {selectCurrentDisk} from "../redux/game_state";
 
 export const DISKS = {
     "#sun": {
@@ -67,7 +67,7 @@ class Rock extends React.Component {
     static onMenuItemClicked(el, model) {
         //Pickup model
         console.log("Picking up: " + model);
-        selectCurrentModel(el, model);
+        selectCurrentDisk(el, model);
     }
 
     render() {

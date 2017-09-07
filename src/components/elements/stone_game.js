@@ -1,11 +1,11 @@
 import React from 'react';
 import {Entity} from "aframe-react";
 import {
-    deselectCurrentModel,
-    getCurrentlySelectedTexture,
-    selectCurrentModel
-} from "./redux/game_state";
-import {toggleBirds, toggleFog, toggleNight} from "./redux/environment_state";
+    deselectCurrentDisk,
+    getCurrentlySelectedDisk,
+    selectCurrentDisk
+} from "../redux/game_state";
+import {toggleBirds, toggleFog, toggleNight} from "../redux/environment_state";
 
 
 export const ROCKS = {
@@ -41,7 +41,7 @@ export const ROCKS = {
     }
 };
 
-export default class Playground extends React.Component {
+export default class StoneGame extends React.Component {
     constructor(props) {
         super(props);
 
@@ -80,19 +80,19 @@ export default class Playground extends React.Component {
         let fieldModel = fields[name];
 
         //Check if model is selected in game state
-        let selectedTexture = getCurrentlySelectedTexture(el);
+        let selectedTexture = getCurrentlySelectedDisk(el);
         let isDirty = false;
         if (selectedTexture && fieldModel.texture === selectedTexture) {
             console.log("Placing: " + selectedTexture);
             fieldModel.placed = true;
-            deselectCurrentModel(el);
+            deselectCurrentDisk(el);
             isDirty = true;
         } else if (fieldModel.placed) {
             let texture = fieldModel.texture;
             //Pickup model
             console.log("Picking up: " + texture);
             fieldModel.placed = false;
-            selectCurrentModel(el, texture);
+            selectCurrentDisk(el, texture);
             isDirty = true;
         }
 
@@ -179,13 +179,14 @@ class Rock extends React.Component {
                 />
                 <a-image
                     position="0 0.15 0"
-                    rotation="90 0 0"
+                    rotation="90 180 0"
                     scale="0.4 0.4 1"
                     src={this.props.src}/>
 
                 <Entity
                     visible={this.props.placed}
-                    position={{x: 0.0, y: 0.2, z: 0.}}>
+                    rotation="0 180 0"
+                    position={{x: 0.0, y: 0.2, z: 0}}>
                     <Entity id="model"
                             scale={{x: scaleFactor, y: scaleFactor, z: scaleFactor}}
                             collada-model="#rockDisk"/>

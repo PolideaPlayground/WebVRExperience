@@ -1,23 +1,23 @@
 import * as AFRAME from "aframe";
 
-AFRAME.registerReducer('diskSelected', {
+AFRAME.registerReducer('gameState', {
     initialState: {
-        texture: "",
-        visible: false,
+        selected_texture: "",
+        disk_visible: false,
     },
     handlers: {
-        MODEL_SELECTED: function (state, action) {
+        DISK_SELECTED: function (state, action) {
             state = state || this.initialState;
             let newState = Object.assign({}, state);
-            newState.texture = action.texture;
-            newState.visible = true;
+            newState.selected_texture = action.texture;
+            newState.disk_visible = true;
             return newState;
         },
-        MODEL_DESELECTED: function (state, action) {
+        DISK_DESELECTED: function (state, action) {
             state = state || this.initialState;
             let newState = Object.assign({}, state);
-            newState.texture = "";
-            newState.visible = false;
+            newState.selected_texture = "";
+            newState.disk_visible = false;
             return newState;
         },
     }
@@ -25,17 +25,17 @@ AFRAME.registerReducer('diskSelected', {
 
 });
 
-export function getCurrentlySelectedTexture(element) {
-    return element.sceneEl.systems.state.store.getState().diskSelected.texture;
+export function getCurrentlySelectedDisk(element) {
+    return element.sceneEl.systems.state.store.getState().gameState.selected_texture;
 }
 
-export function selectCurrentModel(element, value) {
-    element.sceneEl.emit("MODEL_SELECTED", {texture: value});
+export function selectCurrentDisk(element, value) {
+    element.sceneEl.emit("DISK_SELECTED", {texture: value});
 }
 
-export function deselectCurrentModel(element) {
+export function deselectCurrentDisk(element) {
     let action = {
         texture: ""
     };
-    element.sceneEl.emit("MODEL_DESELECTED", action);
+    element.sceneEl.emit("DISK_DESELECTED", action);
 }

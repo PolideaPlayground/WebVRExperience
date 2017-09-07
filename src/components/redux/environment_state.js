@@ -16,6 +16,7 @@ AFRAME.registerReducer('environment', {
         color: NIGHTBACKGROUND,
         fogState: true,
         nightState: true,
+        lightIntensity: 0.4,
         birds: NOBIRDS,
         sound: NIGHTSOUND,
         fog: FOGNIGHT,
@@ -62,6 +63,7 @@ function changeNight(state, enabled) {
     if (!enabled) {
         console.log("Turn on day");
         newState.nightState = false;
+        newState.lightIntensity = 1.4;
         newState.color = DAYBACKGROUND;
         newState.fog = (state.fogState && FOGDAY) || NOFOG;
         newState.sound = DAYSOUND;
@@ -69,6 +71,7 @@ function changeNight(state, enabled) {
     } else {
         console.log("Turn on night");
         newState.nightState = true;
+        newState.lightIntensity = 0.4;
         newState.color = NIGHTBACKGROUND;
         newState.fog = (state.fogState && FOGNIGHT) || NOFOG;
         newState.sound = NIGHTSOUND;

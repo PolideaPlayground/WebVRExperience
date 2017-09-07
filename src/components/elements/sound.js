@@ -1,7 +1,7 @@
 import {Entity} from "aframe-react";
 import React from "react";
 
-export default class Sound extends React.Component {
+export default class EnvironmentSound extends React.Component {
     constructor(props) {
         super(props);
         this.state = {

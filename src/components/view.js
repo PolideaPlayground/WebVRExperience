@@ -1,10 +1,10 @@
 import {Entity} from "aframe-react";
 import React from "react";
 
-import Playground from "./playground";
+import StoneGame from "./elements/stone_game";
 import Windmill from "./elements/windmill";
-import Rocks from "./elements/disks";
-import Sound from "./elements/sound";
+import Rocks from "./elements/menu_disks";
+import EnvironmentSound from "./elements/sound";
 import Background from "./elements/background";
 import Sky from "./elements/sky";
 
@@ -15,9 +15,9 @@ export default class View extends React.Component {
                 <Sky id={"Sky"} ref={"Sky"} color="#4e4b55"/>
 
                 <Entity
+                    bind__light="intensity: environment.lightIntensity"
                     light={{
                         type: "directional",
-                        intensity: 1.4,
                         castShadow: true,
                         shadowCameraTop: 35,
                         shadowCameraRight: 35,
@@ -26,7 +26,7 @@ export default class View extends React.Component {
                         shadowMapWidth: 1024,
                         shadowMapHeight: 1024,
                     }}
-                    position={{x: 0, y: 40, z: 50}}
+                    position={{x: 0, y: 140, z: 80}}
 
                 />
                 <Entity
@@ -36,18 +36,18 @@ export default class View extends React.Component {
                     }}
                 />
 
-                <Sound id="BackgroundSound"/>
+                <EnvironmentSound id="envSound"/>
                 <Windmill
                     position={{x: -20, y: -3, z: 80}}
                     scale={{x: 4, y: 4, z: 4}}
                     rotation={{x: 0, y: 120, z: 0}}
                     shadow="cast: true; receive: false"/>
 
-                <Playground dimX={3}
-                            dimY={2}
-                            position={{x: 0, y: 1, z: -4}}
-                            rotation={{x: 27.5, y: 0, z: 0}}
-                            shadow="cast: true"
+                <StoneGame dimX={3}
+                           dimY={2}
+                           position={{x: 0, y: 1, z: -4}}
+                           rotation={{x: 27.5, y: 0, z: 0}}
+                           shadow="cast: true"
                 />
 
                 <Rocks id='menu'
