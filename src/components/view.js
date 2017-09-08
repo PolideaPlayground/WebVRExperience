@@ -7,6 +7,7 @@ import Rocks from "./elements/menu_disks";
 import EnvironmentSound from "./elements/sound";
 import Background from "./elements/background";
 import Sky from "./elements/sky";
+import Info from "./elements/info_plane";
 
 export default class View extends React.Component {
     render() {
@@ -43,6 +44,10 @@ export default class View extends React.Component {
                     rotation={{x: 0, y: 120, z: 0}}
                     shadow="cast: true; receive: false"/>
 
+                <Info position={{x: 3.5, y: 4, z: -4.5}}
+                      rotation={{x: -0, y: -30, z: 0}}
+                />
+
                 <StoneGame dimX={3}
                            dimY={2}
                            position={{x: 0, y: 1, z: -4}}
@@ -51,8 +56,8 @@ export default class View extends React.Component {
                 />
 
                 <Rocks id='menu'
-                       position={{x: 3.5, y: 4, z: -4.5}}
-                       rotation={{x: -0, y: -30, z: 0}}
+                       position={{x: -3.5, y: 4, z: -4.5}}
+                       rotation={{x: -0, y: 30, z: 0}}
                 />
 
                 <Background/>

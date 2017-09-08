@@ -15,6 +15,7 @@ import fenceImageUrl from "./../assets/textures/fence.png";
 import mistImageUrl from "./../assets/textures/mist.png";
 import sticksImageUrl from "./../assets/textures/sticks.png";
 import eyeImageUrl from "./../assets/textures/eye.png";
+import polideaImageUrl from "./../assets/images/logo_Polidea.png";
 
 export default class Assets extends React.Component {
     render() {
@@ -43,6 +44,10 @@ export default class Assets extends React.Component {
                 <img id="sticksTexture" alt="sticksTexture" src={sticksImageUrl}/>
                 <img id="fogTexture" alt="fogTexture" src={mistImageUrl}/>
                 <img id="eyeTexture" alt="eyeTexture" src={eyeImageUrl}/>
+
+                {/*images*/}
+                <img id="polideaImage" alt="eyeTexture" src={polideaImageUrl}/>
+
             </a-assets>
         );
     }
