@@ -46,7 +46,7 @@ export default class Assets extends React.Component {
                 <img id="eyeTexture" alt="eyeTexture" src={eyeImageUrl}/>
 
                 {/*images*/}
-                <img id="polideaImage" alt="eyeTexture" src={polideaImageUrl}/>
+                <img id="polideaImage" alt="polideaImage" src={polideaImageUrl}/>
 
             </a-assets>
         );
