@@ -6,6 +6,7 @@ import {
     selectCurrentDisk
 } from "../redux/game_state";
 import {toggleBirds, toggleFog, toggleNight} from "../redux/environment_state";
+import Instructions from "./instructions";
 
 
 export const ROCKS = {
@@ -141,6 +142,8 @@ export default class StoneGame extends React.Component {
                         this.createAllRocks(this.onDiskChange)
                     }
                 </Entity>
+
+                <Instructions/>
             </Entity>
         )
     }
