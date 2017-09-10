@@ -39,8 +39,8 @@ export default class View extends React.Component {
 
                 <EnvironmentSound id="envSound"/>
                 <Windmill
-                    position={{x: -20, y: -3, z: 80}}
-                    scale={{x: 4, y: 4, z: 4}}
+                    position={{x: -34, y: -7.2, z: 65}}
+                    scale={{x: 1, y: 1, z: 1}}
                     rotation={{x: 0, y: 120, z: 0}}
                     shadow="cast: true; receive: false"/>
 
@@ -50,7 +50,7 @@ export default class View extends React.Component {
 
                 <StoneGame dimX={3}
                            dimY={2}
-                           position={{x: 0, y: 1, z: -4}}
+                           position={{x: 0, y: 0.145, z: -4}}
                            rotation={{x: 27.5, y: 0, z: 0}}
                            shadow="cast: true"
                 />

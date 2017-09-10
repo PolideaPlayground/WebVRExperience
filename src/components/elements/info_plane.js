@@ -39,7 +39,7 @@ class About extends React.Component {
 
         parent.setAttribute("visible", false);
         parent.parentEl.querySelector("#polidea").setAttribute('scale', {x: 1, y: 1, z: 1});
-        parent.parentEl.querySelector("#polidea").setAttribute('position', {x: 0, y: 0, z: 0.1})git
+        parent.parentEl.querySelector("#polidea").setAttribute('position', {x: 0, y: 0, z: 0.1})
     }
 
     render() {

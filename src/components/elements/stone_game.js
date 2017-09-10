@@ -11,32 +11,32 @@ import {toggleBirds, toggleFog, toggleNight} from "../redux/environment_state";
 export const ROCKS = {
     "#sun": {
         texture: '#sunTexture',
-        position: {x: 0, y: 0, z: 0},
+        position: {x: 0.02, y: 0.05, z: 0.05},
         placed: false,
     },
     "#sticks": {
         texture: '#sticksTexture',
-        position: {x: 0.55, y: 0, z: 0},
+        position: {x: 0.57, y: 0.05, z: 0.05},
         placed: false,
     },
     "#fog": {
         texture: '#fogTexture',
-        position: {x: 1.1, y: 0, z: 0},
+        position: {x: 1.12, y: 0.05, z: 0.05},
         placed: true,
     },
     "#fence": {
         texture: '#fenceTexture',
-        position: {x: 0, y: 0, z: 0.6},
+        position: {x: 0.02, y: 0.05, z: 0.6},
         placed: false,
     },
     "#eye": {
         texture: '#eyeTexture',
-        position: {x: 0.55, y: 0, z: 0.6},
+        position: {x: 0.57, y: 0.05, z: 0.6},
         placed: false,
     },
     "#birds": {
         texture: '#birdsTexture',
-        position: {x: 1.1, y: 0, z: 0.6},
+        position: {x: 1.12, y: 0.05, z: 0.6},
         placed: false,
     }
 };
@@ -178,7 +178,7 @@ class Rock extends React.Component {
                     collada-model="#rockButton"
                 />
                 <a-image
-                    position="0 0.15 0"
+                    position="0 0.115 0"
                     rotation="90 180 0"
                     scale="0.4 0.4 1"
                     src={this.props.src}/>
@@ -191,9 +191,9 @@ class Rock extends React.Component {
                             scale={{x: scaleFactor, y: scaleFactor, z: scaleFactor}}
                             collada-model="#rockDisk"/>
                     <a-image
-                        position="0 0.15 0"
+                        position="0 0.095 0"
                         rotation="90 0 0"
-                        scale="0.4 0.4 1"
+                        scale="0.33 0.33 1"
                         src={this.props.src}/>
                 </Entity>
             </Entity>
