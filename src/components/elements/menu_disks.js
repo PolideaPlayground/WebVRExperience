@@ -94,9 +94,7 @@ export default class Rocks extends React.Component {
             <Entity {...this.props}
                     className="menu">
                 <Entity
-                    geometry={{primitive: 'plane', width: 2.4, height: 2.4}}
-                    material={{color: 'white', opacity: 1.0}}
-                    shadow="receive: false; cast: true">
+                    shadow="receive: false">
                     {this.createAllRocks(this.state.fields)}
                 </Entity>
                 <Entity
