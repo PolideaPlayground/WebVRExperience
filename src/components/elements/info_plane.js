@@ -53,7 +53,7 @@ export default class Info extends React.Component {
                     scale={{x: 1, y: 1}}
                 >
                     <Entity
-                        position={{x: 1.8, y: 2.2, z: 0}}
+                        position={{x: 1.35, y: 2.2, z: 0}}
                         scale={{x: 1, y: 1}}
                         className={"intersectable"}
                         geometry={{primitive: 'plane', width: 0.3, height: 0.3}}
@@ -67,7 +67,7 @@ export default class Info extends React.Component {
                     />
                     <Entity
                         position={{x: 0, y: 0.85, z: 0}}
-                        text="align: center; width: 2.8; wrapCount: 20; height: auto; color: #595959; value: This demo was developed by VR team at Polidea. Special thanks goes to:\n-Katarzyna Kucharczyk\n-Przemysław Pomaski\n-Chris Wrobel"
+                        text="align: center; width: 2.8; wrapCount: 20; height: auto; color: #595959; value: This demo was developed by VR team at Polidea. Special thanks goes to:\n-Katarzyna Kucharczyk\n-Przemyslaw Pomaski\n-Chris Wrobel"
                     />
                     <Entity
                         position={{x: 0, y: -0.5, z: 0}}

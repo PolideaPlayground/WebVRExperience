@@ -56,7 +56,8 @@ export default class View extends React.Component {
                 />
 
                 <Rocks id='menu'
-                       position={{x: -3.5, y: 4, z: -4.5}}
+                       scale={{x: 0.8, y: 0.8, z: 1}}
+                       position={{x: -3.5, y: 2, z: -4.5}}
                        rotation={{x: -0, y: 30, z: 0}}
                 />
 
