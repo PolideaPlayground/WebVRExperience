@@ -4,22 +4,22 @@ import {deselectCurrentDisk, selectCurrentDisk} from "../redux/game_state";
 
 export const DISKS = {
     "#sun": {
-        position: {x: -0.6, y: 0.6, z: 0.2},
+        position: {x: -0.6, y: 0.6, z: 0.0},
         texture: "#sunTexture",
         textureId: "#menuSunTexture",
     },
     "#fog": {
-        position: {x: 0.6, y: -0.6, z: 0.2},
+        position: {x: 0.6, y: -0.6, z: 0.0},
         texture: "#fogTexture",
         textureId: "#menuFogTexture",
     },
     "#eye": {
-        position: {x: -0.6, y: -0.6, z: 0.2},
+        position: {x: -0.6, y: -0.6, z: 0.0},
         texture: "#fenceTexture",
         textureId: "#menuFenceTexture",
     },
     "#birds": {
-        position: {x: 0.6, y: 0.6, z: 0.2},
+        position: {x: 0.6, y: 0.6, z: 0.0},
         texture: "#birdsTexture",
         textureId: "#menuBirdsTexture",
     }
@@ -57,7 +57,7 @@ class Rock extends React.Component {
                     }
                 }}>
                 <a-image
-                    position="0.05 -0.05 0.15"
+                    position="0.05 -0.05 0.005"
                     src={this.state.field.textureId}/>
             </Entity>
         );
@@ -112,7 +112,7 @@ export default class Rocks extends React.Component {
                         }
                     }}>
                     <a-image
-                        position="0.05 -0.05 0.15"
+                        position="0.05 -0.05 0.005"
                         src="#menuBinTexture"/>
                 </Entity>
             </Entity>
