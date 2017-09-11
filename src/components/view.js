@@ -39,8 +39,8 @@ export default class View extends React.Component {
 
                 <EnvironmentSound id="envSound"/>
                 <Windmill
-                    position={{x: -34, y: -7.2, z: 65}}
-                    scale={{x: 1, y: 1, z: 1}}
+                    position={{x: -34, y: -5.2, z: 65}}
+                    scale={{x: 2, y: 2, z: 2}}
                     rotation={{x: 0, y: 120, z: 0}}
                     shadow="cast: true; receive: false"/>
 

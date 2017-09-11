@@ -1,5 +1,4 @@
-import "aframe-state-component";
-import * as AFRAME from "aframe";
+import * as State from  "./../../utils/state_component";
 
 const FOGDAY = 'density: 0.06; far: 40; color: #ababab; near: 0; type: exponential';
 const FOGNIGHT = 'density: 0.06; far: 40; color: #4e4b55; near: 0; type: exponential';
@@ -11,7 +10,7 @@ const DAYSOUND = 'src: #birdSound; autoplay: true';
 const NOBIRDS = 'attach: false';
 const WITHBIRDS = 'attach: true';
 
-AFRAME.registerReducer('environment', {
+State.registerReducer('environment', {
     initialState: {
         color: NIGHTBACKGROUND,
         fogState: true,

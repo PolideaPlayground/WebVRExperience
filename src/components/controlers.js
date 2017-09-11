@@ -1,5 +1,4 @@
 import {Entity} from "aframe-react";
-import "aframe-state-component";
 import React from "react";
 
 const scaleFactor = 1;

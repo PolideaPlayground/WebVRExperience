@@ -30,11 +30,10 @@
     "aframe-animation-component": "^3.2.5",
     "aframe-particle-system-component": "^1.0.10",
     "aframe-react": "^4.3.0",
-    "aframe-redux-component": "^3.0.2",
-    "aframe-state-component": "^1.0.0",
     "gh-pages": "^1.0.0",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
-    "react-scripts": "0.9.5"
+    "react-scripts": "0.9.5",
+    "redux": "^3.7.2"
   }
 }
