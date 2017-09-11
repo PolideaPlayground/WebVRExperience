@@ -2,7 +2,7 @@ import "aframe";
 import "aframe-particle-system-component";
 
 import "aframe-animation-component";
-import "aframe-state-component";
+import "./utils/state_component";
 
 import React from "react";
 import ReactDOM from "react-dom";
@@ -35,7 +35,7 @@ class VRScene extends React.Component {
             >
                 <Assets/>
                 <Controlers/>
-                <View />
+                <View/>
             </a-scene>
         );
     }

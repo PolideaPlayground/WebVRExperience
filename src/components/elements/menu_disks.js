@@ -1,25 +1,68 @@
 import {Entity} from "aframe-react";
 import React from 'react';
-import {selectCurrentDisk} from "../redux/game_state";
+import {deselectCurrentDisk, selectCurrentDisk} from "../redux/game_state";
 
 export const DISKS = {
     "#sun": {
-        position: {x: -0.6, y: 0.2, z: 0.2},
+        position: {x: -0.6, y: 0.6, z: 0.0},
         texture: "#sunTexture",
+        textureId: "#menuSunTexture",
     },
     "#fog": {
-        position: {x: 0.6, y: -1, z: 0.2},
+        position: {x: 0.6, y: -0.6, z: 0.0},
         texture: "#fogTexture",
+        textureId: "#menuFogTexture",
     },
     "#eye": {
-        position: {x: -0.6, y: -1, z: 0.2},
-        texture: "#eyeTexture",
+        position: {x: -0.6, y: -0.6, z: 0.0},
+        texture: "#fenceTexture",
+        textureId: "#menuFenceTexture",
     },
     "#birds": {
-        position: {x: 0.6, y: 0.2, z: 0.2},
+        position: {x: 0.6, y: 0.6, z: 0.0},
         texture: "#birdsTexture",
+        textureId: "#menuBirdsTexture",
     }
 };
+
+class Rock extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            field: this.props.field,
+        }
+    }
+
+    static onMenuItemClicked(el, model) {
+        //Pickup model
+        console.log("Picking up: " + model);
+        selectCurrentDisk(el, model);
+    }
+
+    render() {
+        return (
+            <Entity
+                className="item intersectable"
+                hoverable
+                hovered_menu_item
+                geometry={{primitive: 'plane', width: 1.0, height: 1.0}}
+                material={{color: 'white', opacity: 1.0}}
+                rotation={{x: 0, y: 0, z: 0}}
+                position={this.state.field.position}
+                shadow="cast: false; receive: false"
+                events={{
+                    click: (evt) => {
+                        let el = evt.target;
+                        Rock.onMenuItemClicked(el, this.state.field.texture)
+                    }
+                }}>
+                <a-image
+                    position="0.05 -0.05 0.005"
+                    src={this.state.field.textureId}/>
+            </Entity>
+        );
+    }
+}
 
 export default class Rocks extends React.Component {
     constructor(props) {
@@ -32,9 +75,12 @@ export default class Rocks extends React.Component {
 
     createRock(field) {
         return <Rock key={field.texture}
-                     position={field.position}
-                     texture={field.texture}
-                     onMenuItemClicked={Rock.onMenuItemClicked}/>
+                     field={field}
+        />
+    }
+
+    onTrashClicked(el) {
+        deselectCurrentDisk(el);
     }
 
     createAllRocks(fields) {
@@ -44,52 +90,32 @@ export default class Rocks extends React.Component {
     }
 
     render() {
-        return <Entity {...this.props}
-                       className="menu"
-                       geometry={{primitive: 'plane', width: 4, height: 4}}
-                       material={{color: '#bfd7ff'}}
-                       shadow="receive: false; cast: true">
-            {this.createAllRocks(this.state.fields)}
-        </Entity>
-    }
-}
-const scaleFactor = 2;
-
-class Rock extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            texture: this.props.texture,
-            position: this.props.position
-        }
-    }
-
-    static onMenuItemClicked(el, model) {
-        //Pickup model
-        console.log("Picking up: " + model);
-        selectCurrentDisk(el, model);
-    }
-
-    render() {
-        return <Entity className="item intersectable"
-                       hoverable hovered_menu_item
-                       rotation={{x: 0, y: 0, z: 0}}
-                       position={this.state.position}
-                       shadow="cast: false; receive: false"
-                       events={{
-                           click: (evt) => {
-                               let el = evt.target;
-                               Rock.onMenuItemClicked(el, this.state.texture)
-                           }
-                       }}>
-            <Entity scale={{x: scaleFactor, y: scaleFactor, z: scaleFactor}}
-                    rotation={{x: 90, y: 0, z: 0}}
+        return (
+            <Entity {...this.props}
+                    className="menu">
+                <Entity
+                    shadow="receive: false">
+                    {this.createAllRocks(this.state.fields)}
+                </Entity>
+                <Entity
+                    className="item intersectable"
+                    hoverable
+                    hovered_menu_item
+                    geometry={{primitive: 'plane', width: 1.0, height: 1.0}}
+                    material={{color: 'white', opacity: 1.0}}
+                    position={{x: 0, y: -2.0, z: 0}}
                     shadow="cast: false; receive: false"
-                    collada-model="#rockDisk"
-            />
-            <a-image
-                position="0 0 0.15"
-                src={this.state.texture}/>
-        </Entity>
+                    events={{
+                        click: (evt) => {
+                            let el = evt.target;
+                            this.onTrashClicked(el)
+                        }
+                    }}>
+                    <a-image
+                        position="0.05 -0.05 0.005"
+                        src="#menuBinTexture"/>
+                </Entity>
+            </Entity>
+        );
     }
 }

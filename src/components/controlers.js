@@ -1,5 +1,4 @@
 import {Entity} from "aframe-react";
-import "aframe-state-component";
 import React from "react";
 
 const scaleFactor = 1;
@@ -68,7 +67,7 @@ export default class Controlers extends React.Component {
                     collada-model="#rockDisk"/>
                 <a-image
                     position="0 0 0.15"
-                    scale="0.35 0.35 1"
+                    scale="0.33 0.33 1"
                     bind__src="gameState.selected_texture"
                     />
             </Entity>);
@@ -86,7 +85,7 @@ export default class Controlers extends React.Component {
                     {selectedModel}
                 </DaydreamController>
 
-                <Entity camera="userHeight:3" look-controls wasd-controls>
+                <Entity camera="userHeight:1.6" look-controls wasd-controls>
                     <CursorController enabled={this.state.cursor_enabled}/>
                     {selectedModel}
                 </Entity>

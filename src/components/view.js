@@ -7,6 +7,7 @@ import Rocks from "./elements/menu_disks";
 import EnvironmentSound from "./elements/sound";
 import Background from "./elements/background";
 import Sky from "./elements/sky";
+import Info from "./elements/info_plane";
 
 export default class View extends React.Component {
     render() {
@@ -38,21 +39,26 @@ export default class View extends React.Component {
 
                 <EnvironmentSound id="envSound"/>
                 <Windmill
-                    position={{x: -20, y: -3, z: 80}}
-                    scale={{x: 4, y: 4, z: 4}}
+                    position={{x: -34, y: -5.2, z: 65}}
+                    scale={{x: 2, y: 2, z: 2}}
                     rotation={{x: 0, y: 120, z: 0}}
                     shadow="cast: true; receive: false"/>
 
+                <Info position={{x: 4.5, y: 1.2, z: -4.5}}
+                      rotation={{x: -0, y: -45, z: 0}}
+                />
+
                 <StoneGame dimX={3}
                            dimY={2}
-                           position={{x: 0, y: 1, z: -4}}
+                           position={{x: 0, y: 0.145, z: -4}}
                            rotation={{x: 27.5, y: 0, z: 0}}
                            shadow="cast: true"
                 />
 
                 <Rocks id='menu'
-                       position={{x: 3.5, y: 4, z: -4.5}}
-                       rotation={{x: -0, y: -30, z: 0}}
+                       scale={{x: 0.8, y: 0.8, z: 1}}
+                       position={{x: -3.5, y: 2, z: -4.5}}
+                       rotation={{x: -0, y: 30, z: 0}}
                 />
 
                 <Background/>

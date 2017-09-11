@@ -1,6 +1,6 @@
-import * as AFRAME from "aframe";
+import * as State from  "./../../utils/state_component";
 
-AFRAME.registerReducer('gameState', {
+State.registerReducer('gameState', {
     initialState: {
         selected_texture: "",
         disk_visible: false,
