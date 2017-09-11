@@ -36,7 +36,7 @@ export default class Info extends React.Component {
                     id="polidea"
                     className={"intersectable"}
                     position={{x: 0, y: 0, z: 0.1}}
-                    geometry={{primitive: 'plane', width: 2, height: 0.8}}
+                    geometry={{primitive: 'plane', width: 1.1, height: 0.45}}
                     material={{src: "#polideaImage"}}
                     events={{
                         click: (evt) => {
@@ -48,7 +48,7 @@ export default class Info extends React.Component {
                     id="text"
                     visible={this.state.infoVisible}
                     geometry={{primitive: 'plane', width: 3, height: 4}}
-                    material={{color: 'white', opacity: 0.9}}
+                    material={{color: 'white', opacity: 1.0}}
                     position={{x: 0, y: 0, z: 0.1}}
                     scale={{x: 1, y: 1}}
                 >
@@ -57,7 +57,7 @@ export default class Info extends React.Component {
                         scale={{x: 1, y: 1}}
                         className={"intersectable"}
                         geometry={{primitive: 'plane', width: 0.3, height: 0.3}}
-                        material={{color: 'white', opacity: 0.9}}
+                        material={{color: 'white', opacity: 1.0}}
                         text="align: center; width: 6; height: auto; color: #595959; value: X"
                         events={{
                             click: (evt) => {
@@ -66,11 +66,11 @@ export default class Info extends React.Component {
                         }}
                     />
                     <Entity
-                        position={{x: 0, y: 0.85, z: 0}}
-                        text="align: center; width: 2.8; wrapCount: 20; height: auto; color: #595959; value: This demo was developed by VR team at Polidea. Special thanks goes to:\n-Katarzyna Kucharczyk\n-Przemyslaw Pomaski\n-Chris Wrobel"
+                        position={{x: 0, y: 0.85, z: 0.05}}
+                        text="align: center; width: 2.8; wrapCount: 20; height: auto; color: #595959; value: This WebVR demo was designed and developed by VR team at Polidea. Credits go to:\n-Katarzyna Kucharczyk\n-Przemyslaw Pomaski\n-Chris Wrobel"
                     />
                     <Entity
-                        position={{x: 0, y: -0.5, z: 0}}
+                        position={{x: 0, y: -0.5, z: 0.05}}
                         className={"intersectable link"}
                         text="align: center; width: 6; height: auto; color: #1da0db; value: www.polidea.com"
                     />

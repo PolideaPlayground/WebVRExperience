@@ -41,7 +41,7 @@ State.registerReducer('environment', {
 
 function changeFog(state, enabled) {
     let newState = Object.assign({}, state);
-    if (!enabled) {
+    if (enabled) {
         console.log("Turn off fog");
         newState.fogState = false;
         newState.color = (state.nightState && NIGHTBACKGROUND) || DAYBACKGROUND;

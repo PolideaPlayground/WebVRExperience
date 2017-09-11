@@ -13,7 +13,7 @@ export const DISKS = {
         texture: "#fogTexture",
         textureId: "#menuFogTexture",
     },
-    "#eye": {
+    "#fence": {
         position: {x: -0.6, y: -0.6, z: 0.0},
         texture: "#fenceTexture",
         textureId: "#menuFenceTexture",

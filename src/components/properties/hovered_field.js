@@ -3,8 +3,6 @@ import {HOVERED_STATE} from "./hoverable";
 
 AFRAME.registerComponent('hovered_field', {
     schema: {
-        color_down: {default: '#555'},
-        color_up: {default: '#222'},
         position_down: {default: {x: 1, y: 1, z: -0.25}},
         position_up: {default: {x: 1, y: 1, z: 0.0}}
     },
@@ -45,24 +43,6 @@ AFRAME.registerComponent('hovered_field', {
             if (stateName === HOVERED_STATE) {
                 element.emit("run_up");
             }
-        });
-    },
-    play: function () {
-        this.el.setAttribute("animation__color_down", {
-            property: "material.color",
-            dur: 400,
-            easing: "easeInSine",
-            to: this.data.color_down,
-            startEvents: "run_down",
-            restartEvents: "run_down"
-        });
-        this.el.setAttribute("animation__color_up", {
-            property: "material.color",
-            dur: 400,
-            easing: "easeInSine",
-            to: this.data.color_up,
-            startEvents: "run_up",
-            restartEvents: "run_up"
         });
     }
 });

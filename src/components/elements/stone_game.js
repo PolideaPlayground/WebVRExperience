@@ -23,7 +23,7 @@ export const ROCKS = {
     "#fog": {
         texture: '#fogTexture',
         position: {x: 1.12, y: 0.05, z: 0.05},
-        placed: true,
+        placed: false,
     },
     "#fence": {
         texture: '#fenceTexture',
@@ -167,7 +167,7 @@ class Rock extends React.Component {
                 {...this.props}
                 id={this.props.src}
                 hoverable
-                sound="src: #rockSound; on: fusing"
+                sound="src: #rockSound; on: run_down"
                 className="field intersectable"
                 shadow="receive: false"
                 events={{
