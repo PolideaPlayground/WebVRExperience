@@ -5,7 +5,7 @@ export default class Background extends React.Component {
     render() {
         return <a-entity
             position="0 0 0">
-            <Entity collada-model="#environment" shadow="receive: true" material="shader: flat"/>
+            <Entity collada-model="#environment" shadow="receive: true"/>
         </a-entity>
     }
 }

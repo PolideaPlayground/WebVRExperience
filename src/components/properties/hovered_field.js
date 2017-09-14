@@ -15,7 +15,8 @@ AFRAME.registerComponent('hovered_field', {
             easing: "easeInSine",
             to: this.data.position_down,
             startEvents: "run_down",
-            restartEvents: "run_down"
+            restartEvents: "run_down",
+            pauseEvents: "run_up"
         });
 
         el.setAttribute("animation__scale_up", {
@@ -24,7 +25,8 @@ AFRAME.registerComponent('hovered_field', {
             easing: "easeInSine",
             to: this.data.position_up,
             startEvents: "run_up",
-            restartEvents: "run_up"
+            restartEvents: "run_up",
+            pauseEvents: "run_down"
         });
 
 
