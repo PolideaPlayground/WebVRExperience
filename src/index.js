@@ -2,6 +2,7 @@ import "aframe";
 import "aframe-particle-system-component";
 
 import "aframe-animation-component";
+import "aframe-log-component";
 import "./utils/state_component";
 
 import React from "react";
@@ -10,6 +11,7 @@ import View from "./components/view";
 import Assets from "./components/assets";
 import Controlers from "./components/controlers";
 
+import "./components/properties/controller_clickable";
 import "./components/properties/hoverable";
 import "./components/properties/hovered_field";
 import "./components/properties/hovered_menu_item";
