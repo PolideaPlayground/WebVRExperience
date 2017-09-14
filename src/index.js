@@ -2,7 +2,6 @@ import "aframe";
 import "aframe-particle-system-component";
 
 import "aframe-animation-component";
-import "aframe-log-component";
 import "./utils/state_component";
 
 import React from "react";

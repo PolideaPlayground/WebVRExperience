@@ -130,13 +130,13 @@ class GearVRController extends React.Component {
             gearRaycaster = <Entity
                 primitive="a-cursor"
                 cursor="fuse: false"
-                downEvents={["buttondown", "buttonchanged"]}
-                upEvents={["trackpad_up", "trigger_up"]}
+                downEvents={["trackpaddown", "triggerdown"]}
+                upEvents={["trackpadup", "triggerup"]}
                 raycaster="far: 10;  interval: 500; objects: .intersectable; showLine: true"
                 line="color: yellow; opacity: 2"/>;
         }
         return (
-            <Entity gearvr-controler>
+            <Entity gearvr-controls clickable-controller>
                 {gearRaycaster}
             </Entity>
 
