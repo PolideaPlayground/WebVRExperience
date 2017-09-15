@@ -5,8 +5,8 @@ const FOGNIGHT = 'density: 0.06; far: 40; color: #4e4b55; near: 0; type: exponen
 const NOFOG = 'density: 0; far: 40; type: exponential; color: #ababab; near: 0';
 const NIGHTBACKGROUND = '#000';
 const DAYBACKGROUND = '#FFB';
-const NIGHTSOUND = 'src: #nightSound; autoplay: true';
-const DAYSOUND = 'src: #birdSound; autoplay: true';
+const NIGHTSOUND = 'src: #nightSound; autoplay: true; loop: true';
+const DAYSOUND = 'src: #daySound; autoplay: true; loop: true';
 const NOBIRDS = 'attach: false';
 const WITHBIRDS = 'attach: true';
 
@@ -16,6 +16,7 @@ State.registerReducer('environment', {
         fogState: true,
         nightState: true,
         lightIntensity: 0.4,
+        mushroomState: false,
         birds: NOBIRDS,
         sound: NIGHTSOUND,
         fog: FOGNIGHT,
@@ -33,6 +34,12 @@ State.registerReducer('environment', {
             state = state || this.initialState;
             let newState = Object.assign({}, state);
             newState.birds = action.enabled ? WITHBIRDS : NOBIRDS;
+            return newState;
+        },
+        MUSHROOM_ENABLED: function (state, action) {
+            state = state || this.initialState;
+            let newState = Object.assign({}, state);
+            newState.mushroomState = action.enabled;
             return newState;
         },
     }
@@ -99,6 +106,15 @@ export function toggleBirds(element, enabled) {
 
     let action = {
         type: "BIRDS_ENABLED",
+        enabled: enabled
+    };
+    element.sceneEl.systems.state.store.dispatch(action);
+}
+
+export function toggleMushroom(element, enabled) {
+
+    let action = {
+        type: "MUSHROOM_ENABLED",
         enabled: enabled
     };
     element.sceneEl.systems.state.store.dispatch(action);

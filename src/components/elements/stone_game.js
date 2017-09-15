@@ -5,7 +5,7 @@ import {
     getCurrentlySelectedDisk,
     selectCurrentDisk
 } from "../redux/game_state";
-import {toggleBirds, toggleFog, toggleNight} from "../redux/environment_state";
+import {toggleBirds, toggleFog, toggleMushroom, toggleNight} from "../redux/environment_state";
 import Instructions from "./instructions";
 
 
@@ -126,6 +126,12 @@ export default class StoneGame extends React.Component {
         } else {
             toggleBirds(element, false);
         }
+
+        if (this.state.fields["#mushroom"].placed) {
+            toggleMushroom(element, true);
+        } else {
+            toggleMushroom(element, false);
+        }
     }
 
     render() {
@@ -150,7 +156,7 @@ export default class StoneGame extends React.Component {
         )
     }
 }
-const scaleFactor = 1;
+const scaleFactor = 0.8;
 
 class Rock extends React.Component {
     constructor(props) {
@@ -184,7 +190,7 @@ class Rock extends React.Component {
                 />
                 <a-image
                     position="0 0.115 0"
-                    rotation="90 180 0"
+                    rotation="270 0 0"
                     scale="0.4 0.4 1"
                     src={this.props.src}/>
 
@@ -197,7 +203,7 @@ class Rock extends React.Component {
                             collada-model="#rockDisk"/>
                     <a-image
                         position="0 0.095 0"
-                        rotation="90 0 0"
+                        rotation="270 180 0"
                         scale="0.33 0.33 1"
                         src={this.props.src}/>
                 </Entity>

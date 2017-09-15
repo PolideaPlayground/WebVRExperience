@@ -62,7 +62,7 @@ export default class View extends React.Component {
                       rotation={{x: -0, y: 30, z: 0}}
                 />
 
-                <Mushrooms/>
+                <Mushrooms bind__visibile="visible: environment.mushroomState"/>
 
                 <Background/>
 

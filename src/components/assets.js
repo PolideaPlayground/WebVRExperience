@@ -8,8 +8,8 @@ import rockButtonUrl from "./../assets/models/rock_button.dae";
 import rockDiskUrl from "./../assets/models/rock_disk.dae";
 import rockDesktopUrl from "./../assets/models/rock_desktop.dae";
 import rockSoundUrl from "./../assets/sounds/rock_scraping.mp3";
-import nightSoundUrl from "./../assets/sounds/Jungle_Atmosphere_Late_Night.mp3";
-import birdSoundUrl from "./../assets/sounds/Chirping-birds.mp3";
+import nightSoundUrl from "./../assets/sounds/night_music.m4a";
+import daySoundUrl from "./../assets/sounds/day_music.m4a";
 import sunImageUrl from "./../assets/textures/sun.png";
 import birdsImageUrl from "./../assets/textures/birds.png";
 import mushroomImageUrl from "./../assets/textures/mushroom.png";
@@ -44,7 +44,7 @@ export default class Assets extends React.Component {
                 {/* sounds */}
                 <audio id="rockSound" src={rockSoundUrl}/>
                 <audio id="nightSound" src={nightSoundUrl}/>
-                <audio id="birdSound" src={birdSoundUrl}/>
+                <audio id="daySound" src={daySoundUrl}/>
 
                 {/* textures */}
                 <img id="birdsTexture" alt="birdsTexture" src={birdsImageUrl}/>
