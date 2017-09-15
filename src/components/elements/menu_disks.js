@@ -4,22 +4,22 @@ import {deselectCurrentDisk, selectCurrentDisk} from "../redux/game_state";
 
 export const DISKS = {
     "#sun": {
-        position: {x: -0.6, y: 0.6, z: 0.0},
+        position: {x: -0.5, y: 0.5, z: 0.0},
         texture: "#sunTexture",
         textureId: "#menuSunTexture",
     },
     "#fog": {
-        position: {x: 0.6, y: -0.6, z: 0.0},
+        position: {x: 0.5, y: -0.5, z: 0.0},
         texture: "#fogTexture",
         textureId: "#menuFogTexture",
     },
     "#mushroom": {
-        position: {x: -0.6, y: -0.6, z: 0.0},
+        position: {x: -0.5, y: -0.5, z: 0.0},
         texture: "#mushroomTexture",
         textureId: "#menuMushroomTexture",
     },
     "#birds": {
-        position: {x: 0.6, y: 0.6, z: 0.0},
+        position: {x: 0.5, y: 0.5, z: 0.0},
         texture: "#birdsTexture",
         textureId: "#menuBirdsTexture",
     }
@@ -58,7 +58,7 @@ class Rock extends React.Component {
                     }
                 }}>
                 <a-image
-                    position="0.05 -0.05 0.005"
+                    position="0.0 -0.05 0.005"
                     src={this.state.field.textureId}/>
             </Entity>
         );
@@ -102,9 +102,9 @@ export default class Menu extends React.Component {
                     className="item intersectable"
                     hoverable
                     hovered_menu_item
-                    geometry={{primitive: 'plane', width: 1.0, height: 1.0}}
+                    geometry={{primitive: 'plane', width: 0.7, height: 0.7}}
                     material={{color: 'white', opacity: 1.0}}
-                    position={{x: 0, y: -2.0, z: 0}}
+                    position={{x: 0, y: -1.5, z: 0}}
                     shadow="cast: false; receive: false"
                     events={{
                         click: (evt) => {
@@ -113,7 +113,8 @@ export default class Menu extends React.Component {
                         }
                     }}>
                     <a-image
-                        position="0.05 -0.05 0.005"
+                        position="0.02 -0.0 0.005"
+                        scale="0.7 0.7 0.7"
                         src="#menuBinTexture"/>
                 </Entity>
             </Entity>

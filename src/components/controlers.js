@@ -70,7 +70,7 @@ export default class Controlers extends React.Component {
                     primitive={"a-cylinder"}
                     scale={{x: scaleFactor, y: scaleFactor, z: scaleFactor}}
                     rotation={{x: 90, y: 0, z: 0}}
-                    material={{shader: "flat", color: "#b36247", transparent: true, opacity: 0.7}}
+                    material={{shader: "flat", color: "#a64701", transparent: true, opacity: 0.75}}
                 />
                 <a-image
                     position="0 0 0.05"
