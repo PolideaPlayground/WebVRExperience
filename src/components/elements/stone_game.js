@@ -148,10 +148,6 @@ export default class StoneGame extends React.Component {
                         this.createAllRocks(this.onDiskChange)
                     }
                 </Entity>
-
-                <Instructions position={{x: 0, y: 1.4, z: -1.4}}
-                              rotation={{x: -25, y: 0, z: 0}}
-                              scale={{x: 2, y: 2, z: 1}}/>
             </Entity>
         )
     }

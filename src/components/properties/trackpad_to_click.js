@@ -9,6 +9,7 @@ AFRAME.registerComponent('trackpad-to-click', {
             for (let i = 0; elements.length; i++) {
                 let element = elements[i];
                 element.emit("click");
+                return;
             }
         };
     },
