@@ -3,11 +3,12 @@ import React from "react";
 
 import StoneGame from "./elements/stone_game";
 import Windmill from "./elements/windmill";
-import Rocks from "./elements/menu_disks";
+import Menu from "./elements/menu_disks";
 import EnvironmentSound from "./elements/sound";
 import Background from "./elements/background";
 import Sky from "./elements/sky";
 import Info from "./elements/info_plane";
+import Mushrooms from "./elements/mushrooms";
 
 export default class View extends React.Component {
     render() {
@@ -55,11 +56,13 @@ export default class View extends React.Component {
                            shadow="cast: true"
                 />
 
-                <Rocks id='menu'
-                       scale={{x: 0.8, y: 0.8, z: 1}}
-                       position={{x: -3.5, y: 2, z: -4.5}}
-                       rotation={{x: -0, y: 30, z: 0}}
+                <Menu id='menu'
+                      scale={{x: 0.8, y: 0.8, z: 1}}
+                      position={{x: -3.5, y: 2, z: -4.5}}
+                      rotation={{x: -0, y: 30, z: 0}}
                 />
+
+                <Mushrooms/>
 
                 <Background/>
 
