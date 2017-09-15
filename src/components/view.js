@@ -55,8 +55,8 @@ export default class View extends React.Component {
                     shadow="cast: true; receive: false"/>
 
                 <Info
-                    position={{x: 4.5, y: 1.2, z: -4.5}}
-                    rotation={{x: -0, y: -45, z: 0}}
+                    position={{x: 2.0, y: 1.6, z: -4.5}}
+                    rotation={{x: -0, y: -35, z: 0}}
                 />
 
                 <StoneGame
@@ -66,7 +66,7 @@ export default class View extends React.Component {
                 />
 
                 <Instructions
-                    position={{x: 0, y: 2.0, z: -4.5}}
+                    position={{x: 0, y: 1.8, z: -4.5}}
                     rotation={{x: 0, y: 0, z: 0}}
                     scale={{x: 2, y: 2, z: 1}}/>
 

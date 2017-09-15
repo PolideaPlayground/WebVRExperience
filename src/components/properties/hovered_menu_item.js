@@ -44,5 +44,25 @@ AFRAME.registerComponent('hovered_menu_item', {
                 element.emit("run_up");
             }
         });
+    },
+    play: function () {
+        let el = this.el;
+        el.setAttribute("animation__color_down", {
+            property: "color",
+            dur: 400,
+            easing: "easeInSine",
+            to: "#444",
+            startEvents: "run_down",
+            restartEvents: "run_down"
+        });
+
+        el.setAttribute("animation__color_up", {
+            property: "color",
+            dur: 400,
+            easing: "easeInSine",
+            to: "#19c",
+            startEvents: "run_up",
+            restartEvents: "run_up"
+        });
     }
 })

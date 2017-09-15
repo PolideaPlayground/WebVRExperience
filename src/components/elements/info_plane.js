@@ -32,12 +32,22 @@ export default class Info extends React.Component {
                     id="info"
                     shadow="receive: false; cast: true">
                 <Entity
-                    visible={this.state.buttonVisible}
                     id="polidea"
-                    className={"intersectable"}
+                    visible={this.state.buttonVisible}
                     position={{x: 0, y: 0, z: 0.1}}
+                    className={"intersectable"}
                     geometry={{primitive: 'plane', width: 1.1, height: 0.45}}
-                    material={{src: "#polideaImage"}}
+                    material={{color: 'white', opacity: 1.0}}
+                    text={{
+                        align: "center",
+                        baseline: "center",
+                        width: 2.4,
+                        wrapCount: 28,
+                        lineHeight: 60,
+                        height: "auto",
+                        color: "#595959",
+                        value: "About us"
+                    }}
                     events={{
                         click: (evt) => {
                             this.onPolideaClicked();
@@ -47,18 +57,25 @@ export default class Info extends React.Component {
                 <Entity
                     id="text"
                     visible={this.state.infoVisible}
-                    geometry={{primitive: 'plane', width: 3, height: 4}}
+                    geometry={{primitive: 'plane', width: 3, height: 3}}
                     material={{color: 'white', opacity: 1.0}}
-                    position={{x: 0, y: 0, z: 0.1}}
+                    position={{x: 1, y: 0, z: 0.1}}
                     scale={{x: 1, y: 1}}
                 >
+
                     <Entity
-                        position={{x: 1.35, y: 2.2, z: 0}}
+                        position={{x: 1.35, y: 1.7, z: 0}}
                         scale={{x: 1, y: 1}}
                         className={"intersectable"}
                         geometry={{primitive: 'plane', width: 0.3, height: 0.3}}
                         material={{color: 'white', opacity: 1.0}}
-                        text="align: center; width: 6; height: auto; color: #595959; value: X"
+                        text={{
+                            align: "center",
+                            width: 6,
+                            height: "auto",
+                            color: "#484848",
+                            value: "X"
+                        }}
                         events={{
                             click: (evt) => {
                                 this.onXClicked();
@@ -66,13 +83,51 @@ export default class Info extends React.Component {
                         }}
                     />
                     <Entity
-                        position={{x: 0, y: 0.85, z: 0.05}}
-                        text="align: center; width: 2.8; wrapCount: 20; height: auto; color: #595959; value: This WebVR demo was designed and developed by VR team at Polidea. Credits go to:\n-Katarzyna Kucharczyk\n-Przemyslaw Pomaski\n-Chris Wrobel"
+                        primitive={"a-image"}
+                        position={{x: 0, y: 1.0, z: 0.05}}
+                        scale={{x: 0.75, y: 0.75, z: 1}}
+                        geometry={{primitive: 'plane', width: 1.82, height: 0.5}}
+                        src="#polideaImage"
                     />
                     <Entity
-                        position={{x: 0, y: -0.5, z: 0.05}}
+                        position={{x: 0, y: 0.5, z: 0.05}}
+                        text={{
+                            align: "left",
+                            baseline: "top",
+                            width: 2.4,
+                            wrapCount: 28,
+                            lineHeight: 60,
+                            height: "auto",
+                            color: "#484848",
+                            value: "This WebVR demo was designed and developed by VR team at Polidea."
+                        }}
+                    />
+                    <Entity
+                        position={{x: 0, y: -0.3, z: 0.05}}
+                        text={{
+                            align: "left",
+                            baseline: "top",
+                            width: 2.4,
+                            wrapCount: 32,
+                            lineHeight: 60,
+                            height: "auto",
+                            color: "#484848",
+                            value: "Authors:\n-Katarzyna Kucharczyk\n-Przemyslaw Pomaski\n-Chris Wrobel"
+                        }}
+                    />
+                    <Entity
+                        position={{x: 0, y: -1.1, z: 0.05}}
                         className={"intersectable link"}
-                        text="align: center; width: 6; height: auto; color: #1da0db; value: www.polidea.com"
+                        text={{
+                            align: "center",
+                            baseline: "top",
+                            width: 2.4,
+                            wrapCount: 28,
+                            lineHeight: 60,
+                            height: "auto",
+                            color: "#484848",
+                            value: "www.polidea.com"
+                        }}
                     />
                 </Entity>
             </Entity>

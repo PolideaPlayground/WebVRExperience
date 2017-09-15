@@ -141,9 +141,10 @@ class GearVRController extends React.Component {
     render() {
         return (
             <Entity
-                position={{x: 0, y: 0.2, z: 0}}
+                position={{x: 0, y: 0.3, z: 0}}
                 gearvr-controls
-                trackpad-to-click>
+                trackpad-to-click
+            >
                 {
                     this.props.enabled ?
                         <Entity>
@@ -170,9 +171,10 @@ class DaydreamController extends React.Component {
     render() {
         return (
             <Entity
-                position={{x: 0, y: 0.2, z: 0}}
+                position={{x: 0, y: 0.3, z: 0}}
                 daydream-controls
-                trackpad-to-click>
+                trackpad-to-click
+            >
                 {
                     this.props.enabled ?
                         <Entity>

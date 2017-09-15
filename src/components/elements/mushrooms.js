@@ -19,19 +19,19 @@ export default class Mushrooms extends React.Component {
                 />
 
                 <Entity
-                    position={{x: 1.5, y: 0, z: -8.5}}
+                    position={{x: 2.5, y: 0, z: -8.5}}
                     scale={{x: 2, y: 2, z: 2}}
                     collada-model="#mushroom"
                 />
 
                 <Entity
-                    position={{x: 12.5, y: 0.5, z: -16.5}}
+                    position={{x: 11.375, y: 0.453, z: -11.8}}
                     scale={{x: 1.5, y: 1.5, z: 1.5}}
                     collada-model="#mushroom"
                 />
 
                 <Entity
-                    position={{x: 0.85, y: 0, z: -2.6}}
+                    position={{x: 0.85, y: -0.163, z: -2.6}}
                     scale={{x: 0.5, y: 0.5, z: 0.5}}
                     collada-model="#mushroom"
                 />
