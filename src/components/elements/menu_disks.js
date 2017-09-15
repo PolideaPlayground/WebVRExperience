@@ -43,6 +43,7 @@ class Rock extends React.Component {
         return (
             <Entity
                 className="item intersectable"
+                controller-clickable
                 hoverable
                 hovered_menu_item
                 geometry={{primitive: 'plane', width: 1.0, height: 1.0}}
