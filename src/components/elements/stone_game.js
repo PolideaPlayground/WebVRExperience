@@ -25,8 +25,8 @@ export const ROCKS = {
         position: {x: 1.12, y: 0.05, z: 0.05},
         placed: false,
     },
-    "#fence": {
-        texture: '#fenceTexture',
+    "#mushroom": {
+        texture: '#mushroomTexture',
         position: {x: 0.02, y: 0.05, z: 0.6},
         placed: false,
     },

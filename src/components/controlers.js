@@ -1,7 +1,7 @@
 import {Entity} from "aframe-react";
 import React from "react";
 
-const scaleFactor = 1;
+const scaleFactor = 0.1;
 
 export default class Controlers extends React.Component {
     constructor(props) {
@@ -59,15 +59,22 @@ export default class Controlers extends React.Component {
     render() {
         let selectedModel = (
             <Entity id="model"
-                    position={{x: 0.0, y: 0.0, z: -2.4}}
+                    position={{x: 0.0, y: 0.05, z: -2.4}}
+                    rotation={{x: -20, y: 0, z: 0}}
                     bind__visible="gameState.disk_visible">
+                {/*<Entity*/}
+                {/*scale={{x: scaleFactor, y: scaleFactor, z: scaleFactor}}*/}
+                {/*rotation={{x: 90, y: 0, z: 0}}*/}
+                {/*collada-model="#rockDisk"/>*/}
                 <Entity
+                    primitive={"a-cylinder"}
                     scale={{x: scaleFactor, y: scaleFactor, z: scaleFactor}}
                     rotation={{x: 90, y: 0, z: 0}}
-                    collada-model="#rockDisk"/>
+                    material={{shader: "flat", color: "#b36247", transparent: true, opacity: 0.7}}
+                />
                 <a-image
-                    position="0 0 0.15"
-                    scale="0.33 0.33 1"
+                    position="0 0 0.05"
+                    scale="0.1 0.1 1"
                     bind__src="gameState.selected_texture"
                 />
             </Entity>);
@@ -106,7 +113,6 @@ class CursorController extends React.Component {
                     fuseTimeout="1000"
                     raycaster="far: 10; interval: 500; objects: .intersectable; showLine: false"
                     line="color: yellow; opacity: 2"
-                    geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.03"
                     material="color: yellow; shader: flat"
                 >
                     <a-animation
@@ -134,8 +140,8 @@ class GearVRController extends React.Component {
                 {this.props.enabled ?
                     <Entity>
                         <Entity
-                            raycaster="far: 10;  interval: 500; objects: .intersectable; showLine: true"
-                            line="color: yellow; opacity: 2"/>;
+                            raycaster="far: 20;  interval: 500; objects: .intersectable; showLine: true"
+                            line="color: yellow; opacity: 0.7"/>;
                         {this.props.children}
                     </Entity>
                     : <div/>}
@@ -153,7 +159,7 @@ class DaydreamController extends React.Component {
                     <Entity>
                         <Entity
                             raycaster="far: 20; interval: 500; objects: .intersectable; showLine: true"
-                            line="color: yellow; opacity: 2"
+                            line="color: yellow; opacity: 0.7"
                         />;
                         {this.props.children}
                     </Entity>

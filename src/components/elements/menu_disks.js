@@ -13,10 +13,10 @@ export const DISKS = {
         texture: "#fogTexture",
         textureId: "#menuFogTexture",
     },
-    "#fence": {
+    "#mushroom": {
         position: {x: -0.6, y: -0.6, z: 0.0},
-        texture: "#fenceTexture",
-        textureId: "#menuFenceTexture",
+        texture: "#mushroomTexture",
+        textureId: "#menuMushroomTexture",
     },
     "#birds": {
         position: {x: 0.6, y: 0.6, z: 0.0},
@@ -65,7 +65,7 @@ class Rock extends React.Component {
     }
 }
 
-export default class Rocks extends React.Component {
+export default class Menu extends React.Component {
     constructor(props) {
         super(props);
 
