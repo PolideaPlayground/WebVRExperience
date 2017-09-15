@@ -86,8 +86,9 @@ export default class Controlers extends React.Component {
                 </DaydreamController>
 
                 <Entity camera="userHeight:1.6" look-controls wasd-controls>
-                    <CursorController enabled={true}/>
-                    {selectedModel}
+                    <CursorController enabled={this.state.cursor_enabled}>
+                        {selectedModel}
+                    </CursorController>
                 </Entity>
             </Entity>
         );
@@ -97,25 +98,28 @@ export default class Controlers extends React.Component {
 class CursorController extends React.Component {
     render() {
         if (this.props.enabled) {
-            return <Entity
-                id="cursor"
-                primitive="a-cursor"
-                cursor="fuse: true"
-                fuseTimeout="1000"
-                raycaster="far: 10; interval: 500; objects: .intersectable; showLine: false"
-                line="color: yellow; opacity: 2"
-                geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.03"
-                material="color: yellow; shader: flat"
-            >
-                <a-animation
-                    begin="cursor-fusing"
-                    easing="ease-in"
-                    attribute="scale"
-                    fill="backwards"
-                    from="1 1 1"
-                    dur="1000"
-                    to="0.1 0.1 0.1"
-                />
+            return <Entity>
+                <Entity
+                    id="cursor"
+                    primitive="a-cursor"
+                    cursor="fuse: true"
+                    fuseTimeout="1000"
+                    raycaster="far: 10; interval: 500; objects: .intersectable; showLine: false"
+                    line="color: yellow; opacity: 2"
+                    geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.03"
+                    material="color: yellow; shader: flat"
+                >
+                    <a-animation
+                        begin="cursor-fusing"
+                        easing="ease-in"
+                        attribute="scale"
+                        fill="backwards"
+                        from="1 1 1"
+                        dur="1000"
+                        to="0.1 0.1 0.1"
+                    />
+                </Entity>
+                {this.props.children}
             </Entity>
         } else {
             return <Entity/>
@@ -125,19 +129,16 @@ class CursorController extends React.Component {
 
 class GearVRController extends React.Component {
     render() {
-        let gearRaycaster;
-        if (this.props.enabled) {
-            gearRaycaster = <Entity
-                primitive="a-cursor"
-                cursor="fuse: false"
-                downEvents={["trackpaddown", "triggerdown"]}
-                upEvents={["trackpadup", "triggerup"]}
-                raycaster="far: 10;  interval: 500; objects: .intersectable; showLine: true"
-                line="color: yellow; opacity: 2"/>;
-        }
         return (
-            <Entity gearvr-controls clickable-controller>
-                {gearRaycaster}
+            <Entity gearvr-controls trackpad-to-click>
+                {this.props.enabled ?
+                    <Entity>
+                        <Entity
+                            raycaster="far: 10;  interval: 500; objects: .intersectable; showLine: true"
+                            line="color: yellow; opacity: 2"/>;
+                        {this.props.children}
+                    </Entity>
+                    : <div/>}
             </Entity>
 
         );
@@ -146,20 +147,18 @@ class GearVRController extends React.Component {
 
 class DaydreamController extends React.Component {
     render() {
-        let daydreamRaycaster;
-        if (this.props.enabled) {
-            daydreamRaycaster =
-                <Entity
-                    primitive="a-cursor"
-                    cursor="fuse: false"
-                    downEvents="trackpaddown"
-                    upEvents="trackpadup"
-                    raycaster="far: 20; interval: 500; objects: .intersectable; showLine: true"
-                    line="color: yellow; opacity: 2"/>;
-        }
         return (
-            <Entity daydream-controls>
-                {daydreamRaycaster}
+            <Entity daydream-controls trackpad-to-click>
+                {this.props.enabled ?
+                    <Entity>
+                        <Entity
+                            raycaster="far: 20; interval: 500; objects: .intersectable; showLine: true"
+                            line="color: yellow; opacity: 2"
+                        />;
+                        {this.props.children}
+                    </Entity>
+                    : <div/>}
+                }
             </Entity>
 
         );

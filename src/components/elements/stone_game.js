@@ -167,7 +167,6 @@ class Rock extends React.Component {
                 {...this.props}
                 id={this.props.src}
                 hoverable
-                controller-clickable
                 sound="src: #rockSound; on: run_down"
                 className="field intersectable"
                 shadow="receive: false"
