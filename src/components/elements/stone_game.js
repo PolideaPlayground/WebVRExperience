@@ -6,7 +6,7 @@ import {
     selectCurrentDisk
 } from "../redux/game_state";
 import {toggleBirds, toggleFog, toggleMushroom, toggleNight} from "../redux/environment_state";
-import Instructions from "./instructions";
+import {SELECTED_STATE} from "../properties/stone_field";
 
 
 export const ROCKS = {
@@ -53,26 +53,18 @@ export default class StoneGame extends React.Component {
         this.onDiskChange = this.onDiskChange.bind(this);
     }
 
-    createAllRocks(callback) {
+    createAllRocks() {
         return Object.entries(this.state.fields).map((field) => {
-            return this.createRock(field[0], field[1], callback);
+            return this.createRock(field[0], field[1],);
         })
     }
 
-    createRock(name, data, callback) {
+    createRock(name, data) {
         return <Rock
             key={name}
             name={name}
-            src={data.texture}
-            hovered_field={
-                {
-                    position_down: {x: data.position.x, y: data.position.y - 0.15, z: data.position.z},
-                    position_up: {x: data.position.x, y: data.position.y, z: data.position.z}
-                }
-            }
-            placed={data.placed}
-            onFieldClicked={callback}
-            position={data.position}
+            rock={data}
+            onFieldClicked={this.onDiskChange}
         />
     }
 
@@ -86,6 +78,7 @@ export default class StoneGame extends React.Component {
         if (selectedTexture && fieldModel.texture === selectedTexture) {
             console.log("Placing: " + selectedTexture);
             fieldModel.placed = true;
+            el.addState(SELECTED_STATE);
             deselectCurrentDisk(el);
             isDirty = true;
         } else if (fieldModel.placed) {
@@ -93,6 +86,7 @@ export default class StoneGame extends React.Component {
             //Pickup model
             console.log("Picking up: " + texture);
             fieldModel.placed = false;
+            el.removeState(SELECTED_STATE);
             selectCurrentDisk(el, texture);
             isDirty = true;
         }
@@ -145,7 +139,7 @@ export default class StoneGame extends React.Component {
 
                 <Entity position={{x: -0.55, y: 0.5, z: -0.2}}>
                     {
-                        this.createAllRocks(this.onDiskChange)
+                        this.createAllRocks()
                     }
                 </Entity>
             </Entity>
@@ -160,51 +154,84 @@ class Rock extends React.Component {
 
         this.state = {
             name: this.props.name,
+            rock: this.props.rock,
+            onFieldClicked: this.props.onFieldClicked
         }
     }
 
+    entityCallback(el) {
+        this.el = el;
+    }
+
     render() {
+        let rock = this.state.rock;
+        let down_position, up_position, hovered_position;
+        down_position = {x: rock.position.x, y: rock.position.y - 0.15, z: rock.position.z};
+        hovered_position = {x: rock.position.x, y: rock.position.y - 0.05, z: rock.position.z};
+        up_position = rock.placed ? down_position : {x: rock.position.x, y: rock.position.y, z: rock.position.z};
+
         return (
             <Entity
-                {...this.props}
-                id={this.props.src}
-                hoverable
+                _ref={(el) => this.entityCallback(el)}
+                key={this.state.name}
+                stone_field={{
+                    position_down: down_position,
+                    position_hovered: hovered_position,
+                    position_up: up_position
+                }}
+                position={up_position}
                 sound="src: #rockSound; on: run_down"
-                className="field intersectable"
+                className="intersectable"
                 shadow="receive: false"
                 events={{
                     click: (evt) => {
                         let el = evt.target;
-                        this.props.onFieldClicked(el, this.state.name);
+                        console.log(el);
+                        this.state.onFieldClicked(this.el, this.state.name);
                     }
                 }}
             >
-
-                <Entity
-                    id={this.props.src}
-                    collada-model="#rockButton"
+                <SquareStone
+                    stone_texture={rock.texture}/>
+                <RoundStone
+                    visible={rock.placed}
+                    stone_texture={rock.texture}
                 />
-                <a-image
-                    position="0 0.115 0"
-                    rotation="270 0 0"
-                    scale="0.4 0.4 1"
-                    src={this.props.src}/>
-
-                <Entity
-                    visible={this.props.placed}
-                    rotation="0 180 0"
-                    position={{x: 0.0, y: 0.2, z: 0}}>
-                    <Entity id="model"
-                            scale={{x: scaleFactor, y: scaleFactor, z: scaleFactor}}
-                            collada-model="#rockDisk"/>
-                    <a-image
-                        position="0 0.095 0"
-                        rotation="270 180 0"
-                        scale="0.33 0.33 1"
-                        src={this.props.src}/>
-                </Entity>
             </Entity>
         )
     }
 
+}
+
+class SquareStone extends React.Component {
+    render() {
+        return <Entity>
+            <Entity
+                collada-model="#rockButton"
+            />
+            <a-image
+                position="0 0.115 0"
+                rotation="270 0 0"
+                scale="0.4 0.4 1"
+                src={this.props.stone_texture}/>
+        </Entity>
+    }
+}
+
+class RoundStone extends React.Component {
+    render() {
+        return <Entity
+            {...this.props}
+            rotation="0 180 0"
+            position={{x: 0.0, y: 0.2, z: 0}}>
+            <Entity id="model"
+                    scale={{x: scaleFactor, y: scaleFactor, z: scaleFactor}}
+                    collada-model="#rockDisk"/>
+            <a-image
+                position="0 0.095 0"
+                rotation="270 180 0"
+                scale="0.33 0.33 1"
+                src={this.props.stone_texture}/>
+        </Entity>
+    }
 }

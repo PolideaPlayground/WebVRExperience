@@ -11,8 +11,7 @@ import Assets from "./components/assets";
 import Controlers from "./components/controlers";
 
 import "./components/properties/trackpad_to_click";
-import "./components/properties/hoverable";
-import "./components/properties/hovered_field";
+import "./components/properties/stone_field";
 import "./components/properties/hovered_menu_item";
 
 import "./components/extras/birds";

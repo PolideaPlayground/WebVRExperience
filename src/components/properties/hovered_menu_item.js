@@ -1,5 +1,4 @@
 import * as AFRAME from "aframe";
-import {HOVERED_STATE} from "./hoverable";
 
 AFRAME.registerComponent('hovered_menu_item', {
     schema: {
@@ -10,13 +9,22 @@ AFRAME.registerComponent('hovered_menu_item', {
     },
     init: function () {
         let el = this.el;
+
+        this.el.addEventListener('raycaster-intersected', function () {
+            el.emit("run_down");
+        });
+        this.el.addEventListener('raycaster-intersected-cleared', function () {
+            el.emit("run_up");
+        });
+
         el.setAttribute("animation__position_down", {
             property: "position",
             dur: 400,
             easing: "easeInSine",
             to: this.data.position_down,
             startEvents: "run_down",
-            restartEvents: "run_down"
+            restartEvents: "run_down",
+            pauseEvents: "run_up"
         });
 
         el.setAttribute("animation__position_up", {
@@ -25,29 +33,14 @@ AFRAME.registerComponent('hovered_menu_item', {
             easing: "easeInSine",
             to: this.data.position_up,
             startEvents: "run_up",
-            restartEvents: "run_up"
-        });
-
-
-        this.el.addEventListener('stateadded', function (evt) {
-            let stateName = evt.detail.state;
-            let el = evt.target;
-
-            if (stateName === HOVERED_STATE) {
-                el.emit("run_down");
-            }
-        });
-        this.el.addEventListener('stateremoved', function (evt) {
-            let stateName = evt.detail.state;
-            let element = evt.target;
-
-            if (stateName === HOVERED_STATE) {
-                element.emit("run_up");
-            }
+            restartEvents: "run_up",
+            pauseEvents: "run_down"
         });
     },
     play: function () {
         let el = this.el;
+
+        // FIXME Bug color animation only works when binded on play
         el.setAttribute("animation__color_down", {
             property: "material.color",
             dur: 400,

@@ -29,7 +29,7 @@ export const DISKS = {
     }
 };
 
-class Rock extends React.Component {
+class MenuItem extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -37,7 +37,7 @@ class Rock extends React.Component {
         }
     }
 
-    static onMenuItemClicked(el, model) {
+    onMenuItemClicked(el, model) {
         //Pickup model
         console.log("Picking up: " + model);
         selectCurrentDisk(el, model);
@@ -48,7 +48,6 @@ class Rock extends React.Component {
             <Entity
                 className="item intersectable"
                 controller-clickable
-                hoverable
                 hovered_menu_item={{
                     position_down: this.state.field.position_down,
                     position_up: this.state.field.position_up
@@ -61,7 +60,7 @@ class Rock extends React.Component {
                 events={{
                     click: (evt) => {
                         let el = evt.target;
-                        Rock.onMenuItemClicked(el, this.state.field.texture)
+                        this.onMenuItemClicked(el, this.state.field.texture)
                     }
                 }}>
                 <a-image
@@ -83,8 +82,8 @@ export default class Menu extends React.Component {
     }
 
     createRock(field) {
-        return <Rock key={field.texture}
-                     field={field}
+        return <MenuItem key={field.texture}
+                         field={field}
         />
     }
 
@@ -108,7 +107,6 @@ export default class Menu extends React.Component {
                 </Entity>
                 <Entity
                     className="item intersectable"
-                    hoverable
                     hovered_menu_item={{
                         position_down: {x: 0, y: -1.5, z: 0},
                         position_up: {x: 0, y: -1.5, z: 0.1}
