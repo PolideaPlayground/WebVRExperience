@@ -81,7 +81,7 @@ export default class StoneGame extends React.Component {
             el.addState(SELECTED_STATE);
             deselectCurrentDisk(el);
             isDirty = true;
-        } else if (fieldModel.placed) {
+        } else if (!selectedTexture && fieldModel.placed) {
             let texture = fieldModel.texture;
             //Pickup model
             console.log("Picking up: " + texture);
