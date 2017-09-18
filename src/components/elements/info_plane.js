@@ -33,7 +33,6 @@ export default class Info extends React.Component {
                     shadow="receive: false; cast: true">
                 <Entity
                     id="polidea"
-                    hoverable
                     hovered_menu_item={{
                         position_down: {x: 0, y: 0, z: 0},
                         position_up: {x: 0, y: 0, z: 0.1},
@@ -104,7 +103,7 @@ export default class Info extends React.Component {
                             lineHeight: 60,
                             height: "auto",
                             color: "#484848",
-                            value: "This WebVR demo was designed and developed by VR team at Polidea."
+                            value: "This WebVR demo was created by VR team at Polidea."
                         }}
                     />
                     <Entity
@@ -117,7 +116,7 @@ export default class Info extends React.Component {
                             lineHeight: 60,
                             height: "auto",
                             color: "#484848",
-                            value: "Authors:\n-Katarzyna Kucharczyk\n-Przemyslaw Pomaski\n-Chris Wrobel"
+                            value: "Designed and developed by:\n-Katarzyna Kucharczyk\n-Przemyslaw Pomaski\n-Chris Wrobel"
                         }}
                     />
                     <Entity
