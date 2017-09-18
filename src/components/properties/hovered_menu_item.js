@@ -3,25 +3,27 @@ import {HOVERED_STATE} from "./hoverable";
 
 AFRAME.registerComponent('hovered_menu_item', {
     schema: {
-        scale_down: {default: {x: 1.1, y: 1.1, z: 1.1}},
-        scale_up: {default: {x: 1, y: 1, z: 1}}
+        position_down: {default: {x: 0, y: 0, z: 0}},
+        position_up: {default: {x: 0, y: 0, z: 0.1}},
+        color_down: {default: "#d3e4ff"},
+        color_up: {default: "#FFFFFF"},
     },
     init: function () {
         let el = this.el;
-        el.setAttribute("animation__scale_down", {
-            property: "scale",
+        el.setAttribute("animation__position_down", {
+            property: "position",
             dur: 400,
             easing: "easeInSine",
-            to: this.data.scale_down,
+            to: this.data.position_down,
             startEvents: "run_down",
             restartEvents: "run_down"
         });
 
-        el.setAttribute("animation__scale_up", {
-            property: "scale",
+        el.setAttribute("animation__position_up", {
+            property: "position",
             dur: 400,
             easing: "easeInSine",
-            to: this.data.scale_up,
+            to: this.data.position_up,
             startEvents: "run_up",
             restartEvents: "run_up"
         });
@@ -32,7 +34,6 @@ AFRAME.registerComponent('hovered_menu_item', {
             let el = evt.target;
 
             if (stateName === HOVERED_STATE) {
-                console.log("Set attribute");
                 el.emit("run_down");
             }
         });
@@ -48,19 +49,21 @@ AFRAME.registerComponent('hovered_menu_item', {
     play: function () {
         let el = this.el;
         el.setAttribute("animation__color_down", {
-            property: "color",
+            property: "material.color",
             dur: 400,
             easing: "easeInSine",
-            to: "#444",
+            from: this.data.color_up,
+            to: this.data.color_down,
             startEvents: "run_down",
             restartEvents: "run_down"
         });
 
         el.setAttribute("animation__color_up", {
-            property: "color",
+            property: "material.color",
             dur: 400,
             easing: "easeInSine",
-            to: "#19c",
+            from: this.data.color_down,
+            to: this.data.color_up,
             startEvents: "run_up",
             restartEvents: "run_up"
         });

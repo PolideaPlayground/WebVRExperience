@@ -33,6 +33,11 @@ export default class Info extends React.Component {
                     shadow="receive: false; cast: true">
                 <Entity
                     id="polidea"
+                    hoverable
+                    hovered_menu_item={{
+                        position_down: {x: 0, y: 0, z: 0},
+                        position_up: {x: 0, y: 0, z: 0.1},
+                    }}
                     visible={this.state.buttonVisible}
                     position={{x: 0, y: 0, z: 0.1}}
                     className={"intersectable"}

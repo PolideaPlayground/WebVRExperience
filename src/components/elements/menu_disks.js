@@ -4,22 +4,26 @@ import {deselectCurrentDisk, selectCurrentDisk} from "../redux/game_state";
 
 export const DISKS = {
     "#sun": {
-        position: {x: -0.5, y: 0.5, z: 0.0},
+        position_down: {x: -0.5, y: 0.5, z: 0.0},
+        position_up: {x: -0.5, y: 0.5, z: 0.1},
         texture: "#sunTexture",
         textureId: "#menuSunTexture",
     },
     "#fog": {
-        position: {x: 0.5, y: -0.5, z: 0.0},
+        position_down: {x: 0.5, y: -0.5, z: 0.0},
+        position_up: {x: 0.5, y: -0.5, z: 0.1},
         texture: "#fogTexture",
         textureId: "#menuFogTexture",
     },
     "#mushroom": {
-        position: {x: -0.5, y: -0.5, z: 0.0},
+        position_down: {x: -0.5, y: -0.5, z: 0.0},
+        position_up: {x: -0.5, y: -0.5, z: 0.1},
         texture: "#mushroomTexture",
         textureId: "#menuMushroomTexture",
     },
     "#birds": {
-        position: {x: 0.5, y: 0.5, z: 0.0},
+        position_down: {x: 0.5, y: 0.5, z: 0.0},
+        position_up: {x: 0.5, y: 0.5, z: 0.1},
         texture: "#birdsTexture",
         textureId: "#menuBirdsTexture",
     }
@@ -45,11 +49,14 @@ class Rock extends React.Component {
                 className="item intersectable"
                 controller-clickable
                 hoverable
-                hovered_menu_item
+                hovered_menu_item={{
+                    position_down: this.state.field.position_down,
+                    position_up: this.state.field.position_up
+                }}
                 geometry={{primitive: 'plane', width: 1.0, height: 1.0}}
                 material={{color: 'white', opacity: 1.0}}
                 rotation={{x: 0, y: 0, z: 0}}
-                position={this.state.field.position}
+                position={this.state.field.position_up}
                 shadow="cast: false; receive: false"
                 events={{
                     click: (evt) => {
@@ -59,6 +66,7 @@ class Rock extends React.Component {
                 }}>
                 <a-image
                     position="0.0 -0.05 0.005"
+                    scale="0.8 0.8 0.8"
                     src={this.state.field.textureId}/>
             </Entity>
         );
@@ -101,10 +109,13 @@ export default class Menu extends React.Component {
                 <Entity
                     className="item intersectable"
                     hoverable
-                    hovered_menu_item
+                    hovered_menu_item={{
+                        position_down: {x: 0, y: -1.5, z: 0},
+                        position_up: {x: 0, y: -1.5, z: 0.1}
+                    }}
                     geometry={{primitive: 'plane', width: 0.7, height: 0.7}}
                     material={{color: 'white', opacity: 1.0}}
-                    position={{x: 0, y: -1.5, z: 0}}
+                    position={{x: 0, y: -1.5, z: 0.1}}
                     shadow="cast: false; receive: false"
                     events={{
                         click: (evt) => {
@@ -114,7 +125,7 @@ export default class Menu extends React.Component {
                     }}>
                     <a-image
                         position="0.02 -0.0 0.005"
-                        scale="0.7 0.7 0.7"
+                        scale="0.55 0.55 0.55"
                         src="#menuBinTexture"/>
                 </Entity>
             </Entity>
