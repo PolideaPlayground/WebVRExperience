@@ -1,0 +1,220 @@
+#splash {
+    z-index: 1000;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    display: block;
+    overflow: hidden;
+
+    background-position-x: center;
+    background-position-y: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-color: rgb(120, 139, 58);
+
+    background-image: url(/static/img/background.jpg);
+
+    color: rgba(255, 255, 255, 1);
+}
+
+@media screen and (max-aspect-ratio: 1/1) {
+    #splash {
+        background-image: url(/static/img/background_tablet.jpg);
+    }
+}
+
+#sceneContainer {
+    height: 100%;
+}
+
+#about {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(120, 139, 58, 0.86)
+}
+
+#about .content {
+    padding-top: 90px;
+    margin: 0 auto;
+    max-width: 500px;
+}
+
+#about .content .description {
+    font-family: 'Roboto';
+    font-size: 18px;
+    font-weight: 500;
+    color: rgba(206, 217, 163, 1);
+    text-align: left;
+    line-height: 26px;
+}
+
+#about .content .about-head {
+    font-family: 'Lora';
+    font-size: 39px;
+    font-weight: bold;
+    color: rgba(255, 255, 255, 1);
+    text-align: left;
+}
+
+#about a {
+    font-family: 'Roboto';
+    font-size: 18px;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 1);
+    text-align: left;
+}
+
+#about #about-xbutton {
+    position: absolute;
+    top: 48px;
+    right: 48px;
+    height: 16px;
+    width: 16px;
+    background-image: url("./static/img/close.svg");
+}
+
+#polidea-info-container {
+    position: absolute;
+    top: 24px;
+    left: 24px;
+    height: auto;
+    width: 122px;
+    background-color: rgba(255, 255, 255, 0.8);
+
+    font-family: 'Roboto';
+    font-size: 12px;
+    font-weight: 500;
+    color: rgba(89, 90, 92, 1);
+    text-align: center;
+}
+
+#polidea-info-container .content {
+    padding: 12px;
+}
+
+#splash #main-container {
+    position: relative;
+    margin: 0 auto;
+    max-width: 500px;
+    height: 100%;
+}
+
+#about-button {
+    position: absolute;
+    top: 48px;
+    right: 48px;
+    height: 32px;
+    width: 32px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border: 2px solid rgba(255, 255, 255, 1);
+    border-radius: 17px;
+
+    display: table;
+}
+
+#about-button .image-container {
+    text-align: center;
+    vertical-align: middle;
+    display: table-cell;
+}
+
+#main-container #title-group {
+    position: absolute;
+    top: 20%;
+    font-family: 'Lora';
+    color: rgba(255, 255, 255, 1);
+    text-align: center;
+}
+
+#main-container #title-group .title_bold {
+    font-size: 67px;
+    font-weight: bold;
+}
+
+#main-container #title-group .title_regular {
+    font-size: 36px;
+    margin-top: 12px;
+    font-weight: normal;
+}
+
+#enter-container {
+    position: absolute;
+    top: 70%;
+}
+
+#enter-container div.center-content {
+    margin: 0 auto;
+    min-width: 200px;
+    max-width: 50%;
+}
+
+#enter-container .enter-info {
+    padding-top: 24px;
+    max-width: 190px;
+    margin: 0 auto;
+
+    font-family: 'Roboto';
+    font-size: 17px;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 1);
+    text-align: center;
+    text-decoration: underline;
+}
+
+.white-box {
+    min-width: 200px;
+    padding: 12px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border: 2px solid rgba(255, 255, 255, 1);
+
+    font-family: 'Roboto';
+    font-size: 24px;
+    font-weight: bold;
+    color: rgba(255, 255, 255, 1);
+    text-align: center;
+}
+
+/*Tablet specific*/
+@media (max-width: 1024px) {
+    #about .content {
+        padding: 48px 120px;
+        margin: auto;
+        max-width: 500px;
+    }
+
+    #about-button {
+        top: 36px;
+        right: 36px;
+    }
+
+    #about-xbutton {
+        top: 40px;
+        right: 40px;
+    }
+}
+
+/*Mobile specific*/
+@media (max-width: 768px) {
+    #about .content {
+        padding: 28px 60px;
+        margin: auto;
+        max-width: none;
+    }
+
+    #about-button {
+        top: 24px;
+        right: 24px;
+    }
+
+    #about-xbutton {
+        top: 24px;
+        right: 24px;
+    }
+}
+
