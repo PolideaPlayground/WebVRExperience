@@ -1,21 +1,31 @@
-import * as State from  "./../../utils/state_component";
+import * as State from "./../../utils/state_component";
 
 const FOGDAY = 'density: 0.06; far: 40; color: #ababab; near: 0; type: exponential';
-const FOGNIGHT = 'density: 0.06; far: 40; color: #4e4b55; near: 0; type: exponential';
+const FOGNIGHT = 'density: 0.03; far: 40; color: #302D48; near: 0; type: exponential';
 const NOFOG = 'density: 0; far: 40; type: exponential; color: #ababab; near: 0';
-const NIGHTBACKGROUND = '#000';
-const DAYBACKGROUND = '#FFB';
+
+const DAYBACKGROUND = 'shader: gradient; topColor: 196 189 255; bottomColor: 255 255 255';
+const NIGHTBACKGROUND = 'shader: gradient; topColor: 29 27 39; bottomColor: 98 111 168';
+
 const NIGHTSOUND = 'src: #nightSound; autoplay: true; loop: true';
 const DAYSOUND = 'src: #daySound; autoplay: true; loop: true';
 const NOBIRDS = 'attach: false';
 const WITHBIRDS = 'attach: true';
 
+const DAYLIGHT = "intensity: 1.6; color: #FFDA59; castShadow: true";
+const DAYAMBIENT = "type: ambient; intensity: 1.8; color: #9C90ff";
+
+const NIGHTLIGHT = "intensity: 0.4; color: #CAFF59; castShadow: false";
+const NIGHTAMBIENT = "type: ambient; intensity: 1.0; color: #9C90ff";
+
 State.registerReducer('environment', {
     initialState: {
-        color: NIGHTBACKGROUND,
+        skyMaterial: NIGHTBACKGROUND,
+        skyGradient: false,
         fogState: true,
         nightState: true,
-        lightIntensity: 0.4,
+        light: NIGHTLIGHT,
+        ambient: NIGHTAMBIENT,
         mushroomState: false,
         birds: NOBIRDS,
         sound: NIGHTSOUND,
@@ -51,13 +61,15 @@ function changeFog(state, enabled) {
     if (enabled) {
         console.log("Turn off fog");
         newState.fogState = false;
-        newState.color = (state.nightState && NIGHTBACKGROUND) || DAYBACKGROUND;
+        newState.skyGradient = true;
+        newState.skyMaterial = (state.nightState && NIGHTBACKGROUND) || DAYBACKGROUND;
         newState.fog = NOFOG;
         newState.sound = (state.nightState && NIGHTSOUND) || DAYSOUND;
     } else {
         console.log("Turn on fog");
         newState.fogState = true;
-        newState.color = (state.nightState && NIGHTBACKGROUND) || DAYBACKGROUND;
+        newState.skyGradient = false;
+        newState.skyMaterial = (state.nightState && NIGHTBACKGROUND) || DAYBACKGROUND;
         newState.fog = (state.nightState && FOGNIGHT) || FOGDAY;
         newState.sound = (state.nightState && NIGHTSOUND) || DAYSOUND;
     }
@@ -69,8 +81,9 @@ function changeNight(state, enabled) {
     if (!enabled) {
         console.log("Turn on day");
         newState.nightState = false;
-        newState.lightIntensity = 1.4;
-        newState.color = DAYBACKGROUND;
+        newState.light = DAYLIGHT;
+        newState.ambient = DAYAMBIENT;
+        newState.skyMaterial = DAYBACKGROUND;
         newState.fog = (state.fogState && FOGDAY) || NOFOG;
         newState.sound = DAYSOUND;
 
@@ -78,7 +91,9 @@ function changeNight(state, enabled) {
         console.log("Turn on night");
         newState.nightState = true;
         newState.lightIntensity = 0.4;
-        newState.color = NIGHTBACKGROUND;
+        newState.light = NIGHTLIGHT;
+        newState.ambient = NIGHTAMBIENT;
+        newState.skyMaterial = NIGHTBACKGROUND;
         newState.fog = (state.fogState && FOGNIGHT) || NOFOG;
         newState.sound = NIGHTSOUND;
     }

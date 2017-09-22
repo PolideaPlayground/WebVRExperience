@@ -41,7 +41,7 @@ export default class Info extends React.Component {
                     position={{x: 0, y: 0, z: 0.1}}
                     className={"intersectable"}
                     geometry={{primitive: 'plane', width: 1.1, height: 0.45}}
-                    material={{color: 'white', opacity: 1.0}}
+                    material={{shader: "flat", color: 'white', opacity: 1.0}}
                     text={{
                         align: "center",
                         baseline: "center",
@@ -62,7 +62,7 @@ export default class Info extends React.Component {
                     id="text"
                     visible={this.state.infoVisible}
                     geometry={{primitive: 'plane', width: 3, height: 3}}
-                    material={{color: 'white', opacity: 1.0}}
+                    material={{shader: "flat", color: 'white', opacity: 1.0}}
                     position={{x: 1, y: 0, z: 0.1}}
                     scale={{x: 1, y: 1}}
                 >
@@ -72,13 +72,13 @@ export default class Info extends React.Component {
                         scale={{x: 1, y: 1}}
                         className={"intersectable"}
                         geometry={{primitive: 'plane', width: 0.3, height: 0.3}}
-                        material={{color: 'white', opacity: 1.0}}
+                        material={{shader: "flat", color: 'white', opacity: 1.0}}
                         text={{
                             align: "center",
                             width: 6,
                             height: "auto",
                             color: "#484848",
-                            value: "X"
+                            value: "x"
                         }}
                         events={{
                             click: (evt) => {
@@ -116,7 +116,7 @@ export default class Info extends React.Component {
                             lineHeight: 60,
                             height: "auto",
                             color: "#484848",
-                            value: "Designed and developed by:\n-Katarzyna Kucharczyk\n-Przemyslaw Pomaski\n-Chris Wrobel"
+                            value: "Designed and developed by:\n– Kasia Kucharczyk\n– Przemek Pomaski\n– Chris Wrobel"
                         }}
                     />
                     <Entity

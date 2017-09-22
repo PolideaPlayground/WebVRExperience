@@ -228,7 +228,7 @@ class RoundStone extends React.Component {
                     scale={{x: scaleFactor, y: scaleFactor, z: scaleFactor}}
                     collada-model="#rockDisk"/>
             <a-image
-                position="0 0.095 0"
+                position="0 0.055 0"
                 rotation="270 180 0"
                 scale="0.33 0.33 1"
                 src={this.props.stone_texture}/>

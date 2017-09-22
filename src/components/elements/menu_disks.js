@@ -53,7 +53,7 @@ class MenuItem extends React.Component {
                     position_up: this.state.field.position_up
                 }}
                 geometry={{primitive: 'plane', width: 1.0, height: 1.0}}
-                material={{color: 'white', opacity: 1.0}}
+                material={{shader: "flat", color: 'white', opacity: 1.0}}
                 rotation={{x: 0, y: 0, z: 0}}
                 position={this.state.field.position_up}
                 shadow="cast: false; receive: false"
@@ -112,7 +112,7 @@ export default class Menu extends React.Component {
                         position_up: {x: 0, y: -1.5, z: 0.1}
                     }}
                     geometry={{primitive: 'plane', width: 0.7, height: 0.7}}
-                    material={{color: 'white', opacity: 1.0}}
+                    material={{shader: "flat", color: 'white', opacity: 1.0}}
                     position={{x: 0, y: -1.5, z: 0.1}}
                     shadow="cast: false; receive: false"
                     events={{
