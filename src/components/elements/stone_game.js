@@ -89,6 +89,8 @@ export default class StoneGame extends React.Component {
             el.removeState(SELECTED_STATE);
             selectCurrentDisk(el, texture);
             isDirty = true;
+        } else {
+            el.emit("run_fail");
         }
 
         if (isDirty) {
@@ -181,6 +183,8 @@ class Rock extends React.Component {
                 }}
                 position={up_position}
                 sound="src: #rockSound; on: run_down"
+                sound__hover="src: #hoverSound; on: run_hovered"
+                sound__fail="src: #failSound; on: run_fail"
                 className="intersectable"
                 shadow="receive: false"
                 events={{

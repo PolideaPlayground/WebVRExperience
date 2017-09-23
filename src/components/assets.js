@@ -8,6 +8,8 @@ import rockButtonUrl from "./../assets/models/rock_button.dae";
 import rockDiskUrl from "./../assets/models/rock_disk.dae";
 import rockDesktopUrl from "./../assets/models/rock_desktop.dae";
 import rockSoundUrl from "./../assets/sounds/rock_scraping.mp3";
+import failSoundUrl from "./../assets/sounds/stone_fail.mp3";
+import hoverSoundUrl from "./../assets/sounds/stone_hover.m4a";
 import nightSoundUrl from "./../assets/sounds/night_music.m4a";
 import daySoundUrl from "./../assets/sounds/day_music.m4a";
 import sunImageUrl from "./../assets/textures/sun.png";
@@ -43,6 +45,8 @@ export default class Assets extends React.Component {
 
                 {/* sounds */}
                 <audio id="rockSound" src={rockSoundUrl}/>
+                <audio id="hoverSound" src={hoverSoundUrl}/>
+                <audio id="failSound" src={failSoundUrl}/>
                 <audio id="nightSound" src={nightSoundUrl}/>
                 <audio id="daySound" src={daySoundUrl}/>
 
