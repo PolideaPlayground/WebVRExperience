@@ -267,6 +267,11 @@
     display: block;
 }
 
+/* The default background color is #c00 */
+.github-fork-ribbon.right-bottom:before {
+    background-color: #090;
+}
+
 /*Tablet specific*/
 @media (max-width: 1024px) {
     #about .content {
