@@ -1,7 +1,7 @@
 import * as State from "./../../utils/state_component";
 
-const FOGDAY = 'density: 0.06; far: 40; color: #ababab; near: 0; type: exponential';
-const FOGNIGHT = 'density: 0.03; far: 40; color: #302D48; near: 0; type: exponential';
+const FOGDAY = 'density: 0.045; far: 40; color: #e6e3FF; near: 0; type: exponential';
+const FOGNIGHT = 'density: 0.025; far: 40; color: #5C699F; near: 0; type: exponential';
 const NOFOG = 'density: 0; far: 40; type: exponential; color: #ababab; near: 0';
 
 const DAYBACKGROUND = 'shader: gradient; topColor: 196 189 255; bottomColor: 255 255 255';
