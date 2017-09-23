@@ -5,13 +5,53 @@
       <author>Blender User</author>
       <authoring_tool>Blender 2.78.0 commit date:2017-02-24, commit time:14:33, hash:e92f235</authoring_tool>
     </contributor>
-    <created>2017-09-07T17:44:55</created>
-    <modified>2017-09-07T17:44:55</modified>
+    <created>2017-09-21T18:18:18</created>
+    <modified>2017-09-21T18:18:18</modified>
     <unit name="meter" meter="1"/>
     <up_axis>Z_UP</up_axis>
   </asset>
   <library_images/>
   <library_effects>
+    <effect id="rock3-effect">
+      <profile_COMMON>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color sid="ambient">0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <color sid="diffuse">0.31449 0.2513337 0.1697548 1</color>
+            </diffuse>
+            <index_of_refraction>
+              <float sid="index_of_refraction">1</float>
+            </index_of_refraction>
+          </lambert>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="rock5-effect">
+      <profile_COMMON>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color sid="ambient">0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <color sid="diffuse">0.1876405 0.1556943 0.1130106 1</color>
+            </diffuse>
+            <index_of_refraction>
+              <float sid="index_of_refraction">1</float>
+            </index_of_refraction>
+          </lambert>
+        </technique>
+      </profile_COMMON>
+    </effect>
     <effect id="green_spruce-effect">
       <profile_COMMON>
         <technique sid="common">
@@ -64,46 +104,6 @@
             </ambient>
             <diffuse>
               <color sid="diffuse">0.4305785 0.3748957 0.2495603 1</color>
-            </diffuse>
-            <index_of_refraction>
-              <float sid="index_of_refraction">1</float>
-            </index_of_refraction>
-          </lambert>
-        </technique>
-      </profile_COMMON>
-    </effect>
-    <effect id="rock5-effect">
-      <profile_COMMON>
-        <technique sid="common">
-          <lambert>
-            <emission>
-              <color sid="emission">0 0 0 1</color>
-            </emission>
-            <ambient>
-              <color sid="ambient">0 0 0 1</color>
-            </ambient>
-            <diffuse>
-              <color sid="diffuse">0.1876405 0.1556943 0.1130106 1</color>
-            </diffuse>
-            <index_of_refraction>
-              <float sid="index_of_refraction">1</float>
-            </index_of_refraction>
-          </lambert>
-        </technique>
-      </profile_COMMON>
-    </effect>
-    <effect id="rock3-effect">
-      <profile_COMMON>
-        <technique sid="common">
-          <lambert>
-            <emission>
-              <color sid="emission">0 0 0 1</color>
-            </emission>
-            <ambient>
-              <color sid="ambient">0 0 0 1</color>
-            </ambient>
-            <diffuse>
-              <color sid="diffuse">0.31449 0.2513337 0.1697548 1</color>
             </diffuse>
             <index_of_refraction>
               <float sid="index_of_refraction">1</float>
@@ -289,7 +289,7 @@
               <color sid="ambient">0 0 0 1</color>
             </ambient>
             <diffuse>
-              <color sid="diffuse">0.05018849 0.64 0.6217157 1</color>
+              <color sid="diffuse">0.04065255 0.4214602 0.64 1</color>
             </diffuse>
             <reflective>
               <color>1 1 1 1</color>
@@ -358,6 +358,12 @@
     </effect>
   </library_effects>
   <library_materials>
+    <material id="rock3-material" name="rock3">
+      <instance_effect url="#rock3-effect"/>
+    </material>
+    <material id="rock5-material" name="rock5">
+      <instance_effect url="#rock5-effect"/>
+    </material>
     <material id="green_spruce-material" name="green_spruce">
       <instance_effect url="#green_spruce-effect"/>
     </material>
@@ -366,12 +372,6 @@
     </material>
     <material id="rock2-material" name="rock2">
       <instance_effect url="#rock2-effect"/>
-    </material>
-    <material id="rock5-material" name="rock5">
-      <instance_effect url="#rock5-effect"/>
-    </material>
-    <material id="rock3-material" name="rock3">
-      <instance_effect url="#rock3-effect"/>
     </material>
     <material id="green_2-material" name="green_2">
       <instance_effect url="#green_2-effect"/>
@@ -408,6 +408,72 @@
     </material>
   </library_materials>
   <library_geometries>
+    <geometry id="Cube_010-mesh" name="Cube.010">
+      <mesh>
+        <source id="Cube_010-mesh-positions">
+          <float_array id="Cube_010-mesh-positions-array" count="48">-0.281896 -0.2081604 -1.581025 -0.4397674 -0.7403934 0.1428791 -0.2010002 0.9252168 -1.47583 -0.3891478 0.6674044 0.1846365 0.6291823 -0.575896 -1.385839 0.6861577 0.8905599 -1.382863 0.3990498 0.7744214 0.3186064 -0.5242086 -0.7963826 0.9383899 -0.4046617 0.3436676 0.9485834 0.2116675 0.3195906 1.01317 -0.2714572 0.7121399 -0.8974637 0.5483923 0.7415565 -0.6012028 -0.5315094 -0.06665676 0.1318989 -0.5194335 -0.4980377 1.004044 0.1871411 -0.8341808 1.005591 0.1750855 -0.4465243 1.076663</float_array>
+          <technique_common>
+            <accessor source="#Cube_010-mesh-positions-array" count="16" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Cube_010-mesh-normals">
+          <float_array id="Cube_010-mesh-normals-array" count="84">-0.04584747 -0.9961309 -0.07497572 -0.9756437 0.196254 -0.09799879 0.9849199 -0.06053006 0.1620768 -0.9802776 0.1248847 -0.1531662 -0.09659194 0.9807119 0.1699234 0.9853191 -0.03861951 0.1662979 -7.72214e-4 -0.9942026 -0.1075209 0.207139 -0.006062567 -0.9782928 -0.986674 0.1400021 0.08290964 -0.1095422 0.080217 0.99074 -0.004908502 0.9207633 0.3900911 -0.04880791 0.9981608 0.03595691 -0.9893275 -0.1355854 -0.05336493 0.9688065 -0.02221572 0.2468209 -0.1030792 -0.212199 0.9717748 -0.9819139 -0.1358553 -0.131865 -0.9926208 0.07935899 -0.09168499 4.24913e-4 0.9383291 0.3457432 0.9832022 -0.04504787 0.1768735 -0.2991123 -0.9036894 -0.3063943 0.1071071 0.08430486 -0.9906669 -0.980787 0.1859797 0.05889499 -0.1004664 0.08693975 0.9911348 -0.1992922 0.8435825 0.4986494 -0.1250302 0.9905886 -0.0556941 -0.9939563 0.03852927 -0.1027939 0.9585905 -0.02224218 0.2839184 -0.08886718 -0.1822915 0.9792204</float_array>
+          <technique_common>
+            <accessor source="#Cube_010-mesh-normals-array" count="28" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="Cube_010-mesh-vertices">
+          <input semantic="POSITION" source="#Cube_010-mesh-positions"/>
+        </vertices>
+        <polylist material="rock3-material" count="28">
+          <input semantic="VERTEX" source="#Cube_010-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#Cube_010-mesh-normals" offset="1"/>
+          <vcount>3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 </vcount>
+          <p>1 0 14 0 7 0 10 1 12 1 3 1 14 2 11 2 6 2 10 3 0 3 12 3 5 4 10 4 11 4 11 5 4 5 5 5 1 6 4 6 14 6 0 7 5 7 4 7 8 8 12 8 13 8 15 9 8 9 13 9 9 10 3 10 8 10 3 11 11 11 10 11 1 12 13 12 12 12 9 13 14 13 6 13 14 14 13 14 7 14 1 15 12 15 0 15 10 16 2 16 0 16 5 17 2 17 10 17 11 18 14 18 4 18 1 19 0 19 4 19 0 20 2 20 5 20 8 21 3 21 12 21 15 22 9 22 8 22 9 23 6 23 3 23 3 24 6 24 11 24 1 25 7 25 13 25 9 26 15 26 14 26 14 27 15 27 13 27</p>
+        </polylist>
+      </mesh>
+    </geometry>
+    <geometry id="Cube_007-mesh" name="Cube.007">
+      <mesh>
+        <source id="Cube_007-mesh-positions">
+          <float_array id="Cube_007-mesh-positions-array" count="60">-0.7302519 1.050693 1.001952 0.7429641 -0.2820971 -0.6265541 0.7898837 -0.3194708 -0.1039936 -0.6905698 0.7480472 1.63816 -0.8021062 -0.226182 0.3247516 -1.130586 0.3686798 -0.5181007 -1.371819 0.9992928 -0.9731584 0.3257007 1.12807 1.62041 0.28935 1.529821 -1.291296 -0.7969608 0.5315392 1.066954 -0.2257229 -0.3362565 -0.4887501 -0.01748734 -0.3610266 0.02656054 -0.6788823 0.921964 -1.125521 -1.138602 -0.3696388 -0.3110483 -0.8418308 -0.3925731 -0.5292777 -1.122092 -0.2906109 -0.7381036 -1.103897 -0.4137851 0.0415427 -1.011241 -0.3926635 0.172428 -1.060411 -0.3500546 0.2185425 -0.962286 -0.4214978 0.1350152</float_array>
+          <technique_common>
+            <accessor source="#Cube_007-mesh-positions-array" count="20" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Cube_007-mesh-normals">
+          <float_array id="Cube_007-mesh-normals-array" count="108">-0.9939138 0.03961771 0.1027905 -0.2334516 -0.6261405 -0.7439411 0.1231632 -0.7416043 0.6594346 -0.3106951 0.8506772 0.4240481 0.9734475 0.2173395 -0.07185965 0.09272593 -0.9953384 -0.02652508 0.04192644 -0.6992834 0.713614 0.9605669 0.2768116 0.02620184 -0.9410839 -0.1368422 0.3092497 -0.9814059 0.1422429 0.1288784 -0.1519418 0.9788547 0.1369571 0.06211292 0.03820359 -0.9973378 0.3005817 -0.778062 0.551607 0.04809445 -0.3333919 -0.9415609 0.03919398 -0.9964292 -0.07478404 -0.2107568 -0.9597285 -0.1857489 -0.3181322 0.5027532 -0.8037607 -0.9753353 0.1042039 0.1945837 -0.9992536 1.5939e-5 -0.03862905 -0.9736948 0.1096484 0.1997393 -0.2074613 0.0642451 -0.9761313 0.1498941 -0.691179 0.7069678 0.08774852 -0.7301924 0.6775835 0.05566823 -0.9959664 -0.07036989 0.02988028 -0.991443 -0.1270752 -0.1248521 -0.9899947 -0.06574547 0.04897588 -0.7070212 0.7054945 -0.9271174 -0.2590158 0.2708585 -0.9706864 0.1484011 0.1890641 -0.2913337 0.9540714 0.06980407 -0.3829143 -0.5232112 -0.7613322 0.6354709 0.2517612 -0.7299268 0.1337985 -0.7409977 0.6580429 -0.0975691 -0.4771518 -0.8733879 0.04625147 -0.9967072 -0.06660032 -0.3034504 -0.8703098 0.387916</float_array>
+          <technique_common>
+            <accessor source="#Cube_007-mesh-normals-array" count="36" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="Cube_007-mesh-vertices">
+          <input semantic="POSITION" source="#Cube_007-mesh-positions"/>
+        </vertices>
+        <polylist material="rock5-material" count="36">
+          <input semantic="VERTEX" source="#Cube_007-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#Cube_007-mesh-normals" offset="1"/>
+          <vcount>3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 </vcount>
+          <p>13 0 16 0 5 0 6 1 12 1 5 1 4 2 19 2 11 2 7 3 0 3 3 3 8 4 2 4 1 4 19 5 14 5 10 5 9 6 18 6 4 6 8 7 7 7 2 7 5 8 0 8 6 8 0 9 9 9 3 9 8 10 0 10 7 10 14 11 5 11 10 11 4 12 7 12 3 12 1 13 12 13 8 13 11 14 1 14 2 14 14 15 13 15 15 15 18 16 19 16 17 16 9 17 5 17 18 17 15 18 13 18 5 18 16 19 18 19 5 19 6 20 8 20 12 20 11 21 2 21 4 21 4 22 17 22 19 22 10 23 11 23 19 23 19 24 16 24 13 24 13 25 14 25 19 25 17 26 4 26 18 26 3 27 9 27 4 27 5 28 9 28 0 28 8 29 6 29 0 29 12 30 10 30 5 30 14 31 15 31 5 31 4 32 2 32 7 32 1 33 10 33 12 33 11 34 10 34 1 34 18 35 16 35 19 35</p>
+        </polylist>
+      </mesh>
+    </geometry>
     <geometry id="Cylinder_044-mesh" name="Cylinder.044">
       <mesh>
         <source id="Cylinder_044-mesh-positions">
@@ -8205,6 +8271,26 @@
   <library_controllers/>
   <library_visual_scenes>
     <visual_scene id="Scene" name="Scene">
+      <node id="Cube_022" name="Cube_022" type="NODE">
+        <matrix sid="transform">0.05019812 -0.7969338 -0.1030475 -0.5703343 0.4316267 0.04292568 0.2815013 4.760452 -0.1628518 -0.1318788 0.7143348 0.8920463 0 0 0 1</matrix>
+        <instance_geometry url="#Cube_010-mesh" name="Cube_022">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="rock3-material" target="#rock3-material"/>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+      <node id="Cube_021" name="Cube_021" type="NODE">
+        <matrix sid="transform">0.6166542 -0.2343253 0.2178556 0.65048 -0.3492758 -0.1971506 0.3885922 4.940125 -0.02863853 -2.64112 -0.04833566 0.9087527 0 0 0 1</matrix>
+        <instance_geometry url="#Cube_007-mesh" name="Cube_021">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="rock5-material" target="#rock5-material"/>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
       <node id="Cylinder_044" name="Cylinder_044" type="NODE">
         <matrix sid="transform">0.449842 0.6211404 0 -3.364357 -0.6211404 0.449842 0 -40.10294 0 0 0.7669245 -7.143989 0 0 0 1</matrix>
         <instance_geometry url="#Cylinder_044-mesh" name="Cylinder_044">
@@ -10250,7 +10336,7 @@
         </instance_geometry>
       </node>
       <node id="Cube_088" name="Cube_088" type="NODE">
-        <matrix sid="transform">0.02555857 0 0 2.211276 0 0.02555857 0 2.743464 0 0 0.02555857 -0.2051476 0 0 0 1</matrix>
+        <matrix sid="transform">0.01355827 0 0 2.216057 0 0.01355827 0 2.743464 0 0 0.01355827 -0.2051476 0 0 0 1</matrix>
         <instance_geometry url="#Cube_096-mesh" name="Cube_088">
           <bind_material>
             <technique_common>

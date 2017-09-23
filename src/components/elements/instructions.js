@@ -6,7 +6,7 @@ export default class Instructions extends React.Component {
         return <Entity
             {...this.props}
             geometry={{primitive: 'plane', width: 1.0, height: 0.4}}
-            material={{color: 'black', opacity: 0.6}}
+            material={{color: 'black', opacity: 0.4}}
             text={{
                 width: 0.8,
                 height: "auto",
