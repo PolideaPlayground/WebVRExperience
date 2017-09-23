@@ -10,7 +10,16 @@ export default class Mushrooms extends React.Component {
                     position={{x: 3.5, y: 0, z: -4.5}}
                     scale={{x: 1, y: 1, z: 1}}
                     collada-model="#mushroom"
-                />
+                >
+                    <a-animation attribute="scale"
+                                 dur="2000"
+                                 fill="forwards"
+                                 easing="ease-out-elastic"
+                                 from="0 0 0"
+                                 to="1 1 1"
+                                 bind__visibile="visible: environment.mushroomState"
+                                 />
+                </Entity>
 
                 <Entity
                     position={{x: 5.5, y: 0.2, z: -12.5}}

@@ -18,30 +18,26 @@ export default class View extends React.Component {
                 <Sky
                     id={"Sky"}
                     ref={"Sky"}
-                    color="#4e4b55"
                 />
 
                 <Entity
-                    bind__light="intensity: environment.lightIntensity"
+                    bind__light="environment.light"
                     light={{
                         type: "directional",
                         castShadow: true,
-                        shadowCameraTop: 35,
-                        shadowCameraRight: 35,
-                        shadowCameraBottom: -35,
+                        shadowCameraTop: 15,
+                        shadowCameraRight: 25,
+                        shadowCameraBottom: -25,
                         shadowCameraLeft: -35,
-                        shadowMapWidth: 1024,
-                        shadowMapHeight: 1024,
+                        shadowMapWidth: 2048,
+                        shadowMapHeight: 2048,
                     }}
-                    position={{x: 0, y: 140, z: 80}}
+                    position={{x: 45.698, y: 43.389, z: 80}}
 
                 />
 
                 <Entity
-                    light={{
-                        type: "ambient",
-                        intensity: 0.5
-                    }}
+                    bind__light="environment.ambient"
                 />
                 <Background/>
 

@@ -15,16 +15,12 @@ export default class Controlers extends React.Component {
     }
 
     controllerConnected = (evt) => {
-        // Wait for controller to connect before
         let controllerName = evt.detail.name;
-        // console.re.log("Controller:" + controllerName);
         this.enableControllerRaycaster(controllerName, true);
     };
 
     controllerDisconnected = (evt) => {
-        // Wait for controller to connect before
         let controllerName = evt.detail.name;
-        // console.re.log("Controller:" + controllerName);
         this.enableControllerRaycaster(controllerName, false);
     };
 
