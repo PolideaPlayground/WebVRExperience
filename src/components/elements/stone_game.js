@@ -186,7 +186,6 @@ class Rock extends React.Component {
                 events={{
                     click: (evt) => {
                         let el = evt.target;
-                        console.log(el);
                         this.state.onFieldClicked(this.el, this.state.name);
                     }
                 }}

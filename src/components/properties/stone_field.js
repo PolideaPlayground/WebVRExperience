@@ -26,7 +26,6 @@ AFRAME.registerComponent('stone_field', {
             let stateName = evt.detail.state;
 
             if(stateName === SELECTED_STATE || stateName === HOVERED_STATE){
-                console.log(el.states);
                 if (el.is(SELECTED_STATE)) {
                     el.emit("run_down");
                 } else if (el.is(HOVERED_STATE)) {
@@ -38,7 +37,6 @@ AFRAME.registerComponent('stone_field', {
             let stateName = evt.detail.state;
 
             if(stateName === SELECTED_STATE || stateName === HOVERED_STATE) {
-                console.log(el.states);
                 if (!el.is(SELECTED_STATE)) {
                     if (el.is(HOVERED_STATE)) {
                         el.emit("run_hovered");

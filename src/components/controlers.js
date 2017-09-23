@@ -88,7 +88,7 @@ export default class Controlers extends React.Component {
                     {selectedModel}
                 </DaydreamController>
 
-                <Entity camera="userHeight:1.6; fov: 60" look-controls wasd-controls>
+                <Entity camera="userHeight:1.6; fov: 60" look-controls>
                     <CursorController enabled={this.state.cursor_enabled}>
                         {selectedModel}
                     </CursorController>
@@ -106,8 +106,7 @@ class CursorController extends React.Component {
                     <Entity
                         id="cursor"
                         primitive="a-cursor"
-                        cursor="fuse: true"
-                        fuseTimeout="1000"
+                        cursor="fuse: true; fuseTimeout: 1200"
                         raycaster="far: 10; interval: 500; objects: .intersectable; showLine: false"
                         line="color: yellow; opacity: 2"
                         material="color: yellow; shader: flat"
@@ -118,7 +117,7 @@ class CursorController extends React.Component {
                             attribute="scale"
                             fill="backwards"
                             from="1 1 1"
-                            dur="1000"
+                            dur="1200"
                             to="0.1 0.1 0.1"
                         />
                     </Entity>
