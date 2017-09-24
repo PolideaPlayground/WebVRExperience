@@ -124,11 +124,6 @@ export default class StoneGame extends React.Component {
         }
 
         if (this.state.fields["#mushroom"].placed) {
-            let nodeList = document.querySelectorAll("#mushrooms > a-entity");
-            var arrayLength = nodeList.length;
-            for (var i = 0; i < arrayLength; i++) {
-                nodeList[i].emit("grow_mushroom");
-            }
             toggleMushroom(element, true);
         } else {
             toggleMushroom(element, false);

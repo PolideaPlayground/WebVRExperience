@@ -50,6 +50,15 @@ State.registerReducer('environment', {
             state = state || this.initialState;
             let newState = Object.assign({}, state);
             newState.mushroomState = action.enabled;
+
+            if (state.mushroomState !== newState.mushroomState) {
+                let nodeList = document.querySelectorAll("#mushrooms > a-entity");
+                var arrayLength = nodeList.length;
+                for (var i = 0; i < arrayLength; i++) {
+                    nodeList[i].emit("grow_mushroom");
+                }
+            }
+
             return newState;
         },
     }
