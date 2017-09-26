@@ -2,7 +2,7 @@ import React from "react";
 import propellerUrl from "./../assets/models/propeller.dae";
 import windmillUrl from "./../assets/models/windmill.dae";
 import mushroomUrl from "./../assets/models/mushroom.dae";
-import environmentUrl from "./../assets/models/environment.dae";
+import environmentUrl from "./../assets/models/Environment_ModifiersApplied.dae";
 import blockUrl from "./../assets/models/block.dae";
 import rockButtonUrl from "./../assets/models/rock_button.dae";
 import rockDiskUrl from "./../assets/models/rock_disk.dae";

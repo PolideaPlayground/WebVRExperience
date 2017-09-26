@@ -171,6 +171,9 @@ AFRAME.registerComponent('birds', {
         this.boids = [];
         let boid, bird;
 
+        let colors = ['#eeeeee', '#bebebe', '#838383', '#505050']
+        // todo
+
         for (var i = 0; i < this.data.count; i++) {
             boid = this.boids[i] = new Boid();
             boid.position.x = Math.random() * 40 - 20;

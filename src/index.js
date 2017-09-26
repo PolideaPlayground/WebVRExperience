@@ -100,22 +100,26 @@ class SplashScene extends React.Component {
         let gameGroup;
         if (this.state.vrEnabled) {
             gameGroup =
-                <div id="vr-group" className="center-content">
-                    <div
-                        id="enter-vr"
-                        className="white-box clickable"
-                        onTouchTap={() => {
-                            this.enterGame(true);
-                        }}>
-                        Enter VR
+                <div>
+                    <div id="vr-group" className="center-content button">
+                        <div
+                            id="enter-vr"
+                            className="white-box clickable"
+                            onTouchTap={() => {
+                                this.enterGame(true);
+                            }}>
+                            Enter VR
+                        </div>
                     </div>
-                    <div
-                        id="peak-360"
-                        className="enter-info clickable"
-                        onTouchTap={() => {
-                            this.enterGame(false);
-                        }}>
-                        or take a sneak peek<br/>in 360 mode
+                    <div id="vr-group" className="center-content optional">
+                        <div
+                            id="peak-360"
+                            className="enter-info clickable"
+                            onTouchTap={() => {
+                                this.enterGame(false);
+                            }}>
+                            or take a sneak peek<br/>in 360 mode
+                        </div>
                     </div>
                 </div>
         } else {
@@ -138,8 +142,8 @@ class SplashScene extends React.Component {
         return (
             <div id="splash">
                 {/*<a className="github-fork-ribbon right-bottom fixed"*/}
-                   {/*href="https://github.com/PolideaPlayground/WebVRExperience" title="Fork me on GitHub">Fork me on*/}
-                    {/*GitHub</a>*/}
+                {/*href="https://github.com/PolideaPlayground/WebVRExperience" title="Fork me on GitHub">Fork me on*/}
+                {/*GitHub</a>*/}
                 <div id="polidea-info-container"
                      hidden={this.state.aboutEnabled}>
                     <div className="content">

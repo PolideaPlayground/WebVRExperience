@@ -4,7 +4,7 @@ AFRAME.registerComponent('hovered_menu_item', {
     schema: {
         position_down: {default: {x: 0, y: 0, z: 0}},
         position_up: {default: {x: 0, y: 0, z: 0.1}},
-        color_down: {default: "#d3e4ff"},
+        color_down: {default: "#b4d1ff"},
         color_up: {default: "#FFFFFF"},
     },
     init: function () {
