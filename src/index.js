@@ -137,7 +137,9 @@ class SplashScene extends React.Component {
 
         return (
             <div id="splash">
-                <a className="github-fork-ribbon right-bottom fixed" href="https://github.com/PolideaPlayground/WebVRExperience" title="Fork me on GitHub">Fork me on GitHub</a>
+                {/*<a className="github-fork-ribbon right-bottom fixed"*/}
+                   {/*href="https://github.com/PolideaPlayground/WebVRExperience" title="Fork me on GitHub">Fork me on*/}
+                    {/*GitHub</a>*/}
                 <div id="polidea-info-container"
                      hidden={this.state.aboutEnabled}>
                     <div className="content">
@@ -154,13 +156,13 @@ class SplashScene extends React.Component {
                              this.enableAbout(true);
                          }}>
                     <div className="image-container">
-                        ?
+                        <img src="static/img/question.svg"/>
                     </div>
                 </div>
                 <div id="main-container" hidden={this.state.aboutEnabled}>
                     <div id="title-group">
                         <div className="title_bold">
-                            Having fun
+                            Have fun
                         </div>
                         <div className="title_regular">
                             with
@@ -203,62 +205,62 @@ class SplashScene extends React.Component {
                     </div>
                 </div>
             </div>
-    );
-    }
-    }
-
-    class VRScene extends React.Component {
-        render() {
-        return (
-        //TODO when turn on/off antialias and other effects
-        <a-scene
-        id="scene"
-        material={{
-            color: "#031128"
-        }}
-        vr-mode-ui="enabled: true"
-        bind__fog="environment.fog"
-        bind__birds="environment.birds"
-        shadow="type: basic"
-        light="defaultLightsEnabled: false"
-        >
-        <Assets/>
-        <Controlers/>
-        <View/>
-        </a-scene>
         );
     }
-    }
+}
 
-    class MainScene extends React.Component {
-        constructor(props) {
+class VRScene extends React.Component {
+    render() {
+        return (
+            //TODO when turn on/off antialias and other effects
+            <a-scene
+                id="scene"
+                material={{
+                    color: "#031128"
+                }}
+                vr-mode-ui="enabled: true"
+                bind__fog="environment.fog"
+                bind__birds="environment.birds"
+                shadow="type: basic"
+                light="defaultLightsEnabled: false"
+            >
+                <Assets/>
+                <Controlers/>
+                <View/>
+            </a-scene>
+        );
+    }
+}
+
+class MainScene extends React.Component {
+    constructor(props) {
         super(props);
 
         this.state = {
-        gameEnabled: false,
-        vrMode: false
-    }
+            gameEnabled: false,
+            vrMode: false
+        }
     }
 
-        enterGame(vrMode) {
+    enterGame(vrMode) {
         this.setState({
-        gameEnabled: true,
-        vrMode: vrMode
-    })
+            gameEnabled: true,
+            vrMode: vrMode
+        })
     }
 
-        render() {
+    render() {
         let splash;
-        if(!this.state.gameEnabled){
-        splash = <SplashScene callback={this.enterGame.bind(this)}/>;
-    }
+        if (!this.state.gameEnabled) {
+            splash = <SplashScene callback={this.enterGame.bind(this)}/>;
+        }
         return <div>
-        <VRScene />
-        {splash}
+            <VRScene/>
+            {splash}
         </div>;
     }
-    }
+}
 
-    ReactDOM.render(
-        <MainScene/>
+ReactDOM.render(
+    <MainScene/>
     , document.querySelector("#sceneContainer"));
