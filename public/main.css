@@ -15,14 +15,14 @@
     background-size: cover;
     background-color: rgb(120, 139, 58);
 
-    background-image: url({{'/static/img/background.jpg'|absolute_url}});
+    background-image: url("../static/img/background.jpg"), url("./static/img/background.jpg");
 
     color: rgba(255, 255, 255, 1);
 }
 
 @media screen and (max-aspect-ratio: 1/1) {
     #splash {
-        background-image: url({{'/static/img/background_tablet.jpg'|absolute_url}});
+        background-image: url("../static/img/background_tablet.jpg"), url("./static/img/background_tablet.jpg");
     }
 }
 
