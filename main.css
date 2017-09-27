@@ -35,7 +35,7 @@
     position: absolute;
 }
 
-#about {
+#about, #howto {
     position: absolute;
     top: 0px;
     left: 0px;
@@ -44,13 +44,13 @@
     background-color: rgba(120, 139, 58, 0.86)
 }
 
-#about .content {
+#about .content, #howto .content {
     padding-top: 90px;
     margin: 0 auto;
     max-width: 500px;
 }
 
-#about .content .description {
+#about .content .description, #howto .content .description {
     font-family: 'Roboto';
     font-size: 18px;
     font-weight: 500;
@@ -59,7 +59,7 @@
     line-height: 26px;
 }
 
-#about .content .about-head {
+#about .content .about-head, #howto .content .about-head {
     font-family: 'Lora';
     font-size: 39px;
     font-weight: bold;
@@ -67,7 +67,7 @@
     text-align: left;
 }
 
-#about a {
+#about a, #howto a {
     font-family: 'Roboto';
     font-size: 18px;
     font-weight: 500;
@@ -75,10 +75,10 @@
     text-align: left;
 }
 
-#about #about-xbutton {
+#about #about-xbutton, #howto #about-xbutton {
     position: absolute;
-    top: 48px;
-    right: 48px;
+    top: 49px;
+    right: 49px;
     height: 16px;
     width: 16px;
     background-image: url("../static/img/close.svg"), url("./static/img/close.svg");
@@ -112,15 +112,19 @@
     width: 32px;
     background-color: rgba(255, 255, 255, 0.2);
     border: 2px solid rgba(255, 255, 255, 1);
-    border-radius: 17px;
+    border-radius: 50px;
 
     display: table;
+}
+
+#about-button:hover {
+    background-color: rgba(255, 255, 255, 0.3);
 }
 
 #about-button .image-container {
     vertical-align: middle;
     display: table-cell;
-    padding-top: 3px;
+    padding-top: 5px;
     padding-left: 11px;
 }
 
@@ -153,6 +157,11 @@
 
 #enter-container div.center-content {
     margin: 0 auto;
+    padding: 10px;
+}
+
+#enter-container div.center-content-text {
+    margin: 0 auto;
     min-width: 200px;
     max-width: 50%;
 }
@@ -171,17 +180,21 @@
 }
 
 .white-box {
-    min-width: 200px;
-    padding: 12px;
+    min-width: 100px;
+    padding: 10px;
     background-color: rgba(255, 255, 255, 0.2);
     border: 2px solid rgba(255, 255, 255, 1);
-    box-sizing: border-box;
 
     font-family: 'Roboto';
     font-size: 24px;
     font-weight: bold;
     color: rgba(255, 255, 255, 1);
     text-align: center;
+}
+
+.white-box:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+
 }
 
 #enter-container #loader-group {
@@ -269,7 +282,7 @@
 
 /*Tablet specific*/
 @media (max-width: 1024px) {
-    #about .content {
+    #about .content, #howto .content {
         padding: 48px 120px;
         margin: auto;
         max-width: 500px;
@@ -281,8 +294,8 @@
     }
 
     #about-xbutton {
-        top: 40px;
-        right: 40px;
+        top: 36px;
+        right: 36px;
     }
 
     #main-container #title-group .title_bold {
@@ -305,7 +318,7 @@
 
 /*Mobile specific*/
 @media (max-width: 768px) {
-    #about .content {
+    #about .content, #howto .content {
         padding: 28px 60px;
         margin: auto;
         max-width: none;
@@ -333,7 +346,7 @@
     }
 
     #main-container #title-group {
-        padding-top: 80px;
+        padding-top: 10%;
     }
 
     #polidea-info-container {
@@ -344,7 +357,7 @@
     }
 
     #enter-container {
-        bottom: 80px;
+        bottom: 20%;
     }
 
     #about-button {
@@ -352,9 +365,15 @@
         right: 23px;
     }
 
-    #about-xbutton {
+    #about #about-xbutton, #howto #about-xbutton {
         top: 24px;
         right: 24px;
+    }
+
+    .white-box {
+        min-width: 80px;
+        padding: 5px;
+        font-size: 20px;
     }
 
 }
@@ -371,7 +390,7 @@
     }
 
     #enter-container {
-        bottom: 80px;
+        bottom: 10%;
     }
 
     #main-container #title-group {
@@ -385,7 +404,17 @@
     }
 
     #enter-container .enter-info {
-        padding-top: 10px;
+        padding-top: 10%;
+    }
+
+    #about #about-xbutton, #howto #about-xbutton {
+        top: 32px;
+        right: 32px;
+    }
+
+    #about .content .description, #howto .content .description {
+        font-size: 14px;
+        font-family: 'Roboto';
     }
 }
 
