@@ -172,7 +172,7 @@ AFRAME.registerComponent('birds', {
         let boid, bird;
 
         let colors = ['#eeeeee', '#bebebe', '#838383', '#505050']
-        // todo
+
 
         for (var i = 0; i < this.data.count; i++) {
             boid = this.boids[i] = new Boid();
@@ -185,7 +185,7 @@ AFRAME.registerComponent('birds', {
             // boid.setAvoidWalls(true);
             boid.setGoal(0, 10, -20);
             bird = this.birds[i] = new THREE.Mesh(new Bird(), new THREE.MeshBasicMaterial({
-                color: Math.random() * 0xffffff,
+                color:  colors[Math.floor(Math.random()*colors.length)],
                 side: THREE.DoubleSide
             }));
             bird.phase = Math.floor(Math.random() * Math.PI);
