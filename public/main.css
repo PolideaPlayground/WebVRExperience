@@ -99,8 +99,9 @@
 
 #splash #main-container {
     position: relative;
-    margin: 100px auto 0 auto;
+    margin: 0 auto 0 auto;
     max-width: 500px;
+    height: calc(100vh - 36px);
 }
 
 #about-button {
@@ -129,7 +130,8 @@
     font-family: 'Lora';
     color: rgba(255, 255, 255, 1);
     text-align: center;
-    margin-bottom: 100px;
+
+    padding-top: 60px;
 }
 
 #main-container #title-group .title_bold {
@@ -144,8 +146,8 @@
 }
 
 #enter-container {
-    position: relative;
-    bottom: 10px;
+    position: absolute;
+    bottom: 80px;
     width: 100%;
 }
 
@@ -283,8 +285,6 @@
         right: 40px;
     }
 
-
-
     #main-container #title-group .title_bold {
         font-size: 67px;
         font-weight: 700;
@@ -302,85 +302,90 @@
         font-weight: 400;
     }
 }
-    /*Mobile specific*/
-    @media (max-width: 768px) {
-        #about .content {
-            padding: 28px 60px;
-            margin: auto;
-            max-width: none;
-        }
 
-        #splash #main-container  {
-margin-top:0;
-        }
-        #enter-container  {
-            margin-bottom:50px;
-        }
-        #main-container #title-group .title_bold {
-            font-size: 42px;
-            font-weight: 700;
-            font-style: normal;
-
-            font-stretch: normal;
-            font-variant-caps: normal;
-            font-variant-ligatures: normal;
-            font-variant-numeric: normal;
-        }
-
-        #main-container #title-group .title_regular {
-            font-size: 24px;
-            margin-top: 12px;
-            font-weight: 400;
-        }
-
-        #main-container #title-group {
-            margin-bottom: 30px;
-        }
-
-        #polidea-info-container {
-            margin: 23px 0 0 23px;
-            height: 36px;
-            width: 94px;
-            background-color: rgba(255, 255, 255, 0.8);
-        }
-
-        #about-button {
-            top: 23px;
-            right: 23px;
-        }
-
-        #about-xbutton {
-            top: 24px;
-            right: 24px;
-        }
-
+/*Mobile specific*/
+@media (max-width: 768px) {
+    #about .content {
+        padding: 28px 60px;
+        margin: auto;
+        max-width: none;
     }
 
-    /*Mobile horizontal*/
-    @media only screen and (max-width: 768px) and (orientation: landscape) {
-        #main-container #title-group .title_bold {
-            font-size: 36px;
-            font-weight: 700;
-        }
-
-        #splash #main-container  {
-            margin:0 auto;
-        }
-        #enter-container  {
-            margin-bottom:10px;
-        }
-        #main-container #title-group {
-            margin-bottom: 30px;
-        }
-
-        #main-container #title-group .title_regular {
-            font-size: 18px;
-            margin-top: 0px;
-            font-weight: 400;
-        }
-
-        #enter-container .enter-info {
-            padding-top: 10px;
-        }
+    #splash #main-container {
+        margin-top: 0;
     }
+
+    #main-container #title-group .title_bold {
+        font-size: 42px;
+        font-weight: 700;
+        font-style: normal;
+
+        font-stretch: normal;
+        font-variant-caps: normal;
+        font-variant-ligatures: normal;
+        font-variant-numeric: normal;
+    }
+
+    #main-container #title-group .title_regular {
+        font-size: 24px;
+        margin-top: 12px;
+        font-weight: 400;
+    }
+
+    #main-container #title-group {
+        padding-top: 80px;
+    }
+
+    #polidea-info-container {
+        margin: 23px 0 0 23px;
+        height: 36px;
+        width: 94px;
+        background-color: rgba(255, 255, 255, 0.8);
+    }
+
+    #enter-container {
+        bottom: 80px;
+    }
+
+    #about-button {
+        top: 23px;
+        right: 23px;
+    }
+
+    #about-xbutton {
+        top: 24px;
+        right: 24px;
+    }
+
+}
+
+/*Mobile horizontal*/
+@media only screen and (max-width: 768px) and (orientation: landscape) {
+    #main-container #title-group .title_bold {
+        font-size: 36px;
+        font-weight: 700;
+    }
+
+    #splash #main-container {
+        margin: 0 auto;
+    }
+
+    #enter-container {
+        bottom: 80px;
+    }
+
+    #main-container #title-group {
+        padding-top: 0px;
+    }
+
+    #main-container #title-group .title_regular {
+        font-size: 18px;
+        margin-top: 0px;
+        font-weight: 400;
+    }
+
+    #enter-container .enter-info {
+        padding-top: 10px;
+    }
+}
 
