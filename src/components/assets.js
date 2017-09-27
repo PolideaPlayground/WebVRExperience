@@ -11,7 +11,7 @@ import rockSoundUrl from "./../assets/sounds/rock_scraping.mp3";
 import failSoundUrl from "./../assets/sounds/stone_fail.mp3";
 import hoverSoundUrl from "./../assets/sounds/stone_hover.m4a";
 import nightSoundUrl from "./../assets/sounds/night_music.m4a";
-import daySoundUrl from "./../assets/sounds/day_music.m4a";
+import daySoundUrl from "./../assets/sounds/birds.mp3";
 import sunImageUrl from "./../assets/textures/sun.png";
 import birdsImageUrl from "./../assets/textures/birds.png";
 import mushroomImageUrl from "./../assets/textures/mushroom.png";
@@ -19,6 +19,7 @@ import mistImageUrl from "./../assets/textures/mist.png";
 import sticksImageUrl from "./../assets/textures/sticks.png";
 import eyeImageUrl from "./../assets/textures/eye.png";
 import polideaImageUrl from "./../assets/images/logo_Polidea.png";
+import closeImageUrl from "./../assets/images/close.png";
 
 import menuBinImageUrl from "./../assets/textures/m_bin.png";
 import menuSunImageUrl from "./../assets/textures/m_sun.png";
@@ -66,6 +67,7 @@ export default class Assets extends React.Component {
 
                 {/*images*/}
                 <img id="polideaImage" alt="polideaImage" src={polideaImageUrl}/>
+                <img id="closeImage" alt="closeImage" src={closeImageUrl}/>
 
             </a-assets>
         );
