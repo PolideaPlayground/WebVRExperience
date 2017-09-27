@@ -283,6 +283,8 @@
         right: 40px;
     }
 
+
+
     #main-container #title-group .title_bold {
         font-size: 67px;
         font-weight: 700;
@@ -308,7 +310,7 @@
             max-width: none;
         }
 
-        #main-container  {
+        #splash #main-container  {
 margin-top:0;
         }
         #enter-container  {
@@ -329,6 +331,10 @@ margin-top:0;
             font-size: 24px;
             margin-top: 12px;
             font-weight: 400;
+        }
+
+        #main-container #title-group {
+            margin-bottom: 30px;
         }
 
         #polidea-info-container {
