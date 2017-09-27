@@ -85,22 +85,16 @@
 }
 
 #polidea-info-container {
-    position: absolute;
-    top: 24px;
-    left: 24px;
-    height: auto;
+    margin: 34px 0 0 34px;
+    height: 36px;
     width: 94px;
     background-color: rgba(255, 255, 255, 0.8);
-
-    font-family: 'Roboto';
-    font-size: 12px;
-    font-weight: 500;
-    color: rgba(89, 90, 92, 1);
-    text-align: center;
 }
 
 #polidea-info-container .content {
-    padding: 7px 0px 5px 0;
+    padding: 7px 0px 0px 7px;
+    height: auto;
+    width: 81px;
 }
 
 #splash #main-container {
@@ -112,8 +106,8 @@
 
 #about-button {
     position: absolute;
-    top: 48px;
-    right: 48px;
+    top: 39px;
+    right: 39px;
     height: 32px;
     width: 32px;
     background-color: rgba(255, 255, 255, 0.2);
@@ -131,8 +125,7 @@
 }
 
 #main-container #title-group {
-    position: absolute;
-    top: 20%;
+    margin-top: 100px;
     width: 100%;
 
     font-family: 'Lora';
@@ -153,7 +146,7 @@
 
 #enter-container {
     position: absolute;
-    top: 70%;
+    bottom: 30%;
     width: 100%;
 }
 
@@ -290,6 +283,22 @@
         top: 40px;
         right: 40px;
     }
+
+    #main-container #title-group .title_bold {
+        font-size: 67px;
+        font-weight: 700;
+        font-style: normal;
+
+        font-stretch: normal;
+        font-variant-caps: normal;
+        font-variant-ligatures: normal;
+        font-variant-numeric: normal;
+    }
+
+    #main-container #title-group .title_regular {
+        font-size: 36px;
+        margin-top: 12px;
+        font-weight: 400;
 }
 
 /*Mobile specific*/
@@ -298,6 +307,10 @@
         padding: 28px 60px;
         margin: auto;
         max-width: none;
+    }
+
+    #main-container #title-group {
+        margin-top: 100px;
     }
 
     #main-container #title-group .title_bold {
@@ -321,9 +334,16 @@
         top: 150px;
     }
 
+    #polidea-info-container {
+        margin: 23px 0 0 23px;
+        height: 36px;
+        width: 94px;
+        background-color: rgba(255, 255, 255, 0.8);
+    }
+
     #about-button {
-        top: 24px;
-        right: 24px;
+        top: 23px;
+        right: 23px;
     }
 
     #about-xbutton {
@@ -336,22 +356,26 @@
 /*Mobile horizontal*/
 @media only screen and (max-width: 768px) and (orientation: landscape) {
     #main-container #title-group .title_bold {
-        font-size: 56px;
+        font-size: 40px;
         font-weight: 700;
     }
 
+    #main-container #title-group {
+        margin-top: 0px;
+    }
+
     #main-container #title-group .title_regular {
-        font-size: 28px;
+        font-size: 22px;
         margin-top: 8px;
         font-weight: 400;
     }
 
-    #main-container #title-group {
-        top: 10%;
+    #enter-container {
+        bottom: 20%;
     }
 
-    #enter-container {
-        top: 60%;
+    #enter-container .enter-info {
+        padding-top: 10px;
     }
 }
 
