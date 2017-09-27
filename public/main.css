@@ -157,7 +157,6 @@
 
 #enter-container div.center-content {
     margin: 0 auto;
-    padding: 10px;
 }
 
 #enter-container div.center-content-text {
@@ -206,7 +205,8 @@
 }
 
 #enter-container #loader-group .description {
-    margin-top: 16px;
+    margin-top: 10px;
+    overflow: scroll;
 }
 
 #enter-container #loader-group #loader {
@@ -282,6 +282,10 @@
 
 /*Tablet specific*/
 @media (max-width: 1024px) {
+    #splash {
+        background-image: url("../static/img/background_tablet.jpg"), url("./static/img/background_tablet.jpg");
+    }
+
     #about .content, #howto .content {
         padding: 48px 120px;
         margin: auto;
@@ -371,7 +375,6 @@
     }
 
     .white-box {
-        min-width: 80px;
         padding: 5px;
         font-size: 20px;
     }
@@ -380,6 +383,10 @@
 
 /*Mobile horizontal*/
 @media only screen and (max-width: 768px) and (orientation: landscape) {
+    #splash {
+        background-image: url("../static/img/background_mobile.jpg"), url("./static/img/background_mobile.jpg");
+    }
+
     #main-container #title-group .title_bold {
         font-size: 36px;
         font-weight: 700;
@@ -390,7 +397,7 @@
     }
 
     #enter-container {
-        bottom: 10%;
+        bottom: 28%;
     }
 
     #main-container #title-group {
@@ -403,10 +410,6 @@
         font-weight: 400;
     }
 
-    #enter-container .enter-info {
-        padding-top: 10%;
-    }
-
     #about #about-xbutton, #howto #about-xbutton {
         top: 32px;
         right: 32px;
@@ -415,6 +418,9 @@
     #about .content .description, #howto .content .description {
         font-size: 14px;
         font-family: 'Roboto';
+    }
+    #enter-container .enter-info {
+        padding-top: 10px;
     }
 }
 

@@ -115,7 +115,7 @@ export default class Info extends React.Component {
                             lineHeight: 60,
                             height: "auto",
                             color: "#484848",
-                            value: "Designed and developed by:\n– Kasia Kucharczyk\n– Przemek Pomaski\n– Chris Wrobel"
+                            value: "Designed and developed by VR team at Polidea."
                         }}
                     />
                     <Entity
