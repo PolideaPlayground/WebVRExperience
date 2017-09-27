@@ -101,7 +101,6 @@
     position: relative;
     margin: 0 auto;
     max-width: 500px;
-    height: 100%;
 }
 
 #about-button {
@@ -125,7 +124,7 @@
 }
 
 #main-container #title-group {
-    margin-top: 100px;
+    position: absolute;
     width: 100%;
 
     font-family: 'Lora';
@@ -146,7 +145,7 @@
 
 #enter-container {
     position: absolute;
-    bottom: 30%;
+    bottom: 10px;
     width: 100%;
 }
 
@@ -299,83 +298,78 @@
         font-size: 36px;
         margin-top: 12px;
         font-weight: 400;
-}
-
-/*Mobile specific*/
-@media (max-width: 768px) {
-    #about .content {
-        padding: 28px 60px;
-        margin: auto;
-        max-width: none;
-    }
-
-    #main-container #title-group {
-        margin-top: 100px;
-    }
-
-    #main-container #title-group .title_bold {
-        font-size: 42px;
-        font-weight: 700;
-        font-style: normal;
-
-        font-stretch: normal;
-        font-variant-caps: normal;
-        font-variant-ligatures: normal;
-        font-variant-numeric: normal;
-    }
-
-    #main-container #title-group .title_regular {
-        font-size: 24px;
-        margin-top: 12px;
-        font-weight: 400;
-    }
-
-    #main-container #title-group {
-        top: 150px;
-    }
-
-    #polidea-info-container {
-        margin: 23px 0 0 23px;
-        height: 36px;
-        width: 94px;
-        background-color: rgba(255, 255, 255, 0.8);
-    }
-
-    #about-button {
-        top: 23px;
-        right: 23px;
-    }
-
-    #about-xbutton {
-        top: 24px;
-        right: 24px;
-    }
-
-}
-
-/*Mobile horizontal*/
-@media only screen and (max-width: 768px) and (orientation: landscape) {
-    #main-container #title-group .title_bold {
-        font-size: 40px;
-        font-weight: 700;
-    }
-
-    #main-container #title-group {
-        margin-top: 0px;
-    }
-
-    #main-container #title-group .title_regular {
-        font-size: 22px;
-        margin-top: 8px;
-        font-weight: 400;
-    }
-
-    #enter-container {
-        bottom: 20%;
-    }
-
-    #enter-container .enter-info {
-        padding-top: 10px;
     }
 }
+    /*Mobile specific*/
+    @media (max-width: 768px) {
+        #about .content {
+            padding: 28px 60px;
+            margin: auto;
+            max-width: none;
+        }
+
+        #main-container #title-group {
+
+        }
+
+        #main-container #title-group .title_bold {
+            font-size: 42px;
+            font-weight: 700;
+            font-style: normal;
+
+            font-stretch: normal;
+            font-variant-caps: normal;
+            font-variant-ligatures: normal;
+            font-variant-numeric: normal;
+        }
+
+        #main-container #title-group .title_regular {
+            font-size: 24px;
+            margin-top: 12px;
+            font-weight: 400;
+        }
+
+        #polidea-info-container {
+            margin: 23px 0 0 23px;
+            height: 36px;
+            width: 94px;
+            background-color: rgba(255, 255, 255, 0.8);
+        }
+
+        #about-button {
+            top: 23px;
+            right: 23px;
+        }
+
+        #about-xbutton {
+            top: 24px;
+            right: 24px;
+        }
+
+    }
+
+    /*Mobile horizontal*/
+    @media only screen and (max-width: 768px) and (orientation: landscape) {
+        #main-container #title-group .title_bold {
+            font-size: 36px;
+            font-weight: 700;
+        }
+
+        #main-container #title-group {
+        }
+
+        #main-container #title-group .title_regular {
+            font-size: 18px;
+            margin-top: 0px;
+            font-weight: 400;
+        }
+
+        #enter-container {
+            bottom: 10px;
+        }
+
+        #enter-container .enter-info {
+            padding-top: 10px;
+        }
+    }
 
