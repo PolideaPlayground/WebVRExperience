@@ -175,11 +175,11 @@ class SplashScene extends React.Component {
                             nature
                         </div>
                     </div>
+                    <div id="enter-container" className="center-content">
+                        {this.state.loading ? loaderGroup : gameGroup}
+                    </div>
+                </div>
 
-                </div>
-                <div id="enter-container" className="center-content">
-                    {this.state.loading ? loaderGroup : gameGroup}
-                </div>
                 <div id="about" className="dialog" hidden={!this.state.aboutEnabled}>
                     <div
                         id="about-xbutton"
