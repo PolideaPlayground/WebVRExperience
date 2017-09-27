@@ -30,6 +30,7 @@ class SplashScene extends React.Component {
 
         this.state = {
             aboutEnabled: false,
+            howtoEnabled: false,
             loading: true,
             vrEnabled: false
         };
@@ -65,6 +66,12 @@ class SplashScene extends React.Component {
     enableAbout(visible) {
         this.setState({
             aboutEnabled: visible
+        })
+    }
+
+    enableHowto(visible) {
+        this.setState({
+            howtoEnabled: visible
         })
     }
 
@@ -111,7 +118,7 @@ class SplashScene extends React.Component {
                             Enter VR
                         </div>
                     </div>
-                    <div id="vr-group" className="center-content optional">
+                    <div id="vr-group" className="center-content-text optional">
                         <div
                             id="peak-360"
                             className="enter-info clickable"
@@ -124,26 +131,31 @@ class SplashScene extends React.Component {
                 </div>
         } else {
             gameGroup =
-                <div id="no-vr-group" className="center-content">
-                    <div
-                        id="enter-360"
-                        className="white-box clickable"
-                        onTouchTap={() => {
-                            this.enterGame(false);
-                        }}>
-                        Enter 360 mode
+                <div>
+                    <div id="no-vr-group" className="center-content">
+                        <div
+                            id="enter-360"
+                            className="white-box clickable"
+                            onTouchTap={() => {
+                                this.enterGame(false);
+                            }}>
+                            Enter 360 mode
+                        </div>
+
                     </div>
-                    <div className="enter-info clickable">
-                        or learn how to enter VR
+                    <div id="no-vr-group" className="center-content-text">
+                        <div className="enter-info clickable" onTouchTap={
+                            () => {
+                                this.enableHowto(true);
+                            }}>
+                            or learn how to enter VR
+                        </div>
                     </div>
                 </div>
         }
 
         return (
             <div id="splash">
-                {/*<a className="github-fork-ribbon right-bottom fixed"*/}
-                {/*href="https://github.com/PolideaPlayground/WebVRExperience" title="Fork me on GitHub">Fork me on*/}
-                {/*GitHub</a>*/}
                 <div id="polidea-info-container"
                      hidden={this.state.aboutEnabled}>
                     <div className="content">
@@ -154,7 +166,7 @@ class SplashScene extends React.Component {
                 </div>
                 <div id="about-button"
                      className="about-button clickable"
-                     hidden={this.state.aboutEnabled}
+                     hidden={this.state.aboutEnabled || this.state.howtoEnabled}
                      onTouchTap={
                          () => {
                              this.enableAbout(true);
@@ -163,7 +175,7 @@ class SplashScene extends React.Component {
                         <img src="static/img/question.svg"/>
                     </div>
                 </div>
-                <div id="main-container" hidden={this.state.aboutEnabled}>
+                <div id="main-container" hidden={this.state.aboutEnabled || this.state.howtoEnabled}>
                     <div id="title-group">
                         <div className="title_bold">
                             Have fun
@@ -195,6 +207,32 @@ class SplashScene extends React.Component {
                                 proper stone button. You can take the discs from flat interface on your
                                 left-hand.
                                 This experiment allows anyone to join in, no matter what device they're using.
+                            </p>
+                            <p>
+                                Technologies used: AFrame, Three.js, React
+                            </p>
+                            <p>
+                                Created by Polidea VR/AR Team. Check out other WebVR Experiments <a
+                                href="https://webvrexperiments.com/" target="_blank">here</a> and check out the
+                                open-source code on <a
+                                href="https://github.com/PolideaPlayground/WebVRExperience"
+                                target="_blank">GitHub</a>.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="howto" className="dialog" hidden={!this.state.howtoEnabled}>
+                    <div
+                        id="about-xbutton"
+                        className="close xbutton clickable"
+                        onTouchTap={() => {
+                            this.enableHowto(false);
+                        }}/>
+                    <div className="content">
+                        <div className="description">
+                            <p>
+                               Bla Bla bla
                             </p>
                             <p>
                                 Technologies used: AFrame, Three.js, React
