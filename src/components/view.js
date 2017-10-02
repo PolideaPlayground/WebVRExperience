@@ -44,6 +44,10 @@ export default class View extends React.Component {
                 <EnvironmentSound
                     id="envSound"/>
 
+                <Entity id="backgroundSound"
+                        poolSize={2}
+                        sound={{src: '#waterSound', loop: true, autoplay: true, volume: 1.3}}/>
+
                 <Windmill
                     position={{x: -34, y: -5.2, z: 65}}
                     scale={{x: 2, y: 2, z: 2}}

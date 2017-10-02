@@ -7,8 +7,9 @@ const NOFOG = 'density: 0; far: 40; type: exponential; color: #ababab; near: 0';
 const DAYBACKGROUND = 'shader: gradient; topColor: 196 189 255; bottomColor: 255 255 255';
 const NIGHTBACKGROUND = 'shader: gradient; topColor: 29 27 39; bottomColor: 98 111 168';
 
-const NIGHTSOUND = 'src: #nightSound; autoplay: true; loop: true';
-const DAYSOUND = 'src: #daySound; autoplay: true; loop: true';
+const NIGHTSOUND = 'src: #nightSound; autoplay: true; loop: true; volume: 0.8';
+const NOSOUND = 'src: null; autoplay: false; loop: false';
+const BIRDSOUND = 'src: #birdSound; autoplay: true; loop: true';
 const NOBIRDS = 'attach: false';
 const WITHBIRDS = 'attach: true';
 
@@ -24,6 +25,7 @@ State.registerReducer('environment', {
         skyGradient: false,
         fogState: true,
         nightState: true,
+        birdsState: false,
         light: NIGHTLIGHT,
         ambient: NIGHTAMBIENT,
         mushroomState: false,
@@ -42,9 +44,7 @@ State.registerReducer('environment', {
         },
         BIRDS_ENABLED: function (state, action) {
             state = state || this.initialState;
-            let newState = Object.assign({}, state);
-            newState.birds = action.enabled ? WITHBIRDS : NOBIRDS;
-            return newState;
+            return changeBirds(state, action.enabled);
         },
         MUSHROOM_ENABLED: function (state, action) {
             state = state || this.initialState;
@@ -73,14 +73,12 @@ function changeFog(state, enabled) {
         newState.skyGradient = true;
         newState.skyMaterial = (state.nightState && NIGHTBACKGROUND) || DAYBACKGROUND;
         newState.fog = NOFOG;
-        newState.sound = (state.nightState && NIGHTSOUND) || DAYSOUND;
     } else {
         console.log("Turn on fog");
         newState.fogState = true;
         newState.skyGradient = false;
         newState.skyMaterial = (state.nightState && NIGHTBACKGROUND) || DAYBACKGROUND;
         newState.fog = (state.nightState && FOGNIGHT) || FOGDAY;
-        newState.sound = (state.nightState && NIGHTSOUND) || DAYSOUND;
     }
     return newState;
 }
@@ -94,7 +92,14 @@ function changeNight(state, enabled) {
         newState.ambient = DAYAMBIENT;
         newState.skyMaterial = DAYBACKGROUND;
         newState.fog = (state.fogState && FOGDAY) || NOFOG;
-        newState.sound = DAYSOUND;
+        if (state.birdsState === false) {
+            newState.sound = NOSOUND;
+            console.log('Playing nothing');
+        } else {
+
+            console.log('Playing birds');
+            newState.sound = BIRDSOUND;
+        }
 
     } else {
         console.log("Turn on night");
@@ -104,8 +109,38 @@ function changeNight(state, enabled) {
         newState.ambient = NIGHTAMBIENT;
         newState.skyMaterial = NIGHTBACKGROUND;
         newState.fog = (state.fogState && FOGNIGHT) || NOFOG;
-        newState.sound = NIGHTSOUND;
+        if (state.birdsState === false) {
+            console.log('Playing night');
+            newState.sound = NIGHTSOUND;
+        } else {
+            console.log('Playing birds');
+            newState.sound = BIRDSOUND;
+        }
     }
+    return newState;
+}
+
+function changeBirds(state, enabled) {
+    let newState = Object.assign({}, state);
+
+    if (enabled) {
+        console.log('Turn on birds');
+        newState.birdsState = true;
+        newState.birds = WITHBIRDS;
+        newState.sound = BIRDSOUND;
+    } else {
+        console.log('Turn off birds');
+        newState.birdsState = false;
+        newState.birds = NOBIRDS;
+        if (state.nightState === true) {
+            console.log('Turn on night sounds');
+            newState.sound = NIGHTSOUND;
+        } else {
+            console.log('Turn on day sounds');
+            newState.sound = NOSOUND;
+        }
+    }
+
     return newState;
 }
 

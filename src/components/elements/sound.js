@@ -11,6 +11,7 @@ export default class EnvironmentSound extends React.Component {
 
     render() {
         return <Entity {...this.props}
+                       poolSize={2}
                        sound={{src: this.state.sound, volume: 1}}
                        bind__sound="environment.sound"/>
     }
