@@ -1,8 +1,8 @@
 import * as THREE from "three";
 
-var Bird = function () {
+let Bird = function () {
 
-    var scope = this;
+    let scope = this;
 
     THREE.Geometry.call(this);
 
@@ -17,7 +17,7 @@ var Bird = function () {
     v(-3, 0, 0);
 
     f3(0, 2, 1);
-    // f3(0, 3, 2);
+    f3(0, 3, 2);
 
     f3(4, 7, 6);
     f3(5, 6, 7);
@@ -34,7 +34,6 @@ var Bird = function () {
         scope.faces.push(new THREE.Face3(a, b, c));
 
     }
-    this.dynamic = true;
 };
 
 Bird.prototype = Object.create( THREE.Geometry.prototype );

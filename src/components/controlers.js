@@ -1,8 +1,6 @@
 import {Entity} from "aframe-react";
 import React from "react";
 
-const scaleFactor = 0.1;
-
 export default class Controlers extends React.Component {
     constructor(props) {
         super(props);
@@ -53,24 +51,26 @@ export default class Controlers extends React.Component {
     }
 
     render() {
+        const scaleFactor = 0.7;
         let selectedModel = (
             <Entity id="model"
                     position={{x: 0.0, y: 0.05, z: -2.4}}
                     rotation={{x: -20, y: 0, z: 0}}
-                    bind__visible="gameState.disk_visible">
-                {/*<Entity*/}
-                {/*scale={{x: scaleFactor, y: scaleFactor, z: scaleFactor}}*/}
-                {/*rotation={{x: 90, y: 0, z: 0}}*/}
-                {/*collada-model="#rockDisk"/>*/}
-                <Entity
-                    primitive={"a-cylinder"}
                     scale={{x: scaleFactor, y: scaleFactor, z: scaleFactor}}
-                    rotation={{x: 90, y: 0, z: 0}}
-                    material={{shader: "flat", color: "#a64701", transparent: true, opacity: 0.75}}
-                />
+                    bind__visible="gameState.disk_visible">
+                <Entity
+                scale={{x: 0.5, y: 0.5, z: 0.5}}
+                rotation={{x: 90, y: 0, z: 0}}
+                collada-model="#rockDisk"/>
+                {/*<Entity*/}
+                    {/*primitive={"a-cylinder"}*/}
+                    {/*scale={{x: scaleFactor, y: scaleFactor, z: scaleFactor}}*/}
+                    {/*rotation={{x: 90, y: 0, z: 0}}*/}
+                    {/*material={{shader: "flat", color: "#a64701", transparent: true, opacity: 0.75}}*/}
+                {/*/>*/}
                 <a-image
                     position="0 0 0.05"
-                    scale="0.1 0.1 1"
+                    scale="0.15 0.15 1"
                     bind__src="gameState.selected_texture"
                 />
             </Entity>);
