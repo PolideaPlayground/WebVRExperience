@@ -7,11 +7,14 @@ import blockUrl from "./../assets/models/block.dae";
 import rockButtonUrl from "./../assets/models/rock_button.dae";
 import rockDiskUrl from "./../assets/models/rock_disk.dae";
 import rockDesktopUrl from "./../assets/models/rock_desktop.dae";
+
 import rockSoundUrl from "./../assets/sounds/rock_scraping.mp3";
-import failSoundUrl from "./../assets/sounds/stone_fail.mp3";
+import failSoundUrl from "./../assets/sounds/stone_fail_01.mp3";
 import hoverSoundUrl from "./../assets/sounds/stone_hover.m4a";
-import nightSoundUrl from "./../assets/sounds/night_music.m4a";
-import daySoundUrl from "./../assets/sounds/birds.mp3";
+import nightSoundUrl from "./../assets/sounds/night_looped.mp3";
+import birdSoundUrl from "./../assets/sounds/birds_looped.mp3";
+import waterSoundUrl from "./../assets/sounds/water_looped.mp3";
+
 import sunImageUrl from "./../assets/textures/sun.png";
 import birdsImageUrl from "./../assets/textures/birds.png";
 import mushroomImageUrl from "./../assets/textures/mushroom.png";
@@ -49,7 +52,8 @@ export default class Assets extends React.Component {
                 <audio id="hoverSound" src={hoverSoundUrl}/>
                 <audio id="failSound" src={failSoundUrl}/>
                 <audio id="nightSound" src={nightSoundUrl}/>
-                <audio id="daySound" src={daySoundUrl}/>
+                <audio id="waterSound" src={waterSoundUrl}/>
+                <audio id="birdSound" src={birdSoundUrl}/>
 
                 {/* textures */}
                 <img id="birdsTexture" alt="birdsTexture" src={birdsImageUrl}/>
