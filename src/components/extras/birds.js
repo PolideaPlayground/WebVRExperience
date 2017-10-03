@@ -162,8 +162,9 @@ function Boid() {
 
 AFRAME.registerComponent('birds', {
     schema: {
-        attach: {default: true},
-        count: {default: 6}
+        attach: {default: false},
+        count: {default: 6},
+        visible: {default: false}
     },
     init: function () {
         let sceneEl = this.el.sceneEl;
@@ -185,10 +186,11 @@ AFRAME.registerComponent('birds', {
             // boid.setAvoidWalls(true);
             boid.setGoal(0, 10, -20);
             bird = this.birds[i] = new THREE.Mesh(new Bird(), new THREE.MeshBasicMaterial({
-                color:  colors[Math.floor(Math.random()*colors.length)],
+                color: colors[Math.floor(Math.random() * colors.length)],
                 side: THREE.DoubleSide
             }));
             bird.phase = Math.floor(Math.random() * Math.PI);
+            bird.visible = false;
             sceneEl.object3D.add(bird);
         }
     },
@@ -207,5 +209,12 @@ AFRAME.registerComponent('birds', {
                 bird.geometry.vertices[5].y = bird.geometry.vertices[4].y = Math.sin(bird.phase) * 0.2;
             }
         }
+
+
+        for (var i = 0, il = this.birds.length; i < il; i++) {
+            let boid = this.boids[i];
+            boid.visible = this.data.visible
+        }
     }
+
 });

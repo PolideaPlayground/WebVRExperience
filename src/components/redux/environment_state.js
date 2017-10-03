@@ -10,8 +10,8 @@ const NIGHTBACKGROUND = 'shader: gradient; topColor: 29 27 39; bottomColor: 98 1
 const NIGHTSOUND = 'src: #nightSound; autoplay: true; loop: true; volume: 0.8';
 const NOSOUND = 'src: null; autoplay: false; loop: false';
 const BIRDSOUND = 'src: #birdSound; autoplay: true; loop: true';
-const NOBIRDS = 'attach: false';
-const WITHBIRDS = 'attach: true';
+const NOBIRDS = 'attach: false; visible: false';
+const WITHBIRDS = 'attach: true; visible: true';
 
 const DAYLIGHT = "intensity: 1.6; color: #FFDA59; castShadow: true";
 const DAYAMBIENT = "type: ambient; intensity: 1.8; color: #9C90ff";
