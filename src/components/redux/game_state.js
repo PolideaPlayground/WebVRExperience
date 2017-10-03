@@ -1,4 +1,4 @@
-import * as State from  "./../../utils/state_component";
+import * as State from "./../../utils/state_component";
 
 State.registerReducer('gameState', {
     initialState: {
@@ -30,7 +30,11 @@ export function getCurrentlySelectedDisk(element) {
 }
 
 export function selectCurrentDisk(element, value) {
-    element.sceneEl.emit("DISK_SELECTED", {texture: value});
+    if (getCurrentlySelectedDisk(element) === value) {
+        deselectCurrentDisk(element)
+    } else {
+        element.sceneEl.emit("DISK_SELECTED", {texture: value});
+    }
 }
 
 export function deselectCurrentDisk(element) {

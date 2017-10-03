@@ -176,6 +176,7 @@ class Rock extends React.Component {
             <Entity
                 _ref={(el) => this.entityCallback(el)}
                 key={this.state.name}
+                controller-clickable
                 stone_field={{
                     position_down: down_position,
                     position_hovered: hovered_position,
