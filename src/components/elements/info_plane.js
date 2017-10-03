@@ -69,6 +69,10 @@ export default class Info extends React.Component {
                     <Entity
                         position={{x: 1.35, y: 1.7, z: 0}}
                         scale={{x: 1, y: 1}}
+                        hovered_menu_item={{
+                            position_down: {x: 1.35, y: 1.7, z: 0},
+                            position_up: {x: 1.35, y: 1.7, z: 0.1},
+                        }}
                         className={"intersectable"}
                         geometry={{primitive: 'plane', width: 0.3, height: 0.3}}
                         material={{shader: "flat", color: 'white', opacity: 1.0}}
