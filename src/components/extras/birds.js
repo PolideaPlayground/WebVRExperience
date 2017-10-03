@@ -156,7 +156,7 @@ const boids = [];
 AFRAME.registerComponent('birds', {
     schema: {
         attach: {default: true},
-        count: {default: 6},
+        count: {default: 4},
         visible: {default: false}
     },
     init: function () {
@@ -191,15 +191,13 @@ AFRAME.registerComponent('birds', {
         }
     },
     update: function () {
-        let sceneEl = this.el.sceneEl;
-
         for (let i = 0; i < this.birds.length; i++) {
             let bird = this.birds[i];
+
             if (this.data.attach) {
-                sceneEl.object3D.add(bird);
-                console.log(this.birds);
+                bird.visible = true;
             } else {
-                sceneEl.object3D.remove(bird);
+                bird.visible = false;
             }
         }
     },
@@ -220,10 +218,5 @@ AFRAME.registerComponent('birds', {
             }
         }
 
-
-        for (var i = 0, il = this.birds.length; i < il; i++) {
-            let boid = this.boids[i];
-            boid.visible = this.data.visible
-        }
     }
 });
