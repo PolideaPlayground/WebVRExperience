@@ -232,17 +232,13 @@ class SplashScene extends React.Component {
                     <div className="content">
                         <div className="description">
                             <p>
-                               Bla Bla bla
+                                To check out this demo in VR open it on a mobile phone and use it with a Google
+                                Cardboard or a similar headset, like Google Daydream or Samsung Gear VR.
                             </p>
                             <p>
-                                Technologies used: AFrame, Three.js, React
-                            </p>
-                            <p>
-                                Created by Polidea VR/AR Team. Check out other WebVR Experiments <a
-                                href="https://webvrexperiments.com/" target="_blank">here</a> and check out the
-                                open-source code on <a
-                                href="https://github.com/PolideaPlayground/WebVRExperience"
-                                target="_blank">GitHub</a>.
+                                If you want to learn more about WebVR compatibility go to <a href="https://webvr.info/"
+                                                                                             target="_blank">official
+                                manual.</a>
                             </p>
                         </div>
                     </div>
