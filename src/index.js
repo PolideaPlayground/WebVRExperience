@@ -203,20 +203,20 @@ class SplashScene extends React.Component {
                         <h1 className="about-head unselectable">Having fun with nature</h1>
                         <div className="description">
                             <p>
-                                Enter Virtual Reality experiment where you can play with nature. Put a disc on a
-                                proper stone button. You can take the discs from flat interface on your
-                                left-hand.
-                                This experiment allows anyone to join in, no matter what device they're using.
+                                We think that sometimes small things can make your day. Enter our VR experiment where
+                                you can influence your surrounding—change sounds, weather conditions and even day into
+                                night.
+                                Select a disc from the menu on the left and put it on a proper stone symbol. This
+                                experiment can be run on any mobile and desktop device.
                             </p>
                             <p>
                                 Technologies used: AFrame, Three.js, React
                             </p>
                             <p>
-                                Created by Polidea VR/AR Team. Check out other WebVR Experiments <a
-                                href="https://webvrexperiments.com/" target="_blank">here</a> and check out the
-                                open-source code on <a
+                                Created by Polidea VR/AR Team. And if you want to play with it yourself, feel free to
+                                check out the <a
                                 href="https://github.com/PolideaPlayground/WebVRExperience"
-                                target="_blank">GitHub</a>.
+                                target="_blank">source code</a> on our Github.
                             </p>
                         </div>
                     </div>
@@ -232,13 +232,13 @@ class SplashScene extends React.Component {
                     <div className="content">
                         <div className="description">
                             <p>
-                                To check out this demo in VR open it on a mobile phone and use it with a Google
-                                Cardboard or a similar headset, like Google Daydream or Samsung Gear VR.
+                                To check out this demo in VR open it on your mobile and use it with a Google Cardboard
+                                or a similar headset, like Google Daydream or Samsung Gear VR.
                             </p>
                             <p>
-                                If you want to learn more about WebVR compatibility go to <a href="https://webvr.info/"
-                                                                                             target="_blank">official
-                                manual.</a>
+                                If you want to learn more about WebVR compatibility go to <a
+                                href="https://webvr.info/"
+                                target="_blank">the official manual.</a>
                             </p>
                         </div>
                     </div>

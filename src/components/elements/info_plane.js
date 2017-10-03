@@ -102,15 +102,15 @@ export default class Info extends React.Component {
                             align: "left",
                             baseline: "top",
                             width: 2.4,
-                            wrapCount: 28,
+                            wrapCount: 32,
                             lineHeight: 60,
                             height: "auto",
                             color: "#484848",
-                            value: "This WebVR demo was created by VR team at Polidea."
+                            value: "We think that sometimes small things can make your day. That's why we created this experiment, which runs on any mobile and desktop device."
                         }}
                     />
                     <Entity
-                        position={{x: 0, y: -0.3, z: 0.05}}
+                        position={{x: 0, y: -0.5, z: 0.05}}
                         text={{
                             align: "left",
                             baseline: "top",

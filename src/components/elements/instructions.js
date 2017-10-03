@@ -14,7 +14,7 @@ export default class Instructions extends React.Component {
                 lineHeight: 60,
                 align: "center",
                 color: "white",
-                value: "Select symbols from the menu on the left and place them on the matching stones"
+                value: "Select discs from the menu on the left and place them on the matching symbols"
             }}
         />
     }
