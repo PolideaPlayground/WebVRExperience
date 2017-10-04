@@ -88,7 +88,7 @@ export default class Controlers extends React.Component {
                     {selectedModel}
                 </DaydreamController>
 
-                <Entity camera="userHeight:1.6; fov: 60" look-controls>
+                <Entity camera-height-vr-fix camera="userHeight:1.6; fov: 60" look-controls>
                     <CursorController enabled={this.state.cursor_enabled}>
                         {selectedModel}
                     </CursorController>
@@ -136,7 +136,7 @@ class GearVRController extends React.Component {
     render() {
         return (
             <Entity
-                position={{x: 0, y: 0.3, z: 0}}
+                position={{x: 0, y: 0, z: 0}}
                 gearvr-controls
                 trackpad-to-click
             >
@@ -166,7 +166,7 @@ class DaydreamController extends React.Component {
     render() {
         return (
             <Entity
-                position={{x: 0, y: 0.3, z: 0}}
+                position={{x: 0, y: 0, z: 0}}
                 daydream-controls
                 trackpad-to-click
             >

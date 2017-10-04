@@ -13,6 +13,7 @@ import Controlers from "./components/controlers";
 import "./components/properties/trackpad_to_click";
 import "./components/properties/stone_field";
 import "./components/properties/hovered_menu_item";
+import "./components/properties/camera-height-vr-fix";
 
 import "./components/extras/birds";
 import "./components/redux/environment_state";
