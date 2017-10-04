@@ -46,13 +46,11 @@
     <link href="https://fonts.googleapis.com/css?family=Lora:400,700|Roboto:400,500" rel="stylesheet">
     <script>
         function checkBrowser() {
-//            if (navigator.appName == 'Microsoft Internet Explorer') {
             var info = document.querySelector("#splash #not-supported-info");
             if (info) {
                 info.style.visibility = "visible";
 
             }
-//            }
             var loader = document.querySelector("#splash #loader-group");
             if (loader) {
                 loader.style.visibility = "hidden";
@@ -60,7 +58,7 @@
         }
 
         // The basic check
-        if (document.readyState === 'complete') {
+        if (document.readyState === 'complete' || navigator.appName === 'Microsoft Internet Explorer') {
             checkBrowser();
         }
 
