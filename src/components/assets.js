@@ -19,8 +19,6 @@ import sunImageUrl from "./../assets/textures/sun.png";
 import birdsImageUrl from "./../assets/textures/birds.png";
 import mushroomImageUrl from "./../assets/textures/mushroom.png";
 import mistImageUrl from "./../assets/textures/mist.png";
-import sticksImageUrl from "./../assets/textures/sticks.png";
-import eyeImageUrl from "./../assets/textures/eye.png";
 import polideaImageUrl from "./../assets/images/logo_Polidea.png";
 import closeImageUrl from "./../assets/images/close.png";
 
@@ -59,9 +57,7 @@ export default class Assets extends React.Component {
                 <img id="birdsTexture" alt="birdsTexture" src={birdsImageUrl}/>
                 <img id="sunTexture" alt="sunTexture" src={sunImageUrl}/>
                 <img id="mushroomTexture" alt="mushroomTexture" src={mushroomImageUrl}/>
-                <img id="sticksTexture" alt="sticksTexture" src={sticksImageUrl}/>
                 <img id="fogTexture" alt="fogTexture" src={mistImageUrl}/>
-                <img id="eyeTexture" alt="eyeTexture" src={eyeImageUrl}/>
 
                 <img id="menuBinTexture" alt="binTexture" src={menuBinImageUrl}/>
                 <img id="menuSunTexture" alt="menuSunTexture" src={menuSunImageUrl}/>

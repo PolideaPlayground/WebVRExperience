@@ -12,32 +12,22 @@ import {SELECTED_STATE} from "../properties/stone_field";
 export const ROCKS = {
     "#sun": {
         texture: '#sunTexture',
-        position: {x: 0.02, y: 0.05, z: 0.05},
-        placed: false,
-    },
-    "#sticks": {
-        texture: '#sticksTexture',
-        position: {x: 0.57, y: 0.05, z: 0.05},
+        position: {x: 0.87, y: 0.05, z: 0.015},
         placed: false,
     },
     "#fog": {
         texture: '#fogTexture',
-        position: {x: 1.12, y: 0.05, z: 0.05},
+        position: {x: 0.26, y: 0.05, z: 0.015},
         placed: false,
     },
     "#mushroom": {
         texture: '#mushroomTexture',
-        position: {x: 0.02, y: 0.05, z: 0.6},
-        placed: false,
-    },
-    "#eye": {
-        texture: '#eyeTexture',
-        position: {x: 0.57, y: 0.05, z: 0.6},
+        position: {x: 0.87, y: 0.05, z: 0.6},
         placed: false,
     },
     "#birds": {
         texture: '#birdsTexture',
-        position: {x: 1.12, y: 0.05, z: 0.6},
+        position: {x: 0.26, y: 0.05, z: 0.6},
         placed: false,
     }
 };
