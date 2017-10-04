@@ -32,10 +32,8 @@
     "aframe-particle-system-component": "^1.0.10",
     "aframe-react": "^4.3.0",
     "gh-pages": "^1.0.0",
-    "loaders.css": "^0.1.2",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
-    "react-loaders": "^2.5.0",
     "react-scripts": "0.9.5",
     "react-tap-event-plugin": "^2.0.1",
     "redux": "^3.7.2"

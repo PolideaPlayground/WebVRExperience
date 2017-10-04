@@ -17,13 +17,15 @@
     <meta property="og:type" content="website"/>
     <meta property="og:title" content="Have fun with nature"/>
     <meta property="og:description" content="Discover all magical effects in a WebVR Experiment."/>
-    <meta property="og:image" content="https://raw.githubusercontent.com/PolideaPlayground/WebVRExperience/master/public/static/img/VR_facebook.png"/>
+    <meta property="og:image"
+          content="https://raw.githubusercontent.com/PolideaPlayground/WebVRExperience/master/public/static/img/VR_facebook.png"/>
 
     <!-- Twitter Share -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Have fun with nature">
     <meta name="twitter:description" content="Discover all magical effects in a WebVR Experiment.">
-    <meta name="twitter:image" content="https://raw.githubusercontent.com/PolideaPlayground/WebVRExperience/master/public/static/img/VR_twitter.png">
+    <meta name="twitter:image"
+          content="https://raw.githubusercontent.com/PolideaPlayground/WebVRExperience/master/public/static/img/VR_twitter.png">
 
     <link rel="icon" type="image/png" sizes="33x33" href="static/img/favicon.ico">
 
@@ -31,9 +33,10 @@
     <meta http-equiv="origin-trial" data-feature="WebVR (For Chrome M59+)" data-expires="2017-11-03"
           content="AnLFGX4JhECUYv0AdQw+vUDlkWGvdKXS/XoN3Gxt1VURaIo054OP7nPIhp6KfOO0Re5UMnD7zcc6ArHpwL39Xg4AAABdeyJvcmlnaW4iOiJodHRwczovL3BvbGlkZWFwbGF5Z3JvdW5kLmdpdGh1Yi5pbzo0NDMiLCJmZWF0dXJlIjoiV2ViVlIxLjEiLCJleHBpcnkiOjE1MDk3MTMwMDZ9">
     <!-- Origin Trial Token, feature = WebVR (For Chrome M62+), origin = https://polideaplayground.github.io, expires = 2017-11-14 -->
-    <meta http-equiv="origin-trial" data-feature="WebVR (For Chrome M62+)" data-expires="2017-11-14" content="AvVj6haEqYWgcCfBfZ26HgAvY3TSYTktmA7y1sd1gHRFew/eR8esYBBdR+/ETVx4mrW+YekeDTBnWcpvow3klQAAAABzeyJvcmlnaW4iOiJodHRwczovL3BvbGlkZWFwbGF5Z3JvdW5kLmdpdGh1Yi5pbzo0NDMiLCJmZWF0dXJlIjoiV2ViVlIxLjFNNjIiLCJleHBpcnkiOjE1MTA2NDkwMDEsImlzU3ViZG9tYWluIjp0cnVlfQ==">
+    <meta http-equiv="origin-trial" data-feature="WebVR (For Chrome M62+)" data-expires="2017-11-14"
+          content="AvVj6haEqYWgcCfBfZ26HgAvY3TSYTktmA7y1sd1gHRFew/eR8esYBBdR+/ETVx4mrW+YekeDTBnWcpvow3klQAAAABzeyJvcmlnaW4iOiJodHRwczovL3BvbGlkZWFwbGF5Z3JvdW5kLmdpdGh1Yi5pbzo0NDMiLCJmZWF0dXJlIjoiV2ViVlIxLjFNNjIiLCJleHBpcnkiOjE1MTA2NDkwMDEsImlzU3ViZG9tYWluIjp0cnVlfQ==">
 
-    <link rel="stylesheet" type="text/css" href="./main.css?v=1" >
+    <link rel="stylesheet" type="text/css" href="./main.css?v=1">
 
     <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-fork-ribbon-css/0.2.0/gh-fork-ribbon.min.css" />-->
     <!--&lt;!&ndash;[if lt IE 9]>-->
@@ -41,9 +44,90 @@
     <!--<![endif]&ndash;&gt;-->
 
     <link href="https://fonts.googleapis.com/css?family=Lora:400,700|Roboto:400,500" rel="stylesheet">
+    <script>
+        function checkBrowser() {
+//            if (navigator.appName == 'Microsoft Internet Explorer') {
+            var info = document.querySelector("#splash #not-supported-info");
+            if (info) {
+                info.style.visibility = "visible";
+
+            }
+//            }
+            var loader = document.querySelector("#splash #loader-group");
+            if (loader) {
+                loader.style.visibility = "hidden";
+            }
+        }
+
+        // The basic check
+        if (document.readyState === 'complete') {
+            checkBrowser();
+        }
+
+        // Polling for the sake of my intern tests
+        var interval = setInterval(function () {
+            if (document.readyState === 'complete') {
+                clearInterval(interval);
+                checkBrowser();
+            }
+        }, 100);
+
+    </script>
 </head>
 
 <body>
-<div id="sceneContainer"></div>
+<div id="sceneContainer">
+    <div id="splash">
+        <div id="polidea-info-container">
+            <div class="content">
+                <a href="https://vrar.polidea.com/" target="_blank">
+                    <img src="static/img/logo_polidea.svg"/>
+                </a>
+            </div>
+        </div>
+        <div id="main-container">
+            <div id="title-group">
+                <div class="title_bold">
+                    Have fun
+                </div>
+                <div class="title_regular">
+                    with
+                </div>
+                <div class="title_bold">
+                    nature
+                </div>
+            </div>
+        </div>
+
+
+        <div id="about-info" className="center-content">
+            <div id="loader-group">
+                <div id="loader">
+                    <div class="cssload-thecube">
+                        <div class="cssload-cube cssload-c1"></div>
+                        <div class="cssload-cube cssload-c2"></div>
+                        <div class="cssload-cube cssload-c4"></div>
+                        <div class="cssload-cube cssload-c3"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="not-supported-info" class="content">
+                <div class="description">
+                    <p>
+                        Your browser does not support WebVR! :( <br/>Consider installing a <a
+                            href="https://www.google.com/chrome/"
+                            target="_blank">Chrome</a> browser.
+                    </p>
+                    <p>
+                        If you want to learn more about WebVR compatibility<br/>go to <a
+                            href="https://webvr.rocks/"
+                            target="_blank">the official manual.</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 </body>
 </html>

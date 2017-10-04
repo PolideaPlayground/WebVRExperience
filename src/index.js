@@ -19,8 +19,6 @@ import "./components/extras/birds";
 import "./components/redux/environment_state";
 import "./components/redux/game_state";
 
-import {Loader} from 'react-loaders';
-
 import injectTapEventPlugin from "react-tap-event-plugin";
 
 injectTapEventPlugin();
@@ -99,7 +97,12 @@ class SplashScene extends React.Component {
         let loaderGroup =
             <div id="loader-group">
                 <div id="loader">
-                    <Loader type="square-spin"/>
+                    <div className="cssload-thecube">
+                        <div className="cssload-cube cssload-c1"/>
+                        <div className="cssload-cube cssload-c2"/>
+                        <div className="cssload-cube cssload-c4"/>
+                        <div className="cssload-cube cssload-c3"/>
+                    </div>
                 </div>
                 <div className="description">
                     Checking for VR devices...
