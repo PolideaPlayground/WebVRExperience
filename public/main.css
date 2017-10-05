@@ -50,7 +50,7 @@
     max-width: 500px;
 }
 
-#splash #about-info {
+#splash #loading-info #loader-group, #splash #loading-info #not-supported-info {
     position: absolute;
     bottom: 80px;
     width: 100%;
@@ -60,9 +60,7 @@
     visibility: hidden;
 }
 
-#splash #about-info .content {
-    padding-top: 90px;
-    margin: 0 auto;
+#splash #loading-info .content {
     max-width: 500px;
 
     font-family: 'Roboto';
@@ -70,6 +68,11 @@
     font-weight: 500;
     color: rgba(255, 255, 255, 1);
     text-align: center;
+}
+
+#about .content , #howto .content {
+    height: 100%;
+    overflow-y: auto;
 }
 
 #about .content .description, #howto .content .description {
@@ -111,6 +114,8 @@
     height: 36px;
     width: 94px;
     background-color: rgba(255, 255, 255, 0.8);
+
+    position: absolute;
 }
 
 #polidea-info-container .content {
@@ -121,9 +126,9 @@
 
 #splash #main-container {
     position: relative;
-    margin: 0 auto 0 auto;
+    margin: 48px auto 0 auto;
     max-width: 500px;
-    height: calc(100vh - 36px);
+    height: 100%;
 }
 
 #about-button {
@@ -171,7 +176,7 @@
     font-weight: 400;
 }
 
-#enter-container {
+#enter-container, #about-info {
     position: absolute;
     bottom: 80px;
     width: 100%;
@@ -478,13 +483,22 @@
 /*Mobile specific*/
 @media (max-width: 768px) {
     #about .content, #howto .content {
-        padding: 28px 60px;
+        padding: 0 60px;
         margin: auto;
         max-width: none;
     }
 
-    #splash #main-container {
-        margin-top: 0;
+    #about .content .about-head {
+        padding-top: 28px;
+    }
+
+    #about .content .description {
+        padding-bottom: 28px;
+    }
+
+    #howto .content .description {
+        padding-top: 28px;
+        padding-bottom: 28px;
     }
 
     #main-container #title-group .title_bold {
@@ -548,12 +562,8 @@
         font-weight: 700;
     }
 
-    #splash #main-container {
-        margin: 0 auto;
-    }
-
     #enter-container {
-        bottom: 28%;
+        bottom: 20%;
     }
 
     #main-container #title-group {
