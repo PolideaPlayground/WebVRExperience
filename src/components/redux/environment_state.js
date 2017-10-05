@@ -10,6 +10,7 @@ const NIGHTBACKGROUND = 'shader: gradient; topColor: 29 27 39; bottomColor: 98 1
 const NIGHTSOUND = 'src: #nightSound; autoplay: true; loop: true; volume: 0.8';
 const NOSOUND = 'src: null; autoplay: false; loop: false';
 const BIRDSOUND = 'src: #birdSound; autoplay: true; loop: true';
+
 const NOBIRDS = 'attach: false; visible: false';
 const WITHBIRDS = 'attach: true; visible: true';
 
@@ -31,6 +32,7 @@ State.registerReducer('environment', {
         mushroomState: false,
         birds: NOBIRDS,
         sound: NIGHTSOUND,
+        birdSound: NOSOUND,
         fog: FOGNIGHT,
     },
     handlers: {
@@ -92,15 +94,7 @@ function changeNight(state, enabled) {
         newState.ambient = DAYAMBIENT;
         newState.skyMaterial = DAYBACKGROUND;
         newState.fog = (state.fogState && FOGDAY) || NOFOG;
-        if (state.birdsState === false) {
-            newState.sound = NOSOUND;
-            console.log('Playing nothing');
-        } else {
-
-            console.log('Playing birds');
-            newState.sound = BIRDSOUND;
-        }
-
+        newState.sound = NOSOUND;
     } else {
         console.log("Turn on night");
         newState.nightState = true;
@@ -109,13 +103,7 @@ function changeNight(state, enabled) {
         newState.ambient = NIGHTAMBIENT;
         newState.skyMaterial = NIGHTBACKGROUND;
         newState.fog = (state.fogState && FOGNIGHT) || NOFOG;
-        if (state.birdsState === false) {
-            console.log('Playing night');
-            newState.sound = NIGHTSOUND;
-        } else {
-            console.log('Playing birds');
-            newState.sound = BIRDSOUND;
-        }
+        newState.sound = NIGHTSOUND;
     }
     return newState;
 }
@@ -127,18 +115,12 @@ function changeBirds(state, enabled) {
         console.log('Turn on birds');
         newState.birdsState = true;
         newState.birds = WITHBIRDS;
-        newState.sound = BIRDSOUND;
+        newState.birdSound = BIRDSOUND;
     } else {
         console.log('Turn off birds');
         newState.birdsState = false;
         newState.birds = NOBIRDS;
-        if (state.nightState === true) {
-            console.log('Turn on night sounds');
-            newState.sound = NIGHTSOUND;
-        } else {
-            console.log('Turn on day sounds');
-            newState.sound = NOSOUND;
-        }
+        newState.birdSound = NOSOUND;
     }
 
     return newState;

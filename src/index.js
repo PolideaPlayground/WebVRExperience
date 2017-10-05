@@ -77,7 +77,6 @@ class SplashScene extends React.Component {
     enterGame(vrMode) {
         this.props.callback(vrMode);
         document.querySelector("#backgroundSound").components["sound"].playSound();
-        document.querySelector("#envSound").components["sound"].playSound();
 
         if (vrMode) {
             //Fixme Bug - Only working option to enter vr mode

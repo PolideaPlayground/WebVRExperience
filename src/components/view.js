@@ -4,7 +4,7 @@ import React from "react";
 import StoneGame from "./elements/stone_game";
 import Windmill from "./elements/windmill";
 import Menu from "./elements/menu_disks";
-import EnvironmentSound from "./elements/sound";
+import EnvironmentSounds from "./elements/sound";
 import Background from "./elements/background";
 import Sky from "./elements/sky";
 import Info from "./elements/info_plane";
@@ -41,12 +41,7 @@ export default class View extends React.Component {
                 />
                 <Background/>
 
-                <EnvironmentSound
-                    id="envSound"/>
-
-                <Entity id="backgroundSound"
-                        poolSize={2}
-                        sound={{src: '#waterSound', loop: true, autoplay: true, volume: 1.3}}/>
+                <EnvironmentSounds/>
 
                 <Windmill
                     position={{x: -34, y: -5.2, z: 65}}

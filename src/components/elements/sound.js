@@ -1,18 +1,21 @@
 import {Entity} from "aframe-react";
 import React from "react";
 
-export default class EnvironmentSound extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            sound: this.props.sound
-        }
-    }
-
+export default class EnvironmentSounds extends React.Component {
     render() {
-        return <Entity {...this.props}
-                       poolSize={2}
-                       sound={{src: this.state.sound, volume: 1}}
-                       bind__sound="environment.sound"/>
+        return <Entity>
+
+            <Entity
+                id="envSound"
+                poolSize={2}
+                bind__sound="environment.sound"/>
+            <Entity
+                id="birdSound"
+                poolSize={2}
+                bind__sound="environment.birdSound"/>
+            <Entity id="backgroundSound"
+                    poolSize={2}
+                    sound={{src: '#waterSound', loop: true, autoplay: false, volume: 1.8}}/>
+        </Entity>
     }
 }
