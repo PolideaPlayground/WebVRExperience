@@ -7,8 +7,6 @@ export default class Controlers extends React.Component {
 
         this.state = {
             cursor_enabled: true,
-            daydream_enabled: false,
-            gearvr_enabled: false
         };
     }
 
@@ -24,29 +22,17 @@ export default class Controlers extends React.Component {
 
     enableControllerRaycaster(controllerName, enabled) {
         let cursorEnabled = true;
-        let daydreamEnabled = false;
-        let gearvrEnabled = false;
 
-        if (controllerName === "daydream-controls") {
-            daydreamEnabled = enabled;
-            cursorEnabled = !enabled;
-        }
-
-        if (controllerName === "gearvr-controls") {
-            gearvrEnabled = enabled;
+        if (controllerName === "daydream-controls" ||
+            controllerName === "gearvr-controls" ||
+            controllerName === "oculus-touch-controls" ||
+            controllerName === "vive-controls" ||
+            controllerName === "windows-motion-controls") {
             cursorEnabled = !enabled;
         }
 
         this.setState({
             cursor_enabled: cursorEnabled,
-        });
-
-        this.setState({
-            gearvr_enabled: gearvrEnabled
-        });
-
-        this.setState({
-            daydream_enabled: daydreamEnabled
         });
     }
 
@@ -59,14 +45,14 @@ export default class Controlers extends React.Component {
                     scale={{x: scaleFactor, y: scaleFactor, z: scaleFactor}}
                     bind__visible="gameState.disk_visible">
                 <Entity
-                scale={{x: 0.5, y: 0.5, z: 0.5}}
-                rotation={{x: 90, y: 0, z: 0}}
-                collada-model="#rockDisk"/>
+                    scale={{x: 0.5, y: 0.5, z: 0.5}}
+                    rotation={{x: 90, y: 0, z: 0}}
+                    collada-model="#rockDisk"/>
                 {/*<Entity*/}
-                    {/*primitive={"a-cylinder"}*/}
-                    {/*scale={{x: scaleFactor, y: scaleFactor, z: scaleFactor}}*/}
-                    {/*rotation={{x: 90, y: 0, z: 0}}*/}
-                    {/*material={{shader: "flat", color: "#a64701", transparent: true, opacity: 0.75}}*/}
+                {/*primitive={"a-cylinder"}*/}
+                {/*scale={{x: scaleFactor, y: scaleFactor, z: scaleFactor}}*/}
+                {/*rotation={{x: 90, y: 0, z: 0}}*/}
+                {/*material={{shader: "flat", color: "#a64701", transparent: true, opacity: 0.75}}*/}
                 {/*/>*/}
                 <a-image
                     position="0 0 0.05"
@@ -81,12 +67,9 @@ export default class Controlers extends React.Component {
                 controllerdisconnected: this.controllerDisconnected,
             }}>
 
-                <GearVRController enabled={this.state.gearvr_enabled}>
+                <VRController>
                     {selectedModel}
-                </GearVRController>
-                <DaydreamController enabled={this.state.daydream_enabled}>
-                    {selectedModel}
-                </DaydreamController>
+                </VRController>
 
                 <Entity camera-height-vr-fix camera="userHeight:1.6; fov: 60" look-controls>
                     <CursorController enabled={this.state.cursor_enabled}>
@@ -132,61 +115,22 @@ class CursorController extends React.Component {
     }
 }
 
-class GearVRController extends React.Component {
+class VRController extends React.Component {
     render() {
         return (
             <Entity
-                position={{x: 0, y: 0, z: 0}}
-                gearvr-controls
+                laser-controls
+                raycaster={{
+                    far: 20,
+                    interval: 200,
+                    objects: ".intersectable",
+                    showLine: true,
+                }}
+                line="color: yellow; opacity: 0.7"
                 trackpad-to-click
             >
-                {
-                    this.props.enabled ?
-                        <Entity>
-                            <Entity
-                                raycaster={{
-                                    far: 20,
-                                    interval: 200,
-                                    objects: ".intersectable",
-                                    showLine: true,
-                                    origin: {x: 0, y: 0.005, z: 0}
-                                }}
-                                line="color: yellow; opacity: 0.7"/>;
-                            {this.props.children}
-                        </Entity>
-                        : <div/>
-                }
-            </Entity>
 
-        );
-    }
-}
-
-class DaydreamController extends React.Component {
-    render() {
-        return (
-            <Entity
-                position={{x: 0, y: 0, z: 0}}
-                daydream-controls
-                trackpad-to-click
-            >
-                {
-                    this.props.enabled ?
-                        <Entity>
-                            <Entity
-                                raycaster={{
-                                    far: 20,
-                                    interval: 200,
-                                    objects: ".intersectable",
-                                    showLine: true
-                                }}
-                                line="color: yellow; opacity: 0.7"
-                            />;
-                            {this.props.children}
-                        </Entity>
-                        : <div/>
-                }
-                }
+                {this.props.children}
             </Entity>
 
         );
