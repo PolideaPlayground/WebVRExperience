@@ -50,6 +50,31 @@
     max-width: 500px;
 }
 
+#splash #loading-info #loader-group, #splash #loading-info #not-supported-info {
+    position: absolute;
+    bottom: 80px;
+    width: 100%;
+}
+
+#splash #not-supported-info {
+    visibility: hidden;
+}
+
+#splash #loading-info .content {
+    max-width: 500px;
+
+    font-family: 'Roboto';
+    font-size: 17px;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 1);
+    text-align: center;
+}
+
+#about .content, #howto .content {
+    height: 100%;
+    overflow-y: auto;
+}
+
 #about .content .description, #howto .content .description {
     font-family: 'Roboto';
     font-size: 18px;
@@ -67,7 +92,7 @@
     text-align: left;
 }
 
-#about a, #howto a {
+#about a, #howto a, #not-supported-info a {
     font-family: 'Roboto';
     font-size: 18px;
     font-weight: 500;
@@ -89,6 +114,8 @@
     height: 36px;
     width: 94px;
     background-color: rgba(255, 255, 255, 0.8);
+
+    position: absolute;
 }
 
 #polidea-info-container .content {
@@ -99,9 +126,9 @@
 
 #splash #main-container {
     position: relative;
-    margin: 0 auto 0 auto;
+    margin: 48px auto 0 auto;
     max-width: 500px;
-    height: calc(100vh - 36px);
+    height: 100%;
 }
 
 #about-button {
@@ -149,7 +176,7 @@
     font-weight: 400;
 }
 
-#enter-container {
+#enter-container, #about-info {
     position: absolute;
     bottom: 80px;
     width: 100%;
@@ -216,52 +243,191 @@
     max-width: 50px;
 }
 
-@-webkit-keyframes square-spin {
-    25% {
-        -webkit-transform: perspective(100px) rotateX(180deg) rotateY(0);
-        transform: perspective(100px) rotateX(180deg) rotateY(0);
+.cssload-thecube {
+    width: 73px;
+    height: 73px;
+    margin: 0 auto;
+    margin-top: 49px;
+    position: relative;
+    transform: rotateZ(45deg);
+    -o-transform: rotateZ(45deg);
+    -ms-transform: rotateZ(45deg);
+    -webkit-transform: rotateZ(45deg);
+    -moz-transform: rotateZ(45deg);
+}
+
+.cssload-thecube .cssload-cube {
+    position: relative;
+    transform: rotateZ(45deg);
+    -o-transform: rotateZ(45deg);
+    -ms-transform: rotateZ(45deg);
+    -webkit-transform: rotateZ(45deg);
+    -moz-transform: rotateZ(45deg);
+}
+
+.cssload-thecube .cssload-cube {
+    float: left;
+    width: 50%;
+    height: 50%;
+    position: relative;
+    transform: scale(1.1);
+    -o-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+}
+
+.cssload-thecube .cssload-cube:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(255, 255, 255);
+    animation: cssload-fold-thecube 2.76s infinite linear both;
+    -o-animation: cssload-fold-thecube 2.76s infinite linear both;
+    -ms-animation: cssload-fold-thecube 2.76s infinite linear both;
+    -webkit-animation: cssload-fold-thecube 2.76s infinite linear both;
+    -moz-animation: cssload-fold-thecube 2.76s infinite linear both;
+    transform-origin: 100% 100%;
+    -o-transform-origin: 100% 100%;
+    -ms-transform-origin: 100% 100%;
+    -webkit-transform-origin: 100% 100%;
+    -moz-transform-origin: 100% 100%;
+}
+
+.cssload-thecube .cssload-c2 {
+    transform: scale(1.1) rotateZ(90deg);
+    -o-transform: scale(1.1) rotateZ(90deg);
+    -ms-transform: scale(1.1) rotateZ(90deg);
+    -webkit-transform: scale(1.1) rotateZ(90deg);
+    -moz-transform: scale(1.1) rotateZ(90deg);
+}
+
+.cssload-thecube .cssload-c3 {
+    transform: scale(1.1) rotateZ(180deg);
+    -o-transform: scale(1.1) rotateZ(180deg);
+    -ms-transform: scale(1.1) rotateZ(180deg);
+    -webkit-transform: scale(1.1) rotateZ(180deg);
+    -moz-transform: scale(1.1) rotateZ(180deg);
+}
+
+.cssload-thecube .cssload-c4 {
+    transform: scale(1.1) rotateZ(270deg);
+    -o-transform: scale(1.1) rotateZ(270deg);
+    -ms-transform: scale(1.1) rotateZ(270deg);
+    -webkit-transform: scale(1.1) rotateZ(270deg);
+    -moz-transform: scale(1.1) rotateZ(270deg);
+}
+
+.cssload-thecube .cssload-c2:before {
+    animation-delay: 0.35s;
+    -o-animation-delay: 0.35s;
+    -ms-animation-delay: 0.35s;
+    -webkit-animation-delay: 0.35s;
+    -moz-animation-delay: 0.35s;
+}
+
+.cssload-thecube .cssload-c3:before {
+    animation-delay: 0.69s;
+    -o-animation-delay: 0.69s;
+    -ms-animation-delay: 0.69s;
+    -webkit-animation-delay: 0.69s;
+    -moz-animation-delay: 0.69s;
+}
+
+.cssload-thecube .cssload-c4:before {
+    animation-delay: 1.04s;
+    -o-animation-delay: 1.04s;
+    -ms-animation-delay: 1.04s;
+    -webkit-animation-delay: 1.04s;
+    -moz-animation-delay: 1.04s;
+}
+
+@keyframes cssload-fold-thecube {
+    0%, 10% {
+        transform: perspective(136px) rotateX(-180deg);
+        opacity: 0;
     }
-    50% {
-        -webkit-transform: perspective(100px) rotateX(180deg) rotateY(180deg);
-        transform: perspective(100px) rotateX(180deg) rotateY(180deg);
-    }
+    25%,
     75% {
-        -webkit-transform: perspective(100px) rotateX(0) rotateY(180deg);
-        transform: perspective(100px) rotateX(0) rotateY(180deg);
+        transform: perspective(136px) rotateX(0deg);
+        opacity: 1;
     }
+    90%,
     100% {
-        -webkit-transform: perspective(100px) rotateX(0) rotateY(0);
-        transform: perspective(100px) rotateX(0) rotateY(0);
+        transform: perspective(136px) rotateY(180deg);
+        opacity: 0;
     }
 }
 
-@keyframes square-spin {
-    25% {
-        -webkit-transform: perspective(100px) rotateX(180deg) rotateY(0);
-        transform: perspective(100px) rotateX(180deg) rotateY(0);
+@-o-keyframes cssload-fold-thecube {
+    0%, 10% {
+        -o-transform: perspective(136px) rotateX(-180deg);
+        opacity: 0;
     }
-    50% {
-        -webkit-transform: perspective(100px) rotateX(180deg) rotateY(180deg);
-        transform: perspective(100px) rotateX(180deg) rotateY(180deg);
-    }
+    25%,
     75% {
-        -webkit-transform: perspective(100px) rotateX(0) rotateY(180deg);
-        transform: perspective(100px) rotateX(0) rotateY(180deg);
+        -o-transform: perspective(136px) rotateX(0deg);
+        opacity: 1;
     }
+    90%,
     100% {
-        -webkit-transform: perspective(100px) rotateX(0) rotateY(0);
-        transform: perspective(100px) rotateX(0) rotateY(0);
+        -o-transform: perspective(136px) rotateY(180deg);
+        opacity: 0;
     }
 }
 
-.square-spin > div {
-    -webkit-animation-fill-mode: both;
-    animation-fill-mode: both;
-    width: 50px;
-    height: 50px;
-    background: #fff;
-    -webkit-animation: square-spin 3s 0s cubic-bezier(0.09, 0.57, 0.49, 0.9) infinite;
-    animation: square-spin 3s 0s cubic-bezier(0.09, 0.57, 0.49, 0.9) infinite;
+@-ms-keyframes cssload-fold-thecube {
+    0%, 10% {
+        -ms-transform: perspective(136px) rotateX(-180deg);
+        opacity: 0;
+    }
+    25%,
+    75% {
+        -ms-transform: perspective(136px) rotateX(0deg);
+        opacity: 1;
+    }
+    90%,
+    100% {
+        -ms-transform: perspective(136px) rotateY(180deg);
+        opacity: 0;
+    }
+}
+
+@-webkit-keyframes cssload-fold-thecube {
+    0%, 10% {
+        -webkit-transform: perspective(136px) rotateX(-180deg);
+        opacity: 0;
+    }
+    25%,
+    75% {
+        -webkit-transform: perspective(136px) rotateX(0deg);
+        opacity: 1;
+    }
+    90%,
+    100% {
+        -webkit-transform: perspective(136px) rotateY(180deg);
+        opacity: 0;
+    }
+}
+
+@-moz-keyframes cssload-fold-thecube {
+    0%, 10% {
+        -moz-transform: perspective(136px) rotateX(-180deg);
+        opacity: 0;
+    }
+    25%,
+    75% {
+        -moz-transform: perspective(136px) rotateX(0deg);
+        opacity: 1;
+    }
+    90%,
+    100% {
+        -moz-transform: perspective(136px) rotateY(180deg);
+        opacity: 0;
+    }
 }
 
 .clickable {
@@ -324,13 +490,22 @@
 /*Mobile specific*/
 @media (max-width: 768px) {
     #about .content, #howto .content {
-        padding: 28px 60px;
+        padding: 0 60px;
         margin: auto;
         max-width: none;
     }
 
-    #splash #main-container {
-        margin-top: 0;
+    #about .content .about-head {
+        padding-top: 28px;
+    }
+
+    #about .content .description {
+        padding-bottom: 28px;
+    }
+
+    #howto .content .description {
+        padding-top: 28px;
+        padding-bottom: 28px;
     }
 
     #main-container #title-group .title_bold {
@@ -394,12 +569,8 @@
         font-weight: 700;
     }
 
-    #splash #main-container {
-        margin: 0 auto;
-    }
-
     #enter-container {
-        bottom: 28%;
+        bottom: 20%;
     }
 
     #main-container #title-group {
@@ -420,6 +591,10 @@
     #about .content .description, #howto .content .description {
         font-size: 14px;
         font-family: 'Roboto';
+    }
+
+    #about a, #howto a {
+        font-size: 14px;
     }
 
     #enter-container .enter-info {
