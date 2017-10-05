@@ -67,14 +67,14 @@ export default class Info extends React.Component {
                     scale={{x: 1, y: 1}}
                 >
                     <Entity
-                        position={{x: 1.35, y: 1.7, z: 0}}
+                        position={{x: 1.25, y: 1.85, z: 0}}
                         scale={{x: 1, y: 1}}
                         hovered_menu_item={{
-                            position_down: {x: 1.35, y: 1.7, z: -0.1},
-                            position_up: {x: 1.35, y: 1.7, z: 0},
+                            position_down: {x: 1.25, y: 1.85, z: -0.1},
+                            position_up: {x: 1.25, y: 1.85, z: 0},
                         }}
                         className={"intersectable"}
-                        geometry={{primitive: 'plane', width: 0.3, height: 0.3}}
+                        geometry={{primitive: 'plane', width: 0.5, height: 0.5}}
                         material={{shader: "flat", color: 'white', opacity: 1.0}}
 
                         events={{
@@ -85,7 +85,7 @@ export default class Info extends React.Component {
                         <Entity
                             primitive={"a-image"}
                             src="#closeImage"
-                            scale={{x: 0.2, y: 0.2}}
+                            scale={{x: 0.3, y: 0.3}}
                             position={{x: 0, y: 0, z: 0.01}}
                         />
                     </Entity>
