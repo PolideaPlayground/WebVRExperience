@@ -1,6 +1,6 @@
 ![alt text](https://raw.githubusercontent.com/PolideaPlayground/WebVRExperience/master/public/static/img/VR_facebook.png "Having fun with nature, a WebVR Experiment")
 
-# "Having fun with nature" - WebVR Experience
+# "Have fun with nature" - WebVR Experience
 We think that sometimes small things can make your day. That's why we created this web experiment, which runs on any mobile and desktop device.
 Enter our VR experiment where you can influence your surrounding - change sounds, weather conditions and even day into night.
 
