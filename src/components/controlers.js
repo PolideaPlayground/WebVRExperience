@@ -48,12 +48,6 @@ export default class Controlers extends React.Component {
                     scale={{x: 0.5, y: 0.5, z: 0.5}}
                     rotation={{x: 90, y: 0, z: 0}}
                     collada-model="#rockDisk"/>
-                {/*<Entity*/}
-                {/*primitive={"a-cylinder"}*/}
-                {/*scale={{x: scaleFactor, y: scaleFactor, z: scaleFactor}}*/}
-                {/*rotation={{x: 90, y: 0, z: 0}}*/}
-                {/*material={{shader: "flat", color: "#a64701", transparent: true, opacity: 0.75}}*/}
-                {/*/>*/}
                 <a-image
                     position="0 0 0.05"
                     scale="0.15 0.15 1"
@@ -67,7 +61,7 @@ export default class Controlers extends React.Component {
                 controllerdisconnected: this.controllerDisconnected,
             }}>
 
-                <VRController>
+                <VRController enabled={!this.state.cursor_enabled}>
                     {selectedModel}
                 </VRController>
 
@@ -90,8 +84,12 @@ class CursorController extends React.Component {
                         id="cursor"
                         primitive="a-cursor"
                         cursor="fuse: true; fuseTimeout: 1200"
-                        raycaster="far: 10; interval: 500; objects: .intersectable; showLine: false"
-                        line="color: yellow; opacity: 2"
+                        raycaster={{
+                            far: 20,
+                            interval: 200,
+                            objects: ".intersectable",
+                            showLine: false,
+                        }}
                         material="color: yellow; shader: flat"
                     >
                         <a-animation
@@ -124,13 +122,14 @@ class VRController extends React.Component {
                     far: 20,
                     interval: 200,
                     objects: ".intersectable",
-                    showLine: true,
                 }}
                 line="color: yellow; opacity: 0.7"
-                trackpad-to-click
             >
-
-                {this.props.children}
+                {
+                    this.props.enabled ?
+                        this.props.children
+                        : <div/>
+                }
             </Entity>
 
         );
