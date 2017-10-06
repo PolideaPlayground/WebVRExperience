@@ -1,6 +1,6 @@
 import {Entity} from "aframe-react";
 import React from 'react';
-
+import ReactGA from 'react-ga';
 
 export default class Info extends React.Component {
     constructor(props) {
@@ -13,6 +13,11 @@ export default class Info extends React.Component {
     }
 
     onPolideaClicked() {
+        ReactGA.event({
+            category: 'Navigation',
+            action: 'Show About Polidea',
+        });
+
         this.setState({
             buttonVisible: false,
             infoVisible: true

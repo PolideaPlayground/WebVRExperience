@@ -20,6 +20,8 @@ const DAYAMBIENT = "type: ambient; intensity: 1.8; color: #9C90ff";
 const NIGHTLIGHT = "intensity: 0.4; color: #CAFF59; castShadow: false";
 const NIGHTAMBIENT = "type: ambient; intensity: 1.0; color: #9C90ff";
 
+import ReactGA from 'react-ga';
+
 State.registerReducer('environment', {
     initialState: {
         skyMaterial: NIGHTBACKGROUND,
@@ -38,30 +40,23 @@ State.registerReducer('environment', {
     handlers: {
         FOG_ENABLED: function (state, action) {
             state = state || this.initialState;
+            let newState = Object.assign({}, state);
+
             return changeFog(state, action.enabled);
         },
         NIGHT_ENABLED: function (state, action) {
             state = state || this.initialState;
+            let newState = Object.assign({}, state);
             return changeNight(state, action.enabled);
         },
         BIRDS_ENABLED: function (state, action) {
             state = state || this.initialState;
+            let newState = Object.assign({}, state);
             return changeBirds(state, action.enabled);
         },
         MUSHROOM_ENABLED: function (state, action) {
             state = state || this.initialState;
-            let newState = Object.assign({}, state);
-            newState.mushroomState = action.enabled;
-
-            if (state.mushroomState !== newState.mushroomState) {
-                let nodeList = document.querySelectorAll("#mushrooms > a-entity");
-                var arrayLength = nodeList.length;
-                for (var i = 0; i < arrayLength; i++) {
-                    nodeList[i].emit("grow_mushroom");
-                }
-            }
-
-            return newState;
+            return changeMushrooms(state, action.enabled)
         },
     }
 });
@@ -69,6 +64,7 @@ State.registerReducer('environment', {
 
 function changeFog(state, enabled) {
     let newState = Object.assign({}, state);
+
     if (enabled) {
         console.log("Turn off fog");
         newState.fogState = false;
@@ -82,11 +78,19 @@ function changeFog(state, enabled) {
         newState.skyMaterial = (state.nightState && NIGHTBACKGROUND) || DAYBACKGROUND;
         newState.fog = (state.nightState && FOGNIGHT) || FOGDAY;
     }
+
+    if (state.fogState !== newState.fogState) {
+        ReactGA.event({
+            category: 'Enabled Fog',
+            action: enabled.toString(),
+        });
+    }
     return newState;
 }
 
 function changeNight(state, enabled) {
     let newState = Object.assign({}, state);
+
     if (!enabled) {
         console.log("Turn on day");
         newState.nightState = false;
@@ -105,6 +109,13 @@ function changeNight(state, enabled) {
         newState.fog = (state.fogState && FOGNIGHT) || NOFOG;
         newState.sound = NIGHTSOUND;
     }
+
+    if (state.nightState !== newState.nightState) {
+        ReactGA.event({
+            category: 'Enabled Night',
+            action: enabled.toString(),
+        });
+    }
     return newState;
 }
 
@@ -121,6 +132,33 @@ function changeBirds(state, enabled) {
         newState.birdsState = false;
         newState.birds = NOBIRDS;
         newState.birdSound = NOSOUND;
+    }
+
+    if (state.birdsState !== newState.birdsState) {
+        ReactGA.event({
+            category: 'Enabled Birds',
+            action: enabled.toString(),
+        });
+    }
+
+    return newState;
+}
+
+function changeMushrooms(state, enabled) {
+    let newState = Object.assign({}, state);
+    newState.mushroomState = enabled;
+
+    if (state.mushroomState !== newState.mushroomState) {
+        ReactGA.event({
+            category: 'Enabled Mushrooms',
+            action: enabled.toString(),
+        });
+
+        let nodeList = document.querySelectorAll("#mushrooms > a-entity");
+        var arrayLength = nodeList.length;
+        for (var i = 0; i < arrayLength; i++) {
+            nodeList[i].emit("grow_mushroom");
+        }
     }
 
     return newState;

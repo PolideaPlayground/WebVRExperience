@@ -20,6 +20,8 @@ import "./components/redux/environment_state";
 import "./components/redux/game_state";
 
 import injectTapEventPlugin from "react-tap-event-plugin";
+import ReactGA from 'react-ga';
+ReactGA.initialize('UA-7528028-60');
 
 injectTapEventPlugin();
 
@@ -40,13 +42,28 @@ class SplashScene extends React.Component {
                 if (displays.length > 0 && displays[0].isPresenting) {
                     if (displays[0].stageParameters === null) {
                         console.log('3dof');
+                        ReactGA.event({
+                            category: 'VRCapablities',
+                            action: '3DOF',
+                        });
                         component.enableVR(true);
                     } else {
                         console.log('6dof');
+                        ReactGA.event({
+                            category: 'VRCapablities',
+                            action: '6DOF',
+                        });
                         component.enableVR(true);
                     }
                 } else {
-                    component.enableVR(AFRAME.utils.device.isMobile());
+                    let isMobile = AFRAME.utils.device.isMobile();
+                    if(isMobile){
+                        ReactGA.event({
+                            category: 'VRCapablities',
+                            action: 'Mobile VR',
+                        });
+                    }
+                    component.enableVR(isMobile);
                 }
             })
             .catch(function () {
@@ -56,6 +73,10 @@ class SplashScene extends React.Component {
     }
 
     enableVR(enable) {
+        ReactGA.event({
+            category: 'VREnabled',
+            action: enable
+        });
         this.setState({
             loading: false,
             vrEnabled: enable
@@ -74,11 +95,31 @@ class SplashScene extends React.Component {
         })
     }
 
+    toggleFullScreen() {
+        var doc = window.document;
+        var docEl = doc.documentElement;
+
+        var requestFullScreen = docEl.requestFullscreen || docEl.mozRequestFullScreen || docEl.webkitRequestFullScreen || docEl.msRequestFullscreen;
+        var cancelFullScreen = doc.exitFullscreen || doc.mozCancelFullScreen || doc.webkitExitFullscreen || doc.msExitFullscreen;
+
+        if(!doc.fullscreenElement && !doc.mozFullScreenElement && !doc.webkitFullscreenElement && !doc.msFullscreenElement) {
+            requestFullScreen.call(docEl);
+        }
+        else {
+            cancelFullScreen.call(doc);
+        }
+    }
+
     enterGame(vrMode) {
         this.props.callback(vrMode);
         document.querySelector("#backgroundSound").components["sound"].playSound();
         window.scrollTo(0,document.body.scrollHeight);
-        document.body.requestFullscreen();
+        this.toggleFullScreen();
+
+        ReactGA.event({
+            category: 'Navigation',
+            action: 'Enter Game with VR: ' + vrMode ,
+        });
 
         if (vrMode) {
             //Fixme Bug - Only working option to enter vr mode
@@ -153,6 +194,11 @@ class SplashScene extends React.Component {
                     <div id="no-vr-group" className="center-content-text">
                         <div className="enter-info clickable" onTouchTap={
                             () => {
+                                ReactGA.event({
+                                    category: 'Navigation',
+                                    action: 'How to enter VR',
+                                });
+
                                 this.enableHowto(true);
                             }}>
                             or learn how to enter VR
@@ -176,6 +222,11 @@ class SplashScene extends React.Component {
                      hidden={this.state.aboutEnabled || this.state.howtoEnabled}
                      onTouchTap={
                          () => {
+                             ReactGA.event({
+                                 category: 'Navigation',
+                                 action: 'About Demo',
+                             });
+
                              this.enableAbout(true);
                          }}>
                     <div className="image-container">

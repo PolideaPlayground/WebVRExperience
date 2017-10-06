@@ -1,6 +1,7 @@
 import {Entity} from "aframe-react";
 import React from 'react';
 import {deselectCurrentDisk, selectCurrentDisk} from "../redux/game_state";
+import ReactGA from 'react-ga';
 
 export const DISKS = {
     "#sun": {
@@ -40,6 +41,11 @@ class MenuItem extends React.Component {
     onMenuItemClicked(el, model) {
         //Pickup model
         console.log("Picking up: " + model);
+        ReactGA.event({
+            category: 'Menu Action',
+            action: "Picking up: " + model,
+        });
+
         selectCurrentDisk(el, model);
     }
 
@@ -88,6 +94,11 @@ export default class Menu extends React.Component {
     }
 
     onTrashClicked(el) {
+        ReactGA.event({
+            category: 'Menu Action',
+            action: 'Remove Disk',
+        });
+
         deselectCurrentDisk(el);
     }
 
