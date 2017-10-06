@@ -4,8 +4,7 @@ AFRAME.registerComponent('trackpad-to-click', {
     init: function () {
         var self = this;
         this.onButtonDown = function (evt) {
-            let raycasterEl = self.el.querySelector('[raycaster]');
-            let elements = raycasterEl.components.raycaster.intersectedEls;
+            let elements = self.el.components.raycaster.intersectedEls;
             for (let i = 0; elements.length; i++) {
                 let element = elements[i];
                 element.emit("click");
