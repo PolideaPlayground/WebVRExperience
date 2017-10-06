@@ -489,6 +489,24 @@
 
 /*Mobile specific*/
 @media (max-width: 768px) {
+    body {
+        overflow: scroll !important;
+    }
+
+    html {
+        position: relative !important;
+    }
+
+    a-scene {
+        position: relative;
+        top: 0;
+        left: 0;
+    }
+
+    #sceneContainer {
+        height:101vh !important;
+    }
+
     #about .content, #howto .content {
         padding: 0 60px;
         margin: auto;
