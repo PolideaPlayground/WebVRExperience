@@ -4,7 +4,7 @@
 We think that sometimes small things can make your day. That's why we created this web experiment, which runs on any mobile and desktop device.
 Enter our VR experiment where you can influence your surrounding - change sounds, weather conditions and even day into night.
 
-###[Check it out](https://polideaplayground.github.io/WebVRExperience/)
+[**Check it out here**](https://polideaplayground.github.io/WebVRExperience/)
 
 ## Technology
 This demo was also built to demonstrate WebVR capabilities. Supported devices:
