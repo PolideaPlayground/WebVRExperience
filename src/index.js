@@ -75,7 +75,7 @@ class SplashScene extends React.Component {
     enableVR(enable) {
         ReactGA.event({
             category: 'VREnabled',
-            action: enable
+            action: enable.toString()
         });
         this.setState({
             loading: false,
