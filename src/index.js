@@ -212,7 +212,7 @@ class SplashScene extends React.Component {
                 <div id="polidea-info-container"
                      hidden={this.state.aboutEnabled}>
                     <div className="content">
-                        <a href="https://vrar.polidea.com/" target="_blank">
+                        <a href="https://polidea.com/" target="_blank">
                             <img src="static/img/logo_polidea.svg"/>
                         </a>
                     </div>
